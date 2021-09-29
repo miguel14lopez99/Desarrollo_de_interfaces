@@ -78,6 +78,9 @@ public class Entidad {
         return true;
     }
 
-    
+    @Override
+    public String toString() {
+        return "Entidad{" + "id=" + id + ", start=" + start + ", end=" + end + ", profit=" + profit + '}';
+    }
 	
 }
