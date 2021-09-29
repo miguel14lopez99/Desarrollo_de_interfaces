@@ -1,0 +1,13 @@
+C:\Users\chipi\source\repos\Ejercicio8\Ejercicio8\bin\Debug\netcoreapp3.1\Ejercicio8.exe
+C:\Users\chipi\source\repos\Ejercicio8\Ejercicio8\bin\Debug\netcoreapp3.1\Ejercicio8.deps.json
+C:\Users\chipi\source\repos\Ejercicio8\Ejercicio8\bin\Debug\netcoreapp3.1\Ejercicio8.runtimeconfig.json
+C:\Users\chipi\source\repos\Ejercicio8\Ejercicio8\bin\Debug\netcoreapp3.1\Ejercicio8.runtimeconfig.dev.json
+C:\Users\chipi\source\repos\Ejercicio8\Ejercicio8\bin\Debug\netcoreapp3.1\Ejercicio8.dll
+C:\Users\chipi\source\repos\Ejercicio8\Ejercicio8\bin\Debug\netcoreapp3.1\Ejercicio8.pdb
+C:\Users\chipi\source\repos\Ejercicio8\Ejercicio8\obj\Debug\netcoreapp3.1\Ejercicio8.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\chipi\source\repos\Ejercicio8\Ejercicio8\obj\Debug\netcoreapp3.1\Ejercicio8.AssemblyInfoInputs.cache
+C:\Users\chipi\source\repos\Ejercicio8\Ejercicio8\obj\Debug\netcoreapp3.1\Ejercicio8.AssemblyInfo.cs
+C:\Users\chipi\source\repos\Ejercicio8\Ejercicio8\obj\Debug\netcoreapp3.1\Ejercicio8.csproj.CoreCompileInputs.cache
+C:\Users\chipi\source\repos\Ejercicio8\Ejercicio8\obj\Debug\netcoreapp3.1\Ejercicio8.dll
+C:\Users\chipi\source\repos\Ejercicio8\Ejercicio8\obj\Debug\netcoreapp3.1\Ejercicio8.pdb
+C:\Users\chipi\source\repos\Ejercicio8\Ejercicio8\obj\Debug\netcoreapp3.1\Ejercicio8.genruntimeconfig.cache
