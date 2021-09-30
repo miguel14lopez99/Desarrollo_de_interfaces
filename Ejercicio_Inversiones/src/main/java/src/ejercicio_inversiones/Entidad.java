@@ -35,7 +35,7 @@ public class Entidad {
             return profit;
     }
 
-    public double totalProfit(int start, int end, double profit) {
+    public double totalProfit() {
 
             return (end-start+1)*profit;
 

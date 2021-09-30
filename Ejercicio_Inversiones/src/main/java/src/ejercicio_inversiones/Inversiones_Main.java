@@ -17,6 +17,26 @@ public class Inversiones_Main {
         
         añadirEntidades(lista);
         
+        ArrayList<Boolean> combinacion = new ArrayList<Boolean>();
+        ArrayList<Boolean> posibCombinacion = new ArrayList<Boolean>();
+        
+        double max = 0;
+        
+    }
+    
+    public static void inversiones(int stage, ArrayList<Entidad> lista, ArrayList<Boolean> combinacion, ArrayList<Boolean> posibCombinacion, double max){
+        
+        
+        
+        if (stage == combinacion.size()){
+            
+            double posibMax = totalProfitCombi(combinacion, lista);
+            if (posibMax > max){
+                max = posibMax;
+                posibCombinacion = combinacion;
+            }
+            
+        }
         
     }
 
@@ -57,6 +77,20 @@ public class Inversiones_Main {
             System.out.println("Error de E/S");
         }
         
+    }
+    
+    public static double totalProfitCombi(ArrayList<Boolean> combinacion, ArrayList<Entidad> lista){
+        double total = 0;
+        
+        for (int i = 0; i < lista.size(); i++) {
+            
+            if(combinacion.get(i)){
+                total += lista.get(i).totalProfit();
+            }
+            
+        }
+        
+        return total;
     }
 
 }
