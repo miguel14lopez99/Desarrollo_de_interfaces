@@ -1,0 +1,25 @@
+Se generan una serie de tasks
+cada task tiene un codigo de task(random 1-100), y puntos por hacerlo(random 1-4)
+tipos de task: magical, logical, force
+
+la task se asigna a los personajes (cada 1 seg):
+	- code % 2 == 0 -> Spock
+	- code % 3 == 0 -> Gandalf
+	- code % 5 == 0 -> Yoda
+
+(cada 2 seg):
+	- se coge la primera task que este pendiente en la cola
+	- se quita de la cola
+		se chequea el tipo de task:
+			- si puede realizarla -> scoreboard++ (G/S/Y)
+			- si no puede, la task se guarda en una pila de tasks que no puede hacer
+
+Clase TASK?
+
+Clase CHARACTER
+
+Los personajes tienen un scoreboard por task realizada
+los personajes tienen un tipo de task que no pueden hacer
+tienen un scoreboard
+
+hay que hacer una simulación de 5 min
