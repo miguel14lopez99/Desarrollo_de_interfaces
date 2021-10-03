@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\chipi\\source\\repos\\Ejercicio4\\Ejercicio4\\Ejercicio4.csproj",
+      "projectUniqueName": "C:\\Users\\chipi\\Documents\\Repositorios\\Disenio_de_interfaces\\Ejercicios de C#\\Ejercicio4\\Ejercicio4\\Ejercicio4.csproj",
       "projectName": "Ejercicio4",
-      "projectPath": "C:\\Users\\chipi\\source\\repos\\Ejercicio4\\Ejercicio4\\Ejercicio4.csproj",
+      "projectPath": "C:\\Users\\chipi\\Documents\\Repositorios\\Disenio_de_interfaces\\Ejercicios de C#\\Ejercicio4\\Ejercicio4\\Ejercicio4.csproj",
       "packagesPath": "C:\\Users\\chipi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\chipi\\source\\repos\\Ejercicio4\\Ejercicio4\\obj\\",
+      "outputPath": "C:\\Users\\chipi\\Documents\\Repositorios\\Disenio_de_interfaces\\Ejercicios de C#\\Ejercicio4\\Ejercicio4\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\chipi\\AppData\\Roaming\\NuGet\\NuGet.Config",

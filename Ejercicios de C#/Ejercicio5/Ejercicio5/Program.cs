@@ -10,8 +10,6 @@ namespace Ejercicio5
             double sum = 0.0;
             int op = 1;
 
-            Console.WriteLine("Result: " + sum);
-
             for (int i = 1; i < 1000; i+=2)
             {
                 switch (op)

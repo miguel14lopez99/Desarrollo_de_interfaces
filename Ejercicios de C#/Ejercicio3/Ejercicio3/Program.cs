@@ -18,7 +18,7 @@ namespace Ejercicio3
 				i++;
 			} while (i <= number) ;
 
-			double avg = sum / number;
+			double avg = (double)sum / (double)number;
 
 			Console.WriteLine ("The sum is: " + sum);
 			Console.WriteLine ("The average is: " + avg);

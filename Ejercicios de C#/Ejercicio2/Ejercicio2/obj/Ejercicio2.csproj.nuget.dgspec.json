@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\chipi\\source\\repos\\Ejercicio2\\Ejercicio2\\Ejercicio2.csproj": {}
+    "C:\\Users\\chipi\\Documents\\Repositorios\\Disenio_de_interfaces\\Ejercicios de C#\\Ejercicio2\\Ejercicio2\\Ejercicio2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\chipi\\source\\repos\\Ejercicio2\\Ejercicio2\\Ejercicio2.csproj": {
+    "C:\\Users\\chipi\\Documents\\Repositorios\\Disenio_de_interfaces\\Ejercicios de C#\\Ejercicio2\\Ejercicio2\\Ejercicio2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\chipi\\source\\repos\\Ejercicio2\\Ejercicio2\\Ejercicio2.csproj",
+        "projectUniqueName": "C:\\Users\\chipi\\Documents\\Repositorios\\Disenio_de_interfaces\\Ejercicios de C#\\Ejercicio2\\Ejercicio2\\Ejercicio2.csproj",
         "projectName": "Ejercicio2",
-        "projectPath": "C:\\Users\\chipi\\source\\repos\\Ejercicio2\\Ejercicio2\\Ejercicio2.csproj",
+        "projectPath": "C:\\Users\\chipi\\Documents\\Repositorios\\Disenio_de_interfaces\\Ejercicios de C#\\Ejercicio2\\Ejercicio2\\Ejercicio2.csproj",
         "packagesPath": "C:\\Users\\chipi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\chipi\\source\\repos\\Ejercicio2\\Ejercicio2\\obj\\",
+        "outputPath": "C:\\Users\\chipi\\Documents\\Repositorios\\Disenio_de_interfaces\\Ejercicios de C#\\Ejercicio2\\Ejercicio2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\chipi\\AppData\\Roaming\\NuGet\\NuGet.Config",
