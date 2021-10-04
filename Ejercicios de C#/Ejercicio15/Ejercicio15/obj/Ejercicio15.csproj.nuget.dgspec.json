@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\B15-04m\\Documents\\Repositorios\\Disenio_de_interfaces\\Ejercicios de C#\\Ejercicio12\\Ejercicio12\\Ejercicio12.csproj": {}
+    "C:\\Users\\B15-04m\\Documents\\Repositorios\\Disenio_de_interfaces\\Ejercicios de C#\\Ejercicio15\\Ejercicio15\\Ejercicio15.csproj": {}
   },
   "projects": {
-    "C:\\Users\\B15-04m\\Documents\\Repositorios\\Disenio_de_interfaces\\Ejercicios de C#\\Ejercicio12\\Ejercicio12\\Ejercicio12.csproj": {
+    "C:\\Users\\B15-04m\\Documents\\Repositorios\\Disenio_de_interfaces\\Ejercicios de C#\\Ejercicio15\\Ejercicio15\\Ejercicio15.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\B15-04m\\Documents\\Repositorios\\Disenio_de_interfaces\\Ejercicios de C#\\Ejercicio12\\Ejercicio12\\Ejercicio12.csproj",
-        "projectName": "Ejercicio12",
-        "projectPath": "C:\\Users\\B15-04m\\Documents\\Repositorios\\Disenio_de_interfaces\\Ejercicios de C#\\Ejercicio12\\Ejercicio12\\Ejercicio12.csproj",
+        "projectUniqueName": "C:\\Users\\B15-04m\\Documents\\Repositorios\\Disenio_de_interfaces\\Ejercicios de C#\\Ejercicio15\\Ejercicio15\\Ejercicio15.csproj",
+        "projectName": "Ejercicio15",
+        "projectPath": "C:\\Users\\B15-04m\\Documents\\Repositorios\\Disenio_de_interfaces\\Ejercicios de C#\\Ejercicio15\\Ejercicio15\\Ejercicio15.csproj",
         "packagesPath": "C:\\Users\\B15-04m\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\B15-04m\\Documents\\Repositorios\\Disenio_de_interfaces\\Ejercicios de C#\\Ejercicio12\\Ejercicio12\\obj\\",
+        "outputPath": "C:\\Users\\B15-04m\\Documents\\Repositorios\\Disenio_de_interfaces\\Ejercicios de C#\\Ejercicio15\\Ejercicio15\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\B15-04m\\AppData\\Roaming\\NuGet\\NuGet.Config",
