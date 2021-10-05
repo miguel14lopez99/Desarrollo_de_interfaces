@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\B15-04m\\Documents\\Repositorios\\Disenio_de_interfaces\\Ejercicios de C#\\Ejercicio16\\Ejercicio16\\Ejercicio16.csproj",
-      "projectName": "Ejercicio16",
-      "projectPath": "C:\\Users\\B15-04m\\Documents\\Repositorios\\Disenio_de_interfaces\\Ejercicios de C#\\Ejercicio16\\Ejercicio16\\Ejercicio16.csproj",
+      "projectUniqueName": "C:\\Users\\B15-04m\\Documents\\Repositorios\\Disenio_de_interfaces\\Ejercicios de C#\\Ejercicio18\\Ejercicio18\\Ejercicio18.csproj",
+      "projectName": "Ejercicio18",
+      "projectPath": "C:\\Users\\B15-04m\\Documents\\Repositorios\\Disenio_de_interfaces\\Ejercicios de C#\\Ejercicio18\\Ejercicio18\\Ejercicio18.csproj",
       "packagesPath": "C:\\Users\\B15-04m\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\B15-04m\\Documents\\Repositorios\\Disenio_de_interfaces\\Ejercicios de C#\\Ejercicio16\\Ejercicio16\\obj\\",
+      "outputPath": "C:\\Users\\B15-04m\\Documents\\Repositorios\\Disenio_de_interfaces\\Ejercicios de C#\\Ejercicio18\\Ejercicio18\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\B15-04m\\AppData\\Roaming\\NuGet\\NuGet.Config",
