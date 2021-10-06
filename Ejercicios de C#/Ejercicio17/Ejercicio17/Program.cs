@@ -7,191 +7,90 @@ namespace Ejercicio17
 
         static void Main(string[] args)
         {
-            e();
-        }
+            Console.WriteLine("Type a letter from A to T (type 'x' to exit): ");
+            char opt = Console.ReadLine().ToLower()[0];
 
-        static void a()
-        {
-            int length = 8;
-
-            int cont = 1;
-
-            for (int i = 0; i < length; i++)
+            while (opt != 'x')
             {
-                for (int j = 0; j < (cont + i); j++)
-                {
-
-                    Console.Write("# ");
-
-                }
+                Console.WriteLine("Insert the size: ");
+                int size = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine();
+
+                switch (opt)
+                {
+                    case 'a':
+                        PrintPatterns.a(size);
+                        break;
+                    case 'b':
+                        PrintPatterns.b(size);
+                        break;
+                    case 'c':
+                        PrintPatterns.c(size);
+                        break;
+                    case 'd':
+                        PrintPatterns.d(size);
+                        break;
+                    case 'e':
+                        PrintPatterns.e(size);
+                        break;
+                    case 'f':
+                        PrintPatterns.f(size);
+                        break;
+                    case 'g':
+                        PrintPatterns.g(size);
+                        break;
+                    case 'h':
+                        PrintPatterns.h(size);
+                        break;
+                    case 'i':
+                        PrintPatterns.i(size);
+                        break;
+                    case 'j':
+                        PrintPatterns.j(size);
+                        break;
+                    case 'k':
+                        PrintPatterns.k(size);
+                        break;
+                    case 'l':
+                        PrintPatterns.l(size);
+                        break;
+                    case 'm':
+                        PrintPatterns.m(size);
+                        break;
+                    case 'n':
+                        PrintPatterns.n(size);
+                        break;
+                    case 'o':
+                        PrintPatterns.o(size);
+                        break;
+                    case 'p':
+                        PrintPatterns.p(size);
+                        break;
+                    case 'q':
+                        PrintPatterns.q(size);
+                        break;
+                    case 'r':
+                        PrintPatterns.r(size);
+                        break;
+                    case 's':
+                        PrintPatterns.s(size);
+                        break;
+                    case 't':
+                        PrintPatterns.t(size);
+                        break;
+                    default:
+                        Console.WriteLine("The letter is incorrect");
+                        break;
+                }
+
+                Console.WriteLine("\nType a letter from A to T (type 'x' to exit): ");
+                opt = Console.ReadLine().ToLower()[0];
+                
             }
-        }
 
-        static void b()
-        {
-            int length = 8;
-
-            int cont = 0;
-
-            for (int i = length; i > 0; i--)
-            {
-                for (int j = 0; j < (cont + i); j++)
-                {
-
-                    Console.Write("# ");
-
-                }
-                Console.WriteLine();
-            }
-        }
-
-        static void c()
-        {
-            int length = 8;
-
-            int cont = -1;
-
-            for (int i = length; i > 0; i--)
-            {
-                for (int j = 0; j < (cont + i); j++)
-                {
-                    Console.Write("  ");
-                }
-
-                for (int k = 0; k < length-(cont + i); k++)
-                {
-                    Console.Write("# ");
-                }
-
-                Console.WriteLine();
-            }
-        }
-
-        static void d()
-        {
-            int length = 8;
-
-            int cont = -1;
-
-            for (int i = 0 ; i < length; i++)
-            {
-                for (int j = 0; j < (cont + i); j++)
-                {
-                    Console.Write("  ");
-                }
-
-                for (int k = 0; k < length - (cont + i); k++)
-                {
-                    Console.Write("# ");
-                }
-
-                Console.WriteLine();
-            }
-        }
-
-        static void e()
-        {
-            int length = 7;
-
-            for (int i = 0; i < length; i++)
-            {
-                if (i == 0 || i == length-1)
-                {
-                    for (int j = 0; j < length; j++)
-                    {
-                        Console.Write("# ");
-                    }
-                }
-
-                if (i != 0 || i != length-1)
-                {
-                    for (int j = 0; j < length; j++)
-                    {
-                        if (j == 0 || j == length)
-                        {
-                            Console.Write("# ");
-                        }
-                    }
-                }
-                Console.WriteLine();
-            }
-        }
-
-        static void f()
-        {
-
-        }
-
-        static void g()
-        {
-
-        }
-
-        static void h()
-        {
-
-        }
-
-        static void i()
-        {
-
-        }
-
-        static void j()
-        {
-
-        }
-
-        static void k()
-        {
-
-        }
-
-        static void l()
-        {
-
-        }
-
-        static void m()
-        {
-
-        }
-
-        static void n()
-        {
-
-        }
-
-        static void o()
-        {
-
-        }
-
-        static void p()
-        {
-
-        }
-
-        static void q()
-        {
-
-        }
-
-        static void r()
-        {
-
-        }
-
-        static void s()
-        {
-
-        }
-
-        static void t()
-        {
-
+            Console.WriteLine("\nGoodBye");
         }
 
     }
+
 }
