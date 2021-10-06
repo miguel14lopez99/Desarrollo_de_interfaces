@@ -1,0 +1,28 @@
+Ejercicio 21 Numeros perfectos y deficientes
+
+introducir un limite superior (upper bound), un bucle comprobando cada uno de los numeros
+
+declarar los arrays (listas) ;
+
+bucle (1 a upper bound){
+
+	comprobar si el num es perfecto (la suma de sus factores sea igual a ellos)
+    if ( sumaFactores(num) == num ){
+        meter en un array de enteros -> int[] arrayPerfectos
+    }
+    si no es perfecto comprobar si es deficiente (la suma de sus factores es menor a ellos)
+    if ( sumaFactores(num) < num ){
+        meter en un array de enteros -> int[] arrayDeficientes
+    }
+    else{
+        meter en un array de enteros -> int[] array_niPerfectos_niDeficientes
+    }
+ 
+ ub - 100
+ cont - x
+
+}
+
+mostrar el contenido de las listas, contar los elementos para mostrar su porcentaje
+
+hacer metodo para perfectos y otro para deficientes (Boolean)
