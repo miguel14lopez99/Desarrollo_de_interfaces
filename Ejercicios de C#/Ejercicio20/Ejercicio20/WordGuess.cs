@@ -7,23 +7,25 @@ namespace Ejercicio20
         static void Main(string[] args)
         {
 
-            String word = "tonacho";
-            String result = createResult(word);
+            String word = "teacher";
+            String toLowerWord = word.ToLower();
+            String result = createResult(word); // I have changed this variable to lowercase so that any letter can be entered
             int cont = 0;
             Boolean isCorrect = false;
 
-            while (!(result.Equals(word)) && !isCorrect)
+            while (!(result.Equals(toLowerWord)) && !isCorrect)
             {
                 Console.WriteLine("Key in one character or your guess word: ");
-                String _try = Console.ReadLine();
+                String _try = Console.ReadLine().ToLower(); // I have changed this variable to lowercase so that any letter can be insert
 
-                if (isLetter(_try))
+                //the program asks you to enter letter or word
+                if (isLetter(_try)) // check if the string is a Letter
                 {
                     char tryChar = _try[0];
 
-                    result = updateResult(tryChar, word, result);
+                    result = updateResult(tryChar, toLowerWord, result);
 
-                    if (result.Equals(word))
+                    if (result.Equals(toLowerWord))
                     {
                         Console.WriteLine("Trail " + cont + ": Congratulations!");
                     }
@@ -34,9 +36,9 @@ namespace Ejercicio20
 
                     cont++;
                 }
-                else
+                else // if the string isn't a letter it's a word
                 {
-                    if (_try.Equals(word))
+                    if (_try.Equals(toLowerWord))
                     {
                         isCorrect = true;
                         Console.WriteLine("Trail " + cont + ": Congratulations!");
@@ -71,7 +73,7 @@ namespace Ejercicio20
 
         }
 
-        static String createResult(String word)
+        static String createResult(String word) // this method creates an empty String (with "_") with the same length of the word 
         {
             char[] chars = new char[word.Length];
 
@@ -85,7 +87,7 @@ namespace Ejercicio20
             return charsStr;
         }
 
-        static Boolean isLetter(String _try)
+        static Boolean isLetter(String _try) // this method checks if the inserted string is only a letter
         {
             Boolean isLetter = false;
 
@@ -97,7 +99,7 @@ namespace Ejercicio20
             return isLetter;
         }
 
-        static String updateResult(char _try, String word, String result)
+        static String updateResult(char _try, String word, String result) // this method updates the result with the succesfull trials
         {
             char[] resultChars = result.ToCharArray();
 

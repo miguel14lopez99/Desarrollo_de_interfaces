@@ -7,7 +7,7 @@ namespace Ejercicio17
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Type a letter from A to T (type 'x' to exit): ");
+            Console.WriteLine("Type a letter from A to T (type 'x' to exit): "); // I think I could do a better menu
             char opt = Console.ReadLine().ToLower()[0];
 
             while (opt != 'x')

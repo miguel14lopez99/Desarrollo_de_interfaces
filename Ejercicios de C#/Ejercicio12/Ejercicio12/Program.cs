@@ -21,7 +21,7 @@ namespace Ejercicio12
 
         }
 
-        static Boolean hexCheck(String hexNumber)
+        static Boolean hexCheck(String hexNumber) // this method checks if the string is a hexadecimal number
         {
             Boolean isHexadecimal = true;
 
@@ -44,7 +44,7 @@ namespace Ejercicio12
             return isHexadecimal;
         }
 
-        static int getHexNumber(char hexChar)
+        static int getHexNumber(char hexChar) // this method checks if the inserted character corresponds to a hexadecimal number and return the number, -1 if not hexadecimal
         {
             char[] characters = { '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F' };
 
@@ -62,16 +62,16 @@ namespace Ejercicio12
             return number;
         }
 
-        static int hexString_to_decimal(String hexNumber)
+        static int hexString_to_decimal(String hexNumber) // this method goes through the hexadecimal number adding the decimal value of each of the positions to the variable num
         {
             int num = 0;
 
             int div = 16;
 
-            for (int i = 0; i < hexNumber.Length; i++)
+            for (int i = 0; i < hexNumber.Length; i++) 
             {
 
-                num += (int)Math.Pow(div, (hexNumber.Length - (i+1))) * getHexNumber(hexNumber[i]);
+                num += (int)Math.Pow(div, (hexNumber.Length - (i+1))) * getHexNumber(hexNumber[i]); // num saves the sum of the div variable raised to the next position by the value of the next hexadecimal number
 
             }
 

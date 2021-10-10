@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\chipi\\source\\repos\\Ejercicio7\\Ejercicio7\\Ejercicio7.csproj",
+      "projectUniqueName": "C:\\Users\\chipi\\Documents\\Repositorios\\Disenio_de_interfaces\\Ejercicios de C#\\Ejercicio7\\Ejercicio7\\Ejercicio7.csproj",
       "projectName": "Ejercicio7",
-      "projectPath": "C:\\Users\\chipi\\source\\repos\\Ejercicio7\\Ejercicio7\\Ejercicio7.csproj",
+      "projectPath": "C:\\Users\\chipi\\Documents\\Repositorios\\Disenio_de_interfaces\\Ejercicios de C#\\Ejercicio7\\Ejercicio7\\Ejercicio7.csproj",
       "packagesPath": "C:\\Users\\chipi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\chipi\\source\\repos\\Ejercicio7\\Ejercicio7\\obj\\",
+      "outputPath": "C:\\Users\\chipi\\Documents\\Repositorios\\Disenio_de_interfaces\\Ejercicios de C#\\Ejercicio7\\Ejercicio7\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\chipi\\AppData\\Roaming\\NuGet\\NuGet.Config",

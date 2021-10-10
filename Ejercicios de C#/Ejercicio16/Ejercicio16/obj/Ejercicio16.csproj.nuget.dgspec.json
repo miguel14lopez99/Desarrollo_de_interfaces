@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\B15-04m\\Documents\\Repositorios\\Disenio_de_interfaces\\Ejercicios de C#\\Ejercicio16\\Ejercicio16\\Ejercicio16.csproj": {}
+    "C:\\Users\\chipi\\Documents\\Repositorios\\Disenio_de_interfaces\\Ejercicios de C#\\Ejercicio16\\Ejercicio16\\Ejercicio16.csproj": {}
   },
   "projects": {
-    "C:\\Users\\B15-04m\\Documents\\Repositorios\\Disenio_de_interfaces\\Ejercicios de C#\\Ejercicio16\\Ejercicio16\\Ejercicio16.csproj": {
+    "C:\\Users\\chipi\\Documents\\Repositorios\\Disenio_de_interfaces\\Ejercicios de C#\\Ejercicio16\\Ejercicio16\\Ejercicio16.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\B15-04m\\Documents\\Repositorios\\Disenio_de_interfaces\\Ejercicios de C#\\Ejercicio16\\Ejercicio16\\Ejercicio16.csproj",
+        "projectUniqueName": "C:\\Users\\chipi\\Documents\\Repositorios\\Disenio_de_interfaces\\Ejercicios de C#\\Ejercicio16\\Ejercicio16\\Ejercicio16.csproj",
         "projectName": "Ejercicio16",
-        "projectPath": "C:\\Users\\B15-04m\\Documents\\Repositorios\\Disenio_de_interfaces\\Ejercicios de C#\\Ejercicio16\\Ejercicio16\\Ejercicio16.csproj",
-        "packagesPath": "C:\\Users\\B15-04m\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\B15-04m\\Documents\\Repositorios\\Disenio_de_interfaces\\Ejercicios de C#\\Ejercicio16\\Ejercicio16\\obj\\",
+        "projectPath": "C:\\Users\\chipi\\Documents\\Repositorios\\Disenio_de_interfaces\\Ejercicios de C#\\Ejercicio16\\Ejercicio16\\Ejercicio16.csproj",
+        "packagesPath": "C:\\Users\\chipi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\chipi\\Documents\\Repositorios\\Disenio_de_interfaces\\Ejercicios de C#\\Ejercicio16\\Ejercicio16\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\B15-04m\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\chipi\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

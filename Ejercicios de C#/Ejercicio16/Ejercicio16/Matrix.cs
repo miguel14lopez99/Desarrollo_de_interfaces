@@ -13,7 +13,7 @@ namespace Ejercicio16
         {
             int[,] result = new int[a.GetLength(0),a.GetLength(1)];
 
-            if (areSameDimension(a, b))
+            if (areSameDimension(a, b)) //if the matrices doesn't have the same dimension the method shows an error, on the other hand the terms are added one by one 
             {
 
                 for (int i = 0; i < a.GetLength(0); i++)
@@ -33,7 +33,7 @@ namespace Ejercicio16
             return result;
         }
 
-        public static int[,] subtraction(int[,] a, int[,] b)
+        public static int[,] subtraction(int[,] a, int[,] b) // this method is nearly the same as in the addiction
         {
             int[,] result = new int[a.GetLength(0), a.GetLength(1)];
 
@@ -57,9 +57,9 @@ namespace Ejercicio16
             return result;
         }
 
-        public static int[,] multiplication(int[,] a, int[,] b)
+        public static int[,] multiplication(int[,] a, int[,] b) // this method multiply the terms in the right order 
         {
-            int[,] result = new int[a.GetLength(0), b.GetLength(1)];
+            int[,] result = new int[a.GetLength(0), b.GetLength(1)]; // the result is a matrix formed by the width of the first matrix and the height of the second
 
             if (canMultiply(a, b))
             {
@@ -86,7 +86,7 @@ namespace Ejercicio16
             return result;
         }
 
-        public static void print(int[,] res)
+        public static void print(int[,] res) // this method prints the matrix on console
         {
             Console.WriteLine("Result:\n");
             for (int i = 0; i < res.GetLength(0); i++)
@@ -100,7 +100,7 @@ namespace Ejercicio16
 
         }
 
-        private static Boolean areSameDimension(int[,] a, int[,] b)
+        private static Boolean areSameDimension(int[,] a, int[,] b) // this method check if the height and width of the matrices match
         {
             Boolean sameDimension = false;
 
@@ -112,7 +112,7 @@ namespace Ejercicio16
             return sameDimension;
         }
 
-        private static Boolean canMultiply(int[,] a, int[,] b)
+        private static Boolean canMultiply(int[,] a, int[,] b) // check if the height of the first and width of the second, as well as the width of the first and the height of the second match
         {
             Boolean canMultiply = false;
 
@@ -124,9 +124,9 @@ namespace Ejercicio16
             return canMultiply;
         }
 
-        /////////////////////DOUBLE/////////////////////////
+        /////////////////////DOUBLE VERSION///////////////////////// this methods are the same as above
 
-        public static double[,] additionInt(double[,] a, double[,] b)
+        public static double[,] addition(double[,] a, double[,] b)
         {
             double[,] result = new double[a.GetLength(0), a.GetLength(1)];
 
@@ -150,7 +150,7 @@ namespace Ejercicio16
             return result;
         }
 
-        public static double[,] subtractionInt(double[,] a, double[,] b)
+        public static double[,] subtraction(double[,] a, double[,] b)
         {
             double[,] result = new double[a.GetLength(0), a.GetLength(1)];
 

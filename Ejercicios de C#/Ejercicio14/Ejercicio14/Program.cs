@@ -9,7 +9,7 @@ namespace Ejercicio14
             Console.Write("Enter a Hexadecimal string: ");
             String hexNumber = Console.ReadLine().ToLower();
 
-            if (hexCheck(hexNumber))
+            if (hexCheck(hexNumber)) 
             {
                 Console.WriteLine("The equivalent decimal number for hexadecimal \"" + hexNumber + "\" is " + hexToBin(hexNumber));
             }
@@ -19,7 +19,7 @@ namespace Ejercicio14
             }
         }
 
-        static Boolean hexCheck(String hexNumber)
+        static Boolean hexCheck(String hexNumber) // returns true if the string is a hexadecimal number and false in the opposite case
         {
             Boolean isHexadecimal = true;
 
@@ -42,7 +42,7 @@ namespace Ejercicio14
             return isHexadecimal;
         }
 
-        static int getHexNumber(char hexChar)
+        static int getHexNumber(char hexChar) // transform a hexadecimal character into an integer, in any other case returns -1
         {
 
             char[] characters = { '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f' };
@@ -60,7 +60,7 @@ namespace Ejercicio14
             return number;
         }
 
-        static String hexToBin(String hexNumber)
+        static String hexToBin(String hexNumber) // transform the hexadecimal number into binary traversing these analog arrays
         {
 
             char[] hex =   {'0',    '1',    '2',    '3',    '4',    '5',    '6',    '7',    '8',    '9',    'a',    'b',    'c',    'd',    'e',    'f' };

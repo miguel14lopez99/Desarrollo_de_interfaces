@@ -40,7 +40,7 @@ namespace Ejercicio21
 
         }
 
-        static Boolean isPerfect(int num)
+        static Boolean isPerfect(int num) // this method checks if the number is perfect (when the sum of its proper divisor are equal than the number)
         {
             Boolean isPerfect = false;
 
@@ -52,7 +52,7 @@ namespace Ejercicio21
             return isPerfect;
         }
 
-        static Boolean isDeficient(int num)
+        static Boolean isDeficient(int num) // this method checks if the number is deficient (when the sum of its proper divisor are less than the number)
         {
             Boolean isDeficient = false;
 
@@ -66,18 +66,16 @@ namespace Ejercicio21
 
         static int sumProperDivisors(int num)
         {
-            // Final result of summation of divisors
+
             int result = 0;
             if (num == 1) // there will be no proper divisor
                 result = 0;
-            // find all divisors which divides 'num'
-            for (int i = 2; i <= Math.Sqrt(num); i++)
+            
+            for (int i = 2; i <= Math.Sqrt(num); i++) // find all divisors which divides by the variable num
             {
-                // if 'i' is divisor of 'num'
-                if (num % i == 0)
+                
+                if (num % i == 0) // if the posible number is divisor of the variable num
                 {
-                    // if both divisors are same then add
-                    // it only once else add both
                     if (i == (num / i))
                         result += i;
                     else
@@ -85,11 +83,11 @@ namespace Ejercicio21
                 }
             }
 
-            // Add 1 to the result as 1 is also a divisor
-            return (result + 1);
+            
+            return (result + 1); // it return the result plus 1 beacause 1 is also a proper divisor
         }
 
-        static void printList(List<int> numList, int upperBound)
+        static void printList(List<int> numList, int upperBound) // this methiod shows the list of numbers as well as its percertage
         {
             foreach (int item in numList)
             {

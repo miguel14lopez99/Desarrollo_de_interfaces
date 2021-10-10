@@ -9,9 +9,9 @@ namespace Ejercicio15
             Console.WriteLine("Enter the number of students: ");
             int students = Convert.ToInt32(Console.ReadLine());
 
-            int[] grades = new int[students];
+            int[] grades = new int[students]; // create an array of length equal to the number of students
 
-            for (int i = 0; i < students; i++)
+            for (int i = 0; i < students; i++) // a correct grade is entered for each student
             {
                 Console.WriteLine("Enter the grade for student " + (i + 1) + ": ");
                 int grade = Convert.ToInt32(Console.ReadLine());
@@ -41,7 +41,7 @@ namespace Ejercicio15
 
         }
 
-        static double calculateAvg(int[] grades)
+        static double calculateAvg(int[] grades) // this method calculates the average of the student's grades
         {
             double avg = 0;
             int sum = 0;
@@ -56,7 +56,7 @@ namespace Ejercicio15
             return avg;
         }
 
-        static int calculateMin(int[] grades)
+        static int calculateMin(int[] grades) // this method returns the minimal grade
         {
             int min = 0;
 
@@ -71,7 +71,7 @@ namespace Ejercicio15
             return min;
         }
 
-        static int calculateMax(int[] grades)
+        static int calculateMax(int[] grades) // this method returns the highest grade
         {
             int max = 0;
 
@@ -86,7 +86,7 @@ namespace Ejercicio15
             return max;
         }
 
-        static double calculate_Standard_Deviation(int[] grades, double avg)
+        static double calculate_Standard_Deviation(int[] grades, double avg) // this method returns the standard deviation of all grades
         {
 
             double res = 0;
@@ -94,8 +94,8 @@ namespace Ejercicio15
             {
                 res += (grade) * (grade);
             }
-            double sumOfDerivationAverage = res / (grades.Length - 1);
-            return Math.Sqrt(sumOfDerivationAverage - (avg * avg));
+            double derivation_average_sum = res / (grades.Length - 1);
+            return Math.Sqrt(derivation_average_sum - (avg * avg));
         }
     }
 }
