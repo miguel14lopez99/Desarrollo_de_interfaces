@@ -12,9 +12,9 @@ namespace Gandalf_Spock_Yoda
 
         public Task()
         {
-            this.Code = RandomNumber.random_Number(1, 100);
-            this.TaskType = (InterfaceTask.TaskType)RandomNumber.random_Number(0,3);
-            this.Score = RandomNumber.random_Number(1, 5);
+            this.code = RandomNumber.random_Number(1, 100);
+            this.taskType = (InterfaceTask.TaskType)RandomNumber.random_Number(0,3);
+            this.score = RandomNumber.random_Number(1, 5);
 
         }
 

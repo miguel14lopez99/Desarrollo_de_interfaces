@@ -17,7 +17,7 @@ namespace Gandalf_Spock_Yoda
             characters[1] = Gandalf;
             characters[2] = Yoda;
 
-            int max_time = 5*60;
+            int max_time = 5*60; // 5 minutes
             int time = 1;
 
             do
@@ -40,21 +40,26 @@ namespace Gandalf_Spock_Yoda
                     //Do the tasks
                     foreach (Character c in characters)
                     {
-
-                        Task nextTask = c.TaskQueue.Dequeue();
-
-                        if(canDoTask(c, nextTask))
+                        if (c.TaskQueue.Count > 0)
                         {
-                            c.addPoint();
-                            Console.WriteLine(c.Name+ " - +1 point ");
+                            Task nextTask = c.TaskQueue.Dequeue();
+
+                            if (canDoTask(c, nextTask))
+                            {
+                                c.addPoint(nextTask.Score);
+                                Console.WriteLine(c.Name + " +"+ nextTask.Score +" point ");
+                            }
+                            else
+                            {
+                                c.NoPosibleTask.Push(nextTask);
+                                Console.WriteLine(c.Name + " can't do the task ");
+                            }
                         }
-                        else
-                        {
-                            c.NoPosibleTask.Push(nextTask);
-                            Console.WriteLine(c.Name + " can't do the task ");
-                        }
+                        
 
                     }
+
+                    Console.WriteLine("----------------------------------");
 
                 }
 
@@ -96,10 +101,9 @@ namespace Gandalf_Spock_Yoda
         {
             Boolean candoit = true;
 
-            if (newTask.TaskType.Equals(c.NoPosibleTask))
+            if (newTask.TaskType.Equals(c.ImposibleTask))
             {
                 candoit = false;
-                Console.WriteLine("ENTRAAAAAAAAAAAAAAAAA");
             }   
 
             return candoit;
@@ -114,12 +118,12 @@ namespace Gandalf_Spock_Yoda
             {
                 if (maxScoreboard < c.Scoreboard)
                 {
-
+                    maxScoreboard = c.Scoreboard;
                     winner = c;
                 }
             }
 
-            Console.WriteLine(winner.ToString());
+            Console.WriteLine(winner.Name + " has won with " + winner.Scoreboard + " points.");
         }
     }
 }

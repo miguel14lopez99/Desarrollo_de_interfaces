@@ -15,9 +15,9 @@ namespace Gandalf_Spock_Yoda
 
         public Character(String name, InterfaceTask.TaskType imposibleTask)
         {
-            this.Name = name;
-            this.Scoreboard = 0;
-            this.ImposibleTask = imposibleTask;
+            this.name = name;
+            this.scoreboard = 0;
+            this.imposibleTask = imposibleTask;
             
         }
 
@@ -27,9 +27,9 @@ namespace Gandalf_Spock_Yoda
         public Stack<Task> NoPosibleTask { get => noPosibleTask; set => noPosibleTask = value; }
         public string Name { get => name; set => name = value; }
 
-        public void addPoint()
+        public void addPoint(int taskScore)
         {
-            this.Scoreboard++;
+            this.scoreboard = scoreboard + taskScore;
         }
 
         

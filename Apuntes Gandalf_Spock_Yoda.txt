@@ -11,7 +11,7 @@ la task se asigna a los personajes (cada 1 seg):
 	- se coge la primera task que este pendiente en la cola
 	- se quita de la cola
 		se chequea el tipo de task:
-			- si puede realizarla -> scoreboard++ (G/S/Y)
+			- si puede realizarla -> scoreboard + puntos de task (G/S/Y)
 			- si no puede, la task se guarda en una pila de tasks que no puede hacer
 
 Clase TASK?
