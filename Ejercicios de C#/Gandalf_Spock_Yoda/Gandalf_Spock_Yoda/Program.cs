@@ -46,12 +46,12 @@ namespace Gandalf_Spock_Yoda
 
                             if (canDoTask(c, nextTask))
                             {
-                                c.addPoint(nextTask.Score);
+                                c.addPoints(nextTask.Score);
                                 Console.WriteLine(c.Name + " +"+ nextTask.Score +" point ");
                             }
                             else
                             {
-                                c.NoPosibleTask.Push(nextTask);
+                                c.NoPosibleTasks.Push(nextTask);
                                 Console.WriteLine(c.Name + " can't do the task ");
                             }
                         }
@@ -76,7 +76,7 @@ namespace Gandalf_Spock_Yoda
 
         }
 
-        static void assignTask(Character[] characters, Task newTask)
+        static void assignTask(Character[] characters, Task newTask) // assing the task to the proper character
         {
             if ((newTask.Code % 2) == 0)
             {
@@ -97,7 +97,7 @@ namespace Gandalf_Spock_Yoda
             }
         }
 
-        static Boolean canDoTask(Character c, Task newTask)
+        static Boolean canDoTask(Character c, Task newTask) // return boolean if the character can perform the task
         {
             Boolean candoit = true;
 
@@ -109,7 +109,7 @@ namespace Gandalf_Spock_Yoda
             return candoit;
         }
 
-        static void showWinner(Character[] characters)
+        static void showWinner(Character[] characters) // finds the winner in the characters array and show it as well as his scoreboard
         {
             Character winner = null;
             int maxScoreboard = 0;
