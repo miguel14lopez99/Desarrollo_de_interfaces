@@ -1,0 +1,15 @@
+bishop
+
+si la suma de las coords es par son blancas
+
+si no negras
+
+recorrido de las celdas adyacentes (esquinas para el alfil)
+for (i=-1; i<=1; i++){
+	for(j=-1; j<=1; j++){
+		if((x+i)>=0 && (x+i)<=m.length-1 && (y+j)>=0 && (y+j)<=m.length-1){
+			if(Math.abs(i)+Math.abs(j)=2)
+				m(x+i,y+j)
+		}
+	}
+}
