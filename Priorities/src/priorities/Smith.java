@@ -13,15 +13,20 @@ import static priorities.DataCharacter.maxInfect;
  */
 class Smith extends Character {
         
-        private int infect;
+    private int infect;
 
-        public Smith() {
-            super("Smith",null,-1,-1,-1,-1);   
-            this.infect = 0;
-        }
-        
-        public void updateInfection(){
-            infect = RandomNumber.randomNumber(1, maxInfect);
-        }
-    
+    public Smith() {
+        super("Smith",null,-1,-1,-1,-1);   
+        this.infect = 0;
     }
+
+    public void updateInfection(){ //takes a random capacity to infect
+        infect = RandomNumber.randomNumber(1, maxInfect);
+    }
+
+    public int getInfect() {
+        return infect;
+    }
+
+    
+}

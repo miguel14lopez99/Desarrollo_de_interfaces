@@ -35,5 +35,9 @@ public class SortCharacters {
         return QueueCharacter.remove();   
     }
     
+    public int size(){
+        return QueueCharacter.size();
+    }
+    
     
 }

@@ -11,24 +11,30 @@ package priorities;
  */
 class Neo extends Character {
         
-        private boolean isTheOne;
+    private boolean isTheOne;
 
-        public Neo() {
-            
-            super("Neo",null,-1,-1,-1,-1);
-            this.isTheOne = false;
+    public Neo() {
+
+        super("Neo",null,-1,-1,-1,-1);
+        this.isTheOne = false;
+    }
+
+    public  void updateIsTheOne(){
+
+        int fiftyFifty = RandomNumber.randomNumber(0, 1);
+
+        if(fiftyFifty == 1){
+            isTheOne = true;
+        } else {
+            isTheOne = false;
         }
+
+    }
+
+    public boolean IsTheOne() {
+        return isTheOne;
+    }
+         
         
-        public void updateIsTheOne(){
-            
-            int fiftyFifty = RandomNumber.randomNumber(0, 1);
-            
-            if(fiftyFifty == 1){
-                isTheOne = true;
-            } else {
-                isTheOne = false;
-            }
- 
-        }
   
     }

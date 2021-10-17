@@ -140,4 +140,11 @@ public class Character implements DataCharacter,Comparable<Character> {
         return samePos;
     }
     
+    public void addDeath(){
+        
+        if(death > 0) // this makes inmortal neo and smith, because their death variable is -1
+            death += 10; 
+        
+    }
+    
 }
