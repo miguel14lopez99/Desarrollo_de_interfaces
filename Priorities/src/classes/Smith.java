@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package priorities;
+package classes;
 
-import static priorities.DataCharacter.maxInfect;
+import static classes.DataCharacter.maxInfect;
 
 /**
  *

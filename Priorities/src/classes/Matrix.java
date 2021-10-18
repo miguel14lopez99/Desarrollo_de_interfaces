@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package priorities;
+package classes;
 
 import java.util.LinkedList;
 import java.util.NoSuchElementException;
@@ -59,7 +59,7 @@ public class Matrix implements DataMatrix {
 
     
     public void generatePeople(){ // fills the people queue of characters
-        for (int i = 0; i < 2; i++) {
+        for (int i = 0; i < 200; i++) {
             people.add(new Character());
         }
     }

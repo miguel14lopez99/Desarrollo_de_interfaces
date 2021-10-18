@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package priorities;
+package classes;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -12,7 +12,7 @@ import java.util.logging.Logger;
  *
  * @author chipi
  */
-public class Test_Main {
+public class Main {
     
     public static void main(String[] args) {
         
@@ -20,9 +20,10 @@ public class Test_Main {
         
         Runnable runnable = new Runnable(){
            
+            @Override
             public void run(){
                 
-                int max_time = 30; // 30 seconds
+                int max_time = 33; // with 33 seconds, Neo has a +- 50% to save the humanity [-time NEO always wins | +time SMITH always wins]
                 int time = 1;
                 boolean gameOver = false;
                 
@@ -60,17 +61,18 @@ public class Test_Main {
                         }
 
                         //check the game is over
-                        gameOver = m.isGameOver(); // I don't know why this variable is not used
+                        gameOver = m.isGameOver();
 
                         m.printMatrix();
 
                         Thread.sleep(100);
                         time += 1;
+                        
                     } catch (InterruptedException ex) {
-                        Logger.getLogger(Test_Main.class.getName()).log(Level.SEVERE, null, ex);
+                        Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
                     }
 
-                } while (time <= max_time || !m.isGameOver());
+                } while (time <= max_time && !gameOver);
                 
                 if(m.isGameOver()){
                     System.out.println("Smith has finished with humanity");
