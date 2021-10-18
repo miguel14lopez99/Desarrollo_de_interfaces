@@ -65,7 +65,7 @@ public class Main {
 
                         m.printMatrix();
 
-                        Thread.sleep(100);
+                        Thread.sleep(1000);
                         time += 1;
                         
                     } catch (InterruptedException ex) {
