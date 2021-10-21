@@ -43,10 +43,22 @@ public class Cell {
     public void setVisited(boolean visited) {
         this.visited = visited;
     }
+    
+    public int distance(Cell c){
+        return Math.max(Math.abs(row-c.getRow()),Math.abs(column-c.getColumn()));
+    }
+    
+    public boolean isOdd(){
+        return (this.getRow()+this.getColumn()) % 2 != 0;
+    }
+    
+    public boolean isEven(){
+        return (this.getRow()+this.getColumn()) % 2 == 0;
+    }
 
     @Override
     public String toString() {
-        return "Cell{" + "row=" + row + ", column=" + column + ", visited=" + visited + '}';
+        return "(" + row + "," + column + ")";
     }
 
     @Override

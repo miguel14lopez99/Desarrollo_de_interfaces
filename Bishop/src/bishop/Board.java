@@ -41,5 +41,16 @@ public class Board implements Data {
         chessboard[c.getRow()][c.getColumn()].setVisited(false);
     }
     
+    public boolean isInside(Cell c){    
+        return (c.getRow()>=0 && c.getRow()<N && c.getColumn()>=0 && c.getColumn()<M);
+    }
     
+    public boolean isMovementOK(int i, int j){
+        return (i!=0 && j!=0);
+    }
+    
+    public boolean isPathOK(Cell source, Cell target){
+        return (source.isEven() && target.isEven()) || (source.isOdd() && target.isOdd());
+    }
+
 }
