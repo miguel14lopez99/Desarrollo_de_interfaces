@@ -1,0 +1,28 @@
+﻿<Window x:Class="Controles2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Controles2"
+        mc:Ignorable="d"
+        Title="Ecuación de segundo grado" Height="436" Width="536">
+    <Grid>
+        <TextBlock Margin="11,38,0,0" Text="Programa para resolver una ecuación de segundo grado AX^2 + BX + C = 0" TextWrapping="Wrap" VerticalAlignment="Top" Height="62" TextAlignment="Center" Background="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" Padding="5,5,5,5" HorizontalAlignment="Center" Width="238"/>
+        <Label x:Name="lblCoeficientes" Content="Coeficientes:" HorizontalAlignment="Left" Margin="92,129,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblA" Content="A: " HorizontalAlignment="Left" Margin="76,160,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtA" HorizontalAlignment="Left" Margin="100,164,0,0" TextWrapping="Wrap" Width="80" Height="18" VerticalAlignment="Top"/>
+        <Label x:Name="lblB" Content="B: " HorizontalAlignment="Left" Margin="76,204,0,0" Height="26" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtB" HorizontalAlignment="Left" Margin="100,208,0,0" TextWrapping="Wrap" Width="80" Height="18" VerticalAlignment="Top"/>
+        <Label x:Name="lblC" Content="C: " HorizontalAlignment="Left" Margin="76,254,0,0" Height="26" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtC" HorizontalAlignment="Left" Margin="100,258,0,0" TextWrapping="Wrap" Width="80" Height="18" VerticalAlignment="Top"/>
+        <Label x:Name="lblSolucion" Content="Solución:" HorizontalAlignment="Left" Margin="284,129,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblX1" Content="X1 =" HorizontalAlignment="Left" Margin="272,160,0,0" Height="26" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtX1" HorizontalAlignment="Left" Margin="313,164,0,0" TextWrapping="Wrap" Width="149" Height="18" VerticalAlignment="Top"/>
+        <Label x:Name="lblX2" Content="X2 = " HorizontalAlignment="Left" Margin="272,204,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtX2" HorizontalAlignment="Left" Margin="313,208,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="149"/>
+        <Button x:Name="btnResolver" Content="Resolver" HorizontalAlignment="Left" Margin="143,352,0,0" VerticalAlignment="Top" Width="50" Click="btnResolver_Click"/>
+        <Button x:Name="btnLimpiar" Content="Limpiar" HorizontalAlignment="Left" Margin="227,352,0,0" VerticalAlignment="Top" Width="50" Click="btnLimpiar_Click"/>
+        <Button x:Name="btnSalir" Content="Salir" HorizontalAlignment="Left" Margin="313,352,0,0" VerticalAlignment="Top" Width="50" Click="btnSalir_Click"/>
+
+    </Grid>
+</Window>

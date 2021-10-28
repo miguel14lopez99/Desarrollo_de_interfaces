@@ -1,0 +1,19 @@
+﻿<Window x:Class="Controles1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Controles1"
+        mc:Ignorable="d"
+        Title="Cuadrado de un número" Height="267" Width="403">
+    <Grid>
+        <TextBlock HorizontalAlignment="Center" Margin="0,29,0,0" Text="Programa para elevar un número al cuadrado" TextWrapping="Wrap" VerticalAlignment="Top" Height="44" Width="204" TextAlignment="Center" Background="{DynamicResource {x:Static SystemColors.ScrollBarBrushKey}}" FontWeight="Bold" Padding="5,5,5,5"/>
+        <Label x:Name="lblNumero" Content="Número: " HorizontalAlignment="Left" Margin="36,107,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblNumero_Copy" Content="Resultado: " HorizontalAlignment="Left" Margin="36,150,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtNumero" HorizontalAlignment="Left" Margin="110,111,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="80" Text=""/>
+        <TextBox x:Name="txtResult" HorizontalAlignment="Left" Margin="110,154,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="80"/>
+        <Button x:Name="btnCalcular" Content="Calcular" HorizontalAlignment="Left" Margin="242,110,0,0" VerticalAlignment="Top" Width="79" Click="btnCalcular_Click"/>
+        <Button x:Name="btnSalir" Content="Salir" HorizontalAlignment="Left" Margin="293,188,0,0" VerticalAlignment="Top" Width="65" Height="26" Click="btnSalir_Click"/>
+
+    </Grid>
+</Window>
