@@ -35,6 +35,7 @@
             <Button>Button 1</Button>
             <Button Grid.Column="1">Button 2</Button>
         </Grid>
+        <ProgressBar HorizontalAlignment="Left" Height="27" Margin="307,27,0,0" VerticalAlignment="Top" Width="434"/>
 
     </Grid>
 </Window>

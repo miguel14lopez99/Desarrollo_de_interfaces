@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\B15-04m\\Documents\\Repositorios\\Disenio_de_interfaces\\Example1\\Example1\\Example1.csproj": {}
+    "C:\\Users\\B15-04m\\Documents\\Repositorios\\Disenio_de_interfaces\\Example2\\Example2\\Example2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\B15-04m\\Documents\\Repositorios\\Disenio_de_interfaces\\Example1\\Example1\\Example1.csproj": {
+    "C:\\Users\\B15-04m\\Documents\\Repositorios\\Disenio_de_interfaces\\Example2\\Example2\\Example2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\B15-04m\\Documents\\Repositorios\\Disenio_de_interfaces\\Example1\\Example1\\Example1.csproj",
-        "projectName": "Example1",
-        "projectPath": "C:\\Users\\B15-04m\\Documents\\Repositorios\\Disenio_de_interfaces\\Example1\\Example1\\Example1.csproj",
+        "projectUniqueName": "C:\\Users\\B15-04m\\Documents\\Repositorios\\Disenio_de_interfaces\\Example2\\Example2\\Example2.csproj",
+        "projectName": "Example2",
+        "projectPath": "C:\\Users\\B15-04m\\Documents\\Repositorios\\Disenio_de_interfaces\\Example2\\Example2\\Example2.csproj",
         "packagesPath": "C:\\Users\\B15-04m\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\B15-04m\\Documents\\Repositorios\\Disenio_de_interfaces\\Example1\\Example1\\obj\\",
+        "outputPath": "C:\\Users\\B15-04m\\Documents\\Repositorios\\Disenio_de_interfaces\\Example2\\Example2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\B15-04m\\AppData\\Roaming\\NuGet\\NuGet.Config",
