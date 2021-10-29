@@ -1,0 +1,24 @@
+﻿<Window x:Class="ExampleComboWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ExampleComboWPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <ComboBox x:Name="cboPeople" HorizontalAlignment="Left" Margin="104,56,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cboPeople_SelectionChanged">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Name: "></TextBlock>
+                        <TextBlock Text="{Binding Path=name}" Width="60"></TextBlock>
+                        <TextBlock Text="Apellido: "></TextBlock>
+                        <TextBlock Text="{Binding Path=surname}" Width="60"></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+
+    </Grid>
+</Window>
