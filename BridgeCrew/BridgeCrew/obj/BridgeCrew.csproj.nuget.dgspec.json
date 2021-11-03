@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\B15-04m\\Documents\\Repositorios\\Disenio_de_interfaces\\Ejercicios de C#\\Gandalf_Spock_Yoda\\Gandalf_Spock_Yoda\\Gandalf_Spock_Yoda.csproj": {}
+    "C:\\Users\\B15-04m\\Documents\\Repositorios\\Disenio_de_interfaces\\BridgeCrew\\BridgeCrew\\BridgeCrew.csproj": {}
   },
   "projects": {
-    "C:\\Users\\B15-04m\\Documents\\Repositorios\\Disenio_de_interfaces\\Ejercicios de C#\\Gandalf_Spock_Yoda\\Gandalf_Spock_Yoda\\Gandalf_Spock_Yoda.csproj": {
+    "C:\\Users\\B15-04m\\Documents\\Repositorios\\Disenio_de_interfaces\\BridgeCrew\\BridgeCrew\\BridgeCrew.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\B15-04m\\Documents\\Repositorios\\Disenio_de_interfaces\\Ejercicios de C#\\Gandalf_Spock_Yoda\\Gandalf_Spock_Yoda\\Gandalf_Spock_Yoda.csproj",
-        "projectName": "Gandalf_Spock_Yoda",
-        "projectPath": "C:\\Users\\B15-04m\\Documents\\Repositorios\\Disenio_de_interfaces\\Ejercicios de C#\\Gandalf_Spock_Yoda\\Gandalf_Spock_Yoda\\Gandalf_Spock_Yoda.csproj",
+        "projectUniqueName": "C:\\Users\\B15-04m\\Documents\\Repositorios\\Disenio_de_interfaces\\BridgeCrew\\BridgeCrew\\BridgeCrew.csproj",
+        "projectName": "BridgeCrew",
+        "projectPath": "C:\\Users\\B15-04m\\Documents\\Repositorios\\Disenio_de_interfaces\\BridgeCrew\\BridgeCrew\\BridgeCrew.csproj",
         "packagesPath": "C:\\Users\\B15-04m\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\B15-04m\\Documents\\Repositorios\\Disenio_de_interfaces\\Ejercicios de C#\\Gandalf_Spock_Yoda\\Gandalf_Spock_Yoda\\obj\\",
+        "outputPath": "C:\\Users\\B15-04m\\Documents\\Repositorios\\Disenio_de_interfaces\\BridgeCrew\\BridgeCrew\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\B15-04m\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -52,6 +52,9 @@
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WPF": {
+              "privateAssets": "none"
             }
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
