@@ -23,6 +23,13 @@ namespace BridgeCrew
         public MainWindow()
         {
             InitializeComponent();
+
+            Man hombre = new Man(1,InterfaceBridge.Graduation.Army_General, "Capitan", InterfaceBridge.Planet.Earth);
+            Vulcan noHombre = new Vulcan(1, InterfaceBridge.Graduation.Army_General, "UnTioRaro", true);
+
+            txtNombre.Text = noHombre.Name;
+
+            Console.WriteLine(hombre.Name);
         }
     }
 }
