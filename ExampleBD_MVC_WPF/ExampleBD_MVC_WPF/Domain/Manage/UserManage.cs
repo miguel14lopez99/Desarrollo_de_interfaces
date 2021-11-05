@@ -52,6 +52,9 @@ namespace ExampleBD_MVC_WPF.Domain.Manage
         public void InsertUser(User user)
         {
             ConnectOracle Search = new ConnectOracle();
+            Resources.useful useful = new Resources.useful();
+
+            user.password = useful.getHashSha256(user.password);
 
             int maximun = Convert.ToInt32("0"+Search.DLookUp("max(idUser)","users","")) + 1;
 

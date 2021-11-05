@@ -23,15 +23,22 @@ namespace ExampleBD_MVC_WPF
         public MainWindow()
         {
             InitializeComponent();
-            
+
+            Domain.User user = new Domain.User();
+            user.name = "Miguel";
+            user.password = "Lopez";
+
+            user.insert();
         }
 
         private void btnOK_Click(object sender, RoutedEventArgs e)
         {
+            Resources.useful useful = new Resources.useful();
+
             Domain.User user = new Domain.User();
 
             user.name = txtLogin.Text;
-            user.password = txtPassw.Text;
+            user.password = useful.getHashSha256(txtPassw.Password);
 
             Boolean exist = user.check();
 
@@ -44,6 +51,11 @@ namespace ExampleBD_MVC_WPF
                 MessageBox.Show("User not found");
             }
 
+        }
+
+        private void btnClose_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }
