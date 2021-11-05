@@ -23,6 +23,27 @@ namespace ExampleBD_MVC_WPF
         public MainWindow()
         {
             InitializeComponent();
+            
+        }
+
+        private void btnOK_Click(object sender, RoutedEventArgs e)
+        {
+            Domain.User user = new Domain.User();
+
+            user.name = txtLogin.Text;
+            user.password = txtPassw.Text;
+
+            Boolean exist = user.check();
+
+            if (exist)
+            {
+                MessageBox.Show("You are available in the database");
+            }
+            else
+            {
+                MessageBox.Show("User not found");
+            }
+
         }
     }
 }

@@ -19,7 +19,7 @@ namespace ExampleBD_MVC_WPF.Domain.Manage
 
         public void ReadAll()
         {
-            DataSet data = new DataSet();
+            DataSet data = new DataSet(); //se necesita un DataSet para guardar lo que se rec
             ConnectOracle Search = new ConnectOracle();
 
             data = Search.getData("SELECT idUser FROM users where deleted=0", "users");
@@ -53,12 +53,32 @@ namespace ExampleBD_MVC_WPF.Domain.Manage
         {
             ConnectOracle Search = new ConnectOracle();
 
-            Search.setData("INSERT INTO users VALUES("+user.idUser+","+user.name+","+user.password+")");
+            int maximun = Convert.ToInt32("0"+Search.DLookUp("max(idUser)","users","")) + 1;
+
+            Search.setData("INSERT INTO users VALUES("+maximun+",'"+user.name+"','"+user.password+"',0)");
         }
 
         public Boolean CheckUser(User user)
         {
-            return true;
+            Boolean found = false;
+
+            ConnectOracle Search = new ConnectOracle();
+
+            int count = Convert.ToInt32(Search.DLookUp("count(idUser)", "users", "name = '" + user.name + "' and password = '" + user.password + "'"));
+
+            if (count != 0)
+            {
+                found = true;
+            }
+
+            return found;
+        }
+
+        public void DeleteUser(User user)
+        {
+            ConnectOracle Search = new ConnectOracle();
+
+            Search.setData("Update users set deleted=1 where idUser = "+user.idUser);
         }
     }
 }

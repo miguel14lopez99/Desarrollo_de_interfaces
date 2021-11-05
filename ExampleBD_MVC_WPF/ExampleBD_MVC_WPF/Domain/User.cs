@@ -25,5 +25,30 @@ namespace ExampleBD_MVC_WPF.Domain
             manage = new Manage.UserManage();
             this.idUser = idUser;
         }
+
+        public void insert()
+        {
+            manage.InsertUser(this);
+        }
+
+        public Boolean check()
+        {
+            return manage.CheckUser(this);
+        }
+
+        public void readAll()
+        {
+            manage.ReadAll();
+        }
+
+        public void readUser()
+        {
+            manage.ReadUser(this);
+        }
+
+        public void delete()
+        {
+            manage.DeleteUser(this);
+        }
     }
 }
