@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,16 +21,77 @@ namespace BridgeCrew
     /// </summary>
     public partial class MainWindow : Window
     {
+        private Queue<Officer> queue;
+
         public MainWindow()
         {
             InitializeComponent();
 
-            Man hombre = new Man(1,InterfaceBridge.Graduation.Army_General, "Capitan", InterfaceBridge.Planet.Earth);
-            Vulcan noHombre = new Vulcan(1, InterfaceBridge.Graduation.Army_General, "UnTioRaro", true);
+            queue = Useful.initOfficerQueue();
 
-            txtNombre.Text = noHombre.Name;
+            CambiaOficial();
 
-            Console.WriteLine(hombre.Name);
+            //OFFICERS WORKER
+            pbOfficers.Value = 0;
+            BackgroundWorker workerOfficer = new BackgroundWorker();
+            workerOfficer.WorkerReportsProgress = true;
+            workerOfficer.DoWork += worker_DoWork;
+            workerOfficer.ProgressChanged += worker_ProgressChanged;
+            workerOfficer.RunWorkerCompleted += worker_RunWorkerCompleted;
+            workerOfficer.RunWorkerAsync(60);
+
+        }
+
+        void worker_DoWork(object sender, DoWorkEventArgs e)
+        {
+            int result = 0;
+
+            while (true)
+            {
+                int max = (int)e.Argument;
+                for (int i = 0; i < max; i++)
+                {
+                    int progressPercentage = Convert.ToInt32(((double)i / max) * 100);
+                    (sender as BackgroundWorker).ReportProgress(progressPercentage);
+                    System.Threading.Thread.Sleep(100);
+
+                }
+
+            }
+
+        }
+
+        void worker_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            pbOfficers.Value = e.ProgressPercentage;
+            
+            if (pbOfficers.Value > 97)
+            {
+                CambiaOficial();
+            }
+        }
+
+        void worker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+
+            CambiaOficial();
+
+        }
+
+        private void btnEvery1min_Click(object sender, RoutedEventArgs e)
+        {
+            CambiaOficial();
+        }
+        void CambiaOficial()
+        {
+            Officer officer = queue.Dequeue();
+            queue.Enqueue(officer);
+
+            lblName.Content =        " Name: " + officer.Name;
+            lblOfficialKey.Content = " Official Key: " + officer.OfficialKey.ToString();
+            lblPlanet.Content =      " Planet: " + officer.Planet.ToString();
+            lblGraduation.Content =  " Graduation: " + officer.Graduation.ToString();
+            pbOfficers.Value = 0;
         }
     }
 }

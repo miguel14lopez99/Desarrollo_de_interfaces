@@ -8,19 +8,19 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\B15-04m\\.nuget\\packages\\": {}
+    "C:\\Users\\chipi\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\B15-04m\\Documents\\Repositorios\\Disenio_de_interfaces\\ExampleComboWPF\\ExampleComboWPF\\ExampleComboWPF.csproj",
+      "projectUniqueName": "C:\\Users\\chipi\\Documents\\Repositorios\\Disenio_de_interfaces\\ExampleComboWPF\\ExampleComboWPF\\ExampleComboWPF.csproj",
       "projectName": "ExampleComboWPF",
-      "projectPath": "C:\\Users\\B15-04m\\Documents\\Repositorios\\Disenio_de_interfaces\\ExampleComboWPF\\ExampleComboWPF\\ExampleComboWPF.csproj",
-      "packagesPath": "C:\\Users\\B15-04m\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\B15-04m\\Documents\\Repositorios\\Disenio_de_interfaces\\ExampleComboWPF\\ExampleComboWPF\\obj\\",
+      "projectPath": "C:\\Users\\chipi\\Documents\\Repositorios\\Disenio_de_interfaces\\ExampleComboWPF\\ExampleComboWPF\\ExampleComboWPF.csproj",
+      "packagesPath": "C:\\Users\\chipi\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\chipi\\Documents\\Repositorios\\Disenio_de_interfaces\\ExampleComboWPF\\ExampleComboWPF\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\B15-04m\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\chipi\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

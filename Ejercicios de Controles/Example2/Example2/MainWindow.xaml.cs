@@ -61,7 +61,12 @@ namespace WpfTutorialSamples.Misc
                     (sender as BackgroundWorker).ReportProgress(progressPercentage);
                 System.Threading.Thread.Sleep(1);
 
+                
+
             }
+
+            MessageBox.Show("HOla buenas tardes");
+
             e.Result = result;
         }
 

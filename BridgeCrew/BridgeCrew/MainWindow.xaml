@@ -7,8 +7,46 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Label x:Name="lblNombre" Content="&lt;&lt;sale algo&gt;&gt;" HorizontalAlignment="Left" Margin="98,56,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtNombre" HorizontalAlignment="Left" Margin="217,64,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Grid.OpacityMask>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black"/>
+                <GradientStop Color="White" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.OpacityMask>
+        <Label x:Name="lblName" Content="Name :" HorizontalAlignment="Left" Margin="169,22,0,0" VerticalAlignment="Top">
+            <Label.OpacityMask>
+                <ImageBrush ImageSource="/WIN_20210106_22_06_59_Pro.jpg"/>
+            </Label.OpacityMask>
+        </Label>
+        <Label x:Name="lblOfficialKey" Content="Official Key :" HorizontalAlignment="Left" Margin="169,54,0,0" VerticalAlignment="Top">
+            <Label.OpacityMask>
+                <ImageBrush ImageSource="/WIN_20210106_22_06_59_Pro.jpg"/>
+            </Label.OpacityMask>
+        </Label>
+        <Label x:Name="lblPlanet" Content="Planet :" HorizontalAlignment="Left" Margin="169,89,0,0" VerticalAlignment="Top">
+            <Label.OpacityMask>
+                <ImageBrush ImageSource="/WIN_20210106_22_06_59_Pro.jpg"/>
+            </Label.OpacityMask>
+        </Label>
+        <Label x:Name="lblGraduation" Content="Graduation :" HorizontalAlignment="Left" Margin="169,121,0,0" VerticalAlignment="Top">
+            <Label.OpacityMask>
+                <ImageBrush ImageSource="/WIN_20210106_22_06_59_Pro.jpg"/>
+            </Label.OpacityMask>
+        </Label>
+        <ProgressBar x:Name="pbOfficers" HorizontalAlignment="Left" Height="22" Margin="97,75,0,0" VerticalAlignment="Top" Width="114" RenderTransformOrigin="0.5,0.5">
+            <ProgressBar.OpacityMask>
+                <ImageBrush ImageSource="/WIN_20210106_22_06_59_Pro.jpg"/>
+            </ProgressBar.OpacityMask>
+            <ProgressBar.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </ProgressBar.RenderTransform>
+        </ProgressBar>
+        <Image HorizontalAlignment="Left" Height="112" Margin="27,30,0,0" VerticalAlignment="Top" Width="100" Stretch="Fill" Source="/UML trabajo.png"/>
 
     </Grid>
 </Window>

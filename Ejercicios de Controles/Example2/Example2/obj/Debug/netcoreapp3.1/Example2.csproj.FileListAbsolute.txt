@@ -17,3 +17,22 @@ C:\Users\B15-04m\Documents\Repositorios\Disenio_de_interfaces\Example2\Example2\
 C:\Users\B15-04m\Documents\Repositorios\Disenio_de_interfaces\Example2\Example2\obj\Debug\netcoreapp3.1\Example2.dll
 C:\Users\B15-04m\Documents\Repositorios\Disenio_de_interfaces\Example2\Example2\obj\Debug\netcoreapp3.1\Example2.pdb
 C:\Users\B15-04m\Documents\Repositorios\Disenio_de_interfaces\Example2\Example2\obj\Debug\netcoreapp3.1\Example2.genruntimeconfig.cache
+C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\Ejercicios de Controles\Example2\Example2\bin\Debug\netcoreapp3.1\Example2.exe
+C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\Ejercicios de Controles\Example2\Example2\bin\Debug\netcoreapp3.1\Example2.deps.json
+C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\Ejercicios de Controles\Example2\Example2\bin\Debug\netcoreapp3.1\Example2.runtimeconfig.json
+C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\Ejercicios de Controles\Example2\Example2\bin\Debug\netcoreapp3.1\Example2.runtimeconfig.dev.json
+C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\Ejercicios de Controles\Example2\Example2\bin\Debug\netcoreapp3.1\Example2.dll
+C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\Ejercicios de Controles\Example2\Example2\bin\Debug\netcoreapp3.1\Example2.pdb
+C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\Ejercicios de Controles\Example2\Example2\obj\Debug\netcoreapp3.1\Example2.csproj.AssemblyReference.cache
+C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\Ejercicios de Controles\Example2\Example2\obj\Debug\netcoreapp3.1\MainWindow.baml
+C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\Ejercicios de Controles\Example2\Example2\obj\Debug\netcoreapp3.1\MainWindow.g.cs
+C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\Ejercicios de Controles\Example2\Example2\obj\Debug\netcoreapp3.1\App.g.cs
+C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\Ejercicios de Controles\Example2\Example2\obj\Debug\netcoreapp3.1\Example2_MarkupCompile.cache
+C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\Ejercicios de Controles\Example2\Example2\obj\Debug\netcoreapp3.1\Example2.g.resources
+C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\Ejercicios de Controles\Example2\Example2\obj\Debug\netcoreapp3.1\Example2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\Ejercicios de Controles\Example2\Example2\obj\Debug\netcoreapp3.1\Example2.AssemblyInfoInputs.cache
+C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\Ejercicios de Controles\Example2\Example2\obj\Debug\netcoreapp3.1\Example2.AssemblyInfo.cs
+C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\Ejercicios de Controles\Example2\Example2\obj\Debug\netcoreapp3.1\Example2.csproj.CoreCompileInputs.cache
+C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\Ejercicios de Controles\Example2\Example2\obj\Debug\netcoreapp3.1\Example2.dll
+C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\Ejercicios de Controles\Example2\Example2\obj\Debug\netcoreapp3.1\Example2.pdb
+C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\Ejercicios de Controles\Example2\Example2\obj\Debug\netcoreapp3.1\Example2.genruntimeconfig.cache

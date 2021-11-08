@@ -6,4 +6,14 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="UML trabajo.png" />
+    <None Remove="WIN_20210106_22_06_59_Pro.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="UML trabajo.png" />
+    <Resource Include="WIN_20210106_22_06_59_Pro.jpg" />
+  </ItemGroup>
+
 </Project>

@@ -7,12 +7,20 @@ namespace BridgeCrew
     class Man : Officer, InterfaceBridge
     {
 
-        private InterfaceBridge.Planet planet;
 
         public Man(int officialKey, InterfaceBridge.Graduation graduation, String name, InterfaceBridge.Planet planet)
-            : base(officialKey, graduation, name)
+            : base(officialKey, graduation, name, planet)
         {
-            this.planet = planet;
         }
+
+        public override void getGraduation()
+        {
+            /*TO DO*/
+        }
+        public override void changeGraduation()
+        {
+            /*TO DO*/
+        }
+
     }
 }
