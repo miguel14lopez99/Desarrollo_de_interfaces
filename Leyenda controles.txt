@@ -1,21 +1,21 @@
 ---------------------
-| label	        lbl |
+| label         lbl |
 ---------------------
 | textBox       txt |
 ---------------------
 | comboBox      cbo |
 ---------------------
-| list		lst |
+| list          lst |
 ---------------------
-| button	btn |
+| button        btn |
 ---------------------
-| checkBox	chk |
+| checkBox      chk |
 ---------------------
-| radioButton	rdt |
+| radioButton   rdt |
 ---------------------
-| grid		grd |
+| grid          grd |
 ---------------------
-| dataGrid	dgr |
+| dataGrid      dgr |
 ---------------------
-| forms		frm |
+| forms         frm |
 ---------------------

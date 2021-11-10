@@ -7,13 +7,52 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="CellOK.png" />
+    <None Remove="fondo.png" />
+    <None Remove="fondo_mensaje.jpg" />
+    <None Remove="imgCells\CellDestroyed.png" />
+    <None Remove="imgOfficers\Alia.jpg" />
+    <None Remove="imgOfficers\Chani.jpg" />
+    <None Remove="imgOfficers\Duncan.png" />
+    <None Remove="imgOfficers\Feyd.jpg" />
+    <None Remove="imgOfficers\Gaius.jpg" />
+    <None Remove="imgOfficers\Jessica.jpg" />
+    <None Remove="imgOfficers\Leto.jpg" />
+    <None Remove="imgOfficers\Paul.jpg" />
+    <None Remove="imgOfficers\Shaddam.jpg" />
+    <None Remove="imgOfficers\Stilgar.jpg" />
+    <None Remove="imgOfficers\Vladimir.jpg" />
+    <None Remove="imgPlanets\Arrakis.PNG" />
+    <None Remove="imgPlanets\Bela.PNG" />
+    <None Remove="imgPlanets\Caladan.PNG" />
+    <None Remove="imgPlanets\missing.jpg" />
+    <None Remove="Paul.jpg" />
     <None Remove="UML trabajo.png" />
     <None Remove="WIN_20210106_22_06_59_Pro.jpg" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="imgCells\CellDestroyed.png" />
+    <Resource Include="imgCells\CellOK.png" />
+    <Resource Include="fondo.png" />
+    <Resource Include="fondo_mensaje.jpg" />
+    <Resource Include="imgOfficers\Alia.jpg" />
+    <Resource Include="imgOfficers\Chani.jpg" />
+    <Resource Include="imgOfficers\Duncan.png" />
+    <Resource Include="imgOfficers\Feyd.jpg" />
+    <Resource Include="imgOfficers\Gaius.jpg" />
+    <Resource Include="imgOfficers\Shaddam.jpg" />
+    <Resource Include="imgOfficers\Jessica.jpg" />
+    <Resource Include="imgOfficers\Leto.jpg" />
+    <Resource Include="imgOfficers\Paul.jpg" />
+    <Resource Include="imgOfficers\Stilgar.jpg" />
+    <Resource Include="imgOfficers\Vladimir.jpg" />
+    <Resource Include="imgPlanets\Arrakis.PNG" />
+    <Resource Include="imgPlanets\Bela.PNG" />
+    <Resource Include="imgPlanets\Caladan.PNG" />
+    <Resource Include="imgPlanets\missing.jpg" />
+    <Resource Include="Paul.jpg" />
     <Resource Include="UML trabajo.png" />
-    <Resource Include="WIN_20210106_22_06_59_Pro.jpg" />
   </ItemGroup>
 
 </Project>

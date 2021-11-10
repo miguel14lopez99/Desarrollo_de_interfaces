@@ -89,6 +89,7 @@ namespace ExampleBD_MVC_WPF
             }
             catch (Exception a)
             {
+                Console.WriteLine(a);
                 resultado = -1;
             }
             objConexion.Close();

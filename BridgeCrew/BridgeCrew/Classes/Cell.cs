@@ -8,9 +8,13 @@ namespace BridgeCrew
     {
 
         private int idSquare;
-        private Boolean damaged;
 
+        private Boolean damaged = false;
 
+        public void destroy()
+        {
+            this.damaged = true;
+        }
 
     }
 }

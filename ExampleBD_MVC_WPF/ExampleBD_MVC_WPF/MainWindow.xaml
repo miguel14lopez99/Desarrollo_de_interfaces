@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="348.66" Width="457.373">
     <Grid>
-        <PasswordBox x:Name="txtPassw" HorizontalAlignment="Left" Margin="233,154,0,0" VerticalAlignment="Top" Width="120" Height="23"/>
+        <PasswordBox x:Name="pwdPassword" HorizontalAlignment="Left" Margin="233,154,0,0" VerticalAlignment="Top" Width="120" Height="23"/>
 
         <Label Content="LITTLERP" Margin="181,51,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18" HorizontalAlignment="Left" Width="88"/>
         <Label x:Name="lblLogin" Content="Login:" Margin="95,90,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18" HorizontalAlignment="Left" Width="100" HorizontalContentAlignment="Right"/>

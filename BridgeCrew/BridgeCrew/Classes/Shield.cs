@@ -6,5 +6,8 @@ namespace BridgeCrew
 {
     class Shield
     {
+
+        private Cell[][] shield;
+
     }
 }

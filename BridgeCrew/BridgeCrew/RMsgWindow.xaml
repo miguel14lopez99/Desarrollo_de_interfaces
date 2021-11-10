@@ -1,0 +1,32 @@
+﻿<Window x:Class="BridgeCrew.RMsgWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BridgeCrew"
+        mc:Ignorable="d"
+        Title="RMsgWindow" Height="450" Width="800">
+    <Grid>
+
+        <Button x:Name="btnRead" Content="Read" HorizontalAlignment="Left" Margin="275,373,0,0" VerticalAlignment="Top" Click="btnRead_Click"/>
+        <Button x:Name="btnClearFile" Content="Clear File" HorizontalAlignment="Left" Margin="484,378,0,0" VerticalAlignment="Top" Click="btnClearFile_Click"/>
+       
+        <Grid Margin="126,41,101,123" >
+            <ScrollViewer>
+                    <TextBlock x:Name="txtContent" Text="" TextWrapping="Wrap" TextAlignment="Center" Margin="50,37,50,135"/>
+                </ScrollViewer>
+        
+        </Grid>
+
+
+
+
+
+
+
+
+
+
+
+    </Grid>
+</Window>

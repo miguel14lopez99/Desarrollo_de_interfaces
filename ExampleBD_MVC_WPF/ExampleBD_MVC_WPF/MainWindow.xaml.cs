@@ -24,11 +24,10 @@ namespace ExampleBD_MVC_WPF
         {
             InitializeComponent();
 
-            Domain.User user = new Domain.User();
-            user.name = "Miguel";
-            user.password = "Lopez";
-
-            user.insert();
+            //Domain.User user = new Domain.User();
+            //user.name = "Luis";
+            //user.password = "ssss";
+            //user.insert();
         }
 
         private void btnOK_Click(object sender, RoutedEventArgs e)
@@ -37,14 +36,18 @@ namespace ExampleBD_MVC_WPF
 
             Domain.User user = new Domain.User();
 
+            Users frm = null;
+
             user.name = txtLogin.Text;
-            user.password = useful.getHashSha256(txtPassw.Password);
+            user.password = useful.getHashSha256(pwdPassword.Password);
 
             Boolean exist = user.check();
 
             if (exist)
             {
-                MessageBox.Show("You are available in the database");
+                frm = new Users();
+                frm.Show();
+                this.Close();
             }
             else
             {

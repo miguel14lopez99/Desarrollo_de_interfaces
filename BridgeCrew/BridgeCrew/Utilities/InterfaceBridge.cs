@@ -8,21 +8,14 @@ namespace BridgeCrew
     interface InterfaceBridge
     {
 
-        
-
-        enum TypeG
-        {
-            Combat = 0, Comunication = 1
-        }
-
         enum Planet
         {
-            Mercury = 0, Venus = 1, Earth = 2, Mars = 3, Jupiter = 4, Saturn = 5, Uranus = 6, Neptune = 7, Vulcan = 8
+            Bela_Tegeuse = 0, Caldan = 1, Casa_Capitular = 2, Chusuk = 3, Conexion = 4, Corrin = 5, Ecaz = 6, Arrakis = 7
         }
 
         enum Graduation
         {
-            Captain = 0, Major = 1, Colonel = 2, General = 3, Major_General = 4, Army_General = 5
+            Emperor, BenneGesserit, Warrior, Head_of_Atreides, Head_of_Harkonnens, Leader_of_Fremen
         }
     }
 }

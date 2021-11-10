@@ -8,8 +8,8 @@ namespace BridgeCrew
     {
 
 
-        public Man(int officialKey, InterfaceBridge.Graduation graduation, String name, InterfaceBridge.Planet planet)
-            : base(officialKey, graduation, name, planet)
+        public Man(int officialKey, InterfaceBridge.Graduation graduation, String name, InterfaceBridge.Planet planet, String imgSource)
+            : base(officialKey, graduation, name, planet, imgSource)
         {
         }
 

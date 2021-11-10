@@ -1,0 +1,22 @@
+﻿<Window x:Class="ExampleBD_MVC_WPF.Users"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ExampleBD_MVC_WPF"
+        mc:Ignorable="d"
+        Title="Users" Height="450" Width="800">
+    <Grid>
+        <DataGrid x:Name="dgrUsers" Height="297" Margin="78,73,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="638" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding idUser}" Header="Id User"/>
+                <DataGridTextColumn Binding="{Binding name}" Header="Name"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="btnAdd" Content="New" HorizontalAlignment="Left" Margin="78,20,0,0" VerticalAlignment="Top" Width="75" Height="37" FontSize="14"/>
+        <Button x:Name="btnModify" Content="Modify" HorizontalAlignment="Left" Margin="172,20,0,0" VerticalAlignment="Top" Width="75" Height="37" FontSize="14"/>
+        <Button x:Name="btnDelete" Content="Delete" HorizontalAlignment="Left" Margin="266,20,0,0" VerticalAlignment="Top" Width="75" Height="37" FontSize="14
+                "/>
+
+    </Grid>
+</Window>

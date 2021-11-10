@@ -38,3 +38,99 @@ C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\BridgeCrew\BridgeCre
 C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\BridgeCrew\BridgeCrew\obj\Debug\netcoreapp3.1\BridgeCrew.AssemblyInfo.cs
 C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\BridgeCrew\BridgeCrew\obj\Debug\netcoreapp3.1\BridgeCrew.csproj.CoreCompileInputs.cache
 C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\BridgeCrew\BridgeCrew\obj\Debug\netcoreapp3.1\BridgeCrew.genruntimeconfig.cache
+D:\DAM2\Desarrollo de Interfaces (DI)\Ejercicios\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\bin\Debug\netcoreapp3.1\BridgeCrew.exe
+D:\DAM2\Desarrollo de Interfaces (DI)\Ejercicios\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\bin\Debug\netcoreapp3.1\BridgeCrew.deps.json
+D:\DAM2\Desarrollo de Interfaces (DI)\Ejercicios\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\bin\Debug\netcoreapp3.1\BridgeCrew.runtimeconfig.json
+D:\DAM2\Desarrollo de Interfaces (DI)\Ejercicios\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\bin\Debug\netcoreapp3.1\BridgeCrew.runtimeconfig.dev.json
+D:\DAM2\Desarrollo de Interfaces (DI)\Ejercicios\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\bin\Debug\netcoreapp3.1\BridgeCrew.dll
+D:\DAM2\Desarrollo de Interfaces (DI)\Ejercicios\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\bin\Debug\netcoreapp3.1\BridgeCrew.pdb
+D:\DAM2\Desarrollo de Interfaces (DI)\Ejercicios\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\obj\Debug\netcoreapp3.1\BridgeCrew.csproj.AssemblyReference.cache
+D:\DAM2\Desarrollo de Interfaces (DI)\Ejercicios\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\obj\Debug\netcoreapp3.1\MainWindow.g.cs
+D:\DAM2\Desarrollo de Interfaces (DI)\Ejercicios\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\obj\Debug\netcoreapp3.1\MessagesWindow.g.cs
+D:\DAM2\Desarrollo de Interfaces (DI)\Ejercicios\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\obj\Debug\netcoreapp3.1\App.g.cs
+D:\DAM2\Desarrollo de Interfaces (DI)\Ejercicios\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\obj\Debug\netcoreapp3.1\BridgeCrew_MarkupCompile.cache
+D:\DAM2\Desarrollo de Interfaces (DI)\Ejercicios\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\obj\Debug\netcoreapp3.1\BridgeCrew_MarkupCompile.lref
+D:\DAM2\Desarrollo de Interfaces (DI)\Ejercicios\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\obj\Debug\netcoreapp3.1\MainWindow.baml
+D:\DAM2\Desarrollo de Interfaces (DI)\Ejercicios\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\obj\Debug\netcoreapp3.1\MessagesWindow.baml
+D:\DAM2\Desarrollo de Interfaces (DI)\Ejercicios\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\obj\Debug\netcoreapp3.1\BridgeCrew.g.resources
+D:\DAM2\Desarrollo de Interfaces (DI)\Ejercicios\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\obj\Debug\netcoreapp3.1\BridgeCrew.GeneratedMSBuildEditorConfig.editorconfig
+D:\DAM2\Desarrollo de Interfaces (DI)\Ejercicios\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\obj\Debug\netcoreapp3.1\BridgeCrew.AssemblyInfoInputs.cache
+D:\DAM2\Desarrollo de Interfaces (DI)\Ejercicios\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\obj\Debug\netcoreapp3.1\BridgeCrew.AssemblyInfo.cs
+D:\DAM2\Desarrollo de Interfaces (DI)\Ejercicios\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\obj\Debug\netcoreapp3.1\BridgeCrew.csproj.CoreCompileInputs.cache
+D:\DAM2\Desarrollo de Interfaces (DI)\Ejercicios\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\obj\Debug\netcoreapp3.1\BridgeCrew.dll
+D:\DAM2\Desarrollo de Interfaces (DI)\Ejercicios\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\obj\Debug\netcoreapp3.1\BridgeCrew.pdb
+D:\DAM2\Desarrollo de Interfaces (DI)\Ejercicios\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\obj\Debug\netcoreapp3.1\BridgeCrew.genruntimeconfig.cache
+C:\Users\B15-04m\Documents\Repositorios\BridgeCrew\BridgeCrew\BridgeCrew\bin\Debug\netcoreapp3.1\BridgeCrew.exe
+C:\Users\B15-04m\Documents\Repositorios\BridgeCrew\BridgeCrew\BridgeCrew\bin\Debug\netcoreapp3.1\BridgeCrew.deps.json
+C:\Users\B15-04m\Documents\Repositorios\BridgeCrew\BridgeCrew\BridgeCrew\bin\Debug\netcoreapp3.1\BridgeCrew.runtimeconfig.json
+C:\Users\B15-04m\Documents\Repositorios\BridgeCrew\BridgeCrew\BridgeCrew\bin\Debug\netcoreapp3.1\BridgeCrew.runtimeconfig.dev.json
+C:\Users\B15-04m\Documents\Repositorios\BridgeCrew\BridgeCrew\BridgeCrew\bin\Debug\netcoreapp3.1\BridgeCrew.dll
+C:\Users\B15-04m\Documents\Repositorios\BridgeCrew\BridgeCrew\BridgeCrew\bin\Debug\netcoreapp3.1\BridgeCrew.pdb
+C:\Users\B15-04m\Documents\Repositorios\BridgeCrew\BridgeCrew\BridgeCrew\obj\Debug\netcoreapp3.1\BridgeCrew.csproj.AssemblyReference.cache
+C:\Users\B15-04m\Documents\Repositorios\BridgeCrew\BridgeCrew\BridgeCrew\obj\Debug\netcoreapp3.1\MainWindow.g.cs
+C:\Users\B15-04m\Documents\Repositorios\BridgeCrew\BridgeCrew\BridgeCrew\obj\Debug\netcoreapp3.1\MessagesWindow.g.cs
+C:\Users\B15-04m\Documents\Repositorios\BridgeCrew\BridgeCrew\BridgeCrew\obj\Debug\netcoreapp3.1\App.g.cs
+C:\Users\B15-04m\Documents\Repositorios\BridgeCrew\BridgeCrew\BridgeCrew\obj\Debug\netcoreapp3.1\BridgeCrew_MarkupCompile.cache
+C:\Users\B15-04m\Documents\Repositorios\BridgeCrew\BridgeCrew\BridgeCrew\obj\Debug\netcoreapp3.1\BridgeCrew_MarkupCompile.lref
+C:\Users\B15-04m\Documents\Repositorios\BridgeCrew\BridgeCrew\BridgeCrew\obj\Debug\netcoreapp3.1\MainWindow.baml
+C:\Users\B15-04m\Documents\Repositorios\BridgeCrew\BridgeCrew\BridgeCrew\obj\Debug\netcoreapp3.1\MessagesWindow.baml
+C:\Users\B15-04m\Documents\Repositorios\BridgeCrew\BridgeCrew\BridgeCrew\obj\Debug\netcoreapp3.1\BridgeCrew.g.resources
+C:\Users\B15-04m\Documents\Repositorios\BridgeCrew\BridgeCrew\BridgeCrew\obj\Debug\netcoreapp3.1\BridgeCrew.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\B15-04m\Documents\Repositorios\BridgeCrew\BridgeCrew\BridgeCrew\obj\Debug\netcoreapp3.1\BridgeCrew.AssemblyInfoInputs.cache
+C:\Users\B15-04m\Documents\Repositorios\BridgeCrew\BridgeCrew\BridgeCrew\obj\Debug\netcoreapp3.1\BridgeCrew.AssemblyInfo.cs
+C:\Users\B15-04m\Documents\Repositorios\BridgeCrew\BridgeCrew\BridgeCrew\obj\Debug\netcoreapp3.1\BridgeCrew.csproj.CoreCompileInputs.cache
+C:\Users\B15-04m\Documents\Repositorios\BridgeCrew\BridgeCrew\BridgeCrew\obj\Debug\netcoreapp3.1\BridgeCrew.dll
+C:\Users\B15-04m\Documents\Repositorios\BridgeCrew\BridgeCrew\BridgeCrew\obj\Debug\netcoreapp3.1\BridgeCrew.pdb
+C:\Users\B15-04m\Documents\Repositorios\BridgeCrew\BridgeCrew\BridgeCrew\obj\Debug\netcoreapp3.1\BridgeCrew.genruntimeconfig.cache
+F:\DAM2\Desarrollo de Interfaces (DI)\Ejercicios\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\bin\Debug\netcoreapp3.1\BridgeCrew.exe
+F:\DAM2\Desarrollo de Interfaces (DI)\Ejercicios\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\bin\Debug\netcoreapp3.1\BridgeCrew.deps.json
+F:\DAM2\Desarrollo de Interfaces (DI)\Ejercicios\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\bin\Debug\netcoreapp3.1\BridgeCrew.runtimeconfig.json
+F:\DAM2\Desarrollo de Interfaces (DI)\Ejercicios\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\bin\Debug\netcoreapp3.1\BridgeCrew.runtimeconfig.dev.json
+F:\DAM2\Desarrollo de Interfaces (DI)\Ejercicios\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\bin\Debug\netcoreapp3.1\BridgeCrew.dll
+F:\DAM2\Desarrollo de Interfaces (DI)\Ejercicios\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\bin\Debug\netcoreapp3.1\BridgeCrew.pdb
+F:\DAM2\Desarrollo de Interfaces (DI)\Ejercicios\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\obj\Debug\netcoreapp3.1\BridgeCrew.csproj.AssemblyReference.cache
+F:\DAM2\Desarrollo de Interfaces (DI)\Ejercicios\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\obj\Debug\netcoreapp3.1\MainWindow.g.cs
+F:\DAM2\Desarrollo de Interfaces (DI)\Ejercicios\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\obj\Debug\netcoreapp3.1\MessagesWindow.g.cs
+F:\DAM2\Desarrollo de Interfaces (DI)\Ejercicios\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\obj\Debug\netcoreapp3.1\App.g.cs
+F:\DAM2\Desarrollo de Interfaces (DI)\Ejercicios\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\obj\Debug\netcoreapp3.1\BridgeCrew_MarkupCompile.cache
+F:\DAM2\Desarrollo de Interfaces (DI)\Ejercicios\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\obj\Debug\netcoreapp3.1\BridgeCrew_MarkupCompile.lref
+F:\DAM2\Desarrollo de Interfaces (DI)\Ejercicios\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\obj\Debug\netcoreapp3.1\MainWindow.baml
+F:\DAM2\Desarrollo de Interfaces (DI)\Ejercicios\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\obj\Debug\netcoreapp3.1\MessagesWindow.baml
+F:\DAM2\Desarrollo de Interfaces (DI)\Ejercicios\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\obj\Debug\netcoreapp3.1\BridgeCrew.g.resources
+F:\DAM2\Desarrollo de Interfaces (DI)\Ejercicios\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\obj\Debug\netcoreapp3.1\BridgeCrew.GeneratedMSBuildEditorConfig.editorconfig
+F:\DAM2\Desarrollo de Interfaces (DI)\Ejercicios\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\obj\Debug\netcoreapp3.1\BridgeCrew.AssemblyInfoInputs.cache
+F:\DAM2\Desarrollo de Interfaces (DI)\Ejercicios\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\obj\Debug\netcoreapp3.1\BridgeCrew.AssemblyInfo.cs
+F:\DAM2\Desarrollo de Interfaces (DI)\Ejercicios\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\obj\Debug\netcoreapp3.1\BridgeCrew.csproj.CoreCompileInputs.cache
+F:\DAM2\Desarrollo de Interfaces (DI)\Ejercicios\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\obj\Debug\netcoreapp3.1\BridgeCrew.dll
+F:\DAM2\Desarrollo de Interfaces (DI)\Ejercicios\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\obj\Debug\netcoreapp3.1\BridgeCrew.pdb
+F:\DAM2\Desarrollo de Interfaces (DI)\Ejercicios\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\obj\Debug\netcoreapp3.1\BridgeCrew.genruntimeconfig.cache
+F:\DAM2\Desarrollo de Interfaces (DI)\Ejercicios\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\obj\Debug\netcoreapp3.1\RMsgWindow.g.cs
+F:\DAM2\Desarrollo de Interfaces (DI)\Ejercicios\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\obj\Debug\netcoreapp3.1\RMsgWindow.baml
+D:\DAM2\Desarrollo de Interfaces (DI)\Ejercicios\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\obj\Debug\netcoreapp3.1\RMsgWindow.g.cs
+D:\DAM2\Desarrollo de Interfaces (DI)\Ejercicios\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\BridgeCrew\obj\Debug\netcoreapp3.1\RMsgWindow.baml
+C:\Users\chipi\Documents\Repositorios\BridgeCrew\BridgeCrew\BridgeCrew\bin\Debug\netcoreapp3.1\BridgeCrew.exe
+C:\Users\chipi\Documents\Repositorios\BridgeCrew\BridgeCrew\BridgeCrew\bin\Debug\netcoreapp3.1\BridgeCrew.deps.json
+C:\Users\chipi\Documents\Repositorios\BridgeCrew\BridgeCrew\BridgeCrew\bin\Debug\netcoreapp3.1\BridgeCrew.runtimeconfig.json
+C:\Users\chipi\Documents\Repositorios\BridgeCrew\BridgeCrew\BridgeCrew\bin\Debug\netcoreapp3.1\BridgeCrew.runtimeconfig.dev.json
+C:\Users\chipi\Documents\Repositorios\BridgeCrew\BridgeCrew\BridgeCrew\bin\Debug\netcoreapp3.1\BridgeCrew.dll
+C:\Users\chipi\Documents\Repositorios\BridgeCrew\BridgeCrew\BridgeCrew\bin\Debug\netcoreapp3.1\BridgeCrew.pdb
+C:\Users\chipi\Documents\Repositorios\BridgeCrew\BridgeCrew\BridgeCrew\obj\Debug\netcoreapp3.1\BridgeCrew.csproj.AssemblyReference.cache
+C:\Users\chipi\Documents\Repositorios\BridgeCrew\BridgeCrew\BridgeCrew\obj\Debug\netcoreapp3.1\MainWindow.g.cs
+C:\Users\chipi\Documents\Repositorios\BridgeCrew\BridgeCrew\BridgeCrew\obj\Debug\netcoreapp3.1\MessagesWindow.g.cs
+C:\Users\chipi\Documents\Repositorios\BridgeCrew\BridgeCrew\BridgeCrew\obj\Debug\netcoreapp3.1\RMsgWindow.g.cs
+C:\Users\chipi\Documents\Repositorios\BridgeCrew\BridgeCrew\BridgeCrew\obj\Debug\netcoreapp3.1\App.g.cs
+C:\Users\chipi\Documents\Repositorios\BridgeCrew\BridgeCrew\BridgeCrew\obj\Debug\netcoreapp3.1\BridgeCrew_MarkupCompile.cache
+C:\Users\chipi\Documents\Repositorios\BridgeCrew\BridgeCrew\BridgeCrew\obj\Debug\netcoreapp3.1\BridgeCrew_MarkupCompile.lref
+C:\Users\chipi\Documents\Repositorios\BridgeCrew\BridgeCrew\BridgeCrew\obj\Debug\netcoreapp3.1\MainWindow.baml
+C:\Users\chipi\Documents\Repositorios\BridgeCrew\BridgeCrew\BridgeCrew\obj\Debug\netcoreapp3.1\MessagesWindow.baml
+C:\Users\chipi\Documents\Repositorios\BridgeCrew\BridgeCrew\BridgeCrew\obj\Debug\netcoreapp3.1\RMsgWindow.baml
+C:\Users\chipi\Documents\Repositorios\BridgeCrew\BridgeCrew\BridgeCrew\obj\Debug\netcoreapp3.1\BridgeCrew.g.resources
+C:\Users\chipi\Documents\Repositorios\BridgeCrew\BridgeCrew\BridgeCrew\obj\Debug\netcoreapp3.1\BridgeCrew.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\chipi\Documents\Repositorios\BridgeCrew\BridgeCrew\BridgeCrew\obj\Debug\netcoreapp3.1\BridgeCrew.AssemblyInfoInputs.cache
+C:\Users\chipi\Documents\Repositorios\BridgeCrew\BridgeCrew\BridgeCrew\obj\Debug\netcoreapp3.1\BridgeCrew.AssemblyInfo.cs
+C:\Users\chipi\Documents\Repositorios\BridgeCrew\BridgeCrew\BridgeCrew\obj\Debug\netcoreapp3.1\BridgeCrew.csproj.CoreCompileInputs.cache
+C:\Users\chipi\Documents\Repositorios\BridgeCrew\BridgeCrew\BridgeCrew\obj\Debug\netcoreapp3.1\BridgeCrew.dll
+C:\Users\chipi\Documents\Repositorios\BridgeCrew\BridgeCrew\BridgeCrew\obj\Debug\netcoreapp3.1\BridgeCrew.pdb
+C:\Users\chipi\Documents\Repositorios\BridgeCrew\BridgeCrew\BridgeCrew\obj\Debug\netcoreapp3.1\BridgeCrew.genruntimeconfig.cache
+C:\Users\B15-04m\Documents\Repositorios\BridgeCrew\BridgeCrew\BridgeCrew\obj\Debug\netcoreapp3.1\RMsgWindow.g.cs
+C:\Users\B15-04m\Documents\Repositorios\BridgeCrew\BridgeCrew\BridgeCrew\obj\Debug\netcoreapp3.1\RMsgWindow.baml

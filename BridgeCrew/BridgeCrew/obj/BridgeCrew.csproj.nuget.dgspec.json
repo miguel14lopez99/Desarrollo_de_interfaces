@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\chipi\\Documents\\Repositorios\\Disenio_de_interfaces\\BridgeCrew\\BridgeCrew\\BridgeCrew.csproj": {}
+    "C:\\Users\\B15-04m\\Desktop\\BridgeCrew\\BridgeCrew\\BridgeCrew.csproj": {}
   },
   "projects": {
-    "C:\\Users\\chipi\\Documents\\Repositorios\\Disenio_de_interfaces\\BridgeCrew\\BridgeCrew\\BridgeCrew.csproj": {
+    "C:\\Users\\B15-04m\\Desktop\\BridgeCrew\\BridgeCrew\\BridgeCrew.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\chipi\\Documents\\Repositorios\\Disenio_de_interfaces\\BridgeCrew\\BridgeCrew\\BridgeCrew.csproj",
+        "projectUniqueName": "C:\\Users\\B15-04m\\Desktop\\BridgeCrew\\BridgeCrew\\BridgeCrew.csproj",
         "projectName": "BridgeCrew",
-        "projectPath": "C:\\Users\\chipi\\Documents\\Repositorios\\Disenio_de_interfaces\\BridgeCrew\\BridgeCrew\\BridgeCrew.csproj",
-        "packagesPath": "C:\\Users\\chipi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\chipi\\Documents\\Repositorios\\Disenio_de_interfaces\\BridgeCrew\\BridgeCrew\\obj\\",
+        "projectPath": "C:\\Users\\B15-04m\\Desktop\\BridgeCrew\\BridgeCrew\\BridgeCrew.csproj",
+        "packagesPath": "C:\\Users\\B15-04m\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\B15-04m\\Desktop\\BridgeCrew\\BridgeCrew\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\chipi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\B15-04m\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

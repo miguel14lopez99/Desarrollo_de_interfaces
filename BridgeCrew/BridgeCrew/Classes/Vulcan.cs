@@ -9,8 +9,8 @@ namespace BridgeCrew
 
         private Boolean isRomulan;
 
-        public Vulcan(int officialKey, InterfaceBridge.Graduation graduation, String name, InterfaceBridge.Planet planet, Boolean isRomulan)
-            : base(officialKey, graduation, name, planet)
+        public Vulcan(int officialKey, InterfaceBridge.Graduation graduation, String name, InterfaceBridge.Planet planet, Boolean isRomulan, String imgSource)
+            : base(officialKey, graduation, name, planet, imgSource)
         {
             this.isRomulan = isRomulan;
         }

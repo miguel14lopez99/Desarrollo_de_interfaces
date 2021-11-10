@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\BridgeCrew\BridgeCrew\obj\Debug\netcoreapp3.1\
+C:\Users\B15-04m\Desktop\BridgeCrew\BridgeCrew\obj\Debug\netcoreapp3.1\
 BridgeCrew
 none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
-C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\BridgeCrew\BridgeCrew\App.xaml
-11407045341
+C:\Users\B15-04m\Desktop\BridgeCrew\BridgeCrew\App.xaml
+3599691093
 
-14-1634243820
+16150104096
 192-1533232326
-MainWindow.xaml;
+MainWindow.xaml;MessagesWindow.xaml;RMsgWindow.xaml;
 
-True
+False
 

@@ -13,40 +13,165 @@
                 <GradientStop Color="White" Offset="1"/>
             </LinearGradientBrush>
         </Grid.OpacityMask>
-        <Label x:Name="lblName" Content="Name :" HorizontalAlignment="Left" Margin="169,22,0,0" VerticalAlignment="Top">
-            <Label.OpacityMask>
-                <ImageBrush ImageSource="/WIN_20210106_22_06_59_Pro.jpg"/>
-            </Label.OpacityMask>
-        </Label>
-        <Label x:Name="lblOfficialKey" Content="Official Key :" HorizontalAlignment="Left" Margin="169,54,0,0" VerticalAlignment="Top">
-            <Label.OpacityMask>
-                <ImageBrush ImageSource="/WIN_20210106_22_06_59_Pro.jpg"/>
-            </Label.OpacityMask>
-        </Label>
-        <Label x:Name="lblPlanet" Content="Planet :" HorizontalAlignment="Left" Margin="169,89,0,0" VerticalAlignment="Top">
-            <Label.OpacityMask>
-                <ImageBrush ImageSource="/WIN_20210106_22_06_59_Pro.jpg"/>
-            </Label.OpacityMask>
-        </Label>
-        <Label x:Name="lblGraduation" Content="Graduation :" HorizontalAlignment="Left" Margin="169,121,0,0" VerticalAlignment="Top">
-            <Label.OpacityMask>
-                <ImageBrush ImageSource="/WIN_20210106_22_06_59_Pro.jpg"/>
-            </Label.OpacityMask>
-        </Label>
-        <ProgressBar x:Name="pbOfficers" HorizontalAlignment="Left" Height="22" Margin="97,75,0,0" VerticalAlignment="Top" Width="114" RenderTransformOrigin="0.5,0.5">
-            <ProgressBar.OpacityMask>
-                <ImageBrush ImageSource="/WIN_20210106_22_06_59_Pro.jpg"/>
-            </ProgressBar.OpacityMask>
-            <ProgressBar.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="90"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </ProgressBar.RenderTransform>
-        </ProgressBar>
-        <Image HorizontalAlignment="Left" Height="112" Margin="27,30,0,0" VerticalAlignment="Top" Width="100" Stretch="Fill" Source="/UML trabajo.png"/>
+        <Image Stretch="Fill" Source="/fondo.png"/>
+        <Canvas HorizontalAlignment="Left" Height="168" Margin="-26,22,0,0" VerticalAlignment="Top" Width="270">
+
+
+
+            <Label x:Name="lblName" Content="Name :" Foreground="White" Canvas.Left="195"/>
+            <Label x:Name="lblOfficialKey" Content="Official Key :" Foreground="White" Canvas.Left="195" Canvas.Top="32"/>
+            <Label x:Name="lblPlanet" Content="Planet :" Foreground="White" Canvas.Left="195" Canvas.Top="67"/>
+            <Label x:Name="lblGraduation" Content="Graduation :" Foreground="White" Canvas.Left="195" Canvas.Top="99"/>
+            <ProgressBar x:Name="pbOfficers" Height="22" Width="112" RenderTransformOrigin="0.5,0.5" Foreground="#FFCDD425" Canvas.Left="11" Canvas.Top="52">
+                <ProgressBar.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </ProgressBar.RenderTransform>
+            </ProgressBar>
+            <Image x:Name="imgOfficer" Height="112" Width="100" Stretch="Fill" Source="/Paul.jpg" Canvas.Left="90" Canvas.Top="7"/>
+            <Button x:Name="btnMessages" Content="Messages" Click="btnMessages_Click" Height="23" Width="134" Canvas.Left="56" Canvas.Top="145"/>
+            <Label Content="Every 1 minute" Foreground="White" RenderTransformOrigin="0.5,0.5" Canvas.Top="68">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+
+
+
+        </Canvas>
+        <Canvas HorizontalAlignment="Left" Height="353" Margin="511,7,0,0" VerticalAlignment="Top" Width="238">
+            <ProgressBar x:Name="pbOfficers_Copy" Height="22" Width="228" RenderTransformOrigin="0.5,0.5" Canvas.Left="5" Canvas.Top="22">
+                <ProgressBar.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="180"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </ProgressBar.RenderTransform>
+            </ProgressBar>
+            <Grid x:Name="grdShield" Background="#FFD6D6D6" Height="225" Canvas.Left="5" Canvas.Top="62" Width="228">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Image x:Name="img00" Grid.Row="0" Grid.Column="0" Source="imgCells/CellOK.png"></Image>
+                <Image x:Name="img01" Grid.Row="0" Grid.Column="1" Source="imgCells/CellOK.png"></Image>
+                <Image x:Name="img02" Grid.Row="0" Grid.Column="2" Source="imgCells/CellOK.png"></Image>
+                <Image x:Name="img03" Grid.Row="0" Grid.Column="3" Source="imgCells/CellOK.png"></Image>
+                <Image x:Name="img04" Grid.Row="0" Grid.Column="4" Source="imgCells/CellOK.png"></Image>
+                <Image x:Name="img05" Grid.Row="0" Grid.Column="5" Source="imgCells/CellOK.png"></Image>
+                <Image x:Name="img06" Grid.Row="0" Grid.Column="6" Source="imgCells/CellOK.png"></Image>
+                <Image x:Name="img07" Grid.Row="0" Grid.Column="7" Source="imgCells/CellOK.png"></Image>
+
+                <Image x:Name="img10" Grid.Row="1" Grid.Column="0" Source="imgCells/CellOK.png"></Image>
+                <Image x:Name="img11" Grid.Row="1" Grid.Column="1" Source="imgCells/CellOK.png"></Image>
+                <Image x:Name="img12" Grid.Row="1" Grid.Column="2" Source="imgCells/CellOK.png"></Image>
+                <Image x:Name="img13" Grid.Row="1" Grid.Column="3" Source="imgCells/CellOK.png"></Image>
+                <Image x:Name="img14" Grid.Row="1" Grid.Column="4" Source="imgCells/CellOK.png"></Image>
+                <Image x:Name="img15" Grid.Row="1" Grid.Column="5" Source="imgCells/CellOK.png"></Image>
+                <Image x:Name="img16" Grid.Row="1" Grid.Column="6" Source="imgCells/CellOK.png"></Image>
+                <Image x:Name="img17" Grid.Row="1" Grid.Column="7" Source="imgCells/CellOK.png"></Image>
+
+                <Image x:Name="img20" Grid.Row="2" Grid.Column="0" Source="imgCells/CellOK.png"></Image>
+                <Image x:Name="img21" Grid.Row="2" Grid.Column="1" Source="imgCells/CellOK.png"></Image>
+                <Image x:Name="img22" Grid.Row="2" Grid.Column="2" Source="imgCells/CellOK.png"></Image>
+                <Image x:Name="img23" Grid.Row="2" Grid.Column="3" Source="imgCells/CellOK.png"></Image>
+                <Image x:Name="img24" Grid.Row="2" Grid.Column="4" Source="imgCells/CellOK.png"></Image>
+                <Image x:Name="img25" Grid.Row="2" Grid.Column="5" Source="imgCells/CellOK.png"></Image>
+                <Image x:Name="img26" Grid.Row="2" Grid.Column="6" Source="imgCells/CellOK.png"></Image>
+                <Image x:Name="img27" Grid.Row="2" Grid.Column="7" Source="imgCells/CellOK.png"></Image>
+
+                <Image x:Name="img30" Grid.Row="3" Grid.Column="0" Source="imgCells/CellOK.png"></Image>
+                <Image x:Name="img31" Grid.Row="3" Grid.Column="1" Source="imgCells/CellOK.png"></Image>
+                <Image x:Name="img32" Grid.Row="3" Grid.Column="2" Source="imgCells/CellOK.png"></Image>
+                <Image x:Name="img33" Grid.Row="3" Grid.Column="3" Source="imgCells/CellOK.png"></Image>
+                <Image x:Name="img34" Grid.Row="3" Grid.Column="4" Source="imgCells/CellOK.png"></Image>
+                <Image x:Name="img35" Grid.Row="3" Grid.Column="5" Source="imgCells/CellOK.png"></Image>
+                <Image x:Name="img36" Grid.Row="3" Grid.Column="6" Source="imgCells/CellOK.png"></Image>
+                <Image x:Name="img37" Grid.Row="3" Grid.Column="7" Source="imgCells/CellOK.png"></Image>
+
+                <Image x:Name="img40" Grid.Row="4" Grid.Column="0" Source="imgCells/CellOK.png"></Image>
+                <Image x:Name="img41" Grid.Row="4" Grid.Column="1" Source="imgCells/CellOK.png"></Image>
+                <Image x:Name="img42" Grid.Row="4" Grid.Column="2" Source="imgCells/CellOK.png"></Image>
+                <Image x:Name="img43" Grid.Row="4" Grid.Column="3" Source="imgCells/CellOK.png"></Image>
+                <Image x:Name="img44" Grid.Row="4" Grid.Column="4" Source="imgCells/CellOK.png"></Image>
+                <Image x:Name="img45" Grid.Row="4" Grid.Column="5" Source="imgCells/CellOK.png"></Image>
+                <Image x:Name="img46" Grid.Row="4" Grid.Column="6" Source="imgCells/CellOK.png"></Image>
+                <Image x:Name="img47" Grid.Row="4" Grid.Column="7" Source="imgCells/CellOK.png"></Image>
+
+                <Image x:Name="img50" Grid.Row="5" Grid.Column="0" Source="imgCells/CellOK.png"></Image>
+                <Image x:Name="img51" Grid.Row="5" Grid.Column="1" Source="imgCells/CellOK.png"></Image>
+                <Image x:Name="img52" Grid.Row="5" Grid.Column="2" Source="imgCells/CellOK.png"></Image>
+                <Image x:Name="img53" Grid.Row="5" Grid.Column="3" Source="imgCells/CellOK.png"></Image>
+                <Image x:Name="img54" Grid.Row="5" Grid.Column="4" Source="imgCells/CellOK.png"></Image>
+                <Image x:Name="img55" Grid.Row="5" Grid.Column="5" Source="imgCells/CellOK.png"></Image>
+                <Image x:Name="img56" Grid.Row="5" Grid.Column="6" Source="imgCells/CellOK.png"></Image>
+                <Image x:Name="img57" Grid.Row="5" Grid.Column="7" Source="imgCells/CellOK.png"></Image>
+
+                <Image x:Name="img60" Grid.Row="6" Grid.Column="0" Source="imgCells/CellOK.png"></Image>
+                <Image x:Name="img61" Grid.Row="6" Grid.Column="1" Source="imgCells/CellOK.png"></Image>
+                <Image x:Name="img62" Grid.Row="6" Grid.Column="2" Source="imgCells/CellOK.png"></Image>
+                <Image x:Name="img63" Grid.Row="6" Grid.Column="3" Source="imgCells/CellOK.png"></Image>
+                <Image x:Name="img64" Grid.Row="6" Grid.Column="4" Source="imgCells/CellOK.png"></Image>
+                <Image x:Name="img65" Grid.Row="6" Grid.Column="5" Source="imgCells/CellOK.png"></Image>
+                <Image x:Name="img66" Grid.Row="6" Grid.Column="6" Source="imgCells/CellOK.png"></Image>
+                <Image x:Name="img67" Grid.Row="6" Grid.Column="7" Source="imgCells/CellOK.png"></Image>
+
+                <Image x:Name="img70" Grid.Row="7" Grid.Column="0" Source="imgCells/CellOK.png"></Image>
+                <Image x:Name="img71" Grid.Row="7" Grid.Column="1" Source="imgCells/CellOK.png"></Image>
+                <Image x:Name="img72" Grid.Row="7" Grid.Column="2" Source="imgCells/CellOK.png"></Image>
+                <Image x:Name="img73" Grid.Row="7" Grid.Column="3" Source="imgCells/CellOK.png"></Image>
+                <Image x:Name="img74" Grid.Row="7" Grid.Column="4" Source="imgCells/CellOK.png"></Image>
+                <Image x:Name="img75" Grid.Row="7" Grid.Column="5" Source="imgCells/CellOK.png"></Image>
+                <Image x:Name="img76" Grid.Row="7" Grid.Column="6" Source="imgCells/CellOK.png"></Image>
+                <Image x:Name="img77" Grid.Row="7" Grid.Column="7" Source="imgCells/CellOK.png"></Image>
+
+            </Grid>
+            <ProgressBar x:Name="pbOfficers_Copy1" Height="22" Width="228" RenderTransformOrigin="0.5,0.5" Canvas.Left="5" Canvas.Top="309">
+                <ProgressBar.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="180"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </ProgressBar.RenderTransform>
+            </ProgressBar>
+            <Label Content="Shield Damage" Canvas.Left="74" Canvas.Top="19"/>
+            <Label Content="Shield Integrity: 100%" Canvas.Left="56" Canvas.Top="306"/>
+            <Label Content="Every 5 seconds" Foreground="White"/>
+            <Label Content="Every 30 seconds" Foreground="White" Canvas.Left="138" Canvas.Top="327"/>
+        </Canvas>
+        <Label x:Name="lblStarDate" Content="StarDate" HorizontalAlignment="Left" Margin="10,385,0,0" VerticalAlignment="Top" Foreground="White" FontSize="22"/>
+
+
 
     </Grid>
 </Window>

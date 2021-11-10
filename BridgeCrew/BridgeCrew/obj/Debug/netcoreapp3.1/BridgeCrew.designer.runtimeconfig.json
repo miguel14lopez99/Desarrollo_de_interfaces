@@ -6,8 +6,8 @@
       "version": "3.1.0"
     },
     "additionalProbingPaths": [
-      "C:\\Users\\chipi\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\chipi\\.nuget\\packages"
+      "C:\\Users\\B15-04m\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\B15-04m\\.nuget\\packages"
     ],
     "configProperties": {
       "Microsoft.NETCore.DotNetHostPolicy.SetAppPaths": true

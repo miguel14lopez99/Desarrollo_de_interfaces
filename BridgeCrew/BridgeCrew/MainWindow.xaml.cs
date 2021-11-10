@@ -21,13 +21,16 @@ namespace BridgeCrew
     /// </summary>
     public partial class MainWindow : Window
     {
-        private Queue<Officer> queue;
+        private Queue<Officer> officers;
 
         public MainWindow()
         {
             InitializeComponent();
 
-            queue = Useful.initOfficerQueue();
+            int starDate = Useful.randomStarDate();
+            lblStarDate = 
+            
+            officers = Useful.initOfficerQueue();
 
             CambiaOficial();
 
@@ -39,6 +42,8 @@ namespace BridgeCrew
             workerOfficer.ProgressChanged += worker_ProgressChanged;
             workerOfficer.RunWorkerCompleted += worker_RunWorkerCompleted;
             workerOfficer.RunWorkerAsync(60);
+
+         
 
         }
 
@@ -75,7 +80,7 @@ namespace BridgeCrew
         {
 
             CambiaOficial();
-
+        
         }
 
         private void btnEvery1min_Click(object sender, RoutedEventArgs e)
@@ -84,14 +89,21 @@ namespace BridgeCrew
         }
         void CambiaOficial()
         {
-            Officer officer = queue.Dequeue();
-            queue.Enqueue(officer);
+            Officer officer = officers.Dequeue();
+            officers.Enqueue(officer);
 
             lblName.Content =        " Name: " + officer.Name;
             lblOfficialKey.Content = " Official Key: " + officer.OfficialKey.ToString();
             lblPlanet.Content =      " Planet: " + officer.Planet.ToString();
             lblGraduation.Content =  " Graduation: " + officer.Graduation.ToString();
+            imgOfficer.Source = (new BitmapImage(new Uri(officer.ImgSource, UriKind.Relative)));
             pbOfficers.Value = 0;
+        }
+
+        private void btnMessages_Click(object sender, RoutedEventArgs e)
+        {
+            MessagesWindow messagesWindow = new MessagesWindow();
+            messagesWindow.Show();
         }
     }
 }
