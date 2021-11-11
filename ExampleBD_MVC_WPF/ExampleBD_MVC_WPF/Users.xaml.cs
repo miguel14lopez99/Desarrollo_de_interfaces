@@ -28,5 +28,30 @@ namespace ExampleBD_MVC_WPF
 
             dgrUsers.ItemsSource = aux.manage.list;
         }
+
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            List<User> data = new List<User>();
+            int indice = 0;
+            if (dgrUsers.SelectedItems.Count > 0)
+            {
+                data = (List<User>)dgrUsers.ItemsSource; // los obj del datagrid a la lista
+
+                for(int i = 0; i < dgrUsers.SelectedItems.Count; i++)
+                {
+                    indice = dgrUsers.Items.IndexOf(dgrUsers.SelectedItems[i]);
+                    data.RemoveAt(indice);
+                    User row = (User)dgrUsers.SelectedItems[i];
+                    row.delete();
+                }
+                dgrUsers.ItemsSource = null;
+                dgrUsers.ItemsSource = data;
+            }
+            else
+            {
+                MessageBox.Show("You must select at least one row");
+            }
+
+        }
     }
 }

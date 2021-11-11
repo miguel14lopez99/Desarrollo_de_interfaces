@@ -16,7 +16,7 @@
         <Button x:Name="btnAdd" Content="New" HorizontalAlignment="Left" Margin="78,20,0,0" VerticalAlignment="Top" Width="75" Height="37" FontSize="14"/>
         <Button x:Name="btnModify" Content="Modify" HorizontalAlignment="Left" Margin="172,20,0,0" VerticalAlignment="Top" Width="75" Height="37" FontSize="14"/>
         <Button x:Name="btnDelete" Content="Delete" HorizontalAlignment="Left" Margin="266,20,0,0" VerticalAlignment="Top" Width="75" Height="37" FontSize="14
-                "/>
+                " Click="btnDelete_Click"/>
 
     </Grid>
 </Window>
