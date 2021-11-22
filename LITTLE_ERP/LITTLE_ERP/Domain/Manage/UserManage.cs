@@ -15,7 +15,7 @@ namespace LITTLE_ERP.Domain.Manage
 
         public UserManage()
         {
-            list = new List<User>();
+            this.list = new List<User>();
         }
 
         public void ReadAll()
