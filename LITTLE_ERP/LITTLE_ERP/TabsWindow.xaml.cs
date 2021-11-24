@@ -30,6 +30,10 @@ namespace LITTLE_ERP
             User aux = new User();
             aux.readAll();
 
+            //mostrar la ventana de nuevo user
+            NewUser newUserWindow = new NewUser();
+            newUserWindow.Show();
+
             dgrUsers.ItemsSource = aux.manage.list;
         }
 

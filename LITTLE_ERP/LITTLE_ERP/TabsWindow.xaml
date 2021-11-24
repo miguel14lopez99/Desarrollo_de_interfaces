@@ -25,9 +25,7 @@
                     </DataGrid>
                     <Button x:Name="btnAdd" Content="New" HorizontalAlignment="Left" Margin="10,25,0,0" VerticalAlignment="Top" Width="84" Height="42" FontSize="14" Click="btnAdd_Click"/>
                     <Button x:Name="btnModify" Content="Modify" HorizontalAlignment="Left" Margin="115,25,0,0" VerticalAlignment="Top" Width="84" Height="42" FontSize="14"/>
-                    <Button x:Name="btnDelete" Content="Delete" HorizontalAlignment="Left" Margin="221,25,0,0" VerticalAlignment="Top" Width="83" Height="42" FontSize="14
-                " Click="btnDelete_Click"/>
-
+                    <Button x:Name="btnDelete" Content="Delete" HorizontalAlignment="Left" Margin="221,25,0,0" VerticalAlignment="Top" Width="83" Height="42" FontSize="14" Click="btnDelete_Click"/>
                 </Grid>
             </TabItem>
         </TabControl>

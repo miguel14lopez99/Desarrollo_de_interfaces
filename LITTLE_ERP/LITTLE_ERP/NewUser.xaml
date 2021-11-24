@@ -14,15 +14,16 @@
         <Label x:Name="lblPass" Content="Password:" HorizontalAlignment="Left" Margin="77,88,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblRepPass" Content="Repeat Password:" HorizontalAlignment="Left" Margin="37,110,0,0" VerticalAlignment="Top"/>
         <Label Content="New User" HorizontalAlignment="Left" Margin="111,8,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" Margin="60,303,0,0" VerticalAlignment="Top" Width="75" />
-        <Button x:Name="btnOK" Content="OK" HorizontalAlignment="Left" Margin="169,303,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.458,0.65" />
+        <Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" Margin="60,320,0,0" VerticalAlignment="Top" Width="75" Click="btnCancel_Click" />
+        <Button x:Name="btnOK" Content="OK" HorizontalAlignment="Left" Margin="169,320,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.458,0.65" Click="btnOK_Click" />
         <PasswordBox x:Name="txtRepPass" HorizontalAlignment="Left" Margin="150,115,0,0" VerticalAlignment="Top" Width="120"/>
-        <ListBox HorizontalAlignment="Left" Height="100" Margin="35,184,0,0" VerticalAlignment="Top" Width="100"/>
-        <ListBox HorizontalAlignment="Left" Height="100" Margin="169,184,0,0" VerticalAlignment="Top" Width="100"/>
-        <Button Content="&lt;&lt;" HorizontalAlignment="Left" Margin="140,206,0,0" VerticalAlignment="Top" Width="24"/>
-        <Button Content="&gt;&gt;" HorizontalAlignment="Left" Margin="140,238,0,0" VerticalAlignment="Top" Width="24"/>
-        <Label Content="Assigned Roles" HorizontalAlignment="Left" Margin="40,154,0,0" VerticalAlignment="Top"/>
-        <Label Content="Allowed Roles" HorizontalAlignment="Left" Margin="177,154,0,0" VerticalAlignment="Top"/>
+        <ListBox HorizontalAlignment="Left" Height="100" Margin="35,201,0,0" VerticalAlignment="Top" Width="100"/>
+        <ListBox HorizontalAlignment="Left" Height="100" Margin="169,201,0,0" VerticalAlignment="Top" Width="100"/>
+        <Button Content="&lt;&lt;" HorizontalAlignment="Left" Margin="140,223,0,0" VerticalAlignment="Top" Width="24"/>
+        <Button Content="&gt;&gt;" HorizontalAlignment="Left" Margin="140,255,0,0" VerticalAlignment="Top" Width="24"/>
+        <Label Content="Assigned Roles" HorizontalAlignment="Left" Margin="40,171,0,0" VerticalAlignment="Top"/>
+        <Label Content="Allowed Roles" HorizontalAlignment="Left" Margin="177,171,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblError" Content="La contraseña no coincide." Margin="77,140,0,0" VerticalAlignment="Top" Foreground="#FFC71D1D" HorizontalAlignment="Left" Width="150" Visibility="Hidden"/>
 
     </Grid>
 </Window>

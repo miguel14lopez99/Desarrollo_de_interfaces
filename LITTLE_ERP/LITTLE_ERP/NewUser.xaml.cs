@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LITTLE_ERP.Domain;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,40 @@ namespace LITTLE_ERP
         public NewUser()
         {
             InitializeComponent();
+
+            //no mostrar cuando se abre la ventana
+            lblError.Visibility = Visibility.Hidden;
+        }
+
+        private void btnOK_Click(object sender, RoutedEventArgs e)
+        {
+            Resources.useful useful = new Resources.useful();
+
+            //verificamos si ha introducido bien la contraseña
+
+            if (txtPass.Password.Equals(txtRepPass.Password))
+            {
+                User aux = new User();
+
+                aux.name = txtName.Text;
+
+                aux.password = useful.getHashSha256(txtPass.Password);
+
+                aux.insert();
+
+                //cerrar la ventana cuando se crea el usuario
+                this.Close();
+            }
+            else
+            {
+                lblError.Visibility = Visibility.Visible;
+            }
+
+        }
+
+        private void btnCancel_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }
