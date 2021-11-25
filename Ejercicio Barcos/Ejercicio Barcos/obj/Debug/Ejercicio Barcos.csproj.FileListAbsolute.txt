@@ -1,0 +1,15 @@
+C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\Ejercicio Barcos\Ejercicio Barcos\bin\Debug\Ejercicio Barcos.exe.config
+C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\Ejercicio Barcos\Ejercicio Barcos\bin\Debug\Ejercicio Barcos.exe
+C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\Ejercicio Barcos\Ejercicio Barcos\bin\Debug\Ejercicio Barcos.pdb
+C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\Ejercicio Barcos\Ejercicio Barcos\obj\Debug\Ejercicio Barcos.csproj.AssemblyReference.cache
+C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\Ejercicio Barcos\Ejercicio Barcos\obj\Debug\MainWindow.g.cs
+C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\Ejercicio Barcos\Ejercicio Barcos\obj\Debug\App.g.cs
+C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\Ejercicio Barcos\Ejercicio Barcos\obj\Debug\Ejercicio Barcos_MarkupCompile.cache
+C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\Ejercicio Barcos\Ejercicio Barcos\obj\Debug\Ejercicio Barcos_MarkupCompile.lref
+C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\Ejercicio Barcos\Ejercicio Barcos\obj\Debug\MainWindow.baml
+C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\Ejercicio Barcos\Ejercicio Barcos\obj\Debug\Ejercicio Barcos.g.resources
+C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\Ejercicio Barcos\Ejercicio Barcos\obj\Debug\Ejercicio_Barcos.Properties.Resources.resources
+C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\Ejercicio Barcos\Ejercicio Barcos\obj\Debug\Ejercicio Barcos.csproj.GenerateResource.cache
+C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\Ejercicio Barcos\Ejercicio Barcos\obj\Debug\Ejercicio Barcos.csproj.CoreCompileInputs.cache
+C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\Ejercicio Barcos\Ejercicio Barcos\obj\Debug\Ejercicio Barcos.exe
+C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\Ejercicio Barcos\Ejercicio Barcos\obj\Debug\Ejercicio Barcos.pdb
