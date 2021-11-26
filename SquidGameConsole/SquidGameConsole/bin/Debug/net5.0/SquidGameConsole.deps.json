@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "SquidGameConsole/1.0.0": {
+        "runtime": {
+          "SquidGameConsole.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "SquidGameConsole/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

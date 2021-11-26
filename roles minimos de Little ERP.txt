@@ -1,0 +1,7 @@
+ROLES:
+
+root
+admin
+contable
+employee
+administrative
