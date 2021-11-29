@@ -20,9 +20,12 @@ namespace LITTLE_ERP
     /// </summary>
     public partial class TabsWindow : Window
     {
-        public TabsWindow()
+
+        public TabsWindow()//usuario00
         {
+            
             InitializeComponent();
+            lblUserName.Content = "Name: " + user.name;
         }
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)

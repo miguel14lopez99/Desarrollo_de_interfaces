@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LITTLE_ERP.Domain;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,14 @@ namespace LITTLE_ERP
     /// </summary>
     public partial class MainWindow : Window
     {
+        private Domain.User conUser;
+        internal User ConUser { get => conUser; set => conUser = value; }
+
         public MainWindow()
         {
             InitializeComponent();
+
+            ConUser = new Domain.User();
 
             //Domain.User user = new Domain.User();
             //user.name = "Luis";
@@ -45,9 +51,15 @@ namespace LITTLE_ERP
 
             if (exist)
             {
-                frm = new TabsWindow();
+                //asigna el usuario introducido al usuario conectado
+                ConUser = user;
+
+                frm = new TabsWindow(ConUser);
                 frm.Show();
                 this.Close();
+
+                
+
             }
             else
             {
