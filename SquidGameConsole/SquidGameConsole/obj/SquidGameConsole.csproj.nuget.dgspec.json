@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\B15-04m\\Documents\\Repositorios\\Disenio_de_interfaces\\SquidGameConsole\\SquidGameConsole\\SquidGameConsole.csproj": {}
+    "C:\\Users\\chipi\\Documents\\Repositorios\\Disenio_de_interfaces\\SquidGameConsole\\SquidGameConsole\\SquidGameConsole.csproj": {}
   },
   "projects": {
-    "C:\\Users\\B15-04m\\Documents\\Repositorios\\Disenio_de_interfaces\\SquidGameConsole\\SquidGameConsole\\SquidGameConsole.csproj": {
+    "C:\\Users\\chipi\\Documents\\Repositorios\\Disenio_de_interfaces\\SquidGameConsole\\SquidGameConsole\\SquidGameConsole.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\B15-04m\\Documents\\Repositorios\\Disenio_de_interfaces\\SquidGameConsole\\SquidGameConsole\\SquidGameConsole.csproj",
+        "projectUniqueName": "C:\\Users\\chipi\\Documents\\Repositorios\\Disenio_de_interfaces\\SquidGameConsole\\SquidGameConsole\\SquidGameConsole.csproj",
         "projectName": "SquidGameConsole",
-        "projectPath": "C:\\Users\\B15-04m\\Documents\\Repositorios\\Disenio_de_interfaces\\SquidGameConsole\\SquidGameConsole\\SquidGameConsole.csproj",
-        "packagesPath": "C:\\Users\\B15-04m\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\B15-04m\\Documents\\Repositorios\\Disenio_de_interfaces\\SquidGameConsole\\SquidGameConsole\\obj\\",
+        "projectPath": "C:\\Users\\chipi\\Documents\\Repositorios\\Disenio_de_interfaces\\SquidGameConsole\\SquidGameConsole\\SquidGameConsole.csproj",
+        "packagesPath": "C:\\Users\\chipi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\chipi\\Documents\\Repositorios\\Disenio_de_interfaces\\SquidGameConsole\\SquidGameConsole\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\B15-04m\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\chipi\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
