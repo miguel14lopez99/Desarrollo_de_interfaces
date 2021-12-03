@@ -20,13 +20,25 @@ namespace LITTLE_ERP
     /// </summary>
     public partial class TabsWindow : Window
     {
+        private static User setUser;
+        private static DataGrid setDataGrid;
+        internal static User SetUser { get => setUser; set => setUser = value; }
+        internal static DataGrid SetDataGrid { get => setDataGrid; set => setDataGrid = value; }
 
         public TabsWindow()//usuario00
         {
-            
+            DateTime ahora = DateTime.Now;
+
             InitializeComponent();
-            lblUserName.Content = "Name: " + user.name;
+            lblUserName.Content = "Name: " + SetUser.name;
+            lblDate.Content = "Date: " + ahora.ToString("F");
+
+            User aux = new User();
+            aux.readAll();
+            dgrUsers.ItemsSource = aux.manage.list;
         }
+
+        
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
@@ -34,7 +46,7 @@ namespace LITTLE_ERP
             aux.readAll();
 
             //mostrar la ventana de nuevo user
-            NewUser newUserWindow = new NewUser();
+            NewUser newUserWindow = new NewUser(this);
             newUserWindow.Show();
 
             dgrUsers.ItemsSource = aux.manage.list;
@@ -61,6 +73,30 @@ namespace LITTLE_ERP
             else
             {
                 MessageBox.Show("You must select at least one row");
+            }
+        }
+
+        private void btnModify_Click(object sender, RoutedEventArgs e)
+        {
+            List<User> data = new List<User>();
+            int indice = 0;
+            if (dgrUsers.SelectedItems.Count != 1)
+            {
+                data = (List<User>)dgrUsers.ItemsSource; // los obj del datagrid a la lista
+
+                for (int i = 0; i < dgrUsers.SelectedItems.Count; i++)
+                {
+                    indice = dgrUsers.Items.IndexOf(dgrUsers.SelectedItems[i]);
+                    data.RemoveAt(indice);
+                    User row = (User)dgrUsers.SelectedItems[i];
+                    row.delete();
+                }
+                dgrUsers.ItemsSource = null;
+                dgrUsers.ItemsSource = data;
+            }
+            else
+            {
+                MessageBox.Show("You must select one row");
             }
         }
     }

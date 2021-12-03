@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\B15-04m\\Desktop\\BridgeCrew\\BridgeCrew\\BridgeCrew.csproj",
+      "projectUniqueName": "C:\\Users\\B15-04m\\Documents\\Repositorios\\Disenio_de_interfaces\\BridgeCrew\\BridgeCrew\\BridgeCrew.csproj",
       "projectName": "BridgeCrew",
-      "projectPath": "C:\\Users\\B15-04m\\Desktop\\BridgeCrew\\BridgeCrew\\BridgeCrew.csproj",
+      "projectPath": "C:\\Users\\B15-04m\\Documents\\Repositorios\\Disenio_de_interfaces\\BridgeCrew\\BridgeCrew\\BridgeCrew.csproj",
       "packagesPath": "C:\\Users\\B15-04m\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\B15-04m\\Desktop\\BridgeCrew\\BridgeCrew\\obj\\",
+      "outputPath": "C:\\Users\\B15-04m\\Documents\\Repositorios\\Disenio_de_interfaces\\BridgeCrew\\BridgeCrew\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\B15-04m\\AppData\\Roaming\\NuGet\\NuGet.Config",

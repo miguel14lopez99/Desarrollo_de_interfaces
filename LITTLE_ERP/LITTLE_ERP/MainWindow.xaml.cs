@@ -21,14 +21,11 @@ namespace LITTLE_ERP
     /// </summary>
     public partial class MainWindow : Window
     {
-        private Domain.User conUser;
-        internal User ConUser { get => conUser; set => conUser = value; }
+        
 
         public MainWindow()
         {
             InitializeComponent();
-
-            ConUser = new Domain.User();
 
             //Domain.User user = new Domain.User();
             //user.name = "Luis";
@@ -36,7 +33,7 @@ namespace LITTLE_ERP
             //user.insert();
         }
 
-        private void btnOK_Click(object sender, RoutedEventArgs e)
+        public void btnOK_Click(object sender, RoutedEventArgs e)
         {
             Resources.useful useful = new Resources.useful();
 
@@ -52,13 +49,11 @@ namespace LITTLE_ERP
             if (exist)
             {
                 //asigna el usuario introducido al usuario conectado
-                ConUser = user;
 
-                frm = new TabsWindow(ConUser);
+                TabsWindow.SetUser = user;
+                frm = new TabsWindow();
                 frm.Show();
                 this.Close();
-
-                
 
             }
             else
@@ -68,7 +63,7 @@ namespace LITTLE_ERP
 
         }
 
-        private void btnClose_Click(object sender, RoutedEventArgs e)
+        public void btnClose_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }

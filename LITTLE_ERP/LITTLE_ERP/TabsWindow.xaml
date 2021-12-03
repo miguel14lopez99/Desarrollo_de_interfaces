@@ -24,14 +24,14 @@
                         </DataGrid.Columns>
                     </DataGrid>
                     <Button x:Name="btnAdd" Content="New" HorizontalAlignment="Left" Margin="10,25,0,0" VerticalAlignment="Top" Width="84" Height="42" FontSize="14" Click="btnAdd_Click"/>
-                    <Button x:Name="btnModify" Content="Modify" HorizontalAlignment="Left" Margin="115,25,0,0" VerticalAlignment="Top" Width="84" Height="42" FontSize="14"/>
+                    <Button x:Name="btnModify" Content="Modify" HorizontalAlignment="Left" Margin="115,25,0,0" VerticalAlignment="Top" Width="84" Height="42" FontSize="14" Click="btnModify_Click"/>
                     <Button x:Name="btnDelete" Content="Delete" HorizontalAlignment="Left" Margin="221,25,0,0" VerticalAlignment="Top" Width="83" Height="42" FontSize="14" Click="btnDelete_Click"/>
                 </Grid>
             </TabItem>
         </TabControl>
         <Image HorizontalAlignment="Left" Height="100" Margin="10,10,0,0" VerticalAlignment="Top" Width="100" Grid.RowSpan="2"/>
         <Label x:Name="lblUserName" Content="User: " HorizontalAlignment="Left" Margin="140,21,0,0" VerticalAlignment="Top" FontSize="16" Grid.RowSpan="2"/>
-        <Label Content="Date: " HorizontalAlignment="Left" Margin="443,21,0,0" VerticalAlignment="Top" FontSize="16" Grid.RowSpan="2"/>
+        <Label x:Name="lblDate" Content="Date: " HorizontalAlignment="Left" Margin="443,21,0,0" VerticalAlignment="Top" FontSize="16" Grid.RowSpan="2"/>
 
     </Grid>
 </Window>

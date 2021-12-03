@@ -28,6 +28,16 @@ namespace LITTLE_ERP
             lblError.Visibility = Visibility.Hidden;
         }
 
+        private TabsWindow tabsWindow = null;
+        public NewUser(Window callingForm)
+        {
+            tabsWindow = callingForm as TabsWindow;
+            InitializeComponent();
+
+            //no mostrar cuando se abre la ventana
+            lblError.Visibility = Visibility.Hidden;
+        }
+
         private void btnOK_Click(object sender, RoutedEventArgs e)
         {
             Resources.useful useful = new Resources.useful();
@@ -43,6 +53,9 @@ namespace LITTLE_ERP
                 aux.password = useful.getHashSha256(txtPass.Password);
 
                 aux.insert();
+                //actualizamos el data grid
+                aux.readAll();
+                this.tabsWindow.dgrUsers.ItemsSource = aux.manage.list;
 
                 //cerrar la ventana cuando se crea el usuario
                 this.Close();
