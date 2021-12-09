@@ -55,8 +55,6 @@ namespace LITTLE_ERP.Domain.Manage
             ConnectOracle Search = new ConnectOracle();
             Resources.useful useful = new Resources.useful();
 
-            user.password = useful.getHashSha256(user.password);
-
             int maximun = Convert.ToInt32("0" + Search.DLookUp("max(idUser)", "users", "")) + 1;
 
             Search.setData("INSERT INTO users VALUES(" + maximun + ",'" + user.name + "','" + user.password + "',0)");

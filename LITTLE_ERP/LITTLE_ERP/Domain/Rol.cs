@@ -22,8 +22,22 @@ namespace LITTLE_ERP.Domain
         {
             manage = new Manage.RolManage();
             this.idRol = idRol;
+        }      
+
+        public void readAll()
+        {
+            manage.ReadAll();
         }
 
+        public void readUser()
+        {
+            manage.ReadRol(this);
+        }
+
+        public override string ToString()
+        {
+            return description;
+        }
 
     }
 

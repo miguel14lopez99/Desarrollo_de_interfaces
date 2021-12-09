@@ -59,6 +59,7 @@ namespace LITTLE_ERP
             else
             {
                 MessageBox.Show("User not found");
+                txtLogin.Text = user.password;
             }
 
         }

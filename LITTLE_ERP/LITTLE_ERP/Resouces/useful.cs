@@ -11,7 +11,7 @@ namespace LITTLE_ERP.Resources
     {
         public string getHashSha256(string text)
         {
-            byte[] bytes = Encoding.Unicode.GetBytes(text);
+            byte[] bytes = Encoding.UTF8.GetBytes(text);
             SHA256Managed hashstring = new SHA256Managed();
             byte[] hash = hashstring.ComputeHash(bytes);
             string hashString = string.Empty;
@@ -21,6 +21,8 @@ namespace LITTLE_ERP.Resources
             }
             return hashString;
         }
+
+
 
     }
 }

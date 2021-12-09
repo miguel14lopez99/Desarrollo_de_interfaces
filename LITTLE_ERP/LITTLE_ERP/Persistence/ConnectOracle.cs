@@ -15,7 +15,7 @@ namespace LITTLE_ERP.Persistence
         const string driver = "Data Source=(DESCRIPTION ="
         + "(ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = LOCALHOST)(PORT = 1521)))"
         + "(CONNECT_DATA = (SERVICE_NAME = PDB18C))); "
-        + "User Id=USER1; Password=user1;";
+        + "User Id=LITTLE_ERP; Password=1234;";
 
         ////////////////////////////////////////////////////////////
 

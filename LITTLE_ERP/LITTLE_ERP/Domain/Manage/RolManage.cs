@@ -23,9 +23,9 @@ namespace LITTLE_ERP.Domain.Manage
             DataSet data = new DataSet(); //se necesita un DataSet para guardar lo que se rec
             ConnectOracle Search = new ConnectOracle();
 
-            data = Search.getData("SELECT idUser FROM users where deleted=0", "users");
+            data = Search.getData("SELECT idRol FROM roles where deleted=0", "roles");
 
-            DataTable table = data.Tables["users"];
+            DataTable table = data.Tables["roles"];
 
             Rol aux;
 
@@ -42,12 +42,12 @@ namespace LITTLE_ERP.Domain.Manage
             DataSet data = new DataSet();
             ConnectOracle Search = new ConnectOracle();
 
-            data = Search.getData("SELECT * FROM roles where idRol=" + rol.idRol, "roles");
+            data = Search.getData("SELECT * FROM roles where idRol =" + rol.idRol, "roles");
 
             DataTable table = data.Tables["roles"];
 
             DataRow row = table.Rows[0];
-            rol.description = Convert.ToString(row["Description"]);
+            rol.description = Convert.ToString(row["description"]);
         }
 
     }
