@@ -37,8 +37,23 @@ namespace LITTLE_ERP
             aux.readAll();
             dgrUsers.ItemsSource = aux.manage.list;
         }
+        private MainWindow mainWindow = null;
 
-        
+        public TabsWindow(Window callingForm)//usuario00
+        {
+            DateTime ahora = DateTime.Now;
+
+            mainWindow = callingForm as MainWindow;
+            InitializeComponent();
+
+
+            lblUserName.Content = "Name: " + mainWindow.txtLogin.Text;
+            lblDate.Content = "Date: " + ahora.ToString("F");
+
+            User aux = new User();
+            aux.readAll();
+            dgrUsers.ItemsSource = aux.manage.list;
+        }
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {

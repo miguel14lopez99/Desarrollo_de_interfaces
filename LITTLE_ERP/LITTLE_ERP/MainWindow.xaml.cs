@@ -21,7 +21,6 @@ namespace LITTLE_ERP
     /// </summary>
     public partial class MainWindow : Window
     {
-        
 
         public MainWindow()
         {
@@ -48,18 +47,14 @@ namespace LITTLE_ERP
 
             if (exist)
             {
-                //asigna el usuario introducido al usuario conectado
-
                 TabsWindow.SetUser = user;
-                frm = new TabsWindow();
+                frm = new TabsWindow(this);
                 frm.Show();
                 this.Close();
-
             }
             else
             {
                 MessageBox.Show("User not found");
-                txtLogin.Text = user.password;
             }
 
         }

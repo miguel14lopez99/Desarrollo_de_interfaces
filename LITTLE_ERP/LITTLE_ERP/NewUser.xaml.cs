@@ -107,7 +107,7 @@ namespace LITTLE_ERP
 
             if (lstAllowedRoles.SelectedItems.Count > 0)
             {
-                data = (List<Rol>)lstAllowedRoles.ItemsSource; // los obj del datagrid a la lista
+                data = (List<Rol>)lstAllowedRoles.ItemsSource;
 
                 for (int i = 0; i < lstAllowedRoles.SelectedItems.Count; i++)
                 {
@@ -134,23 +134,26 @@ namespace LITTLE_ERP
 
             if (lstAssignedRoles.SelectedItems.Count > 0)
             {
-                data = (List<Rol>)lstAssignedRoles.ItemsSource; // los obj del datagrid a la lista
+                data = (List<Rol>)lstAssignedRoles.ItemsSource;
 
                 for (int i = 0; i < lstAssignedRoles.SelectedItems.Count; i++)
                 {
                     indice = lstAssignedRoles.Items.IndexOf(lstAssignedRoles.SelectedItems[i]);
-                    //meter roles en la listbox de allowed
-                    lstAllowedRoles.Items.Add(data[i]);
-                    //quitar rol de la lista de deny
+                    //meter roles en la listbox de asignados
+                    lstAssignedRoles.Items.Add(data[i]);
+                    //quitar rol de la lista de allowed
                     data.RemoveAt(indice);
                 }
-                lstAssignedRoles.ItemsSource = null;
+                lstAllowedRoles.ItemsSource = null;
                 lstAssignedRoles.ItemsSource = data;
+
             }
             else
             {
                 MessageBox.Show("You must select at least one row");
             }
         }
+
+
     }
 }
