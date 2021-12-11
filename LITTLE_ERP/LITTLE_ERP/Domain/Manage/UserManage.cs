@@ -53,11 +53,12 @@ namespace LITTLE_ERP.Domain.Manage
         public void InsertUser(User user)
         {
             ConnectOracle Search = new ConnectOracle();
-            Resources.useful useful = new Resources.useful();
 
             int maximun = Convert.ToInt32("0" + Search.DLookUp("max(idUser)", "users", "")) + 1;
 
-            Search.setData("INSERT INTO users VALUES(" + maximun + ",'" + user.name + "','" + user.password + "',0)");
+            user.idUser = maximun;
+
+            Search.setData("INSERT INTO users VALUES(" + user.idUser + ",'" + user.name + "','" + user.password + "',0)");
         }
 
         public Boolean CheckUser(User user)
@@ -82,5 +83,47 @@ namespace LITTLE_ERP.Domain.Manage
 
             Search.setData("Update users set deleted=1 where idUser = " + user.idUser);
         }
+
+        //modificar nombre usuario
+        public void UpdateName(User user, String newName)
+        {
+            ConnectOracle Search = new ConnectOracle();
+
+            Search.setData("Update users set name='"+newName+"' where idUser = " + user.idUser);
+        }
+
+        //añadir rol a user
+        public void addRol(Rol rol, User user)
+        {
+            ConnectOracle Search = new ConnectOracle();
+
+            int maximun = Convert.ToInt32("0" + Search.DLookUp("max(IDUSER_ROLE)", "users_roles", "")) + 1;
+
+            Search.setData("INSERT INTO users_roles VALUES(" + maximun + ",'" + user.idUser + "','" + rol.idRol + "')");
+        }
+
+        //traerse los roles al usuario
+        public void setRolList(User user)
+        {
+            DataSet data = new DataSet(); //se necesita un DataSet para guardar lo que se rec
+
+            ConnectOracle Search = new ConnectOracle();
+
+            data = Search.getData("SELECT idRol FROM users_roles where idUser="+user.idUser, "users_roles");
+
+            DataTable table = data.Tables["users_roles"];
+
+            Rol aux;
+
+            foreach (DataRow row in table.Rows)
+            {
+                aux = new Rol(Convert.ToInt32(row["idRol"]));
+                aux.readRol();
+                user.rolesList.Add(aux);
+            }
+        }
+
+        
+
     }
 }

@@ -29,7 +29,7 @@ namespace LITTLE_ERP.Domain
             manage.ReadAll();
         }
 
-        public void readUser()
+        public void readRol()
         {
             manage.ReadRol(this);
         }

@@ -50,5 +50,7 @@ namespace LITTLE_ERP.Domain.Manage
             rol.description = Convert.ToString(row["description"]);
         }
 
+        
+
     }
 }

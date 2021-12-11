@@ -20,19 +20,21 @@ namespace LITTLE_ERP.Domain
         public int idUser { get; set; }
         public String name { get; set; }
         public String password { get; set; }
-        public List<Rol> rolesList { get; set; }
+        public List<Rol> rolesList;
 
         public Manage.UserManage manage { get; set; }
 
         public User()
         {
             manage = new Manage.UserManage();
+            rolesList = new List<Rol>();
         }
 
         public User(int idUser)
         {
             manage = new Manage.UserManage();
             this.idUser = idUser;
+            rolesList = new List<Rol>();
         }
 
         public void insert()
@@ -58,6 +60,21 @@ namespace LITTLE_ERP.Domain
         public void delete()
         {
             manage.DeleteUser(this);
+        }
+
+        public void addRol(Rol rol)
+        {
+            manage.addRol(rol, this);
+        }
+
+        public void setRolList()
+        {
+            manage.setRolList(this);
+        }
+
+        public void updateName(String name)
+        {
+            manage.UpdateName(this, name);
         }
     }
 }

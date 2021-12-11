@@ -20,8 +20,19 @@ namespace LITTLE_ERP
     /// </summary>
     public partial class NewUser : Window
     {
-        public NewUser()
+        private static User userMod;
+        private static Boolean isMod;
+        internal static User UserMod { get => userMod; set => userMod = value; }
+        public static bool IsMod { get => isMod; set => isMod = value; }
+
+        private List<Rol> allowed;
+        private List<Rol> assigned;
+
+        /*public NewUser()
         {
+
+            
+
             Rol aux = new Rol();
             aux.readAll();
 
@@ -32,22 +43,47 @@ namespace LITTLE_ERP
 
             //recuperar los roles
             lstAllowedRoles.ItemsSource = aux.manage.list;
-        }
+        }*/
 
         private TabsWindow tabsWindow = null;
+
         public NewUser(Window callingForm)
-        {
-            Rol aux = new Rol();
-            aux.readAll();
+        {           
+            InitializeComponent();
 
             tabsWindow = callingForm as TabsWindow;
-            InitializeComponent();
+
+            allowed = new List<Rol>();
+            assigned = new List<Rol>();
+
+            if (isMod)
+            {
+
+                lblTitle.Content = "Modify User";
+                txtPass.IsEnabled = false;
+                txtRepPass.IsEnabled = false;
+
+                //añadir nombre al txtName
+                txtName.Text = userMod.idUser.ToString();
+
+                //añadir los roles del usuario a su lista
+                userMod.setRolList();
+
+                //añadir los roles asignados y ponerlos a la lista
+                assigned = userMod.rolesList;
+                lstAssignedRoles.ItemsSource = assigned;
+            }
+            else
+            {
+                Rol aux = new Rol();
+                aux.readAll();
+
+                //recuperar los roles
+                lstAllowedRoles.ItemsSource = aux.manage.list;
+            }
 
             //no mostrar cuando se abre la ventana
             lblError.Visibility = Visibility.Hidden;
-
-            //recuperar los roles
-            lstAllowedRoles.ItemsSource = aux.manage.list;
             
         }
 
@@ -55,43 +91,80 @@ namespace LITTLE_ERP
         {
             Resources.useful useful = new Resources.useful();
 
-            //verificamos si ha dejado algún campo en blanco
+            User aux = new User();
 
-            if(txtName.Text.Length != 0 && txtPass.Password.Length != 0)
+            if (isMod)
             {
-                //verificamos si ha introducido bien la contraseña
+                //MODIFICAR USUARIO
 
-                User aux = new User();
-
-                if (txtPass.Password.Equals(txtRepPass.Password))
+                if (txtName.Text.Length != 0)
                 {
-                    
-                    aux.name = txtName.Text;
+                    aux = userMod;
+                    String newName = txtName.Text;
+                    aux.updateName(newName);
 
-                    aux.password = useful.getHashSha256(txtPass.Password);
-
-                    aux.insert();
                     //actualizamos el data grid
                     aux.readAll();
                     this.tabsWindow.dgrUsers.ItemsSource = aux.manage.list;
 
-                    //cerrar la ventana cuando se crea el usuario
+                    //cerrar la ventana cuando se modifica el usuario
                     this.Close();
                 }
                 else
                 {
-                    lblError.Content = "La contraseña no coincide";
+                    lblError.Content = "Debe rellenar todos los datos";
                     lblError.Visibility = Visibility.Visible;
                 }
-
-            } 
+            }
             else
             {
-                lblError.Content = "Debe rellenar todos los datos";
-                lblError.Visibility = Visibility.Visible;
-            }
+                //AÑADIR USUARIO
 
-            
+                //verificamos si ha dejado algún campo en blanco
+
+                if (txtName.Text.Length != 0 && txtPass.Password.Length != 0)
+                {
+                    //verificamos si ha introducido bien la contraseña
+
+                    if (txtPass.Password.Equals(txtRepPass.Password))
+                    {
+                        if (lstAssignedRoles.Items.Count != 0)
+                        {
+                            // se inserta el usuario
+                            aux.name = txtName.Text;
+                            aux.password = useful.getHashSha256(txtPass.Password);
+                            aux.insert();
+
+                            // se añaden los roles                        
+                            foreach (Rol rol in assigned)
+                            {
+                                aux.addRol(rol);
+                            }
+
+                            //actualizamos el data grid
+                            aux.readAll();
+                            this.tabsWindow.dgrUsers.ItemsSource = aux.manage.list;
+
+                            //cerrar la ventana cuando se crea el usuario
+                            this.Close();
+                        }
+
+                    }
+                    //verificamos si tiene al menos un rol asignado
+
+                    else
+                    {
+                        lblError.Content = "La contraseña no coincide";
+                        lblError.Visibility = Visibility.Visible;
+                    }
+
+                }
+                else
+                {
+                    lblError.Content = "Debe rellenar todos los datos";
+                    lblError.Visibility = Visibility.Visible;
+                }
+            }
 
         }
 
@@ -101,6 +174,24 @@ namespace LITTLE_ERP
         }
 
         private void btnAssign_Click(object sender, RoutedEventArgs e)
+        {
+            //añadir el rol selecionado a la lista de asignados
+            if (lstAllowedRoles.SelectedItems.Count > 0)
+            {
+                //cuando tiene un rol selecionado
+                Rol aux = (Rol)lstAllowedRoles.SelectedItem;
+                //el rol lo añadimos a la lista de asignados
+                assigned.Add(aux);
+                lstAssignedRoles.Items.Add(aux);
+                //lstAllowedRoles.Items.Remove(aux);
+            }
+            else
+            {
+                MessageBox.Show("You must select at least one rol");
+            }
+        }
+
+        /*private void btnAssign_Click(object sender, RoutedEventArgs e)
         {
             List<Rol> data = new List<Rol>();
             int indice = 0;
@@ -114,6 +205,7 @@ namespace LITTLE_ERP
                     indice = lstAllowedRoles.Items.IndexOf(lstAllowedRoles.SelectedItems[i]);
                     //meter roles en la listbox de asignados
                     lstAssignedRoles.Items.Add(data[i]);
+
                     //quitar rol de la lista de allowed
                     data.RemoveAt(indice);
                 }
@@ -125,35 +217,39 @@ namespace LITTLE_ERP
                 MessageBox.Show("You must select at least one row");
             }
 
-        }
+        }*/
 
         private void btnDeny_Click(object sender, RoutedEventArgs e)
         {
-            List<Rol> data = new List<Rol>();
+            List<Rol> data2 = new List<Rol>();
             int indice = 0;
 
             if (lstAssignedRoles.SelectedItems.Count > 0)
             {
-                data = (List<Rol>)lstAssignedRoles.ItemsSource;
+                data2 = (List<Rol>)lstAssignedRoles.ItemsSource;
 
                 for (int i = 0; i < lstAssignedRoles.SelectedItems.Count; i++)
                 {
                     indice = lstAssignedRoles.Items.IndexOf(lstAssignedRoles.SelectedItems[i]);
                     //meter roles en la listbox de asignados
-                    lstAssignedRoles.Items.Add(data[i]);
+                    lstAllowedRoles.Items.Add(data2[i]);
                     //quitar rol de la lista de allowed
-                    data.RemoveAt(indice);
+                    data2.RemoveAt(indice);
                 }
-                lstAllowedRoles.ItemsSource = null;
-                lstAssignedRoles.ItemsSource = data;
+                //lstAssignedRoles.ItemsSource = null;
+                lstAssignedRoles.ItemsSource = data2;
 
             }
             else
             {
-                MessageBox.Show("You must select at least one row");
+                MessageBox.Show("You must select at least one rol");
             }
         }
 
+        private void Click_Assign()
+        {
+            
+        }
 
     }
 }

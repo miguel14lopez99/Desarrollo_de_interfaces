@@ -48,7 +48,7 @@ namespace LITTLE_ERP
             if (exist)
             {
                 TabsWindow.SetUser = user;
-                frm = new TabsWindow(this);
+                frm = new TabsWindow();
                 frm.Show();
                 this.Close();
             }

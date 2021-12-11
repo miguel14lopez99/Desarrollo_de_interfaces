@@ -36,28 +36,13 @@ namespace LITTLE_ERP
             User aux = new User();
             aux.readAll();
             dgrUsers.ItemsSource = aux.manage.list;
-        }
-        private MainWindow mainWindow = null;
-
-        public TabsWindow(Window callingForm)//usuario00
-        {
-            DateTime ahora = DateTime.Now;
-
-            mainWindow = callingForm as MainWindow;
-            InitializeComponent();
-
-
-            lblUserName.Content = "Name: " + mainWindow.txtLogin.Text;
-            lblDate.Content = "Date: " + ahora.ToString("F");
-
-            User aux = new User();
-            aux.readAll();
-            dgrUsers.ItemsSource = aux.manage.list;
-        }
+        }      
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
+            NewUser.IsMod = false;
             User aux = new User();
+            
             aux.readAll();
 
             //mostrar la ventana de nuevo user
@@ -93,25 +78,18 @@ namespace LITTLE_ERP
 
         private void btnModify_Click(object sender, RoutedEventArgs e)
         {
-            List<User> data = new List<User>();
-            int indice = 0;
-            if (dgrUsers.SelectedItems.Count != 1)
+            if (dgrUsers.SelectedItems.Count == 1)
             {
-                data = (List<User>)dgrUsers.ItemsSource; // los obj del datagrid a la lista
+                NewUser.IsMod = true;
+                NewUser.UserMod = (User)dgrUsers.SelectedItem;   
+                //mostrar la ventana de nuevo user
+                NewUser newUserWindow = new NewUser(this);               
+                newUserWindow.Show();
 
-                for (int i = 0; i < dgrUsers.SelectedItems.Count; i++)
-                {
-                    indice = dgrUsers.Items.IndexOf(dgrUsers.SelectedItems[i]);
-                    data.RemoveAt(indice);
-                    User row = (User)dgrUsers.SelectedItems[i];
-                    row.delete();
-                }
-                dgrUsers.ItemsSource = null;
-                dgrUsers.ItemsSource = data;
             }
             else
             {
-                MessageBox.Show("You must select one row");
+                MessageBox.Show("You must select only one row");
             }
         }
     }
