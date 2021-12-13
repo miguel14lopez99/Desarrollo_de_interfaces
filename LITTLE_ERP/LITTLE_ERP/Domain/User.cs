@@ -15,12 +15,14 @@ namespace LITTLE_ERP.Domain
             Boolean showUser { get; set; }
             Boolean deleteUser { get; set; }
 
+
         }
 
         public int idUser { get; set; }
         public String name { get; set; }
         public String password { get; set; }
         public List<Rol> rolesList;
+        public UserPermisions userPermisions;
 
         public Manage.UserManage manage { get; set; }
 
@@ -34,7 +36,20 @@ namespace LITTLE_ERP.Domain
         {
             manage = new Manage.UserManage();
             this.idUser = idUser;
+            setRolList();
             rolesList = new List<Rol>();
+        }
+
+        public User(String name, String password)
+        {
+            manage = new Manage.UserManage();
+            rolesList = new List<Rol>();
+
+            this.name = name;
+            this.password = password;
+            this.idUser = getUserID(name, password);
+            setRolList();
+            //setPermisions();
         }
 
         public void insert()
@@ -75,6 +90,11 @@ namespace LITTLE_ERP.Domain
         public void updateName(String name)
         {
             manage.UpdateName(this, name);
+        }
+
+        public int getUserID(String login, String pass)
+        {
+            return manage.getUserID(login, pass);
         }
     }
 }

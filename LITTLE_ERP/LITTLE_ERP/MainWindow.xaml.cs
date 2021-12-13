@@ -36,18 +36,28 @@ namespace LITTLE_ERP
         {
             Resources.useful useful = new Resources.useful();
 
-            Domain.User user = new Domain.User();
+            String login = txtLogin.Text;
+            String pass = useful.getHashSha256(pwdPassword.Password);
+
+            User user = new User(login, pass);
 
             TabsWindow frm = null;
-
-            user.name = txtLogin.Text;
-            user.password = useful.getHashSha256(pwdPassword.Password);
 
             Boolean exist = user.check();
 
             if (exist)
             {
                 TabsWindow.SetUser = user;
+
+                MessageBox.Show("idUser: " + user.idUser);
+                MessageBox.Show("name: " + user.name);
+                MessageBox.Show("pass: " + user.password);
+
+                foreach (Rol rol in user.rolesList)
+                {
+                    MessageBox.Show("Rol: " + rol);
+                }
+
                 frm = new TabsWindow();
                 frm.Show();
                 this.Close();

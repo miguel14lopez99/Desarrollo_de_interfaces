@@ -58,13 +58,12 @@ namespace LITTLE_ERP
 
             if (isMod)
             {
-
                 lblTitle.Content = "Modify User";
                 txtPass.IsEnabled = false;
                 txtRepPass.IsEnabled = false;
 
                 //añadir nombre al txtName
-                txtName.Text = userMod.idUser.ToString();
+                txtName.Text = userMod.name;
 
                 //añadir los roles del usuario a su lista
                 userMod.setRolList();
@@ -73,14 +72,12 @@ namespace LITTLE_ERP
                 assigned = userMod.rolesList;
                 lstAssignedRoles.ItemsSource = assigned;
             }
-            else
-            {
-                Rol aux = new Rol();
-                aux.readAll();
+            
+            Rol aux = new Rol();
+            aux.readAll();
 
-                //recuperar los roles
-                lstAllowedRoles.ItemsSource = aux.manage.list;
-            }
+            //recuperar los roles
+            lstAllowedRoles.ItemsSource = aux.manage.list;
 
             //no mostrar cuando se abre la ventana
             lblError.Visibility = Visibility.Hidden;

@@ -97,7 +97,7 @@ namespace LITTLE_ERP.Domain.Manage
         {
             ConnectOracle Search = new ConnectOracle();
 
-            int maximun = Convert.ToInt32("0" + Search.DLookUp("max(IDUSER_ROLE)", "users_roles", "")) + 1;
+            int maximun = Convert.ToInt32("0" + Search.DLookUp("max(IDUSER_ROL)", "users_roles", "")) + 1;
 
             Search.setData("INSERT INTO users_roles VALUES(" + maximun + ",'" + user.idUser + "','" + rol.idRol + "')");
         }
@@ -115,12 +115,21 @@ namespace LITTLE_ERP.Domain.Manage
 
             Rol aux;
 
+            user.rolesList = new List<Rol>(); ;
+
             foreach (DataRow row in table.Rows)
             {
                 aux = new Rol(Convert.ToInt32(row["idRol"]));
                 aux.readRol();
                 user.rolesList.Add(aux);
             }
+        }
+
+        public int getUserID(String name, String password)
+        {
+            ConnectOracle Search = new ConnectOracle();
+            int userID = Convert.ToInt32(Search.DLookUp("idUser", "users", "name = '" + name + "' and password = '" + password+ "'"));
+            return userID;
         }
 
         
