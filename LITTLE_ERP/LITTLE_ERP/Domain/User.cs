@@ -8,12 +8,12 @@ namespace LITTLE_ERP.Domain
 {
     class User
     {
-        private class UserPermisions
+        public class UserPermisions
         {
-            Boolean addUser { get; set; }
-            Boolean editUser { get; set; }
-            Boolean showUser { get; set; }
-            Boolean deleteUser { get; set; }
+            public Boolean addUser { get; set; }
+            public Boolean editUser { get; set; }
+            public Boolean showUser { get; set; }
+            public Boolean deleteUser { get; set; }
 
 
         }
@@ -95,6 +95,11 @@ namespace LITTLE_ERP.Domain
         public int getUserID(String login, String pass)
         {
             return manage.getUserID(login, pass);
+        }
+
+        public void setPermissions()
+        {
+            manage.setPermissions(this);
         }
     }
 }

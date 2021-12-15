@@ -132,7 +132,39 @@ namespace LITTLE_ERP.Domain.Manage
             return userID;
         }
 
-        
+        public void setPermissions(User user)
+        {
+            DataSet data = new DataSet(); //se necesita un DataSet para guardar lo que se rec
+            ConnectOracle Search = new ConnectOracle();
+
+            List<Rol> roles = user.rolesList;
+
+            foreach (Rol rol in roles)
+            {
+                data = Search.getData("SELECT IDPERMISSION FROM ROLES_PERMISSIONS where idRol=" + rol.idRol, "ROLES_PERMISSIONS");
+                DataTable table = data.Tables["users_roles"];
+
+                foreach (DataRow row in table.Rows)
+                {
+                    int idPermission = Convert.ToInt32(row["IDPERMISSION"]);
+                    switch (idPermission)
+                    {
+                        case 1:
+                            user.userPermisions.addUser = true;
+                            break;
+                        case 2:
+                            user.userPermisions.editUser = true;
+                            break;
+                        case 3:
+                            user.userPermisions.showUser = true;
+                            break;
+                        case 4:
+                            user.userPermisions.deleteUser = true;
+                            break;
+                    }
+                }
+            }
+        }
 
     }
 }
