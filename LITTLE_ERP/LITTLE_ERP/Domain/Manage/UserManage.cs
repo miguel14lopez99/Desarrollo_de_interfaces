@@ -11,19 +11,19 @@ namespace LITTLE_ERP.Domain.Manage
     class UserManage
     {
 
-        public List<User> list { get; set; }
+        public List<User> list { get; set; } //List where users are stored
 
         public UserManage()
         {
             this.list = new List<User>();
         }
 
-        public void ReadAll()
+        public void ReadAll() //Read the users from the database and save them to the list
         {
-            DataSet data = new DataSet(); //se necesita un DataSet para guardar lo que se rec
+            DataSet data = new DataSet();
             ConnectOracle Search = new ConnectOracle();
 
-            data = Search.getData("SELECT idUser FROM users where deleted=0", "users");
+            data = Search.getData("SELECT idUser FROM users where deleted=0", "users"); //all users who are not deleted are recovered
 
             DataTable table = data.Tables["users"];
 
@@ -37,7 +37,7 @@ namespace LITTLE_ERP.Domain.Manage
             }
         }
 
-        public void ReadUser(User user)
+        public void ReadUser(User user) //Read a user through their id and assign their name
         {
             DataSet data = new DataSet();
             ConnectOracle Search = new ConnectOracle();
@@ -50,7 +50,7 @@ namespace LITTLE_ERP.Domain.Manage
             user.name = Convert.ToString(row["Name"]);
         }
 
-        public void InsertUser(User user)
+        public void InsertUser(User user) //Insert a user in the database
         {
             ConnectOracle Search = new ConnectOracle();
 
@@ -61,7 +61,7 @@ namespace LITTLE_ERP.Domain.Manage
             Search.setData("INSERT INTO users VALUES(" + user.idUser + ",'" + user.name + "','" + user.password + "',0)");
         }
 
-        public Boolean CheckUser(User user)
+        public Boolean CheckUser(User user) //Checks if a user, with name and password, exists in the database
         {
             Boolean found = false;
 
@@ -77,23 +77,21 @@ namespace LITTLE_ERP.Domain.Manage
             return found;
         }
 
-        public void DeleteUser(User user)
+        public void DeleteUser(User user) //Delete a user from the database
         {
             ConnectOracle Search = new ConnectOracle();
 
             Search.setData("Update users set deleted=1 where idUser = " + user.idUser);
         }
 
-        //modificar nombre usuario
-        public void UpdateName(User user, String newName)
+        public void UpdateName(User user, String newName) //Modify the username
         {
             ConnectOracle Search = new ConnectOracle();
 
             Search.setData("Update users set name='"+newName+"' where idUser = " + user.idUser);
         }
 
-        //añadir rol a user
-        public void addRol(Rol rol, User user)
+        public void addRol(Rol rol, User user) //Add a role to the user
         {
             ConnectOracle Search = new ConnectOracle();
 
@@ -102,10 +100,9 @@ namespace LITTLE_ERP.Domain.Manage
             Search.setData("INSERT INTO users_roles VALUES(" + maximun + ",'" + user.idUser + "','" + rol.idRol + "')");
         }
 
-        //traerse los roles al usuario
-        public void setRolList(User user)
+        public void setRolList(User user) //Retrieves the roles assigned to the user and puts them in the list of user roles
         {
-            DataSet data = new DataSet(); //se necesita un DataSet para guardar lo que se rec
+            DataSet data = new DataSet();
 
             ConnectOracle Search = new ConnectOracle();
 
@@ -115,7 +112,7 @@ namespace LITTLE_ERP.Domain.Manage
 
             Rol aux;
 
-            user.rolesList = new List<Rol>(); ;
+            user.rolesList = new List<Rol>();
 
             foreach (DataRow row in table.Rows)
             {
@@ -125,45 +122,51 @@ namespace LITTLE_ERP.Domain.Manage
             }
         }
 
-        public int getUserID(String name, String password)
+        public int getUserID(String name, String password) //Retrieve the user id through their name and password
         {
             ConnectOracle Search = new ConnectOracle();
             int userID = Convert.ToInt32(Search.DLookUp("idUser", "users", "name = '" + name + "' and password = '" + password+ "'"));
             return userID;
         }
 
-        public void setPermissions(User user)
+        public void setPermissions(User user) //Assign user permissions
         {
-            DataSet data = new DataSet(); //se necesita un DataSet para guardar lo que se rec
+
+
+            DataSet data = new DataSet();
             ConnectOracle Search = new ConnectOracle();
 
             List<Rol> roles = user.rolesList;
 
-            foreach (Rol rol in roles)
+            foreach (Rol rol in roles) //Cycle through the list of user roles
             {
                 data = Search.getData("SELECT IDPERMISSION FROM ROLES_PERMISSIONS where idRol=" + rol.idRol, "ROLES_PERMISSIONS");
-                DataTable table = data.Tables["users_roles"];
+                DataTable table = data.Tables["ROLES_PERMISSIONS"];
 
                 foreach (DataRow row in table.Rows)
                 {
                     int idPermission = Convert.ToInt32(row["IDPERMISSION"]);
+
                     switch (idPermission)
                     {
                         case 1:
-                            user.userPermisions.addUser = true;
+                            user.userPermissions.addUser = true;
                             break;
                         case 2:
-                            user.userPermisions.editUser = true;
+                            user.userPermissions.editUser = true;
                             break;
                         case 3:
-                            user.userPermisions.showUser = true;
+                            user.userPermissions.showUser = true;
                             break;
                         case 4:
-                            user.userPermisions.deleteUser = true;
+                            user.userPermissions.deleteUser = true;
                             break;
                     }
                 }
             }
+
+
+            
         }
 
     }

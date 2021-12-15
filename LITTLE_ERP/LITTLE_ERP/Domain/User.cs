@@ -8,21 +8,24 @@ namespace LITTLE_ERP.Domain
 {
     class User
     {
-        public class UserPermisions
+        public class UserPermissions
         {
             public Boolean addUser { get; set; }
             public Boolean editUser { get; set; }
             public Boolean showUser { get; set; }
             public Boolean deleteUser { get; set; }
 
+            public UserPermissions()
+            {
 
+            }
         }
 
         public int idUser { get; set; }
         public String name { get; set; }
         public String password { get; set; }
         public List<Rol> rolesList;
-        public UserPermisions userPermisions;
+        public UserPermissions userPermissions;
 
         public Manage.UserManage manage { get; set; }
 
@@ -30,26 +33,31 @@ namespace LITTLE_ERP.Domain
         {
             manage = new Manage.UserManage();
             rolesList = new List<Rol>();
+            userPermissions = new UserPermissions();
         }
 
         public User(int idUser)
         {
             manage = new Manage.UserManage();
+            rolesList = new List<Rol>();
+            userPermissions = new UserPermissions();
+
             this.idUser = idUser;
             setRolList();
-            rolesList = new List<Rol>();
+            setPermissions();
         }
 
         public User(String name, String password)
         {
             manage = new Manage.UserManage();
             rolesList = new List<Rol>();
+            userPermissions = new UserPermissions();
 
             this.name = name;
             this.password = password;
             this.idUser = getUserID(name, password);
             setRolList();
-            //setPermisions();
+            setPermissions();
         }
 
         public void insert()

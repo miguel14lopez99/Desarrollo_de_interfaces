@@ -7,13 +7,25 @@
         mc:Ignorable="d"
         Title="TabsWindow" Height="593.566" Width="926.676">
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="49*"/>
-            <RowDefinition Height="514*"/>
-        </Grid.RowDefinitions>
-        <TabControl HorizontalAlignment="Left" Height="426" Margin="10,78,0,0" VerticalAlignment="Top" Width="899" Grid.Row="1" TabStripPlacement="Left">
+        <TabControl HorizontalAlignment="Left" Height="426" Margin="10,127,0,0" VerticalAlignment="Top" Width="899" TabStripPlacement="Left">
             <TabItem Header="HOME" FontSize="16">
                 <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem Header="PROFILE" FontSize="16">
+                <Grid>
+                    <Label Content="Previous Password" HorizontalAlignment="Left" Margin="43,43,0,0" VerticalAlignment="Top"/>
+                    <Label Content="New Password" HorizontalAlignment="Left" Margin="71,74,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Repeat Password" HorizontalAlignment="Left" Margin="54,105,0,0" VerticalAlignment="Top"/>
+                    <PasswordBox x:Name="pwdPrevious" HorizontalAlignment="Left" Margin="208,45,0,0" VerticalAlignment="Top" Width="163"/>
+                    <PasswordBox x:Name="pwdNew" HorizontalAlignment="Left" Margin="208,76,0,0" VerticalAlignment="Top" Width="163"/>
+                    <PasswordBox x:Name="pwdRepeat" HorizontalAlignment="Left" Margin="208,107,0,0" VerticalAlignment="Top" Width="163"/>
+                    <GroupBox Header="ROLES" Margin="43,158,282,46">
+                        <Label x:Name="LblRoles" Content="rol1" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                    </GroupBox>
+                    <Image HorizontalAlignment="Left" Width="160" Margin="602,110,0,0" OpacityMask="#FFFBFBFB" Height="160" VerticalAlignment="Top"/>
+                    <Label x:Name="lblUsername" Content="nombre usuario" HorizontalAlignment="Left" Margin="602,275,0,0" RenderTransformOrigin="0.386,-0.065" Height="31" VerticalAlignment="Top"/>
+                    <Button x:Name="btnChangePwd" Content="Change password" Margin="399,63,282,315" Click="btnChangePwd_Click"/>
+                </Grid>
             </TabItem>
             <TabItem Header="USERS" FontSize="16">
                 <Grid>
@@ -28,10 +40,10 @@
                     <Button x:Name="btnDelete" Content="Delete" HorizontalAlignment="Left" Margin="221,25,0,0" VerticalAlignment="Top" Width="83" Height="42" FontSize="14" Click="btnDelete_Click"/>
                 </Grid>
             </TabItem>
-        </TabControl>
-        <Image HorizontalAlignment="Left" Height="100" Margin="10,10,0,0" VerticalAlignment="Top" Width="100" Grid.RowSpan="2"/>
-        <Label x:Name="lblUserName" Content="User: " HorizontalAlignment="Left" Margin="140,21,0,0" VerticalAlignment="Top" FontSize="16" Grid.RowSpan="2"/>
-        <Label x:Name="lblDate" Content="Date: " HorizontalAlignment="Left" Margin="443,21,0,0" VerticalAlignment="Top" FontSize="16" Grid.RowSpan="2"/>
 
+        </TabControl>
+        <Image HorizontalAlignment="Left" Height="100" Margin="10,10,0,0" VerticalAlignment="Top" Width="100"/>
+        <Label x:Name="lblUserName" Content="User: " HorizontalAlignment="Left" Margin="140,21,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <Label x:Name="lblDate" Content="Date: " HorizontalAlignment="Left" Margin="443,21,0,0" VerticalAlignment="Top" FontSize="16"/>
     </Grid>
 </Window>

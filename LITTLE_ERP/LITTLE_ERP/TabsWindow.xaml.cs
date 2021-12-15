@@ -25,24 +25,42 @@ namespace LITTLE_ERP
         internal static User SetUser { get => setUser; set => setUser = value; }
         internal static DataGrid SetDataGrid { get => setDataGrid; set => setDataGrid = value; }
 
-        public TabsWindow()//usuario00
+        public TabsWindow()
         {
             DateTime ahora = DateTime.Now;
 
             InitializeComponent();
             lblUserName.Content = "Name: " + SetUser.name;
-            lblDate.Content = "Date: " + ahora.ToString("F");
+            lblDate.Content = "Date: " + ahora.ToString("G");
 
-            User aux = new User();
-            aux.readAll();
-            dgrUsers.ItemsSource = aux.manage.list;
+            if(setUser.idUser != 1) //root
+            {
+                if (setUser.userPermissions.showUser)
+                {
+                    User aux = new User();
+                    aux.readAll();
+                    dgrUsers.ItemsSource = aux.manage.list;
+                }
+
+                if (!setUser.userPermissions.addUser)
+                    btnAdd.IsEnabled = false;
+                if (!setUser.userPermissions.deleteUser)
+                    btnDelete.IsEnabled = false;
+                if (!setUser.userPermissions.editUser)
+                    btnModify.IsEnabled = false;
+            }
+            
         }      
+
+        ///
+        /// USERS
+        ///
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
             NewUser.IsMod = false;
             User aux = new User();
-            
+
             aux.readAll();
 
             //mostrar la ventana de nuevo user
@@ -53,7 +71,7 @@ namespace LITTLE_ERP
         }
 
         private void btnDelete_Click(object sender, RoutedEventArgs e)
-        {
+        {          
             List<User> data = new List<User>();
             int indice = 0;
             if (dgrUsers.SelectedItems.Count > 0)
@@ -81,9 +99,9 @@ namespace LITTLE_ERP
             if (dgrUsers.SelectedItems.Count == 1)
             {
                 NewUser.IsMod = true;
-                NewUser.UserMod = (User)dgrUsers.SelectedItem;   
+                NewUser.UserMod = (User)dgrUsers.SelectedItem;
                 //mostrar la ventana de nuevo user
-                NewUser newUserWindow = new NewUser(this);               
+                NewUser newUserWindow = new NewUser(this);
                 newUserWindow.Show();
 
             }
@@ -92,5 +110,15 @@ namespace LITTLE_ERP
                 MessageBox.Show("You must select only one row");
             }
         }
+
+        ///
+        /// PROFILE
+        ///
+
+        private void btnChangePwd_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
     }
 }
