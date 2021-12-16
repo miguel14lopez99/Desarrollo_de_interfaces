@@ -93,8 +93,8 @@
     <Compile Include="NewUser.xaml.cs">
       <DependentUpon>NewUser.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Resouces\Dates.cs" />
-    <Compile Include="Resouces\useful.cs" />
+    <Compile Include="SomeResources\Dates.cs" />
+    <Compile Include="SomeResources\Useful.cs" />
     <Compile Include="TabsWindow.xaml.cs">
       <DependentUpon>TabsWindow.xaml</DependentUpon>
     </Compile>

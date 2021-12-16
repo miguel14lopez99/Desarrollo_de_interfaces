@@ -28,23 +28,6 @@ namespace LITTLE_ERP
         private List<Rol> allowed;
         private List<Rol> assigned;
 
-        /*public NewUser()
-        {
-
-            
-
-            Rol aux = new Rol();
-            aux.readAll();
-
-            InitializeComponent();
-
-            //no mostrar cuando se abre la ventana
-            lblError.Visibility = Visibility.Hidden;
-
-            //recuperar los roles
-            lstAllowedRoles.ItemsSource = aux.manage.list;
-        }*/
-
         private TabsWindow tabsWindow = null;
 
         public NewUser(Window callingForm)
@@ -55,6 +38,13 @@ namespace LITTLE_ERP
 
             allowed = new List<Rol>();
             assigned = new List<Rol>();
+
+            Rol aux = new Rol();
+            aux.readAll();
+
+            //recuperar los roles
+            allowed = aux.manage.list;
+            lstAllowedRoles.ItemsSource = allowed;
 
             if (isMod)
             {
@@ -71,13 +61,19 @@ namespace LITTLE_ERP
                 //añadir los roles asignados y ponerlos a la lista
                 assigned = userMod.rolesList;
                 lstAssignedRoles.ItemsSource = assigned;
-            }
-            
-            Rol aux = new Rol();
-            aux.readAll();
 
-            //recuperar los roles
-            lstAllowedRoles.ItemsSource = aux.manage.list;
+                //restar los roles asignados a los allowed           
+                for (int i = 0; i < allowed.Count; i++)
+                {
+                    for (int j = 0; j < assigned.Count; j++)
+                    {
+                        if (allowed[i].Equals(assigned[j]))
+                            allowed.Remove(allowed[i]);
+                    }
+                }
+                lstAllowedRoles.ItemsSource = allowed;
+
+            }
 
             //no mostrar cuando se abre la ventana
             lblError.Visibility = Visibility.Hidden;
@@ -86,7 +82,6 @@ namespace LITTLE_ERP
 
         private void btnOK_Click(object sender, RoutedEventArgs e)
         {
-            Resources.useful useful = new Resources.useful();
 
             User aux = new User();
 
@@ -100,12 +95,9 @@ namespace LITTLE_ERP
                     String newName = txtName.Text;
                     aux.updateName(newName);
 
-                    //actualizamos el data grid
-                    aux.readAll();
-                    this.tabsWindow.dgrUsers.ItemsSource = aux.manage.list;
+                    // se eliminan los roles que ya tenía
+                    aux.deleteRoles();
 
-                    //cerrar la ventana cuando se modifica el usuario
-                    this.Close();
                 }
                 else
                 {
@@ -129,21 +121,9 @@ namespace LITTLE_ERP
                         {
                             // se inserta el usuario
                             aux.name = txtName.Text;
-                            aux.password = useful.getHashSha256(txtPass.Password);
+                            aux.password = SomeResources.Useful.getHashSha256(txtPass.Password);
                             aux.insert();
 
-                            // se añaden los roles                        
-                            foreach (Rol rol in assigned)
-                            {
-                                aux.addRol(rol);
-                            }
-
-                            //actualizamos el data grid
-                            aux.readAll();
-                            this.tabsWindow.dgrUsers.ItemsSource = aux.manage.list;
-
-                            //cerrar la ventana cuando se crea el usuario
-                            this.Close();
                         }
 
                     }
@@ -161,7 +141,21 @@ namespace LITTLE_ERP
                     lblError.Content = "Debe rellenar todos los datos";
                     lblError.Visibility = Visibility.Visible;
                 }
+
             }
+
+            // se añaden los roles                        
+            foreach (Rol rol in assigned)
+            {
+                aux.addRol(rol);
+            }
+
+            //actualizamos el data grid
+            aux.readAll();
+            this.tabsWindow.dgrUsers.ItemsSource = aux.manage.list;
+
+            //cerrar la ventana cuando se crea el usuario
+            this.Close();
 
         }
 
@@ -179,74 +173,42 @@ namespace LITTLE_ERP
                 Rol aux = (Rol)lstAllowedRoles.SelectedItem;
                 //el rol lo añadimos a la lista de asignados
                 assigned.Add(aux);
-                lstAssignedRoles.Items.Add(aux);
-                //lstAllowedRoles.Items.Remove(aux);
+                allowed.Remove(aux);
+
+                lstAssignedRoles.ItemsSource = null;
+                lstAssignedRoles.ItemsSource = assigned;
+                lstAllowedRoles.ItemsSource = null;
+                lstAllowedRoles.ItemsSource = allowed;
             }
             else
             {
                 MessageBox.Show("You must select at least one rol");
             }
         }
-
-        /*private void btnAssign_Click(object sender, RoutedEventArgs e)
-        {
-            List<Rol> data = new List<Rol>();
-            int indice = 0;
-
-            if (lstAllowedRoles.SelectedItems.Count > 0)
-            {
-                data = (List<Rol>)lstAllowedRoles.ItemsSource;
-
-                for (int i = 0; i < lstAllowedRoles.SelectedItems.Count; i++)
-                {
-                    indice = lstAllowedRoles.Items.IndexOf(lstAllowedRoles.SelectedItems[i]);
-                    //meter roles en la listbox de asignados
-                    lstAssignedRoles.Items.Add(data[i]);
-
-                    //quitar rol de la lista de allowed
-                    data.RemoveAt(indice);
-                }
-                lstAllowedRoles.ItemsSource = null;
-                lstAllowedRoles.ItemsSource = data;
-            }
-            else
-            {
-                MessageBox.Show("You must select at least one row");
-            }
-
-        }*/
 
         private void btnDeny_Click(object sender, RoutedEventArgs e)
         {
-            List<Rol> data2 = new List<Rol>();
-            int indice = 0;
-
+            //quitamos el rol selecionado de la lista de asignados
             if (lstAssignedRoles.SelectedItems.Count > 0)
             {
-                data2 = (List<Rol>)lstAssignedRoles.ItemsSource;
+                //cuando tiene un rol selecionado
+                Rol aux = (Rol)lstAssignedRoles.SelectedItem;
+                //el rol lo añadimos a la lista de asignados
+                allowed.Add(aux);
+                assigned.Remove(aux);
 
-                for (int i = 0; i < lstAssignedRoles.SelectedItems.Count; i++)
-                {
-                    indice = lstAssignedRoles.Items.IndexOf(lstAssignedRoles.SelectedItems[i]);
-                    //meter roles en la listbox de asignados
-                    lstAllowedRoles.Items.Add(data2[i]);
-                    //quitar rol de la lista de allowed
-                    data2.RemoveAt(indice);
-                }
-                //lstAssignedRoles.ItemsSource = null;
-                lstAssignedRoles.ItemsSource = data2;
-
+                lstAssignedRoles.ItemsSource = null;
+                lstAssignedRoles.ItemsSource = assigned;
+                lstAllowedRoles.ItemsSource = null;
+                lstAllowedRoles.ItemsSource = allowed;
             }
             else
             {
                 MessageBox.Show("You must select at least one rol");
             }
-        }
 
-        private void Click_Assign()
-        {
-            
         }
 
     }
+
 }

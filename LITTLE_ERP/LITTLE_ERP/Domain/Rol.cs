@@ -39,6 +39,12 @@ namespace LITTLE_ERP.Domain
             return description;
         }
 
+        public override bool Equals(object obj)
+        {
+            return obj is Rol rol &&
+                   idRol == rol.idRol &&
+                   description == rol.description;
+        }
     }
 
     

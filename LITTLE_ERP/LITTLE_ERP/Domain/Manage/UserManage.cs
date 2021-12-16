@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using LITTLE_ERP.SomeResources;
 
 namespace LITTLE_ERP.Domain.Manage
 {
@@ -91,6 +92,13 @@ namespace LITTLE_ERP.Domain.Manage
             Search.setData("Update users set name='"+newName+"' where idUser = " + user.idUser);
         }
 
+        public void UpdatePass(User user, String newPass) //Modify the password
+        {
+            ConnectOracle Search = new ConnectOracle();
+
+            Search.setData("Update users set password='" + SomeResources.Useful.getHashSha256(newPass) + "' where idUser = " + user.idUser);
+        }
+
         public void addRol(Rol rol, User user) //Add a role to the user
         {
             ConnectOracle Search = new ConnectOracle();
@@ -98,6 +106,13 @@ namespace LITTLE_ERP.Domain.Manage
             int maximun = Convert.ToInt32("0" + Search.DLookUp("max(IDUSER_ROL)", "users_roles", "")) + 1;
 
             Search.setData("INSERT INTO users_roles VALUES(" + maximun + ",'" + user.idUser + "','" + rol.idRol + "')");
+        }
+
+        public void deleteRoles(User user)
+        {
+            ConnectOracle Search = new ConnectOracle();
+
+            Search.setData("DELETE FROM users_roles where idUser = "+user.idUser);
         }
 
         public void setRolList(User user) //Retrieves the roles assigned to the user and puts them in the list of user roles

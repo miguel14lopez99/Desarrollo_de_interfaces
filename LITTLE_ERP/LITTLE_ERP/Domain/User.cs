@@ -90,6 +90,11 @@ namespace LITTLE_ERP.Domain
             manage.addRol(rol, this);
         }
 
+        public void deleteRoles()
+        {
+            manage.deleteRoles(this);
+        }
+
         public void setRolList()
         {
             manage.setRolList(this);
@@ -98,6 +103,11 @@ namespace LITTLE_ERP.Domain
         public void updateName(String name)
         {
             manage.UpdateName(this, name);
+        }
+
+        public void updatePass(String pass)
+        {
+            manage.UpdatePass(this, pass);
         }
 
         public int getUserID(String login, String pass)

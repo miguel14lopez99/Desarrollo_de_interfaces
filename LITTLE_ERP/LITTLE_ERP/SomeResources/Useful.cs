@@ -5,11 +5,11 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LITTLE_ERP.Resources
+namespace LITTLE_ERP.SomeResources
 {
-    class useful
+    class Useful
     {
-        public string getHashSha256(string text)
+        public static string getHashSha256(string text)
         {
             byte[] bytes = Encoding.UTF8.GetBytes(text);
             SHA256Managed hashstring = new SHA256Managed();

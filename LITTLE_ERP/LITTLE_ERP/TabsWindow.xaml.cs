@@ -32,16 +32,10 @@ namespace LITTLE_ERP
             InitializeComponent();
             lblUserName.Content = "Name: " + SetUser.name;
             lblDate.Content = "Date: " + ahora.ToString("G");
+            lblUsername.Content = SetUser.name;
 
-            if(setUser.idUser != 1) //root
+            if (setUser.idUser != 1) //root
             {
-                if (setUser.userPermissions.showUser)
-                {
-                    User aux = new User();
-                    aux.readAll();
-                    dgrUsers.ItemsSource = aux.manage.list;
-                }
-
                 if (!setUser.userPermissions.addUser)
                     btnAdd.IsEnabled = false;
                 if (!setUser.userPermissions.deleteUser)
@@ -49,6 +43,22 @@ namespace LITTLE_ERP
                 if (!setUser.userPermissions.editUser)
                     btnModify.IsEnabled = false;
             }
+            if (setUser.userPermissions.showUser || setUser.idUser == 1)
+            {
+                User aux = new User();
+                aux.readAll();
+                dgrUsers.ItemsSource = aux.manage.list;
+            }
+
+            //actualizar roles
+            String sRoles = "";
+
+            foreach (Rol rol in setUser.rolesList)
+            {
+                sRoles += rol.description + "\n";
+            }
+            MessageBox.Show(sRoles);
+            LblRoles.Content = sRoles;
             
         }      
 
@@ -117,7 +127,22 @@ namespace LITTLE_ERP
 
         private void btnChangePwd_Click(object sender, RoutedEventArgs e)
         {
-
+            if (!SomeResources.Useful.getHashSha256(pwdPrevious.Password).Equals(setUser.password))
+            {
+                MessageBox.Show("The previous password is incorrect");
+            }
+            else if (!pwdNew.Password.Equals(pwdRepeat.Password))
+            {
+                MessageBox.Show("The new password must match");
+            }
+            else
+            {
+                setUser.updatePass(pwdNew.Password);
+                MessageBox.Show("Password Changed");
+                pwdPrevious.Password = "";
+                pwdNew.Password = "";
+                pwdRepeat.Password = "";
+            }      
         }
 
     }

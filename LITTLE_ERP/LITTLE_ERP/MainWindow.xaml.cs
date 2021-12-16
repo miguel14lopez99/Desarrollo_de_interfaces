@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using LITTLE_ERP.SomeResources;
 
 namespace LITTLE_ERP
 {
@@ -34,10 +35,8 @@ namespace LITTLE_ERP
 
         public void btnOK_Click(object sender, RoutedEventArgs e)
         {
-            Resources.useful useful = new Resources.useful();
-
             String login = txtLogin.Text;
-            String pass = useful.getHashSha256(pwdPassword.Password);
+            String pass = SomeResources.Useful.getHashSha256(pwdPassword.Password);
 
             User user = new User(login, pass);
 
