@@ -20,8 +20,10 @@ namespace LITTLE_ERP
     /// </summary>
     public partial class NewUser : Window
     {
+        private static User setUser;
         private static User userMod;
         private static Boolean isMod;
+        internal static User SetUser { get => setUser; set => setUser = value; }
         internal static User UserMod { get => userMod; set => userMod = value; }
         public static bool IsMod { get => isMod; set => isMod = value; }
 
@@ -33,6 +35,7 @@ namespace LITTLE_ERP
         public NewUser(Window callingForm)
         {           
             InitializeComponent();
+            lblError.Visibility = Visibility.Hidden;
 
             tabsWindow = callingForm as TabsWindow;
 
@@ -42,27 +45,42 @@ namespace LITTLE_ERP
             Rol aux = new Rol();
             aux.readAll();
 
-            //recuperar los roles
+            //retrieve the roles
             allowed = aux.manage.list;
             lstAllowedRoles.ItemsSource = allowed;
 
+            //if the user is admin, we remove the admin option            
+            for (int i = 0; i < setUser.rolesList.Count; i++)
+            {
+                if (setUser.rolesList[i].description.Equals("admin"))
+                {
+                    for (int j = 0; j < allowed.Count; j++)
+                    {
+                        if (allowed[j].description.Equals("admin"))
+                            allowed.Remove(allowed[j]);
+                    }
+                }
+            }
+            lstAllowedRoles.ItemsSource = allowed;
+
+            //if you click on the Modify button the window changes
             if (isMod)
             {
                 lblTitle.Content = "Modify User";
                 txtPass.IsEnabled = false;
                 txtRepPass.IsEnabled = false;
 
-                //añadir nombre al txtName
+                //add name to txtName
                 txtName.Text = userMod.name;
 
-                //añadir los roles del usuario a su lista
+                //add user roles to the list
                 userMod.setRolList();
 
-                //añadir los roles asignados y ponerlos a la lista
+                //add assigned roles and put them into the list
                 assigned = userMod.rolesList;
                 lstAssignedRoles.ItemsSource = assigned;
 
-                //restar los roles asignados a los allowed           
+                //subtract assigned roles from allowed          
                 for (int i = 0; i < allowed.Count; i++)
                 {
                     for (int j = 0; j < assigned.Count; j++)
@@ -75,9 +93,6 @@ namespace LITTLE_ERP
 
             }
 
-            //no mostrar cuando se abre la ventana
-            lblError.Visibility = Visibility.Hidden;
-            
         }
 
         private void btnOK_Click(object sender, RoutedEventArgs e)
@@ -87,7 +102,7 @@ namespace LITTLE_ERP
 
             if (isMod)
             {
-                //MODIFICAR USUARIO
+                //MODIFY USER
 
                 if (txtName.Text.Length != 0)
                 {
@@ -95,9 +110,17 @@ namespace LITTLE_ERP
                     String newName = txtName.Text;
                     aux.updateName(newName);
 
-                    // se eliminan los roles que ya tenía
+                    //the roles that user already had are eliminated
                     aux.deleteRoles();
 
+                    //the roles are added                       
+                    foreach (Rol rol in assigned)
+                    {
+                        aux.addRol(rol);
+                    }
+
+                    //close the window when the user is modified
+                    this.Close();
                 }
                 else
                 {
@@ -107,55 +130,54 @@ namespace LITTLE_ERP
             }
             else
             {
-                //AÑADIR USUARIO
+                //ADD USER
 
-                //verificamos si ha dejado algún campo en blanco
-
+                //check if you have left any blank fields
                 if (txtName.Text.Length != 0 && txtPass.Password.Length != 0)
                 {
-                    //verificamos si ha introducido bien la contraseña
-
+                    //check if you have entered the password correctly
                     if (txtPass.Password.Equals(txtRepPass.Password))
                     {
+                        //check if you have assigned at least one role
                         if (lstAssignedRoles.Items.Count != 0)
                         {
-                            // se inserta el usuario
+                            //user is inserted
                             aux.name = txtName.Text;
                             aux.password = SomeResources.Useful.getHashSha256(txtPass.Password);
                             aux.insert();
 
+                            //the roles are added                      
+                            foreach (Rol rol in assigned)
+                            {
+                                aux.addRol(rol);
+                            }
+
+                            //close the window when the user is created
+                            this.Close();
                         }
-
-                    }
-                    //verificamos si tiene al menos un rol asignado
-
+                        else
+                        {
+                            lblError.Content = "You must add at least one role";
+                            lblError.Visibility = Visibility.Visible;
+                        }
+                    }                   
                     else
                     {
-                        lblError.Content = "La contraseña no coincide";
+                        lblError.Content = "The password doesn't match";
                         lblError.Visibility = Visibility.Visible;
                     }
-
                 }
                 else
                 {
-                    lblError.Content = "Debe rellenar todos los datos";
+                    lblError.Content = "You must fill all the data";
                     lblError.Visibility = Visibility.Visible;
                 }
 
             }
 
-            // se añaden los roles                        
-            foreach (Rol rol in assigned)
-            {
-                aux.addRol(rol);
-            }
-
-            //actualizamos el data grid
+            //update the data grid
             aux.readAll();
             this.tabsWindow.dgrUsers.ItemsSource = aux.manage.list;
-
-            //cerrar la ventana cuando se crea el usuario
-            this.Close();
 
         }
 
@@ -166,12 +188,10 @@ namespace LITTLE_ERP
 
         private void btnAssign_Click(object sender, RoutedEventArgs e)
         {
-            //añadir el rol selecionado a la lista de asignados
+            //add the selected role to the assigned list and remove from the allowed list
             if (lstAllowedRoles.SelectedItems.Count > 0)
             {
-                //cuando tiene un rol selecionado
                 Rol aux = (Rol)lstAllowedRoles.SelectedItem;
-                //el rol lo añadimos a la lista de asignados
                 assigned.Add(aux);
                 allowed.Remove(aux);
 
@@ -188,12 +208,10 @@ namespace LITTLE_ERP
 
         private void btnDeny_Click(object sender, RoutedEventArgs e)
         {
-            //quitamos el rol selecionado de la lista de asignados
+            //remove the selected role from the assigned list and add to the allowed list
             if (lstAssignedRoles.SelectedItems.Count > 0)
             {
-                //cuando tiene un rol selecionado
                 Rol aux = (Rol)lstAssignedRoles.SelectedItem;
-                //el rol lo añadimos a la lista de asignados
                 allowed.Add(aux);
                 assigned.Remove(aux);
 

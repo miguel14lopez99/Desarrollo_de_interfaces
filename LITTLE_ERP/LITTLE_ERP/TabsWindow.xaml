@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LITTLE_ERP"
         mc:Ignorable="d"
-        Title="TabsWindow" Height="593.566" Width="926.676">
-    <Grid>
+        Title="TabsWindow" Height="593.566" Width="936.676">
+    <Grid HorizontalAlignment="Left" Width="927">
         <TabControl HorizontalAlignment="Left" Height="426" Margin="10,127,0,0" VerticalAlignment="Top" Width="899" TabStripPlacement="Left">
             <TabItem Header="HOME" FontSize="16">
                 <Grid Background="#FFE5E5E5"/>
@@ -22,12 +22,12 @@
                     <GroupBox Header="ROLES" Margin="43,158,282,46">
                         <Label x:Name="LblRoles" Content="rol1" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
                     </GroupBox>
-                    <Image HorizontalAlignment="Left" Width="160" Margin="602,110,0,0" OpacityMask="#FFFBFBFB" Height="160" VerticalAlignment="Top"/>
+                    <Image HorizontalAlignment="Left" Width="160" Margin="602,110,0,0" OpacityMask="#FFFBFBFB" Height="160" VerticalAlignment="Top" Source="SomeResources/profilePhoto.jpg"/>
                     <Label x:Name="lblUsername" Content="nombre usuario" HorizontalAlignment="Left" Margin="602,275,0,0" RenderTransformOrigin="0.386,-0.065" Height="31" VerticalAlignment="Top"/>
                     <Button x:Name="btnChangePwd" Content="Change password" Margin="399,63,282,315" Click="btnChangePwd_Click"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="USERS" FontSize="16">
+            <TabItem x:Name="tabUsers" Header="USERS" FontSize="16">
                 <Grid>
                     <DataGrid x:Name="dgrUsers" Height="338" Margin="10,72,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="813" AutoGenerateColumns="False" IsReadOnly="True">
                         <DataGrid.Columns>
@@ -38,12 +38,13 @@
                     <Button x:Name="btnAdd" Content="New" HorizontalAlignment="Left" Margin="10,25,0,0" VerticalAlignment="Top" Width="84" Height="42" FontSize="14" Click="btnAdd_Click"/>
                     <Button x:Name="btnModify" Content="Modify" HorizontalAlignment="Left" Margin="115,25,0,0" VerticalAlignment="Top" Width="84" Height="42" FontSize="14" Click="btnModify_Click"/>
                     <Button x:Name="btnDelete" Content="Delete" HorizontalAlignment="Left" Margin="221,25,0,0" VerticalAlignment="Top" Width="83" Height="42" FontSize="14" Click="btnDelete_Click"/>
+                    <Button x:Name="btnDelete_Copy" Content="Zoom" HorizontalAlignment="Left" Margin="325,25,0,0" VerticalAlignment="Top" Width="83" Height="42" FontSize="14" Click="btnDelete_Click" IsEnabled="False"/>
                 </Grid>
             </TabItem>
 
         </TabControl>
-        <Image HorizontalAlignment="Left" Height="100" Margin="10,10,0,0" VerticalAlignment="Top" Width="100"/>
+        <Image HorizontalAlignment="Left" Height="100" Margin="13,10,0,0" VerticalAlignment="Top" Width="100" Source="SomeResources/profilePhoto.jpg" Cursor="None"/>
         <Label x:Name="lblUserName" Content="User: " HorizontalAlignment="Left" Margin="140,21,0,0" VerticalAlignment="Top" FontSize="16"/>
-        <Label x:Name="lblDate" Content="Date: " HorizontalAlignment="Left" Margin="443,21,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <Label x:Name="lblDate" Content="Date: " HorizontalAlignment="Left" Margin="139,57,0,0" VerticalAlignment="Top" FontSize="16"/>
     </Grid>
 </Window>

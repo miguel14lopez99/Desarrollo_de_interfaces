@@ -26,11 +26,6 @@ namespace LITTLE_ERP
         public MainWindow()
         {
             InitializeComponent();
-
-            //Domain.User user = new Domain.User();
-            //user.name = "Luis";
-            //user.password = "ssss";
-            //user.insert();
         }
 
         public void btnOK_Click(object sender, RoutedEventArgs e)
@@ -42,32 +37,11 @@ namespace LITTLE_ERP
 
             TabsWindow frm = null;
 
-            Boolean exist = user.check();
+            Boolean exist = user.check(); //Checks if the user exist
 
             if (exist)
             {
                 TabsWindow.SetUser = user;
-
-                //COMPROBACIONES
-                MessageBox.Show("idUser: " + user.idUser);
-                MessageBox.Show("name: " + user.name);
-                MessageBox.Show("pass: " + user.password);
-
-                foreach (Rol rol in user.rolesList)
-                    MessageBox.Show("Rol: " + rol);
-
-                if(user.userPermissions != null)
-                {
-                    if (user.userPermissions.addUser)
-                        MessageBox.Show("ADDUSER");
-                    if (user.userPermissions.editUser)
-                        MessageBox.Show("EDITUSER");
-                    if (user.userPermissions.showUser)
-                        MessageBox.Show("SHOWUSER");
-                    if (user.userPermissions.deleteUser)
-                        MessageBox.Show("DELETEUSER");
-                }
-                //COMPROBACIONES
 
                 frm = new TabsWindow();
                 frm.Show();

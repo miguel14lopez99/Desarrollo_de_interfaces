@@ -30,18 +30,26 @@ namespace LITTLE_ERP
             DateTime ahora = DateTime.Now;
 
             InitializeComponent();
+            //set the connected user name and time
             lblUserName.Content = "Name: " + SetUser.name;
             lblDate.Content = "Date: " + ahora.ToString("G");
             lblUsername.Content = SetUser.name;
 
+            //the use of the application is restricted to different users
             if (setUser.idUser != 1) //root
             {
-                if (!setUser.userPermissions.addUser)
-                    btnAdd.IsEnabled = false;
-                if (!setUser.userPermissions.deleteUser)
-                    btnDelete.IsEnabled = false;
-                if (!setUser.userPermissions.editUser)
-                    btnModify.IsEnabled = false;
+                if (!setUser.userPermissions.usersAccess)
+                {
+                    tabUsers.Visibility = Visibility.Hidden;
+
+                    if (!setUser.userPermissions.addUser)
+                        btnAdd.IsEnabled = false;
+                    if (!setUser.userPermissions.deleteUser)
+                        btnDelete.IsEnabled = false;
+                    if (!setUser.userPermissions.editUser)
+                        btnModify.IsEnabled = false;
+                    
+                }
             }
             if (setUser.userPermissions.showUser || setUser.idUser == 1)
             {
@@ -50,14 +58,13 @@ namespace LITTLE_ERP
                 dgrUsers.ItemsSource = aux.manage.list;
             }
 
-            //actualizar roles
+            //update roles
             String sRoles = "";
 
             foreach (Rol rol in setUser.rolesList)
             {
                 sRoles += rol.description + "\n";
             }
-            MessageBox.Show(sRoles);
             LblRoles.Content = sRoles;
             
         }      
@@ -68,15 +75,17 @@ namespace LITTLE_ERP
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
+            NewUser.SetUser = setUser;
             NewUser.IsMod = false;
             User aux = new User();
 
             aux.readAll();
 
-            //mostrar la ventana de nuevo user
+            //show the new user window
             NewUser newUserWindow = new NewUser(this);
             newUserWindow.Show();
 
+            //update the user list
             dgrUsers.ItemsSource = aux.manage.list;
         }
 
@@ -86,7 +95,7 @@ namespace LITTLE_ERP
             int indice = 0;
             if (dgrUsers.SelectedItems.Count > 0)
             {
-                data = (List<User>)dgrUsers.ItemsSource; // los obj del datagrid a la lista
+                data = (List<User>)dgrUsers.ItemsSource;
 
                 for (int i = 0; i < dgrUsers.SelectedItems.Count; i++)
                 {
@@ -108,9 +117,10 @@ namespace LITTLE_ERP
         {
             if (dgrUsers.SelectedItems.Count == 1)
             {
+                NewUser.SetUser = setUser;
                 NewUser.IsMod = true;
                 NewUser.UserMod = (User)dgrUsers.SelectedItem;
-                //mostrar la ventana de nuevo user
+                //show new user window with changes
                 NewUser newUserWindow = new NewUser(this);
                 newUserWindow.Show();
 
@@ -127,10 +137,12 @@ namespace LITTLE_ERP
 
         private void btnChangePwd_Click(object sender, RoutedEventArgs e)
         {
+            //check if the previous password is the same as the user password
             if (!SomeResources.Useful.getHashSha256(pwdPrevious.Password).Equals(setUser.password))
             {
                 MessageBox.Show("The previous password is incorrect");
             }
+            //check if the new password matches
             else if (!pwdNew.Password.Equals(pwdRepeat.Password))
             {
                 MessageBox.Show("The new password must match");

@@ -18,9 +18,9 @@ namespace LITTLE_ERP.Domain.Manage
             this.list = new List<Rol>();
         }
 
-        public void ReadAll()
+        public void ReadAll() //Read the roles from the database and save them to the list
         {
-            DataSet data = new DataSet(); //se necesita un DataSet para guardar lo que se rec
+            DataSet data = new DataSet();
             ConnectOracle Search = new ConnectOracle();
 
             data = Search.getData("SELECT idRol FROM roles where deleted=0", "roles");
@@ -37,7 +37,7 @@ namespace LITTLE_ERP.Domain.Manage
             }
         }
 
-        public void ReadRol(Rol rol)
+        public void ReadRol(Rol rol) //Read a role through their id and assign their description
         {
             DataSet data = new DataSet();
             ConnectOracle Search = new ConnectOracle();

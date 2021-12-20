@@ -158,5 +158,10 @@
   <ItemGroup>
     <Folder Include="View\" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="SomeResources\profilePhoto.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

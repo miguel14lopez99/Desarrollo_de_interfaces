@@ -14,7 +14,8 @@ namespace LITTLE_ERP.Domain
             public Boolean editUser { get; set; }
             public Boolean showUser { get; set; }
             public Boolean deleteUser { get; set; }
-
+            public Boolean usersAccess { get; set; }
+            
             public UserPermissions()
             {
 
@@ -60,62 +61,62 @@ namespace LITTLE_ERP.Domain
             setPermissions();
         }
 
-        public void insert()
+        public void insert() //Insert a user in the database
         {
             manage.InsertUser(this);
         }
 
-        public Boolean check()
+        public Boolean check() //Checks if a user, with name and password, exists in the database
         {
             return manage.CheckUser(this);
         }
 
-        public void readAll()
+        public void readAll() //Read the users from the database and save them to the list
         {
             manage.ReadAll();
         }
 
-        public void readUser()
+        public void readUser() //Read a user through their id and assign their name
         {
             manage.ReadUser(this);
         }
 
-        public void delete()
+        public void delete() //Delete a user from the database
         {
             manage.DeleteUser(this);
         }
 
-        public void addRol(Rol rol)
+        public void addRol(Rol rol) //Add a role to the user
         {
             manage.addRol(rol, this);
         }
 
-        public void deleteRoles()
+        public void deleteRoles() //Remove all roles from the user
         {
             manage.deleteRoles(this);
         }
 
-        public void setRolList()
+        public void setRolList() //Retrieves the roles assigned to the user and puts them in the list of user roles
         {
             manage.setRolList(this);
         }
 
-        public void updateName(String name)
+        public void updateName(String name) //Modify the username
         {
             manage.UpdateName(this, name);
         }
 
-        public void updatePass(String pass)
+        public void updatePass(String pass) //Modify the password
         {
             manage.UpdatePass(this, pass);
         }
 
-        public int getUserID(String login, String pass)
+        public int getUserID(String login, String pass) //Retrieve the user id through their name and password
         {
             return manage.getUserID(login, pass);
         }
 
-        public void setPermissions()
+        public void setPermissions() //Assign user permissions
         {
             manage.setPermissions(this);
         }

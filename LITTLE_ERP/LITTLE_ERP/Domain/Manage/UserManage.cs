@@ -24,7 +24,7 @@ namespace LITTLE_ERP.Domain.Manage
             DataSet data = new DataSet();
             ConnectOracle Search = new ConnectOracle();
 
-            data = Search.getData("SELECT idUser FROM users where deleted=0", "users"); //all users who are not deleted are recovered
+            data = Search.getData("SELECT idUser FROM users where deleted=0", "users"); //all users who are not deleted or aren't the root user are recovered
 
             DataTable table = data.Tables["users"];
 
@@ -108,7 +108,7 @@ namespace LITTLE_ERP.Domain.Manage
             Search.setData("INSERT INTO users_roles VALUES(" + maximun + ",'" + user.idUser + "','" + rol.idRol + "')");
         }
 
-        public void deleteRoles(User user)
+        public void deleteRoles(User user) //Remove all roles from the user
         {
             ConnectOracle Search = new ConnectOracle();
 
@@ -175,6 +175,9 @@ namespace LITTLE_ERP.Domain.Manage
                             break;
                         case 4:
                             user.userPermissions.deleteUser = true;
+                            break;
+                        case 5:
+                            user.userPermissions.usersAccess = true;
                             break;
                     }
                 }
