@@ -137,7 +137,15 @@ namespace LITTLE_ERP {
         #line hidden
         
         
-        #line 47 "..\..\TabsWindow.xaml"
+        #line 77 "..\..\TabsWindow.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Button btnAdd_Copy;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 84 "..\..\TabsWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Label lblUserName;
         
@@ -145,7 +153,7 @@ namespace LITTLE_ERP {
         #line hidden
         
         
-        #line 48 "..\..\TabsWindow.xaml"
+        #line 85 "..\..\TabsWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Label lblDate;
         
@@ -249,9 +257,18 @@ namespace LITTLE_ERP {
             #line hidden
             return;
             case 13:
-            this.lblUserName = ((System.Windows.Controls.Label)(target));
+            this.btnAdd_Copy = ((System.Windows.Controls.Button)(target));
+            
+            #line 77 "..\..\TabsWindow.xaml"
+            this.btnAdd_Copy.Click += new System.Windows.RoutedEventHandler(this.btnAdd_Click);
+            
+            #line default
+            #line hidden
             return;
             case 14:
+            this.lblUserName = ((System.Windows.Controls.Label)(target));
+            return;
+            case 15:
             this.lblDate = ((System.Windows.Controls.Label)(target));
             return;
             }

@@ -1,0 +1,14 @@
+C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\Ejercicios de Matrices\Ejercicio_Matrices_2\Ejercicio_Matrices_2\bin\Debug\netcoreapp3.1\Ejercicio_Matrices_2.exe
+C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\Ejercicios de Matrices\Ejercicio_Matrices_2\Ejercicio_Matrices_2\bin\Debug\netcoreapp3.1\Ejercicio_Matrices_2.deps.json
+C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\Ejercicios de Matrices\Ejercicio_Matrices_2\Ejercicio_Matrices_2\bin\Debug\netcoreapp3.1\Ejercicio_Matrices_2.runtimeconfig.json
+C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\Ejercicios de Matrices\Ejercicio_Matrices_2\Ejercicio_Matrices_2\bin\Debug\netcoreapp3.1\Ejercicio_Matrices_2.runtimeconfig.dev.json
+C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\Ejercicios de Matrices\Ejercicio_Matrices_2\Ejercicio_Matrices_2\bin\Debug\netcoreapp3.1\Ejercicio_Matrices_2.dll
+C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\Ejercicios de Matrices\Ejercicio_Matrices_2\Ejercicio_Matrices_2\bin\Debug\netcoreapp3.1\Ejercicio_Matrices_2.pdb
+C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\Ejercicios de Matrices\Ejercicio_Matrices_2\Ejercicio_Matrices_2\obj\Debug\netcoreapp3.1\Ejercicio_Matrices_2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\Ejercicios de Matrices\Ejercicio_Matrices_2\Ejercicio_Matrices_2\obj\Debug\netcoreapp3.1\Ejercicio_Matrices_2.AssemblyInfoInputs.cache
+C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\Ejercicios de Matrices\Ejercicio_Matrices_2\Ejercicio_Matrices_2\obj\Debug\netcoreapp3.1\Ejercicio_Matrices_2.AssemblyInfo.cs
+C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\Ejercicios de Matrices\Ejercicio_Matrices_2\Ejercicio_Matrices_2\obj\Debug\netcoreapp3.1\Ejercicio_Matrices_2.csproj.CoreCompileInputs.cache
+C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\Ejercicios de Matrices\Ejercicio_Matrices_2\Ejercicio_Matrices_2\obj\Debug\netcoreapp3.1\Ejercicio_Matrices_2.dll
+C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\Ejercicios de Matrices\Ejercicio_Matrices_2\Ejercicio_Matrices_2\obj\Debug\netcoreapp3.1\Ejercicio_Matrices_2.pdb
+C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\Ejercicios de Matrices\Ejercicio_Matrices_2\Ejercicio_Matrices_2\obj\Debug\netcoreapp3.1\Ejercicio_Matrices_2.genruntimeconfig.cache
+C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\Ejercicios de Matrices\Ejercicio_Matrices_2\Ejercicio_Matrices_2\obj\Debug\netcoreapp3.1\Ejercicio_Matrices_2.csproj.AssemblyReference.cache
