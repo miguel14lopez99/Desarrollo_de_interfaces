@@ -48,6 +48,7 @@ namespace LITTLE_ERP.Domain.Manage
             DataTable table = data.Tables["customers"];
 
             DataRow row = table.Rows[0];
+            customer.NIF = Convert.ToString(row["NIF"]);
             customer.name = Convert.ToString(row["name"]);
             customer.surname = Convert.ToString(row["surname"]);
         }

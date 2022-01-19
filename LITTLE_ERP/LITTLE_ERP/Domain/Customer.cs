@@ -10,12 +10,18 @@ namespace LITTLE_ERP.Domain
     {
 
         public int idCustomer { get; set; }
+        public String NIF { get; set; }
         public String name { get; set; }
         public String surname { get; set; }
         public String address { get; set; }
         public String phone { get; set; }
         public String email { get; set; }
-        public String refZipCodesCities { get; set; }
+        public int refZipCodesCities { get; set; }
+
+        public Region region { get; set; }
+        public State state { get; set; }
+        public City city { get; set; }
+        public ZipCode zipcode { get; set; }
 
         public Manage.CustomerManage manage { get; set; }
 

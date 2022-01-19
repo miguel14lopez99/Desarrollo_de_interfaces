@@ -86,12 +86,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Domain\City.cs" />
     <Compile Include="Domain\Customer.cs" />
     <Compile Include="Domain\Manage\CustomerManage.cs" />
     <Compile Include="Domain\Manage\RolManage.cs" />
     <Compile Include="Domain\Permission.cs" />
     <Compile Include="Domain\Manage\PermissionManage.cs" />
+    <Compile Include="Domain\Region.cs" />
     <Compile Include="Domain\Rol.cs" />
+    <Compile Include="Domain\State.cs" />
+    <Compile Include="Domain\ZipCode.cs" />
     <Compile Include="NewUser.xaml.cs">
       <DependentUpon>NewUser.xaml</DependentUpon>
     </Compile>

@@ -43,7 +43,13 @@
             </TabItem>
             <TabItem Header="CUSTOMERS" FontSize="16">
                 <Grid>
-                    <DataGrid x:Name="dgrCustomers" Margin="10,120,496,12"/>
+                    <DataGrid x:Name="dgrCustomers" Margin="10,120,496,12">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding NIF}" Header="NIF"/>
+                            <DataGridTextColumn Binding="{Binding name}" Header="Name"/>
+                            <DataGridTextColumn Binding="{Binding surname}" Header="Surname"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
                     <TextBox HorizontalAlignment="Left" Height="23" Margin="74,24,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="230"/>
                     <Button x:Name="btnNewCustomer" Content="New" HorizontalAlignment="Left" VerticalAlignment="Top" Width="84" Height="42" FontSize="14" Margin="10,73,0,0"/>
                     <Button x:Name="btnDeleteCustomer" Content="Delete" HorizontalAlignment="Left" VerticalAlignment="Top" Width="84" Height="42" FontSize="14" Margin="99,73,0,0"/>
