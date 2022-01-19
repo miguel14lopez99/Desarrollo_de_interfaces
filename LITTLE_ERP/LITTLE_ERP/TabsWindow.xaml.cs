@@ -30,6 +30,7 @@ namespace LITTLE_ERP
             DateTime ahora = DateTime.Now;
 
             InitializeComponent();
+
             //set the connected user name and time
             lblUserName.Content = "Name: " + SetUser.name;
             lblDate.Content = "Date: " + ahora.ToString("G");
@@ -66,8 +67,17 @@ namespace LITTLE_ERP
                 sRoles += rol.description + "\n";
             }
             LblRoles.Content = sRoles;
+
+            ///
+            /// CUSTOMERS
+            ///
+
+            //Recuperar regiones
+            //mientras no elijas un region los demás combos estarian deshabilitados
+
             
-        }      
+            
+        }
 
         ///
         /// USERS
@@ -156,6 +166,24 @@ namespace LITTLE_ERP
                 pwdRepeat.Password = "";
             }      
         }
+
+        ///
+        /// CUSTOMERS
+        ///
+
+        private void btnSave_Click(object sender, RoutedEventArgs e)
+        {
+
+
+
+        }
+
+       
+
+
+
+
+
 
 
     }

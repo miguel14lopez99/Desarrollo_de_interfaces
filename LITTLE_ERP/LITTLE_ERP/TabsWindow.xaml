@@ -41,44 +41,40 @@
                     <Button x:Name="btnDelete_Copy" Content="Zoom" HorizontalAlignment="Left" Margin="325,25,0,0" VerticalAlignment="Top" Width="83" Height="42" FontSize="14" Click="btnDelete_Click" IsEnabled="False"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="CLIENTS" FontSize="16">
+            <TabItem Header="CUSTOMERS" FontSize="16">
                 <Grid>
-                    <DataGrid Margin="10,120,540,12"/>
-                    <TextBox HorizontalAlignment="Left" Height="23" Margin="10,25,0,0" TextWrapping="Wrap" Text="Search" VerticalAlignment="Top" Width="250"/>
-                    <Button Content="New" HorizontalAlignment="Left" VerticalAlignment="Top" Width="84" Height="42" FontSize="14" Margin="10,73,0,0"/>
-                    <Button Content="Delete" HorizontalAlignment="Left" VerticalAlignment="Top" Width="84" Height="42" FontSize="14" Margin="99,73,0,0"/>
-                    <Label Content="NIF" Margin="374,20,391,371"/>
-                    <Label Content="Name" Margin="359,54,386,337"/>
-                    <Label Content="Surname" Margin="339,88,386,303"/>
-                    <Label Content="Address" Margin="344,122,386,269"/>
-                    <Label Content="Phone" Margin="354,156,391,235"/>
-                    <Label Content="Email" Margin="359,190,386,201"/>
-                    <Label Content="Region" Margin="354,224,386,161"/>
-                    <TextBox Height="23" TextWrapping="Wrap" Text="TextBox" Width="120" Margin="414,24,266,373"/>
-                    <TextBox Height="23" TextWrapping="Wrap" Text="TextBox" Width="120" Margin="414,58,266,339"/>
-                    <TextBox Height="23" TextWrapping="Wrap" Text="TextBox" Width="120" Margin="414,94,266,303"/>
-                    <TextBox Height="23" TextWrapping="Wrap" Text="TextBox" Width="120" Margin="414,126,266,271"/>
-                    <TextBox Height="23" TextWrapping="Wrap" Text="TextBox" Width="120" Margin="414,160,266,237"/>
-                    <TextBox Height="23" TextWrapping="Wrap" Text="TextBox" Width="120" Margin="414,194,266,203"/>
-                    <TextBox Height="23" TextWrapping="Wrap" Text="TextBox" Width="120" Margin="414,340,266,57"/>
-                    <Label Content="State" Margin="368,259,387,126"/>
-                    <Label Content="City" Margin="376,296,384,89"/>
-                    <Label Content="ZIP code" Margin="342,336,383,49"/>
-                    <ComboBox HorizontalAlignment="Left" Margin="414,264,0,0" VerticalAlignment="Top" Width="120"/>
-                    <ComboBox HorizontalAlignment="Left" Margin="414,227,0,0" VerticalAlignment="Top" Width="120"/>
-                    <ComboBox HorizontalAlignment="Left" Margin="414,300,0,0" VerticalAlignment="Top" Width="120"/>
-                    <ComboBox HorizontalAlignment="Left" Margin="414,368,0,0" VerticalAlignment="Top" Width="120"/>
-                    <Button Content="Save" HorizontalAlignment="Left" VerticalAlignment="Top" Width="84" Height="42" FontSize="14" Margin="620,163,0,0"/>
+                    <DataGrid x:Name="dgrCustomers" Margin="10,120,496,12"/>
+                    <TextBox HorizontalAlignment="Left" Height="23" Margin="74,24,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="230"/>
+                    <Button x:Name="btnNewCustomer" Content="New" HorizontalAlignment="Left" VerticalAlignment="Top" Width="84" Height="42" FontSize="14" Margin="10,73,0,0"/>
+                    <Button x:Name="btnDeleteCustomer" Content="Delete" HorizontalAlignment="Left" VerticalAlignment="Top" Width="84" Height="42" FontSize="14" Margin="99,73,0,0"/>
+                    <Label Content="NIF" Margin="373,20,380,371"/>
+                    <Label Content="Name" Margin="354,54,380,337"/>
+                    <Label Content="Surname" Margin="333,88,380,303"/>
+                    <Label Content="Address" Margin="342,122,380,269"/>
+                    <Label Content="Phone" Margin="354,156,380,235"/>
+                    <Label Content="Email" Margin="359,190,380,201"/>
+                    <Label Content="Region" Margin="348,224,380,161"/>
+                    <TextBox x:Name="txtNIF" Height="23" TextWrapping="Wrap" Margin="414,24,36,373"/>
+                    <TextBox x:Name="txtName" Height="23" TextWrapping="Wrap" Margin="414,58,36,339"/>
+                    <TextBox x:Name="txtSurname" Height="23" TextWrapping="Wrap" Margin="414,94,36,303"/>
+                    <TextBox x:Name="txtAddress" Height="23" TextWrapping="Wrap" Margin="414,126,36,271"/>
+                    <TextBox x:Name="txtPhone" Height="23" TextWrapping="Wrap" Margin="414,160,36,237"/>
+                    <TextBox x:Name="txtEmail" Height="23" TextWrapping="Wrap" Margin="414,194,36,203"/>
+                    <TextBox x:Name="txtZipCode" Height="23" TextWrapping="Wrap" Margin="414,340,206,57"/>
+                    <Label Content="State" Margin="363,259,381,126"/>
+                    <Label Content="City" Margin="368,296,381,89"/>
+                    <Label Content="ZIP code" Margin="338,336,381,49"/>
+                    <ComboBox x:Name="cmbState" HorizontalAlignment="Left" Margin="414,264,0,0" VerticalAlignment="Top" Width="169"/>
+                    <ComboBox x:Name="cmbRegion" HorizontalAlignment="Left" Margin="414,227,0,0" VerticalAlignment="Top" Width="169"/>
+                    <ComboBox x:Name="cmbCity" HorizontalAlignment="Left" Margin="414,300,0,0" VerticalAlignment="Top" Width="169"/>
+                    <ComboBox x:Name="cmbZipCode" HorizontalAlignment="Left" Margin="414,368,0,0" VerticalAlignment="Top" Width="169"/>
+                    <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Left" VerticalAlignment="Top" Width="84" Height="42" FontSize="14" Margin="638,290,0,0" Click="btnSave_Click"/>
+                    <Label Content="Search" Margin="13,20,716,371"/>
                 </Grid>
             </TabItem>
             <TabItem Header="PRODUCTS" FontSize="16">
                 <Grid Background="#FFE5E5E5"/>
             </TabItem>
-            <Button x:Name="btnAdd_Copy" Content="New" HorizontalAlignment="Left" VerticalAlignment="Top" Width="84" Height="42" FontSize="14" Click="btnAdd_Click"/>
-
-
-
-
         </TabControl>
         <Image HorizontalAlignment="Left" Height="100" Margin="13,10,0,0" VerticalAlignment="Top" Width="100" Source="SomeResources/profilePhoto.jpg" Cursor="None"/>
         <Label x:Name="lblUserName" Content="User: " HorizontalAlignment="Left" Margin="140,21,0,0" VerticalAlignment="Top" FontSize="16"/>
