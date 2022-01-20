@@ -75,7 +75,9 @@ namespace LITTLE_ERP
             //Recuperar regiones
             //mientras no elijas un region los demás combos estarian deshabilitados
 
-            
+            Region auxR = new Region();
+            auxR.ReadAll();
+            cmbRegion.ItemsSource = auxR.manage.listR;
             
         }
 
@@ -174,17 +176,64 @@ namespace LITTLE_ERP
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
 
+            //insert del cliente
+            Customer aux = new Customer();
+            aux.NIF = txtNIF.Text;
+            aux.name = txtName.Text;
+            aux.surname = txtSurname.Text;
+            aux.address = txtAddress.Text;
+            aux.phone = txtPhone.Text;
+            aux.email = txtEmail.Text;
 
 
         }
 
-       
+        private void cmbRegion_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
 
+            Region region = (Region)cmbRegion.SelectedItem;
 
+            State auxS = new State();
+            auxS.ReadAll(region);
+            cmbState.ItemsSource = auxS.manage.listS;
 
+        }
 
+        private void cmbState_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
 
+            State state = (State)cmbState.SelectedItem;
 
+            City auxC = new City();
+            auxC.ReadAll(state);
+            cmbCity.ItemsSource = auxC.manage.listC;
 
+        }
+
+        private void cmbCity_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+            City city = (City)cmbCity.SelectedItem;
+
+            ZipCode auxZ = new ZipCode();
+            auxZ.ReadAll(city);
+            cmbZipCode.ItemsSource = auxZ.manage.listZ;
+            
+            if(auxZ.manage.listZ.Count == 1)
+            {
+                txtZipCode.Text = auxZ.manage.listZ[0].name.ToString();
+                cmbZipCode.SelectedItem = auxZ.manage.listZ[0];
+            }
+            
+        }
+
+        private void cmbZipCode_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+            ZipCode zipCode = (ZipCode)cmbZipCode.SelectedItem;
+
+            txtZipCode.Text = zipCode.name.ToString();
+
+        }
     }
 }

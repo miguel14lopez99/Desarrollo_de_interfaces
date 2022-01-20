@@ -6,6 +6,18 @@
         xmlns:local="clr-namespace:LITTLE_ERP"
         mc:Ignorable="d"
         Title="TabsWindow" Height="593.566" Width="936.676">
+    <Window.Resources>
+        <DataTemplate x:Key="ComboTemplate">
+            <StackPanel Orientation="Horizontal">
+                <Border BorderThickness="1" BorderBrush="Black">
+                    <TextBlock Text="{Binding Path=id}"/>
+                </Border>
+                <Border BorderThickness="1" BorderBrush="Black">
+                    <TextBlock Text="{Binding Path=name}"/>
+                </Border>
+            </StackPanel>
+        </DataTemplate>
+    </Window.Resources>
     <Grid HorizontalAlignment="Left" Width="927">
         <TabControl HorizontalAlignment="Left" Height="426" Margin="10,127,0,0" VerticalAlignment="Top" Width="899" TabStripPlacement="Left">
             <TabItem Header="HOME" FontSize="16">
@@ -70,10 +82,10 @@
                     <Label Content="State" Margin="363,259,381,126"/>
                     <Label Content="City" Margin="368,296,381,89"/>
                     <Label Content="ZIP code" Margin="338,336,381,49"/>
-                    <ComboBox x:Name="cmbState" HorizontalAlignment="Left" Margin="414,264,0,0" VerticalAlignment="Top" Width="169"/>
-                    <ComboBox x:Name="cmbRegion" HorizontalAlignment="Left" Margin="414,227,0,0" VerticalAlignment="Top" Width="169"/>
-                    <ComboBox x:Name="cmbCity" HorizontalAlignment="Left" Margin="414,300,0,0" VerticalAlignment="Top" Width="169"/>
-                    <ComboBox x:Name="cmbZipCode" HorizontalAlignment="Left" Margin="414,368,0,0" VerticalAlignment="Top" Width="169"/>
+                    <ComboBox x:Name="cmbState" HorizontalAlignment="Left" Margin="414,264,0,0" VerticalAlignment="Top" Width="169" ItemTemplate="{StaticResource ComboTemplate}" SelectionChanged="cmbState_SelectionChanged"/>
+                    <ComboBox x:Name="cmbRegion" HorizontalAlignment="Left" Margin="414,227,0,0" VerticalAlignment="Top" Width="169" ItemTemplate="{StaticResource ComboTemplate}" SelectionChanged="cmbRegion_SelectionChanged"/>
+                    <ComboBox x:Name="cmbCity" HorizontalAlignment="Left" Margin="414,300,0,0" VerticalAlignment="Top" Width="169" ItemTemplate="{StaticResource ComboTemplate}" SelectionChanged="cmbCity_SelectionChanged"/>
+                    <ComboBox x:Name="cmbZipCode" HorizontalAlignment="Left" Margin="414,368,0,0" VerticalAlignment="Top" Width="169" ItemTemplate="{StaticResource ComboTemplate}" SelectionChanged="cmbZipCode_SelectionChanged"/>
                     <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Left" VerticalAlignment="Top" Width="84" Height="42" FontSize="14" Margin="638,290,0,0" Click="btnSave_Click"/>
                     <Label Content="Search" Margin="13,20,716,371"/>
                 </Grid>
