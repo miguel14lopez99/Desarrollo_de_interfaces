@@ -1,0 +1,22 @@
+[
+    {
+        "DNI": "04567234",
+        "Name": "Jorge",
+        "Gender": "Male"
+    },
+    {
+        "DNI": "06587334",
+        "Name": "Marta",
+        "Gender": "Female"
+    },
+    {
+        "DNI": "04463231",
+        "Name": "Anna",
+        "Gender": "Female"
+    },
+    {
+        "DNI": "06567236",
+        "Name": "Asi",
+        "Gender": "Male"
+    }
+]

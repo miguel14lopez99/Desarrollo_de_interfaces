@@ -1,7 +1,4 @@
 C:\Users\B15-04m\Documents\Repositorios\Disenio_de_interfaces\LITTLE_ERP\LITTLE_ERP\obj\Debug\LITTLE_ERP.csproj.AssemblyReference.cache
-C:\Users\B15-04m\Documents\Repositorios\Disenio_de_interfaces\LITTLE_ERP\LITTLE_ERP\obj\Debug\MainWindow.g.cs
-C:\Users\B15-04m\Documents\Repositorios\Disenio_de_interfaces\LITTLE_ERP\LITTLE_ERP\obj\Debug\NewUser.g.cs
-C:\Users\B15-04m\Documents\Repositorios\Disenio_de_interfaces\LITTLE_ERP\LITTLE_ERP\obj\Debug\TabsWindow.g.cs
 C:\Users\B15-04m\Documents\Repositorios\Disenio_de_interfaces\LITTLE_ERP\LITTLE_ERP\obj\Debug\App.g.cs
 C:\Users\B15-04m\Documents\Repositorios\Disenio_de_interfaces\LITTLE_ERP\LITTLE_ERP\obj\Debug\LITTLE_ERP_MarkupCompile.cache
 C:\Users\B15-04m\Documents\Repositorios\Disenio_de_interfaces\LITTLE_ERP\LITTLE_ERP\obj\Debug\LITTLE_ERP_MarkupCompile.lref
@@ -27,9 +24,6 @@ C:\Users\B15-04m\Documents\Repositorios\Disenio_de_interfaces\LITTLE_ERP\LITTLE_
 C:\Users\B15-04m\Documents\Repositorios\Disenio_de_interfaces\LITTLE_ERP\LITTLE_ERP\bin\Debug\System.Text.Json.xml
 C:\Users\B15-04m\Documents\Repositorios\Disenio_de_interfaces\LITTLE_ERP\LITTLE_ERP\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\B15-04m\Documents\Repositorios\Disenio_de_interfaces\LITTLE_ERP\LITTLE_ERP\bin\Debug\System.ValueTuple.xml
-C:\Users\B15-04m\Documents\Repositorios\Disenio_de_interfaces\LITTLE_ERP\LITTLE_ERP\obj\Debug\MainWindow.baml
-C:\Users\B15-04m\Documents\Repositorios\Disenio_de_interfaces\LITTLE_ERP\LITTLE_ERP\obj\Debug\NewUser.baml
-C:\Users\B15-04m\Documents\Repositorios\Disenio_de_interfaces\LITTLE_ERP\LITTLE_ERP\obj\Debug\TabsWindow.baml
 C:\Users\B15-04m\Documents\Repositorios\Disenio_de_interfaces\LITTLE_ERP\LITTLE_ERP\obj\Debug\LITTLE_ERP.g.resources
 C:\Users\B15-04m\Documents\Repositorios\Disenio_de_interfaces\LITTLE_ERP\LITTLE_ERP\obj\Debug\LITTLE_ERP.Properties.Resources.resources
 C:\Users\B15-04m\Documents\Repositorios\Disenio_de_interfaces\LITTLE_ERP\LITTLE_ERP\obj\Debug\LITTLE_ERP.csproj.GenerateResource.cache
@@ -76,3 +70,9 @@ C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\LITTLE_ERP\LITTLE_ER
 C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\LITTLE_ERP\LITTLE_ERP\obj\Debug\LITTLE_ERP.csproj.CopyComplete
 C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\LITTLE_ERP\LITTLE_ERP\obj\Debug\LITTLE_ERP.exe
 C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\LITTLE_ERP\LITTLE_ERP\obj\Debug\LITTLE_ERP.pdb
+C:\Users\B15-04m\Documents\Repositorios\Disenio_de_interfaces\LITTLE_ERP\LITTLE_ERP\obj\Debug\View\MainWindow.g.cs
+C:\Users\B15-04m\Documents\Repositorios\Disenio_de_interfaces\LITTLE_ERP\LITTLE_ERP\obj\Debug\View\NewUser.g.cs
+C:\Users\B15-04m\Documents\Repositorios\Disenio_de_interfaces\LITTLE_ERP\LITTLE_ERP\obj\Debug\View\TabsWindow.g.cs
+C:\Users\B15-04m\Documents\Repositorios\Disenio_de_interfaces\LITTLE_ERP\LITTLE_ERP\obj\Debug\View\MainWindow.baml
+C:\Users\B15-04m\Documents\Repositorios\Disenio_de_interfaces\LITTLE_ERP\LITTLE_ERP\obj\Debug\View\NewUser.baml
+C:\Users\B15-04m\Documents\Repositorios\Disenio_de_interfaces\LITTLE_ERP\LITTLE_ERP\obj\Debug\View\TabsWindow.baml

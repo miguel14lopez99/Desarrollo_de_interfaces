@@ -55,7 +55,7 @@
             </TabItem>
             <TabItem Header="CUSTOMERS" FontSize="16">
                 <Grid>
-                    <DataGrid x:Name="dgrCustomers" Margin="10,120,496,12">
+                    <DataGrid x:Name="dgrCustomers" Margin="10,120,496,12" AutoGenerateColumns="False" IsReadOnly="True" SelectionChanged="dgrCustomers_SelectionChanged">
                         <DataGrid.Columns>
                             <DataGridTextColumn Binding="{Binding NIF}" Header="NIF"/>
                             <DataGridTextColumn Binding="{Binding name}" Header="Name"/>
@@ -64,7 +64,7 @@
                     </DataGrid>
                     <TextBox HorizontalAlignment="Left" Height="23" Margin="74,24,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="230"/>
                     <Button x:Name="btnNewCustomer" Content="New" HorizontalAlignment="Left" VerticalAlignment="Top" Width="84" Height="42" FontSize="14" Margin="10,73,0,0"/>
-                    <Button x:Name="btnDeleteCustomer" Content="Delete" HorizontalAlignment="Left" VerticalAlignment="Top" Width="84" Height="42" FontSize="14" Margin="99,73,0,0"/>
+                    <Button x:Name="btnDeleteCustomer" Content="Delete" HorizontalAlignment="Left" VerticalAlignment="Top" Width="84" Height="42" FontSize="14" Margin="99,73,0,0" Click="btnDeleteCustomer_Click"/>
                     <Label Content="NIF" Margin="373,20,380,371"/>
                     <Label Content="Name" Margin="354,54,380,337"/>
                     <Label Content="Surname" Margin="333,88,380,303"/>
@@ -78,7 +78,7 @@
                     <TextBox x:Name="txtAddress" Height="23" TextWrapping="Wrap" Margin="414,126,36,271"/>
                     <TextBox x:Name="txtPhone" Height="23" TextWrapping="Wrap" Margin="414,160,36,237"/>
                     <TextBox x:Name="txtEmail" Height="23" TextWrapping="Wrap" Margin="414,194,36,203"/>
-                    <TextBox x:Name="txtZipCode" Height="23" TextWrapping="Wrap" Margin="414,340,206,57"/>
+                    <TextBox x:Name="txtZipCode" Height="23" TextWrapping="Wrap" Margin="414,340,206,57" TextChanged="txtZipCode_TextChanged"/>
                     <Label Content="State" Margin="363,259,381,126"/>
                     <Label Content="City" Margin="368,296,381,89"/>
                     <Label Content="ZIP code" Margin="338,336,381,49"/>
@@ -92,6 +92,11 @@
             </TabItem>
             <TabItem Header="PRODUCTS" FontSize="16">
                 <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem Header="SUPLIERS" FontSize="16">
+                <Grid>
+                    
+                </Grid>
             </TabItem>
         </TabControl>
         <Image HorizontalAlignment="Left" Height="100" Margin="13,10,0,0" VerticalAlignment="Top" Width="100" Source="SomeResources/profilePhoto.jpg" Cursor="None"/>

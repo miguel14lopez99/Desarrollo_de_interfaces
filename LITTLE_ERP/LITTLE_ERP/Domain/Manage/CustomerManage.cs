@@ -59,18 +59,24 @@ namespace LITTLE_ERP.Domain.Manage
             customer.NIF = Convert.ToString(row["NIF"]);
             customer.name = Convert.ToString(row["name"]);
             customer.surname = Convert.ToString(row["surname"]);
+            customer.address = Convert.ToString(row["address"]);
+            customer.phone = Convert.ToString(row["phone"]);
+            customer.email = Convert.ToString(row["email"]);
+            customer.refZipCodesCities = Convert.ToInt32(row["refZipCodesCities"]);
+
         }
 
         public void InsertCustomer(Customer customer)
         {
             ConnectOracle Search = new ConnectOracle();
 
-            int maximun = Convert.ToInt32("0" + Search.DLookUp("max(idUser)", "users", "")) + 1;
+            int maximun = Convert.ToInt32("0" + Search.DLookUp("max(idCustomer)", "customers", "")) + 1;
 
             customer.idCustomer = maximun;
+            customer.refZipCodesCities = 123;
 
-            Search.setData("Insert into customers(idCustomer, name, surname, address, phone, email, refzipcodescities, deleted)" +
-                " values ("+customer.idCustomer+", '"+customer.name+"', '"+customer.address+"', '"+customer.address+"', "+customer.phone+", '"+customer.email+"', "+customer.refZipCodesCities+", 0)");
+            Search.setData("Insert into customers(idCustomer, NIF, name, surname, address, phone, email, refzipcodescities, deleted)" +
+                " values ("+customer.idCustomer+", '"+ customer.NIF +"', '"+customer.name+"', '"+customer.surname+"', '"+customer.address+"', '"+customer.phone+"', '"+customer.email+"', "+customer.refZipCodesCities+", 0)");
 
         }
 

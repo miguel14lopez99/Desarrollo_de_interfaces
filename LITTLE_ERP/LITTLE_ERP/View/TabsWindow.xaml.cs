@@ -78,7 +78,11 @@ namespace LITTLE_ERP
             Region auxR = new Region();
             auxR.ReadAll();
             cmbRegion.ItemsSource = auxR.manage.listR;
-            
+
+            Customer auxC = new Customer();
+            auxC.ReadAll();
+            dgrCustomers.ItemsSource = auxC.manage.list;
+
         }
 
         ///
@@ -185,6 +189,9 @@ namespace LITTLE_ERP
             aux.phone = txtPhone.Text;
             aux.email = txtEmail.Text;
 
+            aux.Insert();
+            aux.ReadAll();
+            dgrCustomers.ItemsSource = aux.manage.list;
 
         }
 
@@ -234,6 +241,48 @@ namespace LITTLE_ERP
 
             txtZipCode.Text = zipCode.name.ToString();
 
+        }
+
+        private void btnDeleteCustomer_Click(object sender, RoutedEventArgs e)
+        {
+            List<Customer> data = new List<Customer>();
+            int indice = 0;
+            if (dgrCustomers.SelectedItems.Count > 0)
+            {
+                data = (List<Customer>)dgrCustomers.ItemsSource;
+
+                for (int i = 0; i < dgrCustomers.SelectedItems.Count; i++)
+                {
+                    indice = dgrCustomers.Items.IndexOf(dgrCustomers.SelectedItems[i]);
+                    data.RemoveAt(indice);
+                    Customer row = (Customer)dgrCustomers.SelectedItems[i];
+                    row.Delete();
+                }
+                dgrCustomers.ItemsSource = null;
+                dgrCustomers.ItemsSource = data;
+            }
+            else
+            {
+                MessageBox.Show("You must select at least one row");
+            }
+        }
+
+        private void dgrCustomers_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Customer aux = (Customer)dgrCustomers.SelectedItem;
+
+            txtNIF.Text = aux.NIF;
+            txtName.Text = aux.name;
+            txtSurname.Text = aux.surname;
+            txtPhone.Text = aux.phone;
+            txtEmail.Text = aux.email;
+            txtAddress.Text = aux.address;
+            txtZipCode.Text = aux.refZipCodesCities.ToString();
+        }
+
+        private void txtZipCode_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            //busca en la base de datos region, state, city
         }
     }
 }
