@@ -25,9 +25,22 @@ namespace LITTLE_ERP.Domain
             this.id = idRegion;
         }
 
+        public Region(int idRegion, String name)
+        {
+            this.manage = new Manage.CustomerManage();
+            this.id = idRegion;
+            this.name = name;
+        }
+
         public void ReadAll()
         {
             manage.ReadAllRegions();
+        }
+
+        public override bool Equals(object obj)
+        {
+            return obj is Region region &&
+                   id == region.id;
         }
     }
 }

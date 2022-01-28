@@ -133,12 +133,21 @@ namespace LITTLE_ERP
         {
             if (dgrUsers.SelectedItems.Count == 1)
             {
-                NewUser.SetUser = setUser;
-                NewUser.IsMod = true;
-                NewUser.UserMod = (User)dgrUsers.SelectedItem;
-                //show new user window with changes
-                NewUser newUserWindow = new NewUser(this);
-                newUserWindow.Show();
+                User modUser = (User)dgrUsers.SelectedItem;
+                if (SetUser.idUser != modUser.idUser)
+                {
+                    NewUser.SetUser = setUser;
+                    NewUser.IsMod = true;
+                    NewUser.UserMod = modUser;
+
+                    //show new user window with changes
+                    NewUser newUserWindow = new NewUser(this);
+                    newUserWindow.Show();
+                } 
+                else
+                {
+                    MessageBox.Show("You can't modify your data");
+                }
 
             }
             else
@@ -180,7 +189,7 @@ namespace LITTLE_ERP
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
 
-            //insert del cliente
+            //insert the client
             Customer aux = new Customer();
             aux.NIF = txtNIF.Text;
             aux.name = txtName.Text;
@@ -277,7 +286,19 @@ namespace LITTLE_ERP
             txtPhone.Text = aux.phone;
             txtEmail.Text = aux.email;
             txtAddress.Text = aux.address;
-            txtZipCode.Text = aux.refZipCodesCities.ToString();
+
+            List<Region> lRegions = (List<Region>) cmbRegion.ItemsSource;
+            cmbRegion.SelectedIndex = lRegions.IndexOf(aux.region);
+
+            List<State> lStates = (List<State>)cmbState.ItemsSource;
+            cmbState.SelectedItem = lStates.IndexOf(aux.state);
+
+            List<City> lCities = (List<City>)cmbCity.ItemsSource;
+            cmbCity.SelectedItem = lCities.IndexOf(aux.city);
+
+            List<ZipCode> lZipCodes = (List<ZipCode>)cmbZipCode.ItemsSource;
+            cmbZipCode.SelectedItem = lZipCodes.IndexOf(aux.zipcode);
+            txtZipCode.Text = aux.zipcode.name;
         }
 
         private void txtZipCode_TextChanged(object sender, TextChangedEventArgs e)

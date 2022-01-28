@@ -64,6 +64,27 @@ namespace LITTLE_ERP.Domain.Manage
             customer.email = Convert.ToString(row["email"]);
             customer.refZipCodesCities = Convert.ToInt32(row["refZipCodesCities"]);
 
+            setZipCityStateRegion(customer);
+        }
+
+        public void setZipCityStateRegion(Customer customer)
+        {
+            DataSet data = new DataSet();
+            ConnectOracle Search = new ConnectOracle();
+
+            data = Search.getData("select z.idZipCode, z.zipCode, c.idCity, c.city, s.idState, s.state, r.idRegion, r.region " +
+                "from cities c, states s, regions r, zipcodes z, zipcodescities zc where " +
+                "zc.refcity = c.idcity and zc.refstate = s.idstate and zc.refzipcode = z.idzipcode and s.refregion = r.idregion and " +
+                "zc.idZipCodesCities = " + customer.refZipCodesCities, "zipcodescities");
+
+            DataTable table = data.Tables["zipcodescities"];
+            DataRow row = table.Rows[0];
+
+            customer.zipcode = new ZipCode(Convert.ToInt32(row["idZipCode"]), Convert.ToString(row["zipCode"]));
+            customer.city = new City(Convert.ToInt32(row["idCity"]), Convert.ToString(row["city"]));
+            customer.state = new State(Convert.ToInt32(row["idState"]), Convert.ToString(row["state"]));
+            customer.region = new Region(Convert.ToInt32(row["idRegion"]), Convert.ToString(row["region"]));
+
         }
 
         public void InsertCustomer(Customer customer)
@@ -73,7 +94,13 @@ namespace LITTLE_ERP.Domain.Manage
             int maximun = Convert.ToInt32("0" + Search.DLookUp("max(idCustomer)", "customers", "")) + 1;
 
             customer.idCustomer = maximun;
-            customer.refZipCodesCities = 123;
+
+            //take REFZIPCODESCITIES from a zipcode
+            DataSet data = new DataSet();
+            data = Search.getData("select zc.idzipcodescities from zipcodes z, zipcodescities zc where zc.refzipcode = z.idzipcode and z.zipcode = '45700'", "zipcodescities");
+            DataTable table = data.Tables["zipcodescities"];
+            DataRow row = table.Rows[0];
+            customer.refZipCodesCities = Convert.ToInt32(row["idzipcodescities"]);
 
             Search.setData("Insert into customers(idCustomer, NIF, name, surname, address, phone, email, refzipcodescities, deleted)" +
                 " values ("+customer.idCustomer+", '"+ customer.NIF +"', '"+customer.name+"', '"+customer.surname+"', '"+customer.address+"', '"+customer.phone+"', '"+customer.email+"', "+customer.refZipCodesCities+", 0)");
@@ -160,7 +187,7 @@ namespace LITTLE_ERP.Domain.Manage
             foreach (DataRow row in table.Rows)
             {
                 aux = new ZipCode(Convert.ToInt32(row["idZipcode"]));
-                aux.name = Convert.ToInt32(row["zipcode"]);
+                aux.name = Convert.ToString(row["zipcode"]);
                 listZ.Add(aux);
             }
 

@@ -34,7 +34,9 @@ namespace LITTLE_ERP.Domain.Manage
             {
                 aux = new User(Convert.ToInt32(row["idUser"]));
                 ReadUser(aux);
-                list.Add(aux);
+                if (aux.idUser != 1) //the program don't show root user
+                    list.Add(aux);
+           
             }
         }
 
@@ -146,8 +148,6 @@ namespace LITTLE_ERP.Domain.Manage
 
         public void setPermissions(User user) //Assign user permissions
         {
-
-
             DataSet data = new DataSet();
             ConnectOracle Search = new ConnectOracle();
 

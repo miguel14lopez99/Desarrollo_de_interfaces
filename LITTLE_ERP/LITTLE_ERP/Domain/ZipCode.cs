@@ -9,7 +9,7 @@ namespace LITTLE_ERP.Domain
     class ZipCode
     {
         public int id { get; set; }
-        public int name { get; set; }
+        public String name { get; set; }
 
         public Manage.CustomerManage manage { get; set; }
 
@@ -24,10 +24,22 @@ namespace LITTLE_ERP.Domain
             this.id = idZipCode;
         }
 
+        public ZipCode(int idZipCode, String name)
+        {
+            this.manage = new Manage.CustomerManage();
+            this.id = idZipCode;
+            this.name = name;
+        }
+
         public void ReadAll(City city)
         {
             manage.ReadAllZipCodes(city);
         }
 
+        public override bool Equals(object obj)
+        {
+            return obj is ZipCode code &&
+                   id == code.id;
+        }
     }
 }

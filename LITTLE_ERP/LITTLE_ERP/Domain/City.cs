@@ -25,9 +25,22 @@ namespace LITTLE_ERP.Domain
             this.id = idCity;
         }
 
+        public City(int idCity, String name)
+        {
+            this.manage = new Manage.CustomerManage();
+            this.id = idCity;
+            this.name = name;
+        }
+
         public void ReadAll(State state)
         {
             manage.ReadAllCities(state);
+        }
+
+        public override bool Equals(object obj)
+        {
+            return obj is City city &&
+                   id == city.id;
         }
     }
 }
