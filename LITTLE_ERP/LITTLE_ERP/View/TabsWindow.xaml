@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LITTLE_ERP"
         mc:Ignorable="d"
-        Title="TabsWindow" Height="607" Width="894">
+        Title="TabsWindow" Height="602" Width="899">
     <Window.Resources>
         <DataTemplate x:Key="ComboTemplate">
             <StackPanel Orientation="Horizontal">
@@ -55,7 +55,8 @@
                     <Button x:Name="btnAdd" Content="New" HorizontalAlignment="Left" Margin="10,25,0,0" VerticalAlignment="Top" Width="84" Height="42" FontSize="14" Click="btnAdd_Click"/>
                     <Button x:Name="btnModify" Content="Modify" HorizontalAlignment="Left" Margin="115,25,0,0" VerticalAlignment="Top" Width="84" Height="42" FontSize="14" Click="btnModify_Click"/>
                     <Button x:Name="btnDelete" Content="Delete" HorizontalAlignment="Left" Margin="221,25,0,0" VerticalAlignment="Top" Width="83" Height="42" FontSize="14" Click="btnDelete_Click"/>
-                    <Button x:Name="btnDelete_Copy" Content="Zoom" HorizontalAlignment="Left" Margin="325,25,0,0" VerticalAlignment="Top" Width="83" Height="42" FontSize="14" Click="btnDelete_Click" IsEnabled="False"/>
+                    <Label Content="Search:" VerticalAlignment="Top" Margin="317,39,0,0" HorizontalAlignment="Left" Width="57"/>
+                    <TextBox x:Name="txtU_Search" VerticalAlignment="Top" Margin="376,44,10,0" TextChanged="txtU_Search_TextChanged"/>
                 </Grid>
             </TabItem>
             <TabItem Header="CUSTOMERS" FontSize="16">
@@ -67,7 +68,7 @@
                             <DataGridTextColumn Binding="{Binding surname}" Header="Surname"/>
                         </DataGrid.Columns>
                     </DataGrid>
-                    <TextBox Height="23" Margin="74,24,498,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                    <TextBox x:Name="txtCustomerSearch" Height="23" Margin="74,24,498,0" TextWrapping="Wrap" VerticalAlignment="Top" TextChanged="txtCustomerSearch_TextChanged"/>
                     <Button x:Name="btnNewCustomer" Content="New" HorizontalAlignment="Left" VerticalAlignment="Top" Width="84" Height="42" FontSize="14" Margin="10,64,0,0" Click="btnNewCustomer_Click"/>
                     <Button x:Name="btnDeleteCustomer" Content="Delete" HorizontalAlignment="Left" VerticalAlignment="Top" Width="84" Height="42" FontSize="14" Margin="103,64,0,0" Click="btnDeleteCustomer_Click"/>
                     <Canvas Margin="0,22,20,23" HorizontalAlignment="Right" Width="460" VerticalAlignment="Stretch" Height="390">
@@ -108,7 +109,7 @@
                         </DataGrid.Columns>
                     </DataGrid>
                     <Label Content="Search:" VerticalAlignment="Top" Margin="10,10,0,0" HorizontalAlignment="Left" Width="65"/>
-                    <TextBox x:Name="txtP_Search" VerticalAlignment="Top" Margin="70,15,267,0"/>
+                    <TextBox x:Name="txtP_Search" VerticalAlignment="Top" Margin="70,15,267,0" TextChanged="txtP_Search_TextChanged"/>
                     <Button x:Name="btnP_New" Content="New" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,64,0,0" Height="42" Width="84" FontSize="14" Click="btnP_New_Click"/>
                     <Button x:Name="btnP_Del" Content="Delete" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="103,64,0,0" Height="42" Width="84" FontSize="14" Click="btnP_Del_Click"/>
                     <Label Content="Form:" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,46,473,0"/>
@@ -127,7 +128,7 @@
                 </Grid>
             </TabItem>
         </TabControl>
-        <Image HorizontalAlignment="Left" Height="100" Margin="10,10,0,0" VerticalAlignment="Top" Width="100" Source="profilePhoto.jpg" Cursor="None"/>
+        <Image HorizontalAlignment="Left" Height="100" Margin="10,10,0,0" VerticalAlignment="Top" Width="100" Source="profilePhoto.jpg" Cursor="None" />
         <Label x:Name="lblUserName" Content="User: " HorizontalAlignment="Left" Margin="140,21,0,0" VerticalAlignment="Top" FontSize="16"/>
         <Label x:Name="lblDate" Content="Date: " Margin="140,57,0,0" VerticalAlignment="Top" FontSize="16" HorizontalAlignment="Left"/>
         <Button x:Name="btnLogout" Content="Log Out" HorizontalAlignment="Right" Margin="0,30,30,0" VerticalAlignment="Top" Width="75" Height="30" Click="btnLogout_Click"/>

@@ -70,5 +70,10 @@ namespace LITTLE_ERP.Domain
         {
             manage.setZipCityStateRegion(this);
         }
+
+        public override string ToString()
+        {
+            return idCustomer + NIF + name + surname + address + phone + email + region.name + state.name + city.name + zipcode.name ;
+        }
     }
 }

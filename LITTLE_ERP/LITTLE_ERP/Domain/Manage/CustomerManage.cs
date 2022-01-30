@@ -16,6 +16,7 @@ namespace LITTLE_ERP.Domain.Manage
         public List<State> listS { get; set; }
         public List<City> listC { get; set; }
         public List<ZipCode> listZ { get; set; }
+        public List<Customer> selectedList { get; set; }
 
         public CustomerManage()
         {
@@ -24,6 +25,7 @@ namespace LITTLE_ERP.Domain.Manage
             this.listS = new List<State>();
             this.listC = new List<City>();
             this.listZ = new List<ZipCode>();
+            this.selectedList = new List<Customer>();
         }
 
         public void ReadAll()
@@ -65,6 +67,22 @@ namespace LITTLE_ERP.Domain.Manage
             customer.refZipCodesCities = Convert.ToInt32(row["refZipCodesCities"]);
 
             setZipCityStateRegion(customer);
+        }
+
+        public void setSelectedList(string pattern)
+        {
+            selectedList.Clear();
+
+            ReadAll();
+
+            foreach (Customer customer in list)
+            {
+                if (customer.ToString().Contains(pattern))
+                {
+                    selectedList.Add(customer);
+                }
+            }
+
         }
 
         public void setZipCityStateRegion(Customer customer)

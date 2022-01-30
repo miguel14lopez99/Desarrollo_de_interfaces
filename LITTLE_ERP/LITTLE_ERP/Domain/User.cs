@@ -118,5 +118,17 @@ namespace LITTLE_ERP.Domain
         {
             manage.setPermissions(this);
         }
+
+        public override string ToString()
+        {
+            String rolesString = "";
+
+            foreach (Rol rol in rolesList)
+            {
+                rolesString = rolesString + rol.ToString();
+            }
+
+            return idUser + name + rolesString;
+        }
     }
 }

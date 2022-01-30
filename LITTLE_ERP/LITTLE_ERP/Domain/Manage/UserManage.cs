@@ -13,10 +13,12 @@ namespace LITTLE_ERP.Domain.Manage
     {
 
         public List<User> list { get; set; } //List where users are stored
+        public List<User> selectedList { get; set; }
 
         public UserManage()
         {
             this.list = new List<User>();
+            this.selectedList = new List<User>();
         }
 
         public void ReadAll() //Read the users from the database and save them to the list
@@ -51,6 +53,21 @@ namespace LITTLE_ERP.Domain.Manage
 
             DataRow row = table.Rows[0];
             user.name = Convert.ToString(row["Name"]);
+        }
+
+        public void setSelectedList(string pattern)
+        {
+            selectedList.Clear();
+
+            ReadAll();
+
+            foreach (User user in list)
+            {
+                if (user.ToString().Contains(pattern))
+                {
+                    selectedList.Add(user);
+                }
+            }
         }
 
         public void InsertUser(User user) //Insert a user in the database
@@ -193,5 +210,6 @@ namespace LITTLE_ERP.Domain.Manage
             
         }
 
+        
     }
 }

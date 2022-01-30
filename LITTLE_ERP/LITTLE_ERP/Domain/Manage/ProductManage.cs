@@ -13,12 +13,14 @@ namespace LITTLE_ERP.Domain.Manage
         public List<Product> list { get; set; }
         public List<Form> listF { get; set; }
         public List<Ingredient> listI { get; set; }
+        public List<Product> selectedList { get; set; }
 
         public ProductManage()
         {
             list = new List<Product>();
             listF = new List<Form>();
             listI = new List<Ingredient>();
+            selectedList = new List<Product>();
         }
 
         public void ReadAll()
@@ -55,6 +57,22 @@ namespace LITTLE_ERP.Domain.Manage
             product.price = Convert.ToDouble(row["price"]);
 
             setFormIngredient(product);
+        }
+
+        public void setSelectedList(string pattern)
+        {
+            selectedList.Clear();
+
+            ReadAll();
+
+            foreach (Product product in list)
+            {
+                if (product.ToString().Contains(pattern))
+                {
+                    selectedList.Add(product);
+                }
+            }
+
         }
 
         public void ReadAllForms()

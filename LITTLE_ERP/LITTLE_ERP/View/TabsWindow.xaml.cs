@@ -203,6 +203,24 @@ namespace LITTLE_ERP
             }
         }
 
+        private void txtU_Search_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            User aux = new User();
+
+            if (txtU_Search.Text.Length != 0)
+            {
+                String pattern = txtU_Search.Text;
+
+                aux.manage.setSelectedList(pattern);
+                dgrUsers.ItemsSource = aux.manage.selectedList;
+            }
+            else
+            {
+                aux.readAll();
+                dgrUsers.ItemsSource = aux.manage.list;
+            }
+        }
+
         ///
         /// PROFILE
         ///
@@ -415,6 +433,24 @@ namespace LITTLE_ERP
 
         }
 
+        private void txtCustomerSearch_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Customer aux = new Customer();
+
+            if (txtCustomerSearch.Text.Length != 0)
+            {
+                String pattern = txtCustomerSearch.Text;
+
+                aux.manage.setSelectedList(pattern);
+                dgrCustomers.ItemsSource = aux.manage.selectedList;
+            }
+            else
+            {
+                aux.ReadAll();
+                dgrCustomers.ItemsSource = aux.manage.list;
+            }
+        }
+
         ///
         /// PRODUCTS
         ///
@@ -425,6 +461,8 @@ namespace LITTLE_ERP
 
             if (aux != null)
             {
+                MessageBox.Show(aux.ToString());
+
                 idProductMod = aux.idProduct;
 
                 txtP_Price.Text = aux.price.ToString();
@@ -490,6 +528,25 @@ namespace LITTLE_ERP
             {
                 MessageBox.Show("You must select at least one row");
             }
+        }   
+
+        private void txtP_Search_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Product aux = new Product();
+
+            if (txtP_Search.Text.Length != 0)
+            {
+                String pattern = txtP_Search.Text;
+
+                aux.manage.setSelectedList(pattern);
+                dgrProducts.ItemsSource = aux.manage.selectedList;
+            }
+            else
+            {
+                aux.ReadAll();
+                dgrProducts.ItemsSource = aux.manage.list;
+            }
         }
+    
     }
 }

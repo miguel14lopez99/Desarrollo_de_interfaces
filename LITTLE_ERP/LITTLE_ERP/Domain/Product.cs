@@ -54,6 +54,11 @@ namespace LITTLE_ERP.Domain
             manage.DeleteProduct(this);
         }
 
+        public override string ToString()
+        {
+            return idProduct + form.frmDesc + ingredient.ingDesc;
+        }
+
 
     }
 }
