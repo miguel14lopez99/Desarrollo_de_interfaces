@@ -5,21 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LITTLE_ERP"
         mc:Ignorable="d"
-        Title="TabsWindow" Height="593.566" Width="936.676">
+        Title="TabsWindow" Height="607" Width="894">
     <Window.Resources>
         <DataTemplate x:Key="ComboTemplate">
             <StackPanel Orientation="Horizontal">
-                <Border BorderThickness="1" BorderBrush="Black">
-                    <TextBlock Text="{Binding Path=id}"/>
-                </Border>
-                <Border BorderThickness="1" BorderBrush="Black">
-                    <TextBlock Text="{Binding Path=name}"/>
-                </Border>
+                <TextBlock Text="{Binding Path=name}"/>
+            </StackPanel>
+        </DataTemplate>
+        <DataTemplate x:Key="ComboTemplateForm">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{Binding Path=frmDesc}"/>
+            </StackPanel>
+        </DataTemplate>
+        <DataTemplate x:Key="ComboTemplateIngredient">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{Binding Path=ingDesc}"/>
             </StackPanel>
         </DataTemplate>
     </Window.Resources>
-    <Grid HorizontalAlignment="Left" Width="927">
-        <TabControl HorizontalAlignment="Left" Height="426" Margin="10,127,0,0" VerticalAlignment="Top" Width="899" TabStripPlacement="Left">
+    <Grid HorizontalAlignment="Stretch" Width="auto" Margin="0,0,0,0">
+        <TabControl Height="auto" Margin="10,115,10,10" Width="auto" TabStripPlacement="Left" HorizontalAlignment="Stretch">
             <TabItem Header="HOME" FontSize="16">
                 <Grid Background="#FFE5E5E5"/>
             </TabItem>
@@ -28,20 +33,20 @@
                     <Label Content="Previous Password" HorizontalAlignment="Left" Margin="43,43,0,0" VerticalAlignment="Top"/>
                     <Label Content="New Password" HorizontalAlignment="Left" Margin="71,74,0,0" VerticalAlignment="Top"/>
                     <Label Content="Repeat Password" HorizontalAlignment="Left" Margin="54,105,0,0" VerticalAlignment="Top"/>
-                    <PasswordBox x:Name="pwdPrevious" HorizontalAlignment="Left" Margin="208,45,0,0" VerticalAlignment="Top" Width="163"/>
-                    <PasswordBox x:Name="pwdNew" HorizontalAlignment="Left" Margin="208,76,0,0" VerticalAlignment="Top" Width="163"/>
-                    <PasswordBox x:Name="pwdRepeat" HorizontalAlignment="Left" Margin="208,107,0,0" VerticalAlignment="Top" Width="163"/>
-                    <GroupBox Header="ROLES" Margin="43,158,282,46">
+                    <PasswordBox x:Name="pwdPrevious" Margin="208,45,453,0" VerticalAlignment="Top"/>
+                    <PasswordBox x:Name="pwdNew" Margin="208,76,453,0" VerticalAlignment="Top"/>
+                    <PasswordBox x:Name="pwdRepeat" Margin="208,107,453,0" VerticalAlignment="Top"/>
+                    <GroupBox Header="ROLES" Margin="43,158,258,46">
                         <Label x:Name="LblRoles" Content="rol1" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
                     </GroupBox>
-                    <Image HorizontalAlignment="Left" Width="160" Margin="602,110,0,0" OpacityMask="#FFFBFBFB" Height="160" VerticalAlignment="Top" Source="SomeResources/profilePhoto.jpg"/>
-                    <Label x:Name="lblUsername" Content="nombre usuario" HorizontalAlignment="Left" Margin="602,275,0,0" RenderTransformOrigin="0.386,-0.065" Height="31" VerticalAlignment="Top"/>
-                    <Button x:Name="btnChangePwd" Content="Change password" Margin="399,63,282,315" Click="btnChangePwd_Click"/>
+                    <Image HorizontalAlignment="Right" Width="160" Margin="0,48,40,0" OpacityMask="#FFFBFBFB" Height="160" VerticalAlignment="Top" Source="profilePhoto.jpg"/>
+                    <Label x:Name="lblUsername" Content="nombre usuario" HorizontalAlignment="Right" Margin="0,212,58,0" RenderTransformOrigin="0.386,-0.065" Height="31" VerticalAlignment="Top"/>
+                    <Button x:Name="btnChangePwd" Content="Change password" Margin="0,49,263,0" Click="btnChangePwd_Click" Height="77" VerticalAlignment="Top" HorizontalAlignment="Right" Width="165"/>
                 </Grid>
             </TabItem>
             <TabItem x:Name="tabUsers" Header="USERS" FontSize="16">
                 <Grid>
-                    <DataGrid x:Name="dgrUsers" Height="338" Margin="10,72,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="813" AutoGenerateColumns="False" IsReadOnly="True">
+                    <DataGrid x:Name="dgrUsers" Margin="10,82,10,10" HorizontalAlignment="Stretch" Width="auto" AutoGenerateColumns="False" IsReadOnly="True">
                         <DataGrid.Columns>
                             <DataGridTextColumn Binding="{Binding idUser}" Header="Id User"/>
                             <DataGridTextColumn Binding="{Binding name}" Header="Name"/>
@@ -62,45 +67,69 @@
                             <DataGridTextColumn Binding="{Binding surname}" Header="Surname"/>
                         </DataGrid.Columns>
                     </DataGrid>
-                    <TextBox HorizontalAlignment="Left" Height="23" Margin="74,24,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="230"/>
-                    <Button x:Name="btnNewCustomer" Content="New" HorizontalAlignment="Left" VerticalAlignment="Top" Width="84" Height="42" FontSize="14" Margin="10,73,0,0"/>
-                    <Button x:Name="btnDeleteCustomer" Content="Delete" HorizontalAlignment="Left" VerticalAlignment="Top" Width="84" Height="42" FontSize="14" Margin="99,73,0,0" Click="btnDeleteCustomer_Click"/>
-                    <Label Content="NIF" Margin="373,20,380,371"/>
-                    <Label Content="Name" Margin="354,54,380,337"/>
-                    <Label Content="Surname" Margin="333,88,380,303"/>
-                    <Label Content="Address" Margin="342,122,380,269"/>
-                    <Label Content="Phone" Margin="354,156,380,235"/>
-                    <Label Content="Email" Margin="359,190,380,201"/>
-                    <Label Content="Region" Margin="348,224,380,161"/>
-                    <TextBox x:Name="txtNIF" Height="23" TextWrapping="Wrap" Margin="414,24,36,373"/>
-                    <TextBox x:Name="txtName" Height="23" TextWrapping="Wrap" Margin="414,58,36,339"/>
-                    <TextBox x:Name="txtSurname" Height="23" TextWrapping="Wrap" Margin="414,94,36,303"/>
-                    <TextBox x:Name="txtAddress" Height="23" TextWrapping="Wrap" Margin="414,126,36,271"/>
-                    <TextBox x:Name="txtPhone" Height="23" TextWrapping="Wrap" Margin="414,160,36,237"/>
-                    <TextBox x:Name="txtEmail" Height="23" TextWrapping="Wrap" Margin="414,194,36,203"/>
-                    <TextBox x:Name="txtZipCode" Height="23" TextWrapping="Wrap" Margin="414,340,206,57" TextChanged="txtZipCode_TextChanged"/>
-                    <Label Content="State" Margin="363,259,381,126"/>
-                    <Label Content="City" Margin="368,296,381,89"/>
-                    <Label Content="ZIP code" Margin="338,336,381,49"/>
-                    <ComboBox x:Name="cmbState" HorizontalAlignment="Left" Margin="414,264,0,0" VerticalAlignment="Top" Width="169" ItemTemplate="{StaticResource ComboTemplate}" SelectionChanged="cmbState_SelectionChanged"/>
-                    <ComboBox x:Name="cmbRegion" HorizontalAlignment="Left" Margin="414,227,0,0" VerticalAlignment="Top" Width="169" ItemTemplate="{StaticResource ComboTemplate}" SelectionChanged="cmbRegion_SelectionChanged"/>
-                    <ComboBox x:Name="cmbCity" HorizontalAlignment="Left" Margin="414,300,0,0" VerticalAlignment="Top" Width="169" ItemTemplate="{StaticResource ComboTemplate}" SelectionChanged="cmbCity_SelectionChanged"/>
-                    <ComboBox x:Name="cmbZipCode" HorizontalAlignment="Left" Margin="414,368,0,0" VerticalAlignment="Top" Width="169" ItemTemplate="{StaticResource ComboTemplate}" SelectionChanged="cmbZipCode_SelectionChanged"/>
-                    <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Left" VerticalAlignment="Top" Width="84" Height="42" FontSize="14" Margin="638,290,0,0" Click="btnSave_Click"/>
+                    <TextBox Height="23" Margin="74,24,498,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                    <Button x:Name="btnNewCustomer" Content="New" HorizontalAlignment="Left" VerticalAlignment="Top" Width="84" Height="42" FontSize="14" Margin="10,64,0,0" Click="btnNewCustomer_Click"/>
+                    <Button x:Name="btnDeleteCustomer" Content="Delete" HorizontalAlignment="Left" VerticalAlignment="Top" Width="84" Height="42" FontSize="14" Margin="103,64,0,0" Click="btnDeleteCustomer_Click"/>
+                    <Canvas Margin="0,22,20,23" HorizontalAlignment="Right" Width="460" VerticalAlignment="Stretch" Height="390">
+                        <Label Content="NIF" HorizontalAlignment="Right" Width="35" Height="34" Canvas.Left="39"/>
+                        <Label Content="Name" HorizontalAlignment="Right" Width="54" Height="34" Canvas.Left="21" Canvas.Top="34"/>
+                        <Label Content="Surname" HorizontalAlignment="Right" Width="75" Height="34" Canvas.Top="68"/>
+                        <Label Content="Address" HorizontalAlignment="Right" Width="66" Height="34" Canvas.Left="4" Canvas.Top="102"/>
+                        <Label Content="Phone" HorizontalAlignment="Right" Width="54" Height="34" Canvas.Left="18" Canvas.Top="136"/>
+                        <Label Content="Email" HorizontalAlignment="Right" Width="49" Height="34" Canvas.Left="23" Canvas.Top="170"/>
+                        <Label Content="Region" HorizontalAlignment="Right" Width="60" Height="40" Canvas.Left="12" Canvas.Top="209"/>
+                        <TextBox x:Name="txtNIF" Height="25" TextWrapping="Wrap" HorizontalAlignment="Right" Width="372" Canvas.Left="77" Canvas.Top="6"/>
+                        <TextBox x:Name="txtName" Height="25" TextWrapping="Wrap" HorizontalAlignment="Right" Width="372" Canvas.Left="77" Canvas.Top="40"/>
+                        <TextBox x:Name="txtSurname" Height="25" TextWrapping="Wrap" HorizontalAlignment="Right" Width="372" Canvas.Left="77" Canvas.Top="76"/>
+                        <TextBox x:Name="txtAddress" Height="25" TextWrapping="Wrap" HorizontalAlignment="Right" Width="372" Canvas.Left="77" Canvas.Top="108"/>
+                        <TextBox x:Name="txtPhone" Height="25" TextWrapping="Wrap" HorizontalAlignment="Right" Width="372" Canvas.Left="77" Canvas.Top="142"/>
+                        <TextBox x:Name="txtEmail" Height="25" TextWrapping="Wrap" HorizontalAlignment="Right" Width="372" Canvas.Left="77" Canvas.Top="176"/>
+                        <TextBox x:Name="txtZipCode" TextWrapping="Wrap" TextChanged="txtZipCode_TextChanged" HorizontalAlignment="Right" Width="215" Height="25" Canvas.Left="77" Canvas.Top="319"/>
+                        <Label Content="State" HorizontalAlignment="Right" Width="45" Height="40" Canvas.Left="28" Canvas.Top="244"/>
+                        <Label Content="City" HorizontalAlignment="Right" Width="40" Height="40" Canvas.Left="34" Canvas.Top="281"/>
+                        <Label Content="ZIP code" HorizontalAlignment="Right" Width="75" Height="40" Canvas.Left="2" Canvas.Top="315"/>
+                        <ComboBox x:Name="cmbState" HorizontalAlignment="Right" Width="215" ItemTemplate="{StaticResource ComboTemplate}" SelectionChanged="cmbState_SelectionChanged" Height="32" VerticalAlignment="Bottom" Canvas.Left="77" Canvas.Top="244"/>
+                        <ComboBox x:Name="cmbRegion" HorizontalAlignment="Right" Width="215" ItemTemplate="{StaticResource ComboTemplate}" SelectionChanged="cmbRegion_SelectionChanged" Height="32" Canvas.Left="77" Canvas.Top="207"/>
+                        <ComboBox x:Name="cmbCity" HorizontalAlignment="Right" Width="215" ItemTemplate="{StaticResource ComboTemplate}" SelectionChanged="cmbCity_SelectionChanged" Height="32" VerticalAlignment="Bottom" Canvas.Left="77" Canvas.Top="280"/>
+                        <ComboBox x:Name="cmbZipCode" HorizontalAlignment="Right" Width="215" ItemTemplate="{StaticResource ComboTemplate}" SelectionChanged="cmbZipCode_SelectionChanged" Height="32" VerticalAlignment="Bottom" Canvas.Left="77" Canvas.Top="349"/>
+                        <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Right" VerticalAlignment="Top" Width="120" Height="65" FontSize="14" Click="btnSave_Click" Canvas.Left="316" Canvas.Top="265"/>
+                    </Canvas>
                     <Label Content="Search" Margin="13,20,716,371"/>
                 </Grid>
             </TabItem>
             <TabItem Header="PRODUCTS" FontSize="16">
-                <Grid Background="#FFE5E5E5"/>
+                <Grid>
+                    <DataGrid x:Name="dgrProducts" Height="auto" Width="auto" Margin="10,121,10,11" AutoGenerateColumns="False" IsReadOnly="True" SelectionChanged="dgrProducts_SelectionChanged">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding idProduct}" Header="ID"/>
+                            <DataGridTextColumn Binding="{Binding form.frmDesc}" Header="Form"/>
+                            <DataGridTextColumn Binding="{Binding ingredient.ingDesc}" Header="Ingredient"/>
+                            <DataGridTextColumn Binding="{Binding price}" Header="Price"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Label Content="Search:" VerticalAlignment="Top" Margin="10,10,0,0" HorizontalAlignment="Left" Width="65"/>
+                    <TextBox x:Name="txtP_Search" VerticalAlignment="Top" Margin="70,15,267,0"/>
+                    <Button x:Name="btnP_New" Content="New" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,64,0,0" Height="42" Width="84" FontSize="14" Click="btnP_New_Click"/>
+                    <Button x:Name="btnP_Del" Content="Delete" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="103,64,0,0" Height="42" Width="84" FontSize="14" Click="btnP_Del_Click"/>
+                    <Label Content="Form:" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,46,473,0"/>
+                    <ComboBox x:Name="cmbP_Form" VerticalAlignment="Top" Margin="0,51,267,0" HorizontalAlignment="Right" Width="205" ItemTemplate="{StaticResource ComboTemplateForm}"/>
+                    <Label Content="Ingredient:" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,82,473,0"/>
+                    <ComboBox x:Name="cmbP_Ingredient" VerticalAlignment="Top" Margin="0,87,267,0" HorizontalAlignment="Right" Width="205" ItemTemplate="{StaticResource ComboTemplateIngredient}"/>
+                    <Label Content="Price:" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,46,211,0"/>
+                    <TextBox x:Name="txtP_Price" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,51,11,0" Width="200"/>
+                    <Button x:Name="btnP_Save" Content="Save" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,82,68,0" Height="31" Width="84" FontSize="14" Click="btnP_Save_Click"/>
+
+                </Grid>
             </TabItem>
             <TabItem Header="SUPLIERS" FontSize="16">
                 <Grid>
-                    
+
                 </Grid>
             </TabItem>
         </TabControl>
-        <Image HorizontalAlignment="Left" Height="100" Margin="13,10,0,0" VerticalAlignment="Top" Width="100" Source="SomeResources/profilePhoto.jpg" Cursor="None"/>
+        <Image HorizontalAlignment="Left" Height="100" Margin="10,10,0,0" VerticalAlignment="Top" Width="100" Source="profilePhoto.jpg" Cursor="None"/>
         <Label x:Name="lblUserName" Content="User: " HorizontalAlignment="Left" Margin="140,21,0,0" VerticalAlignment="Top" FontSize="16"/>
-        <Label x:Name="lblDate" Content="Date: " HorizontalAlignment="Left" Margin="139,57,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <Label x:Name="lblDate" Content="Date: " Margin="140,57,0,0" VerticalAlignment="Top" FontSize="16" HorizontalAlignment="Left"/>
+        <Button x:Name="btnLogout" Content="Log Out" HorizontalAlignment="Right" Margin="0,30,30,0" VerticalAlignment="Top" Width="75" Height="30" Click="btnLogout_Click"/>
     </Grid>
 </Window>

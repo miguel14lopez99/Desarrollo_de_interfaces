@@ -51,10 +51,24 @@ namespace LITTLE_ERP.Domain
             manage.InsertCustomer(this);
         }
 
+        public void Update()
+        {
+            manage.UpdateCustomer(this);
+        }
+
         public void Delete()
         {
             manage.DeleteCustomer(this);
         }
 
+        public void setZipCodesCities(ZipCode zip)
+        {
+            manage.setZipCodesCities(this, zip);
+        }
+
+        public void setZipCityStateRegion()
+        {
+            manage.setZipCityStateRegion(this);
+        }
     }
 }

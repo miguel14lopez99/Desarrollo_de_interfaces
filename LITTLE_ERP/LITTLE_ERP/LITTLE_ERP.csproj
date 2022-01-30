@@ -88,10 +88,14 @@
     </ApplicationDefinition>
     <Compile Include="Domain\City.cs" />
     <Compile Include="Domain\Customer.cs" />
+    <Compile Include="Domain\Form.cs" />
+    <Compile Include="Domain\Ingredient.cs" />
     <Compile Include="Domain\Manage\CustomerManage.cs" />
+    <Compile Include="Domain\Manage\ProductManage.cs" />
     <Compile Include="Domain\Manage\RolManage.cs" />
     <Compile Include="Domain\Permission.cs" />
     <Compile Include="Domain\Manage\PermissionManage.cs" />
+    <Compile Include="Domain\Product.cs" />
     <Compile Include="Domain\Region.cs" />
     <Compile Include="Domain\Rol.cs" />
     <Compile Include="Domain\State.cs" />
@@ -161,7 +165,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Resource Include="SomeResources\profilePhoto.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

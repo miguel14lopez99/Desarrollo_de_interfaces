@@ -179,6 +179,12 @@ namespace LITTLE_ERP.Domain.Manage
                         case 5:
                             user.userPermissions.usersAccess = true;
                             break;
+                        case 6:
+                            user.userPermissions.showCustomers = true;
+                            break;
+                        case 7:
+                            user.userPermissions.showProducts = true;
+                            break;
                     }
                 }
             }

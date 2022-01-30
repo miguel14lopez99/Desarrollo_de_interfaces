@@ -15,11 +15,9 @@ namespace LITTLE_ERP.Domain
             public Boolean showUser { get; set; }
             public Boolean deleteUser { get; set; }
             public Boolean usersAccess { get; set; }
-            
-            public UserPermissions()
-            {
+            public Boolean showCustomers { get; set; }
+            public Boolean showProducts { get; set; }
 
-            }
         }
 
         public int idUser { get; set; }
