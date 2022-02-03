@@ -4,17 +4,22 @@
 winexe
 C#
 .cs
-C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\LITTLE_ERP\LITTLE_ERP\obj\Debug\
+C:\Users\B15-04m\Documents\Repositorios\Disenio_de_interfaces\LITTLE_ERP\LITTLE_ERP\obj\Debug\
 LITTLE_ERP
 none
 false
 DEBUG;TRACE
-C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\LITTLE_ERP\LITTLE_ERP\App.xaml
+C:\Users\B15-04m\Documents\Repositorios\Disenio_de_interfaces\LITTLE_ERP\LITTLE_ERP\App.xaml
 3-772242914
 
+<<<<<<< Updated upstream
 28-1446268680
 25536817227
+=======
+27902221435
+24-625031964
+>>>>>>> Stashed changes
 View\MainWindow.xaml;View\NewUser.xaml;View\TabsWindow.xaml;
 
-False
+True
 
