@@ -1,7 +1,27 @@
 [
     {
-        "":"",
-        "":"",
-        "":""
+        "idSuplier":1,
+        "name":"Flour S.L.",
+        "goods":"wheat flour"
+    },
+    {
+        "idSuplier":2,
+        "name":"Rye&co",
+        "goods":"rye flour"
+    },
+    {
+        "idSuplier":3,
+        "name":"The Seeds Company",
+        "goods":"flax, chia and sesame seeds"
+    },
+    {
+        "idSuplier":4,
+        "name":"AndaSalt",
+        "goods":"salt"
+    },
+    {
+        "idSuplier":5,
+        "name":"Palomino S.L.",
+        "goods":"extra virgin olive oil"
     },
 ]

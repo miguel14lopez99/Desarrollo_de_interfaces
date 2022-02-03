@@ -12,6 +12,12 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+
+using Avalonia;
+//using Avalonia.Controls;
+using Avalonia.Interactivity;
+using Avalonia.Markup.Xaml;
+
 using ExampleJSON.Domain;
 
 namespace ExampleJSON
@@ -24,7 +30,7 @@ namespace ExampleJSON
         public MainWindow()
         {
             InitializeComponent();
-
+            AvaloniaXamlLoader.Load(this);
             try
             {
                 People aux = new People();
@@ -38,5 +44,7 @@ namespace ExampleJSON
 
             
         }
+
+   
     }
 }

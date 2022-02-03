@@ -38,6 +38,9 @@
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="Oracle.ManagedDataAccess, Version=4.122.21.1, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
       <HintPath>..\packages\Oracle.ManagedDataAccess.21.4.0\lib\net462\Oracle.ManagedDataAccess.dll</HintPath>
     </Reference>
@@ -93,12 +96,14 @@
     <Compile Include="Domain\Manage\CustomerManage.cs" />
     <Compile Include="Domain\Manage\ProductManage.cs" />
     <Compile Include="Domain\Manage\RolManage.cs" />
+    <Compile Include="Domain\Manage\SuplierManage.cs" />
     <Compile Include="Domain\Permission.cs" />
     <Compile Include="Domain\Manage\PermissionManage.cs" />
     <Compile Include="Domain\Product.cs" />
     <Compile Include="Domain\Region.cs" />
     <Compile Include="Domain\Rol.cs" />
     <Compile Include="Domain\State.cs" />
+    <Compile Include="Domain\Suplier.cs" />
     <Compile Include="Domain\ZipCode.cs" />
     <Compile Include="View\NewUser.xaml.cs">
       <DependentUpon>NewUser.xaml</DependentUpon>

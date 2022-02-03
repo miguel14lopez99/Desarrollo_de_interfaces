@@ -76,3 +76,5 @@ C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\LITTLE_ERP\LITTLE_ER
 C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\LITTLE_ERP\LITTLE_ERP\obj\Debug\View\MainWindow.baml
 C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\LITTLE_ERP\LITTLE_ERP\obj\Debug\View\NewUser.baml
 C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\LITTLE_ERP\LITTLE_ERP\obj\Debug\View\TabsWindow.baml
+C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\LITTLE_ERP\LITTLE_ERP\bin\Debug\Newtonsoft.Json.dll
+C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\LITTLE_ERP\LITTLE_ERP\bin\Debug\Newtonsoft.Json.xml

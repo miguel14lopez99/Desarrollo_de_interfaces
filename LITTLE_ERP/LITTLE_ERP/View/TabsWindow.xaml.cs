@@ -122,6 +122,15 @@ namespace LITTLE_ERP
 
             //inicializo el id del customer selecionado a 0
             idProductMod = 0;
+
+            ///
+            /// SUPLIERS
+            ///
+
+            Suplier auxS = new Suplier();
+            auxS.ReadAll();
+            dgrSupliers.ItemsSource = auxS.manage.list;
+            
         }
 
         private void btnLogout_Click(object sender, RoutedEventArgs e)
@@ -461,17 +470,12 @@ namespace LITTLE_ERP
 
             if (aux != null)
             {
-                MessageBox.Show(aux.ToString());
-
                 idProductMod = aux.idProduct;
 
                 txtP_Price.Text = aux.price.ToString();
 
-                //List<Form> lForms = (List<Form>)cmbP_Form.ItemsSource;
-                cmbP_Form.SelectedIndex = aux.idForm - 1; //lForms.IndexOf(aux.form);
-
-                //List<Ingredient> lIngredients = (List<Ingredient>)cmbP_Ingredient.ItemsSource;
-                cmbP_Ingredient.SelectedIndex = aux.idIngredient - 1; //lIngredients.IndexOf(aux.ingredient);
+                cmbP_Form.SelectedIndex = aux.idForm - 1;
+                cmbP_Ingredient.SelectedIndex = aux.idIngredient - 1;
 
                 isProductMod = true;
             }
@@ -547,6 +551,28 @@ namespace LITTLE_ERP
                 dgrProducts.ItemsSource = aux.manage.list;
             }
         }
-    
+
+        ///
+        /// SUPLIERS
+        ///
+
+        private void txtS_Search_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Suplier aux = new Suplier();
+
+            if (txtS_Search.Text.Length != 0)
+            {
+                String pattern = txtS_Search.Text;
+
+                aux.manage.setSelectedList(pattern);
+                dgrSupliers.ItemsSource = aux.manage.selectedList;
+            }
+            else
+            {
+                aux.ReadAll();
+                dgrSupliers.ItemsSource = aux.manage.list;
+            }
+        }
+
     }
 }
