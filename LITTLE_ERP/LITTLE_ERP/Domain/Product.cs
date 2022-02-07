@@ -11,6 +11,7 @@ namespace LITTLE_ERP.Domain
         public int idProduct { get; set; }
         public int idForm { get; set; }
         public int idIngredient { get; set; }
+        public int amount { get; set; }
         public double price { get; set; }
 
         public Form form { get; set; }

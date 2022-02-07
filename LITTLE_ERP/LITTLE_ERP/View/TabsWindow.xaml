@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LITTLE_ERP"
         mc:Ignorable="d"
-        Title="TabsWindow" Height="602" Width="899">
+        Title="TabsWindow" Height="602" Width="924">
     <Window.Resources>
         <DataTemplate x:Key="ComboTemplate">
             <StackPanel Orientation="Horizontal">
@@ -105,6 +105,7 @@
                             <DataGridTextColumn Binding="{Binding idProduct}" Header="ID"/>
                             <DataGridTextColumn Binding="{Binding form.frmDesc}" Header="Form"/>
                             <DataGridTextColumn Binding="{Binding ingredient.ingDesc}" Header="Ingredient"/>
+                            <DataGridTextColumn Binding="{Binding amount}" Header="Amount"/>
                             <DataGridTextColumn Binding="{Binding price}" Header="Price"/>
                         </DataGrid.Columns>
                     </DataGrid>
@@ -113,12 +114,14 @@
                     <Button x:Name="btnP_New" Content="New" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,64,0,0" Height="42" Width="84" FontSize="14" Click="btnP_New_Click"/>
                     <Button x:Name="btnP_Del" Content="Delete" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="103,64,0,0" Height="42" Width="84" FontSize="14" Click="btnP_Del_Click"/>
                     <Label Content="Form:" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,46,473,0"/>
-                    <ComboBox x:Name="cmbP_Form" VerticalAlignment="Top" Margin="0,51,267,0" HorizontalAlignment="Right" Width="205" ItemTemplate="{StaticResource ComboTemplateForm}"/>
+                    <ComboBox x:Name="cmbP_Form" VerticalAlignment="Top" Margin="0,51,281,0" HorizontalAlignment="Right" Width="191" ItemTemplate="{StaticResource ComboTemplateForm}"/>
                     <Label Content="Ingredient:" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,82,473,0"/>
-                    <ComboBox x:Name="cmbP_Ingredient" VerticalAlignment="Top" Margin="0,87,267,0" HorizontalAlignment="Right" Width="205" ItemTemplate="{StaticResource ComboTemplateIngredient}"/>
-                    <Label Content="Price:" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,46,211,0"/>
-                    <TextBox x:Name="txtP_Price" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,51,11,0" Width="200"/>
-                    <Button x:Name="btnP_Save" Content="Save" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,82,68,0" Height="31" Width="84" FontSize="14" Click="btnP_Save_Click"/>
+                    <ComboBox x:Name="cmbP_Ingredient" VerticalAlignment="Top" Margin="0,87,281,0" HorizontalAlignment="Right" Width="191" ItemTemplate="{StaticResource ComboTemplateIngredient}"/>
+                    <Label Content="Price:" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,46,193,0"/>
+                    <TextBox x:Name="txtP_Price" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,51,10,0" Width="183"/>
+                    <Button x:Name="btnP_Save" Content="Save" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,10,68,0" Height="31" Width="84" FontSize="14" Click="btnP_Save_Click"/>
+                    <Label Content="Amount:" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,84,193,0"/>
+                    <TextBox x:Name="txtP_Amount" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,89,10,0" Width="183"/>
 
                 </Grid>
             </TabItem>
@@ -136,7 +139,74 @@
                 </Grid>
             </TabItem>
             <TabItem Header="ORDERS" FontSize="16">
-                
+                <Grid>
+                    <Label Content="Search:" VerticalAlignment="Top" Margin="10,10,0,0" HorizontalAlignment="Left" Width="65"/>
+                    <TextBox x:Name="txtO_Search" VerticalAlignment="Top" Margin="70,15,267,0"/>
+                    <Button x:Name="btnO_New" Content="New" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,64,0,0" Height="42" Width="84" FontSize="14"/>
+                    <Button x:Name="btnO_Del" Content="Delete" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="103,64,0,0" Height="42" Width="84" FontSize="14"/>
+                    <DataGrid x:Name="dgrOrders" Height="auto" Width="auto" Margin="10,121,10,11" AutoGenerateColumns="False" IsReadOnly="True">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding idOrder}" Header="ID"/>
+                            <DataGridTextColumn Binding="{Binding datetime, StringFormat='dd/MM/yyyy'}" Header="Date"/>
+                            <DataGridTextColumn Header="conf" Width="40">
+                                <DataGridTextColumn.CellStyle>
+                                    <Style TargetType="DataGridCell">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding status.confirmed}" Value="False">
+                                                <Setter Property="Background" Value="Red" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding status.confirmed}" Value="True">
+                                                <Setter Property="Background" Value="Green" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </DataGridTextColumn.CellStyle>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Header="lab" Width="40">
+                                <DataGridTextColumn.CellStyle>
+                                    <Style TargetType="DataGridCell">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding status.labeled}" Value="False">
+                                                <Setter Property="Background" Value="Red" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding status.labeled}" Value="True">
+                                                <Setter Property="Background" Value="Green" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </DataGridTextColumn.CellStyle>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Header="sent" Width="40">
+                                <DataGridTextColumn.CellStyle>
+                                    <Style TargetType="DataGridCell">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding status.sent}" Value="False">
+                                                <Setter Property="Background" Value="Red" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding status.sent}" Value="True">
+                                                <Setter Property="Background" Value="Green" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </DataGridTextColumn.CellStyle>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Header="inv" Width="40">
+                                <DataGridTextColumn.CellStyle>
+                                    <Style TargetType="DataGridCell">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding status.invoiced}" Value="False">
+                                                <Setter Property="Background" Value="Red" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding status.invoiced}" Value="True">
+                                                <Setter Property="Background" Value="Green" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </DataGridTextColumn.CellStyle>
+                            </DataGridTextColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
             </TabItem>
         </TabControl>
         <Image HorizontalAlignment="Left" Height="100" Margin="10,10,0,0" VerticalAlignment="Top" Width="100" Source="profilePhoto.jpg" Cursor="None" />

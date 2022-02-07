@@ -130,7 +130,15 @@ namespace LITTLE_ERP
             Suplier auxS = new Suplier();
             auxS.ReadAll();
             dgrSupliers.ItemsSource = auxS.manage.list;
-            
+
+            ///
+            /// ORDERS
+            ///
+
+            Order auxO = new Order();
+            auxO.ReadAll();
+            dgrOrders.ItemsSource = auxO.manage.list;
+
         }
 
         private void btnLogout_Click(object sender, RoutedEventArgs e)
@@ -473,6 +481,7 @@ namespace LITTLE_ERP
                 idProductMod = aux.idProduct;
 
                 txtP_Price.Text = aux.price.ToString();
+                txtP_Amount.Text = aux.amount.ToString();
 
                 cmbP_Form.SelectedIndex = aux.idForm - 1;
                 cmbP_Ingredient.SelectedIndex = aux.idIngredient - 1;
@@ -489,6 +498,7 @@ namespace LITTLE_ERP
                 aux.idProduct = idProductMod;
 
             aux.price = Convert.ToDouble(txtP_Price.Text);
+            aux.amount = Convert.ToInt32(txtP_Amount.Text);
             aux.idForm = cmbP_Form.SelectedIndex + 1;
             aux.idIngredient = cmbP_Ingredient.SelectedIndex + 1;
 
@@ -504,6 +514,7 @@ namespace LITTLE_ERP
         private void btnP_New_Click(object sender, RoutedEventArgs e)
         {
             txtP_Price.Text = "";
+            txtP_Amount.Text = "";
             cmbP_Form.SelectedItem = null;
             cmbP_Ingredient.SelectedItem = null;
 

@@ -1,0 +1,71 @@
+﻿<Window x:Class="LITTLE_ERP.View.NewOrder"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LITTLE_ERP.View"
+        mc:Ignorable="d"
+        Title="NewOrder" Height="487" Width="519">
+    <Grid>
+        <Label Content="ID:" HorizontalAlignment="Left" Margin="20" VerticalAlignment="Top"/>
+        <TextBox Height="20" Margin="70,24,25,0" TextWrapping="Wrap" VerticalAlignment="Top" IsEnabled="False"/>
+        <Label Content="Client:" HorizontalAlignment="Left" Margin="20,50,0,0" VerticalAlignment="Top"/>
+        <TextBox Height="20" Margin="70,54,55,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <Label Content="Payment Method:" HorizontalAlignment="Left" Margin="20,80,0,0" VerticalAlignment="Top"/>
+        <ComboBox VerticalAlignment="Top" Margin="25,105,25,0"/>
+        <Button Margin="200,54,25,0" VerticalAlignment="Top" Padding="3" Height="20" HorizontalAlignment="Right">
+            <Image Source="/LITTLE_ERP;component/SomeResources/searchIcon.png" RenderTransformOrigin="0.5,0.5">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleY="1" ScaleX="-1"/>
+                        <SkewTransform AngleY="0" AngleX="0"/>
+                        <RotateTransform Angle="0"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+        </Button>
+        <Button x:Name="btnO_New" Content="New" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="25,140,0,0" Height="42" Width="84"/>
+        <Button x:Name="btnO_Del" Content="Delete" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="118,140,0,0" Height="42" Width="84" />
+        <Grid Margin="25,187,25,75">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <DataGrid>
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding idProduct}" Header="ID"/>
+                    <DataGridTextColumn Binding="{Binding form.frmDesc}" Header="Form"/>
+                    <DataGridTextColumn Binding="{Binding ingredient.ingDesc}" Header="Ingredient"/>
+                    <DataGridTextColumn Binding="{Binding amount}" Header="Amount"/>
+                    <DataGridTextColumn Binding="{Binding price}" Header="Price"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Label Content="Product:" Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+            <Button Grid.Column="1" Margin="0,15,10,0" VerticalAlignment="Top" Padding="3" Height="20" HorizontalAlignment="Right">
+                <Image Source="/LITTLE_ERP;component/SomeResources/searchIcon.png" RenderTransformOrigin="0.5,0.5">
+                    <Image.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleY="1" ScaleX="-1"/>
+                            <SkewTransform AngleY="0" AngleX="0"/>
+                            <RotateTransform Angle="0"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Image.RenderTransform>
+                </Image>
+            </Button>
+            <Label Content="Price:" Grid.Column="1" HorizontalAlignment="Left" Margin="10,0,0,46" Height="26" VerticalAlignment="Bottom"/>
+            <Label Content="Amount:" Grid.Column="1" HorizontalAlignment="Left" Margin="10,0,0,10" VerticalAlignment="Bottom"/>
+            <Button Content="Save" Grid.Column="1" Margin="0,0,10,3" VerticalAlignment="Bottom" Height="35" Width="50" HorizontalAlignment="Right"/>
+            <TextBox Grid.Column="1" Height="20" Margin="15,40,10,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
+            <TextBox Grid.Column="1" Height="20" Margin="53,0,10,48" TextWrapping="Wrap" Text="" VerticalAlignment="Bottom"/>
+            <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="70,0,0,11" TextWrapping="Wrap" Text="" Width="89" Height="20" VerticalAlignment="Bottom"/>
+
+        </Grid>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,25">
+            <Button Content="Cancel" Grid.Column="1" VerticalAlignment="Top" Margin="0,0,50,0" Height="35" Width="50"/>
+            <Button Content="Save" Grid.Column="1" VerticalAlignment="Top" Height="35" Width="50"/>
+        </StackPanel>
+
+    </Grid>
+</Window>

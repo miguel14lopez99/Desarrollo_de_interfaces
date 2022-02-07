@@ -54,6 +54,7 @@ namespace LITTLE_ERP.Domain.Manage
             DataRow row = table.Rows[0];
             product.idForm = Convert.ToInt32(row["idForm"]);
             product.idIngredient = Convert.ToInt32(row["idIngredient"]);
+            product.amount = Convert.ToInt32(row["amount"]);
             product.price = Convert.ToDouble(row["price"]);
 
             setFormIngredient(product);
@@ -144,8 +145,8 @@ namespace LITTLE_ERP.Domain.Manage
 
             setFormIngredient(product);
 
-            Search.setData("Insert into products(idProduct, idForm, idIngredient, price, deleted)" +
-                " values (" + product.idProduct + ", " + product.idForm + ", " + product.idIngredient + ", " + product.price + ", 0)");
+            Search.setData("Insert into products(idProduct, idForm, idIngredient, amount, price, deleted)" +
+                " values (" + product.idProduct + ", " + product.idForm + ", " + product.idIngredient + ", " + product.amount + ", " + product.price + ",0)");
 
         }
 
@@ -155,7 +156,7 @@ namespace LITTLE_ERP.Domain.Manage
 
             setFormIngredient(product);
 
-            Search.setData("Update products set idForm = " + product.idForm + ", idIngredient = " + product.idIngredient + ", price = " + product.price +
+            Search.setData("Update products set idForm = " + product.idForm + ", idIngredient = " + product.idIngredient + ", amount = " + product.amount + ", price = " + product.price +
                 " where idProduct = " + product.idProduct);
         }
 
