@@ -26,7 +26,7 @@ namespace LITTLE_ERP.Domain.Manage
             DataSet data = new DataSet();
             ConnectOracle Search = new ConnectOracle();
 
-            data = Search.getData("SELECT idOrder FROM Orders where deleted=0", "Orders");
+            data = Search.getData("SELECT idOrder FROM Orders where deleted = 0", "Orders");
 
             DataTable table = data.Tables["Orders"];
 
@@ -40,24 +40,25 @@ namespace LITTLE_ERP.Domain.Manage
             }
         }
 
-        public void ReadOrder(Order Order)
+        public void ReadOrder(Order order)
         {
             DataSet data = new DataSet();
             ConnectOracle Search = new ConnectOracle();
 
-            data = Search.getData("SELECT * FROM Orders where idOrder = " + Order.idOrder, "Orders");
+            data = Search.getData("SELECT * FROM Orders where idOrder = " + order.idOrder, "Orders");
 
             DataTable table = data.Tables["Orders"];
 
             DataRow row = table.Rows[0];
-            Order.idCustomer = Convert.ToInt32(row["refCustomer"]);
-            Order.idUser = Convert.ToInt32(row["refUser"]);
-            Order.datetime = Convert.ToDateTime(row["datetime"]);
-            Order.idPaymentMethod = Convert.ToInt32(row["refPaymentMethod"]);
-            Order.total = Convert.ToDouble(row["total"]);
-            Order.prepaid = Convert.ToDouble(row["prepaid"]);
+            order.idCustomer = Convert.ToInt32(row["refCustomer"]);
+            order.idUser = Convert.ToInt32(row["refUser"]);
+            order.datetime = Convert.ToDateTime(row["datetime"]);
+            order.idPaymentMethod = Convert.ToInt32(row["refPaymentMethod"]);
+            order.total = Convert.ToDouble(row["total"]);
+            order.prepaid = Convert.ToDouble(row["prepaid"]);
 
-            setPaymentStatus(Order);
+            setPaymentStatus(order);
+            setCustomerUser(order);
         }
 
         public void setSelectedList(string pattern)
@@ -124,19 +125,41 @@ namespace LITTLE_ERP.Domain.Manage
 
         }
 
+        public void setCustomerUser(Order order)
+        {
+            DataSet data = new DataSet();
+            ConnectOracle Search = new ConnectOracle();
+
+            Customer customer = new Customer(order.idCustomer);
+            customer.ReadCustomer();
+            order.customer = customer;
+
+            User user = new User(order.idUser);
+            user.readUser();
+            order.user = user;
+
+        }
+
+        public int getTodayMaxID()
+        {
+            ConnectOracle Search = new ConnectOracle();
+
+            return Convert.ToInt32("0" + Search.DLookUp("count(*)", "Orders", "TO_CHAR(datetime, 'DD/MM/YYYY') = TO_CHAR(sysdate, 'DD/MM/YYYY')")) + 1;
+        }
+
         public void InsertOrder(Order order)
         {
             ConnectOracle Search = new ConnectOracle();
 
-            order.datetime = DateTime.Now;
+            //order.datetime = DateTime.Now;
 
-            int maximun = Convert.ToInt32("0" + Search.DLookUp("count(*)", "Orders", "TO_CHAR(datetime, 'DD/MM/YYYY') = TO_CHAR(sysdate, 'DD/MM/YYYY')")) + 1;
+            //int maximun = Convert.ToInt32("0" + Search.DLookUp("count(*)", "Orders", "TO_CHAR(datetime, 'DD/MM/YYYY') = TO_CHAR(sysdate, 'DD/MM/YYYY')")) + 1;
 
-            Int64 id = Convert.ToInt64(order.datetime.ToString("yyyyMMdd") + maximun.ToString("0000"));
+            //Int64 id = Convert.ToInt64(order.datetime.ToString("yyyyMMdd") + maximun.ToString("0000"));
 
-            order.idOrder = id;
+            //order.idOrder = id;
 
-            setPaymentStatus(order);
+            //setPaymentStatus(order); //AQUI POR QUE HAGO ESTO
 
             Search.setData("insert into orders (IDORDER, REFCUSTOMER, REFUSER, DATETIME, REFPAYMENTMETHOD, TOTAL, PREPAID, DELETED)" +
                 " values ("+ order.idOrder +", "+ order.idCustomer +", "+ order.idUser +", '"+ order.datetime.ToString("dd/MM/yyyy") + 
@@ -158,7 +181,7 @@ namespace LITTLE_ERP.Domain.Manage
         {
             ConnectOracle Search = new ConnectOracle();
 
-            Search.setData("Delete from Orders where idOrder = " + Order.idOrder);
+            Search.setData("Update Orders set DELETED = 1 where idOrder = " + Order.idOrder);
         }
     }
 }

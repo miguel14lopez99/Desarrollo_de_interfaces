@@ -26,6 +26,10 @@ namespace LITTLE_ERP.Domain
 
         public PaymentMethod payment { get; set; }
         public OrderStatus status { get; set; }
+        public Customer customer { get; set; }
+        public User user { get; set; }
+
+        //me falta la lista de productos
 
         public Manage.OrderManage manage { get; set; }
 
@@ -67,7 +71,7 @@ namespace LITTLE_ERP.Domain
 
         public override string ToString()
         {
-            return idOrder.ToString();
+            return idOrder.ToString() + customer.name + user.name ;
         }
 
 

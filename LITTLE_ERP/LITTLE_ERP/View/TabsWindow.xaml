@@ -25,10 +25,10 @@
     </Window.Resources>
     <Grid HorizontalAlignment="Stretch" Width="auto" Margin="0,0,0,0">
         <TabControl Height="auto" Margin="10,115,10,10" Width="auto" TabStripPlacement="Left" HorizontalAlignment="Stretch">
-            <TabItem Header="HOME" FontSize="16">
+            <TabItem x:Name="tabHome" Header="HOME" FontSize="16">
                 <Grid Background="#FFE5E5E5"/>
             </TabItem>
-            <TabItem Header="PROFILE" FontSize="16">
+            <TabItem x:Name="tabProfile" Header="PROFILE" FontSize="16">
                 <Grid>
                     <Label Content="Previous Password" HorizontalAlignment="Left" Margin="43,43,0,0" VerticalAlignment="Top"/>
                     <Label Content="New Password" HorizontalAlignment="Left" Margin="71,74,0,0" VerticalAlignment="Top"/>
@@ -59,7 +59,7 @@
                     <TextBox x:Name="txtU_Search" VerticalAlignment="Top" Margin="376,44,10,0" TextChanged="txtU_Search_TextChanged"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="CUSTOMERS" FontSize="16">
+            <TabItem x:Name="tabCustomers" Header="CUSTOMERS" FontSize="16">
                 <Grid>
                     <DataGrid x:Name="dgrCustomers" Margin="10,120,496,12" AutoGenerateColumns="False" IsReadOnly="True" SelectionChanged="dgrCustomers_SelectionChanged">
                         <DataGrid.Columns>
@@ -98,7 +98,7 @@
                     </Canvas>
                 </Grid>
             </TabItem>
-            <TabItem Header="PRODUCTS" FontSize="16">
+            <TabItem x:Name="tabProduct" Header="PRODUCTS" FontSize="16">
                 <Grid>
                     <DataGrid x:Name="dgrProducts" Height="auto" Width="auto" Margin="10,121,10,11" AutoGenerateColumns="False" IsReadOnly="True" SelectionChanged="dgrProducts_SelectionChanged">
                         <DataGrid.Columns>
@@ -125,7 +125,7 @@
 
                 </Grid>
             </TabItem>
-            <TabItem Header="SUPLIERS" FontSize="16">
+            <TabItem x:Name="tabSupliers" Header="SUPLIERS" FontSize="16">
                 <Grid>
                     <Label Content="Search:" VerticalAlignment="Top" Margin="10,10,0,0" HorizontalAlignment="Left" Width="65"/>
                     <TextBox x:Name="txtS_Search" VerticalAlignment="Top" Margin="70,15,267,0" TextChanged="txtS_Search_TextChanged"/>
@@ -138,12 +138,12 @@
                     </DataGrid>
                 </Grid>
             </TabItem>
-            <TabItem Header="ORDERS" FontSize="16">
+            <TabItem x:Name="tabOrder" Header="ORDERS" FontSize="16">
                 <Grid>
                     <Label Content="Search:" VerticalAlignment="Top" Margin="10,10,0,0" HorizontalAlignment="Left" Width="65"/>
-                    <TextBox x:Name="txtO_Search" VerticalAlignment="Top" Margin="70,15,267,0"/>
-                    <Button x:Name="btnO_New" Content="New" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,64,0,0" Height="42" Width="84" FontSize="14"/>
-                    <Button x:Name="btnO_Del" Content="Delete" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="103,64,0,0" Height="42" Width="84" FontSize="14"/>
+                    <TextBox x:Name="txtO_Search" VerticalAlignment="Top" Margin="70,15,267,0" TextChanged="txtO_Search_TextChanged"/>
+                    <Button x:Name="btnO_New" Content="New" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,64,0,0" Height="42" Width="84" FontSize="14" Click="btnO_New_Click"/>
+                    <Button x:Name="btnO_Del" Content="Delete" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="103,64,0,0" Height="42" Width="84" FontSize="14" Click="btnO_Del_Click"/>
                     <DataGrid x:Name="dgrOrders" Height="auto" Width="auto" Margin="10,121,10,11" AutoGenerateColumns="False" IsReadOnly="True">
                         <DataGrid.Columns>
                             <DataGridTextColumn Binding="{Binding idOrder}" Header="ID"/>

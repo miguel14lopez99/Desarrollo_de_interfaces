@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using LITTLE_ERP.Domain;
+using LITTLE_ERP.View;
 
 namespace LITTLE_ERP
 {
@@ -30,6 +31,8 @@ namespace LITTLE_ERP
 
         private static Boolean isProductMod;
         private static int idProductMod;
+
+
 
         public TabsWindow()
         {
@@ -585,5 +588,56 @@ namespace LITTLE_ERP
             }
         }
 
+        ///
+        /// ORDERS
+        ///
+
+        private void btnO_New_Click(object sender, RoutedEventArgs e)
+        {
+            NewOrder newOrder = new NewOrder(this);
+            newOrder.Show();
+        }
+
+        private void btnO_Del_Click(object sender, RoutedEventArgs e)
+        {
+            List<Order> data = new List<Order>();
+            int indice = 0;
+            if (dgrOrders.SelectedItems.Count > 0)
+            {
+                data = (List<Order>)dgrOrders.ItemsSource;
+
+                for (int i = 0; i < dgrOrders.SelectedItems.Count; i++)
+                {
+                    indice = dgrOrders.Items.IndexOf(dgrOrders.SelectedItems[i]);
+                    data.RemoveAt(indice);
+                    Order row = (Order)dgrOrders.SelectedItems[i];
+                    row.Delete();
+                }
+                dgrOrders.ItemsSource = null;
+                dgrOrders.ItemsSource = data;
+            }
+            else
+            {
+                MessageBox.Show("You must select at least one row");
+            }
+        }
+
+        private void txtO_Search_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Order aux = new Order();
+
+            if (txtO_Search.Text.Length != 0)
+            {
+                String pattern = txtO_Search.Text;
+
+                aux.manage.setSelectedList(pattern);
+                dgrOrders.ItemsSource = aux.manage.selectedList;
+            }
+            else
+            {
+                aux.ReadAll();
+                dgrOrders.ItemsSource = aux.manage.list;
+            }
+        }
     }
 }

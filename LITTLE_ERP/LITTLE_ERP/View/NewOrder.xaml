@@ -5,15 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LITTLE_ERP.View"
         mc:Ignorable="d"
-        Title="NewOrder" Height="487" Width="519">
+        Title="NewOrder" Height="572" Width="519">
+    <Window.Resources>
+        <DataTemplate x:Key="ComboTemplate">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{Binding Path=name}"/>
+            </StackPanel>
+        </DataTemplate>
+    </Window.Resources>
     <Grid>
         <Label Content="ID:" HorizontalAlignment="Left" Margin="20" VerticalAlignment="Top"/>
-        <TextBox Height="20" Margin="70,24,25,0" TextWrapping="Wrap" VerticalAlignment="Top" IsEnabled="False"/>
+        <TextBox x:Name="txtID" Height="20" Margin="70,24,25,0" TextWrapping="Wrap" VerticalAlignment="Top" IsEnabled="False"/>
         <Label Content="Client:" HorizontalAlignment="Left" Margin="20,50,0,0" VerticalAlignment="Top"/>
-        <TextBox Height="20" Margin="70,54,55,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtCustomer" Height="20" Margin="70,54,55,0" TextWrapping="Wrap" VerticalAlignment="Top" IsEnabled="False"/>
         <Label Content="Payment Method:" HorizontalAlignment="Left" Margin="20,80,0,0" VerticalAlignment="Top"/>
-        <ComboBox VerticalAlignment="Top" Margin="25,105,25,0"/>
-        <Button Margin="200,54,25,0" VerticalAlignment="Top" Padding="3" Height="20" HorizontalAlignment="Right">
+        <ComboBox x:Name="cmbPayment" VerticalAlignment="Top" Margin="25,105,25,0" ItemTemplate="{StaticResource ComboTemplate}"/>
+        <Label Content="Prepaid:" HorizontalAlignment="Left" Margin="20,130,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtPrepaid" Height="20" Margin="25,155,400,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <Button x:Name="btnSearchC" Margin="200,54,25,0" VerticalAlignment="Top" Padding="3" Height="20" HorizontalAlignment="Right" Click="btnSearchC_Click">
             <Image Source="/LITTLE_ERP;component/SomeResources/searchIcon.png" RenderTransformOrigin="0.5,0.5">
                 <Image.RenderTransform>
                     <TransformGroup>
@@ -25,14 +34,14 @@
                 </Image.RenderTransform>
             </Image>
         </Button>
-        <Button x:Name="btnO_New" Content="New" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="25,140,0,0" Height="42" Width="84"/>
-        <Button x:Name="btnO_Del" Content="Delete" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="118,140,0,0" Height="42" Width="84" />
-        <Grid Margin="25,187,25,75">
+        <Button x:Name="btnP_New" Content="New" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="25,200,0,0" Height="42" Width="84"/>
+        <Button x:Name="btnP_Del" Content="Delete" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="213,200,0,0" Height="42" Width="84" />
+        <Grid Margin="25,250,25,75">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <DataGrid>
+            <DataGrid x:Name="drgProducts">
                 <DataGrid.Columns>
                     <DataGridTextColumn Binding="{Binding idProduct}" Header="ID"/>
                     <DataGridTextColumn Binding="{Binding form.frmDesc}" Header="Form"/>
@@ -42,7 +51,7 @@
                 </DataGrid.Columns>
             </DataGrid>
             <Label Content="Product:" Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-            <Button Grid.Column="1" Margin="0,15,10,0" VerticalAlignment="Top" Padding="3" Height="20" HorizontalAlignment="Right">
+            <Button x:Name="btnSearchP" Grid.Column="1" Margin="0,15,0,0" VerticalAlignment="Top" Padding="3" Height="20" HorizontalAlignment="Right" Click="btnSearchP_Click">
                 <Image Source="/LITTLE_ERP;component/SomeResources/searchIcon.png" RenderTransformOrigin="0.5,0.5">
                     <Image.RenderTransform>
                         <TransformGroup>
@@ -54,18 +63,20 @@
                     </Image.RenderTransform>
                 </Image>
             </Button>
+
             <Label Content="Price:" Grid.Column="1" HorizontalAlignment="Left" Margin="10,0,0,46" Height="26" VerticalAlignment="Bottom"/>
             <Label Content="Amount:" Grid.Column="1" HorizontalAlignment="Left" Margin="10,0,0,10" VerticalAlignment="Bottom"/>
-            <Button Content="Save" Grid.Column="1" Margin="0,0,10,3" VerticalAlignment="Bottom" Height="35" Width="50" HorizontalAlignment="Right"/>
-            <TextBox Grid.Column="1" Height="20" Margin="15,40,10,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
-            <TextBox Grid.Column="1" Height="20" Margin="53,0,10,48" TextWrapping="Wrap" Text="" VerticalAlignment="Bottom"/>
-            <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="70,0,0,11" TextWrapping="Wrap" Text="" Width="89" Height="20" VerticalAlignment="Bottom"/>
+            <Button x:Name="btnSaveProduct" Content="Save" Grid.Column="1" Margin="0,0,0,3" VerticalAlignment="Bottom" Height="35" Width="50" HorizontalAlignment="Right"/>
+            <TextBox x:Name="txtProduct" Grid.Column="1" Height="20" Margin="15,40,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsEnabled="False"/>
+            <TextBox x:Name="txtPrice" Grid.Column="1" Height="20" Margin="53,0,0,48" TextWrapping="Wrap" Text="" VerticalAlignment="Bottom"/>
+            <TextBox x:Name="txtAmount" Grid.Column="1" HorizontalAlignment="Left" Margin="70,0,0,11" TextWrapping="Wrap" Text="" Width="94" Height="20" VerticalAlignment="Bottom"/>
 
         </Grid>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,25">
-            <Button Content="Cancel" Grid.Column="1" VerticalAlignment="Top" Margin="0,0,50,0" Height="35" Width="50"/>
-            <Button Content="Save" Grid.Column="1" VerticalAlignment="Top" Height="35" Width="50"/>
+            <Button x:Name="btnCancel" Content="Cancel" Grid.Column="1" VerticalAlignment="Top" Margin="0,0,50,0" Height="35" Width="50"/>
+            <Button x:Name="btnSaveOrder" Content="Save" Grid.Column="1" VerticalAlignment="Top" Height="35" Width="50"/>
         </StackPanel>
+        <Button x:Name="btnP_New" Content="New Generic" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="119,200,0,0" Height="42" Width="84" />
 
     </Grid>
 </Window>

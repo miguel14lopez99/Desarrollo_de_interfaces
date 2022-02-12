@@ -1,0 +1,14 @@
+C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\Ejercicios de Matrices\Ejercicio Barcos\Ejercicio Barcos\bin\Debug\netcoreapp3.1\Ejercicio Barcos.exe
+C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\Ejercicios de Matrices\Ejercicio Barcos\Ejercicio Barcos\bin\Debug\netcoreapp3.1\Ejercicio Barcos.deps.json
+C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\Ejercicios de Matrices\Ejercicio Barcos\Ejercicio Barcos\bin\Debug\netcoreapp3.1\Ejercicio Barcos.runtimeconfig.json
+C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\Ejercicios de Matrices\Ejercicio Barcos\Ejercicio Barcos\bin\Debug\netcoreapp3.1\Ejercicio Barcos.runtimeconfig.dev.json
+C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\Ejercicios de Matrices\Ejercicio Barcos\Ejercicio Barcos\bin\Debug\netcoreapp3.1\Ejercicio Barcos.dll
+C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\Ejercicios de Matrices\Ejercicio Barcos\Ejercicio Barcos\bin\Debug\netcoreapp3.1\Ejercicio Barcos.pdb
+C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\Ejercicios de Matrices\Ejercicio Barcos\Ejercicio Barcos\obj\Debug\netcoreapp3.1\Ejercicio Barcos.csproj.AssemblyReference.cache
+C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\Ejercicios de Matrices\Ejercicio Barcos\Ejercicio Barcos\obj\Debug\netcoreapp3.1\Ejercicio Barcos.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\Ejercicios de Matrices\Ejercicio Barcos\Ejercicio Barcos\obj\Debug\netcoreapp3.1\Ejercicio Barcos.AssemblyInfoInputs.cache
+C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\Ejercicios de Matrices\Ejercicio Barcos\Ejercicio Barcos\obj\Debug\netcoreapp3.1\Ejercicio Barcos.AssemblyInfo.cs
+C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\Ejercicios de Matrices\Ejercicio Barcos\Ejercicio Barcos\obj\Debug\netcoreapp3.1\Ejercicio Barcos.csproj.CoreCompileInputs.cache
+C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\Ejercicios de Matrices\Ejercicio Barcos\Ejercicio Barcos\obj\Debug\netcoreapp3.1\Ejercicio Barcos.dll
+C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\Ejercicios de Matrices\Ejercicio Barcos\Ejercicio Barcos\obj\Debug\netcoreapp3.1\Ejercicio Barcos.pdb
+C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\Ejercicios de Matrices\Ejercicio Barcos\Ejercicio Barcos\obj\Debug\netcoreapp3.1\Ejercicio Barcos.genruntimeconfig.cache
