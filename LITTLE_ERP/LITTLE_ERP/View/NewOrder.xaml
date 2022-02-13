@@ -21,7 +21,7 @@
         <Label Content="Payment Method:" HorizontalAlignment="Left" Margin="20,80,0,0" VerticalAlignment="Top"/>
         <ComboBox x:Name="cmbPayment" VerticalAlignment="Top" Margin="25,105,25,0" ItemTemplate="{StaticResource ComboTemplate}"/>
         <Label Content="Prepaid:" HorizontalAlignment="Left" Margin="20,130,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtPrepaid" Height="20" Margin="25,155,400,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtPrepaid" Height="20" Margin="25,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="81"/>
         <Button x:Name="btnSearchC" Margin="200,54,25,0" VerticalAlignment="Top" Padding="3" Height="20" HorizontalAlignment="Right" Click="btnSearchC_Click">
             <Image Source="/LITTLE_ERP;component/SomeResources/searchIcon.png" RenderTransformOrigin="0.5,0.5">
                 <Image.RenderTransform>
@@ -34,23 +34,22 @@
                 </Image.RenderTransform>
             </Image>
         </Button>
-        <Button x:Name="btnP_New" Content="New" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="25,200,0,0" Height="42" Width="84"/>
-        <Button x:Name="btnP_Del" Content="Delete" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="213,200,0,0" Height="42" Width="84" />
+        <Button x:Name="btnP_New" Content="New" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="25,200,0,0" Height="42" Width="84" Click="btnP_New_Click"/>
+        <Button x:Name="btnP_Del" Content="Delete" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="118,200,0,0" Height="42" Width="84" Click="btnP_Del_Click" />
         <Grid Margin="25,250,25,75">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <DataGrid x:Name="drgProducts">
+            <DataGrid x:Name="dgrProducts" AutoGenerateColumns="False" IsReadOnly="True">
                 <DataGrid.Columns>
                     <DataGridTextColumn Binding="{Binding idProduct}" Header="ID"/>
-                    <DataGridTextColumn Binding="{Binding form.frmDesc}" Header="Form"/>
-                    <DataGridTextColumn Binding="{Binding ingredient.ingDesc}" Header="Ingredient"/>
+                    <DataGridTextColumn Binding="{Binding description}" Header="Description"/>
                     <DataGridTextColumn Binding="{Binding amount}" Header="Amount"/>
-                    <DataGridTextColumn Binding="{Binding price}" Header="Price"/>
+                    <DataGridTextColumn Binding="{Binding pricesale}" Header="Price"/>
                 </DataGrid.Columns>
             </DataGrid>
-            <Label Content="Product:" Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="lblProduct" Content="Product:" Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
             <Button x:Name="btnSearchP" Grid.Column="1" Margin="0,15,0,0" VerticalAlignment="Top" Padding="3" Height="20" HorizontalAlignment="Right" Click="btnSearchP_Click">
                 <Image Source="/LITTLE_ERP;component/SomeResources/searchIcon.png" RenderTransformOrigin="0.5,0.5">
                     <Image.RenderTransform>
@@ -66,17 +65,20 @@
 
             <Label Content="Price:" Grid.Column="1" HorizontalAlignment="Left" Margin="10,0,0,46" Height="26" VerticalAlignment="Bottom"/>
             <Label Content="Amount:" Grid.Column="1" HorizontalAlignment="Left" Margin="10,0,0,10" VerticalAlignment="Bottom"/>
-            <Button x:Name="btnSaveProduct" Content="Save" Grid.Column="1" Margin="0,0,0,3" VerticalAlignment="Bottom" Height="35" Width="50" HorizontalAlignment="Right"/>
+            <Button x:Name="btnSaveProduct" Content="Save" Grid.Column="1" Margin="0,0,0,3" VerticalAlignment="Bottom" Height="35" Width="50" HorizontalAlignment="Right" Click="btnSaveProduct_Click"/>
             <TextBox x:Name="txtProduct" Grid.Column="1" Height="20" Margin="15,40,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsEnabled="False"/>
             <TextBox x:Name="txtPrice" Grid.Column="1" Height="20" Margin="53,0,0,48" TextWrapping="Wrap" Text="" VerticalAlignment="Bottom"/>
             <TextBox x:Name="txtAmount" Grid.Column="1" HorizontalAlignment="Left" Margin="70,0,0,11" TextWrapping="Wrap" Text="" Width="94" Height="20" VerticalAlignment="Bottom"/>
 
         </Grid>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,25">
-            <Button x:Name="btnCancel" Content="Cancel" Grid.Column="1" VerticalAlignment="Top" Margin="0,0,50,0" Height="35" Width="50"/>
-            <Button x:Name="btnSaveOrder" Content="Save" Grid.Column="1" VerticalAlignment="Top" Height="35" Width="50"/>
+            <Button x:Name="btnCancel" Content="Cancel" Grid.Column="1" VerticalAlignment="Top" Margin="0,0,50,0" Height="35" Width="50" Click="btnCancel_Click"/>
+            <Button x:Name="btnSaveOrder" Content="Save" Grid.Column="1" VerticalAlignment="Top" Height="35" Width="50" Click="btnSaveOrder_Click"/>
         </StackPanel>
-        <Button x:Name="btnP_New" Content="New Generic" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="119,200,0,0" Height="42" Width="84" />
+        <TextBlock FlowDirection="RightToLeft" Margin="0,227,48,0" Text="Generic Product" Height="15" VerticalAlignment="Top" HorizontalAlignment="Right" Width="86" />
+        <CheckBox x:Name="chkGeneric" Margin="0,227,25,0" VerticalAlignment="Top" Checked="chkGeneric_Checked" Unchecked="chkGeneric_Unchecked" HorizontalAlignment="Right" Width="18"/>
+
+
 
     </Grid>
 </Window>

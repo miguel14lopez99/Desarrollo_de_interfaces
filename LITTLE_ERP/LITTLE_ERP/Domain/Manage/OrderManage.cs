@@ -13,12 +13,14 @@ namespace LITTLE_ERP.Domain.Manage
         public List<Order> list { get; set; }
         public List<PaymentMethod> listP { get; set; }
         public List<Order> selectedList { get; set; }
+        
 
         public OrderManage()
         {
             list = new List<Order>();
             listP = new List<PaymentMethod>();
             selectedList = new List<Order>();
+            
         }
 
         public void ReadAll()
@@ -34,7 +36,7 @@ namespace LITTLE_ERP.Domain.Manage
 
             foreach (DataRow row in table.Rows)
             {
-                aux = new Order(Convert.ToInt32(row["idOrder"]));
+                aux = new Order(Convert.ToInt64(row["idOrder"]));
                 ReadOrder(aux);
                 list.Add(aux);
             }
@@ -59,6 +61,7 @@ namespace LITTLE_ERP.Domain.Manage
 
             setPaymentStatus(order);
             setCustomerUser(order);
+            ReadAllOrderProducts(order);
         }
 
         public void setSelectedList(string pattern)
@@ -144,22 +147,12 @@ namespace LITTLE_ERP.Domain.Manage
         {
             ConnectOracle Search = new ConnectOracle();
 
-            return Convert.ToInt32("0" + Search.DLookUp("count(*)", "Orders", "TO_CHAR(datetime, 'DD/MM/YYYY') = TO_CHAR(sysdate, 'DD/MM/YYYY')")) + 1;
+            return Convert.ToInt32("0" + Search.DLookUp("count(*)", "Orders", "")) + 1;
         }
 
         public void InsertOrder(Order order)
         {
             ConnectOracle Search = new ConnectOracle();
-
-            //order.datetime = DateTime.Now;
-
-            //int maximun = Convert.ToInt32("0" + Search.DLookUp("count(*)", "Orders", "TO_CHAR(datetime, 'DD/MM/YYYY') = TO_CHAR(sysdate, 'DD/MM/YYYY')")) + 1;
-
-            //Int64 id = Convert.ToInt64(order.datetime.ToString("yyyyMMdd") + maximun.ToString("0000"));
-
-            //order.idOrder = id;
-
-            //setPaymentStatus(order); //AQUI POR QUE HAGO ESTO
 
             Search.setData("insert into orders (IDORDER, REFCUSTOMER, REFUSER, DATETIME, REFPAYMENTMETHOD, TOTAL, PREPAID, DELETED)" +
                 " values ("+ order.idOrder +", "+ order.idCustomer +", "+ order.idUser +", '"+ order.datetime.ToString("dd/MM/yyyy") + 
@@ -177,11 +170,98 @@ namespace LITTLE_ERP.Domain.Manage
                 " where idOrder = " + order.idOrder);
         }
 
-        public void DeleteOrder(Order Order)
+        public void DeleteOrder(Order order)
         {
             ConnectOracle Search = new ConnectOracle();
 
-            Search.setData("Update Orders set DELETED = 1 where idOrder = " + Order.idOrder);
+            Search.setData("Update Orders set DELETED = 1 where idOrder = " + order.idOrder);
+        }
+
+        public void ReadAllOrderProducts(Order order)
+        {
+            DataSet data = new DataSet();
+            ConnectOracle Search = new ConnectOracle();
+
+            data = Search.getData("select op.refproduct, " +
+                "(select f.frmdesc || ' ' || i.ingdesc from products p, forms f, ingredients i where p.idForm = f.idForm and p.idIngredient = i.idIngredient and p.idProduct = op.refProduct) description," +
+                "op.pricesale, op.amount from ordersproducts op where op.deleted = 0 and op.reforder = " + order.idOrder +
+                "union select - 1 refproduct, gp.description, gp.priceofsale, gp.amount " +
+                "from genericproducts gp where gp.deleted = 0 and gp.idOrder = " + order.idOrder, "ORDERSPRODUCTS");
+
+            DataTable table = data.Tables["ORDERSPRODUCTS"];
+
+            foreach (DataRow row in table.Rows)
+            {
+                OrderProducts aux = new OrderProducts();
+                
+                aux.idProduct = Convert.ToInt32(row["refProduct"]);
+                aux.description = Convert.ToString(row["description"]);
+                aux.amount = Convert.ToInt32(row["amount"]);
+                aux.pricesale = Convert.ToDouble(row["pricesale"]);
+
+                order.listOP.Add(aux);
+            }
+        }
+
+        public void InsertOrderProducts(Order order)
+        {
+            ConnectOracle Search = new ConnectOracle();
+
+            foreach (OrderProducts product in order.listOP)
+            {
+                if (product.idProduct == -1) //generic product
+                {
+                    //max id from generic products
+                    int maximun = Convert.ToInt32("0" + Search.DLookUp("count(*)", "GENERICPRODUCTS", "")) + 1;
+
+                    Search.setData("insert into GENERICPRODUCTS (IDGENERICPRODUCT, IDORDER, DESCRIPTION, AMOUNT, PRICEOFSALE, DELETED)" +
+                    " values (" + maximun + ", " + product.idOrder + ", '" + product.description + "', " + product.amount +
+                    ", " + product.pricesale + ", 0)");
+                }
+                else //normal product
+                {
+                    //max id from order products
+                    int maximun = Convert.ToInt32("0" + Search.DLookUp("count(*)", "ORDERSPRODUCTS", "")) + 1;
+
+                    Search.setData("insert into ORDERSPRODUCTS (IDORDERPRODUCT, REFORDER, REFPRODUCT, AMOUNT, PRICESALE, DELETED)" +
+                    " values (" + maximun + ", " + product.idOrder + ", " + product.idProduct + ", " + product.amount +
+                    ", " + product.pricesale + ", 0)");
+                }
+
+            }
+
+        }
+
+        public void InsertOrderStatus(Order order)
+        {
+            ConnectOracle Search = new ConnectOracle();
+
+            int confirmed, labeled, sent, invoiced;
+
+            if (order.status.confirmed) confirmed = 1; else confirmed = 0;
+            if (order.status.labeled) labeled = 1; else labeled = 0;
+            if (order.status.sent) sent = 1; else sent = 0;
+            if (order.status.invoiced) invoiced = 1; else invoiced = 0;
+
+            Search.setData("insert into ORDERS_STATUS (IDORDER, CONFIRMED, LABELED, SENT, INVOICED)" +
+                    " values (" + order.idOrder + ", " + confirmed + ", " + labeled + 
+                    ", " + sent + ", " + invoiced + ")");
+        }
+
+        public void UpdateOrderStatus(Order order)
+        {
+            ConnectOracle Search = new ConnectOracle();
+
+            int confirmed, labeled, sent, invoiced;
+
+            if (order.status.confirmed) confirmed = 1; else confirmed = 0;
+            if (order.status.labeled) labeled = 1; else labeled = 0;
+            if (order.status.sent) sent = 1; else sent = 0;
+            if (order.status.invoiced) invoiced = 1; else invoiced = 0;
+
+            Search.setData("update ORDERS_STATUS set CONFIRMED = "+ confirmed + 
+                ", LABELED = "+ labeled + ", SENT = "+ sent +", INVOICED = "+ invoiced +
+                " where IDORDER = "+ order.idOrder);
         }
     }
 }

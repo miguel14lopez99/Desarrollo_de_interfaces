@@ -57,7 +57,7 @@ namespace LITTLE_ERP.Domain
 
         public override string ToString()
         {
-            return idProduct + form.frmDesc + ingredient.ingDesc;
+            return form.frmDesc + " " + ingredient.ingDesc;
         }
 
 

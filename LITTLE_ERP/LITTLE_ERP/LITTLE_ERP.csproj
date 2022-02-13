@@ -107,6 +107,7 @@
     <Compile Include="Domain\Manage\ProductManage.cs" />
     <Compile Include="Domain\Manage\RolManage.cs" />
     <Compile Include="Domain\Manage\SuplierManage.cs" />
+    <Compile Include="Domain\OrderProducts.cs" />
     <Compile Include="Domain\PaymentMethod.cs" />
     <Compile Include="Domain\Permission.cs" />
     <Compile Include="Domain\Manage\PermissionManage.cs" />

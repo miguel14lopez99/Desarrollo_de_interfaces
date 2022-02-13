@@ -22,9 +22,7 @@ namespace LITTLE_ERP
     public partial class TabsWindow : Window
     {
         private static User setUser;
-        private static DataGrid setDataGrid;
         internal static User SetUser { get => setUser; set => setUser = value; }
-        internal static DataGrid SetDataGrid { get => setDataGrid; set => setDataGrid = value; }
 
         private static Boolean isCustomerMod;
         private static int idCustomerMod;
@@ -32,7 +30,8 @@ namespace LITTLE_ERP
         private static Boolean isProductMod;
         private static int idProductMod;
 
-
+        public Boolean isSelectingProducts { get; set; }
+        public Boolean isSelectingCustomers { get; set; }
 
         public TabsWindow()
         {
@@ -72,6 +71,10 @@ namespace LITTLE_ERP
                 btnNewCustomer.IsEnabled = false;
                 btnDeleteCustomer.IsEnabled = false;
                 btnSave.IsEnabled = false;
+
+                //user that can only show customers can't make or delete orders
+                btnO_New.IsEnabled = false;
+                btnO_Del.IsEnabled = false;
             }
             if (setUser.userPermissions.showProducts)
             {
@@ -471,6 +474,20 @@ namespace LITTLE_ERP
             }
         }
 
+        private void CustomerRow_DoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (isSelectingCustomers)
+            {
+                DataGridRow row = sender as DataGridRow;
+
+                Customer aux = (Customer)row.Item;
+                NewOrder.Customer = aux;
+
+                this.Close();
+            }
+
+        }
+
         ///
         /// PRODUCTS
         ///
@@ -566,6 +583,17 @@ namespace LITTLE_ERP
             }
         }
 
+        private void ProductRow_DoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            DataGridRow row = sender as DataGridRow;
+
+            Product aux = (Product)row.Item;
+
+            NewOrder.Product = aux;
+
+            this.Close();
+        }
+
         ///
         /// SUPLIERS
         ///
@@ -594,6 +622,7 @@ namespace LITTLE_ERP
 
         private void btnO_New_Click(object sender, RoutedEventArgs e)
         {
+            NewOrder.User = setUser;
             NewOrder newOrder = new NewOrder(this);
             newOrder.Show();
         }
@@ -638,6 +667,112 @@ namespace LITTLE_ERP
                 aux.ReadAll();
                 dgrOrders.ItemsSource = aux.manage.list;
             }
+        }
+
+        void cellConfirmed(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        void cellLabeled(object sender, RoutedEventArgs e)
+        {
+
+        }
+        void cellSent(object sender, RoutedEventArgs e)
+        {
+
+        }
+        void cellInvoiced(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void sldStatus_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            Order aux = (Order)dgrOrders.SelectedItem;            
+
+            if(aux != null)
+            {
+                if (sldStatus.Value == 0)
+                {
+                    lblStatus.Text = "Status: Unconfirmed";
+                    aux.status.confirmed = false;
+                    aux.status.labeled = false;
+                    aux.status.sent = false;
+                    aux.status.invoiced = false;
+                }
+
+                if (sldStatus.Value == 10)
+                {
+                    lblStatus.Text = "Status: Confirmed";
+                    aux.status.confirmed = true;
+                    aux.status.labeled = false;
+                    aux.status.sent = false;
+                    aux.status.invoiced = false;
+                }
+
+                if (sldStatus.Value == 20)
+                {
+                    lblStatus.Text = "Status: Labeled";
+                    aux.status.confirmed = true;
+                    aux.status.labeled = true;
+                    aux.status.sent = false;
+                    aux.status.invoiced = false;
+                }
+
+                if (sldStatus.Value == 30)
+                {
+                    lblStatus.Text = "Status: Sent";
+                    aux.status.confirmed = true;
+                    aux.status.labeled = true;
+                    aux.status.sent = true;
+                    aux.status.invoiced = false;
+                }
+
+                if (sldStatus.Value == 40)
+                {
+                    lblStatus.Text = "Status: Invoiced";
+                    aux.status.confirmed = true;
+                    aux.status.labeled = true;
+                    aux.status.sent = true;
+                    aux.status.invoiced = true;
+                }
+
+                dgrOrders.SelectedItem = aux;
+                dgrOrders.Items.Refresh();
+
+                aux.UpdateOrderStatus();
+            }
+
+        }
+
+        private void dgrOrders_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Order aux = (Order)dgrOrders.SelectedItem;
+            int value = 0;
+
+            if(aux != null)
+            {
+                if (aux.status.confirmed)
+                    value = 10;
+                if (aux.status.labeled)
+                    value = 20;
+                if (aux.status.sent)
+                    value = 30;
+                if (aux.status.invoiced)
+                    value = 40;
+
+                sldStatus.Value = value;
+            }
+            
+        }
+
+        private void btnO_Zoom_Click(object sender, RoutedEventArgs e)
+        {
+            Order aux = (Order)dgrOrders.SelectedItem;
+            NewOrder.Order = aux;
+            NewOrder newOrder = new NewOrder();
+            newOrder.Show();
         }
     }
 }
