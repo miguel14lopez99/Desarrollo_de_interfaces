@@ -17,8 +17,7 @@ namespace LITTLE_ERP.View
 {
     /// <summary>
     /// Lógica de interacción para NewOrder.xaml
-    /// </summary>
-    
+    /// </summary>  
     public partial class NewOrder : Window
     {
         private static Order order;
@@ -28,12 +27,19 @@ namespace LITTLE_ERP.View
         private static Product product;
         private static Customer customer;
         private static User user;
+        private static Boolean newInvoice;
 
         internal static Product Product { get => product; set => product = value; }
         internal static Customer Customer { get => customer; set => customer = value; }
         internal static User User { get => user; set => user = value; }
         internal static Order Order { get => order; set => order = value; }
+        public static bool NewInvoice { get => newInvoice; set => newInvoice = value; }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="NewOrder"/> class.
+        /// 
+        /// Without parameters only shows the order data
+        /// </summary>
         public NewOrder()
         {
             InitializeComponent();
@@ -41,7 +47,7 @@ namespace LITTLE_ERP.View
             //disable some controls
             btnSearchC.IsEnabled = false;
             btnSearchP.IsEnabled = false;
-            cmbPayment.IsEnabled = false;
+            cmbPayment.IsEnabled = true;
             txtPrepaid.IsEnabled = false;
             btnP_New.IsEnabled = false;
             btnP_Del.IsEnabled = false;
@@ -54,12 +60,20 @@ namespace LITTLE_ERP.View
             //load the data
             txtID.Text = Order.idOrder.ToString();
             txtCustomer.Text = Order.customer.name;
+            cmbPayment.Items.Add(Order.payment);
             cmbPayment.SelectedItem = Order.payment;
             txtPrepaid.Text = Order.prepaid.ToString();
             dgrProducts.ItemsSource = Order.listOP;   
 
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="NewOrder"/> class.
+        /// 
+        /// Initializes the form to create orders but if this window 
+        /// is created from the Invoice tab, is modified to create invoices
+        /// </summary>
+        /// <param name="callingForm">The calling form.</param>
         public NewOrder(Window callingForm)
         {
             InitializeComponent();
@@ -68,8 +82,9 @@ namespace LITTLE_ERP.View
 
             //put id
             Order aux = new Order();
-            int maximun = aux.manage.getTodayMaxID();
+            int maximun = aux.manage.getMaxOrderID();
             Int64 orderID = Convert.ToInt64(DateTime.Today.ToString("yyyyMMdd") + maximun.ToString("0000"));
+            Order = new Order(orderID);           
 
             txtID.Text = orderID.ToString();
 
@@ -80,8 +95,25 @@ namespace LITTLE_ERP.View
 
             //initialize the order
             Order = new Order();
+
+            //If this window is open from the invoice tab, it changes the id format
+            if (NewInvoice)
+            {
+                maximun = aux.manage.getMaxInvoiceID();
+                Int64 invoiceID = Convert.ToInt64(DateTime.Today.ToString("yyyy") + maximun.ToString("0000"));
+
+                txtID.Text = invoiceID.ToString();
+            }
+      
         }
 
+        /// <summary>
+        /// Handles the Click event of the btnSearchC control.
+        /// 
+        /// Opens the customers tab to select a customer
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void btnSearchC_Click(object sender, RoutedEventArgs e)
         {
             TabsWindow tabsWindow2 = new TabsWindow();
@@ -101,6 +133,13 @@ namespace LITTLE_ERP.View
             txtCustomer.Text = customer.name;
         }
 
+        /// <summary>
+        /// Handles the Click event of the btnSearchP control.
+        /// 
+        /// Opens the products tab to select a product
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void btnSearchP_Click(object sender, RoutedEventArgs e)
         {
             TabsWindow tabsWindow3 = new TabsWindow();
@@ -122,11 +161,19 @@ namespace LITTLE_ERP.View
 
         }
 
+        /// <summary>
+        /// Handles the Click event of the btnSaveProduct control.
+        /// 
+        /// Add the product to the order datagrid
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
+        /// <returns></returns>
         private void btnSaveProduct_Click(object sender, RoutedEventArgs e)
         {
             OrderProducts orderProduct = new OrderProducts();
 
-            orderProduct.idOrder = Convert.ToInt64(txtID.Text);
+            orderProduct.idOrder = Order.idOrder; //Convert.ToInt64(txtID.Text);
 
             if (chkGeneric.IsChecked.Value == true)
             {
@@ -148,6 +195,14 @@ namespace LITTLE_ERP.View
             dgrProducts.ItemsSource = Order.listOP;
         }
 
+        /// <summary>
+        /// Handles the Checked event of the chkGeneric control.
+        /// 
+        /// Modify the form to add generic products
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
+        /// <returns></returns>
         private void chkGeneric_Checked(object sender, RoutedEventArgs e)
         {
             btnSearchP.Visibility = Visibility.Hidden;
@@ -159,6 +214,14 @@ namespace LITTLE_ERP.View
             txtProduct.IsEnabled = true;
         }
 
+        /// <summary>
+        /// Handles the Unchecked event of the chkGeneric control.
+        /// 
+        /// Modify the form to add products from the database
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
+        /// <returns></returns>
         private void chkGeneric_Unchecked(object sender, RoutedEventArgs e)
         {
             btnSearchP.Visibility = Visibility.Visible;
@@ -170,6 +233,14 @@ namespace LITTLE_ERP.View
             txtProduct.IsEnabled = false;
         }
 
+        /// <summary>
+        /// Handles the Click event of the btnP_New control.
+        /// 
+        /// Empty the form to introduce a new product
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
+        /// <returns></returns>
         private void btnP_New_Click(object sender, RoutedEventArgs e)
         {
             txtProduct.Text = "";
@@ -177,6 +248,13 @@ namespace LITTLE_ERP.View
             txtAmount.Text = "1";
         }
 
+        /// <summary>
+        /// Handles the Click event of the btnP_Del control.
+        /// 
+        /// Delete the selected product from the order datagrid
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void btnP_Del_Click(object sender, RoutedEventArgs e)
         {
             List<OrderProducts> data = new List<OrderProducts>();
@@ -189,10 +267,6 @@ namespace LITTLE_ERP.View
                 {
                     indice = dgrProducts.Items.IndexOf(dgrProducts.SelectedItems[i]);
                     data.RemoveAt(indice);
-                    /*OrderProducts row = (OrderProducts)dgrProducts.SelectedItems[i];
-                    int listIndex = order.listOP.IndexOf(row);
-                    order.listOP = order.listOP;
-                    order.listOP.RemoveAt(listIndex);*/
                 }
                 dgrProducts.ItemsSource = null;
                 dgrProducts.ItemsSource = data;
@@ -204,12 +278,25 @@ namespace LITTLE_ERP.View
             }
         }
 
+        /// <summary>
+        /// Handles the Click event of the btnSaveOrder control.
+        /// 
+        /// Save the order in the orders datagrid, but if the window 
+        /// has been called from the invoices tab, it also saves the 
+        /// invoice in the invoices datagrid
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
+        /// <returns></returns>
         private void btnSaveOrder_Click(object sender, RoutedEventArgs e)
         {
-            Order.idOrder = Convert.ToInt64(txtID.Text);
+            int maximun = Order.manage.getMaxOrderID();
+            Int64 orderID = Convert.ToInt64(DateTime.Today.ToString("yyyyMMdd") + maximun.ToString("0000"));
+
+            Order.idOrder = orderID;
             Order.idCustomer = customer.idCustomer;
             Order.idUser = user.idUser;
-            Order.datetime = DateTime.Now;
+            Order.datetime = DateTime.Today;
             if(txtPrepaid.Text.Length != 0)
                 Order.prepaid = Convert.ToDouble(txtPrepaid.Text);
             Order.customer = customer;
@@ -235,15 +322,41 @@ namespace LITTLE_ERP.View
             }
 
             Order.Insert();
-            Order.InsertOrderProducts();
-            Order.InsertOrderStatus();
 
             Order.ReadAll();
             tabsWindow.dgrOrders.ItemsSource = Order.manage.list;
 
+            //If this window is open from the invoice tab...
+            if (NewInvoice)
+            {
+                Order.status.confirmed = true;
+                Order.status.labeled = true;
+                Order.status.sent = true;
+                Order.status.invoiced = true;
+
+                Order.UpdateOrderStatus();
+
+                Invoice invoice = new Invoice();
+                invoice.id = Convert.ToInt64(txtID.Text);
+                invoice.date = Order.datetime;
+                invoice.order = Order;
+
+                invoice.Insert();
+                invoice.ReadAll();
+                tabsWindow.dgrInvoices.ItemsSource = invoice.manage.listI;
+
+                NewInvoice = false;
+            }
+
             this.Close();
         }
 
+        /// <summary>
+        /// Handles the Click event of the btnCancel control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
+        /// <returns></returns>
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
             this.Close();

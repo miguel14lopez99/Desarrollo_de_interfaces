@@ -1,0 +1,1665 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>LITTLE_ERP</name>
+    </assembly>
+    <members>
+        <member name="T:LITTLE_ERP.Domain.City">
+            <summary>
+            Class for create city objects
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.City.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:LITTLE_ERP.Domain.City"/> class.
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.City.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LITTLE_ERP.Domain.City"/> class.
+            </summary>
+            <param name="idCity">The city identifier.</param>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.City.#ctor(System.Int32,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LITTLE_ERP.Domain.City"/> class.
+            </summary>
+            <param name="idCity">The city identifier.</param>
+            <param name="name">The city name.</param>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.City.ReadAll(LITTLE_ERP.Domain.State)">
+            <summary>
+            Reads all the cities from a determined state.
+            </summary>
+            <param name="state">The state.</param>
+        </member>
+        <member name="T:LITTLE_ERP.Domain.Customer">
+            <summary>
+            Class for create customer objects
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Customer.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:LITTLE_ERP.Domain.Customer"/> class.
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Customer.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LITTLE_ERP.Domain.Customer"/> class.
+            </summary>
+            <param name="idCustomer">The customer identifier.</param>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Customer.ReadAll">
+            <summary>
+            Reads all customers from de database.
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Customer.ReadCustomer">
+            <summary>
+            Reads a specific customer from the database.
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Customer.Insert">
+            <summary>
+            Inserts the customer in the database.
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Customer.Update">
+            <summary>
+            Updates customer in the database.
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Customer.Delete">
+            <summary>
+            Deletes the data base customer.
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Customer.setZipCodesCities(LITTLE_ERP.Domain.ZipCode)">
+            <summary>
+            Sets the zipcode_cities reference from database.
+            </summary>
+            <param name="zip">The zip.</param>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Customer.setZipCityStateRegion">
+            <summary>
+            Sets zipcode, city, state and region of the customer.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:LITTLE_ERP.Domain.Form">
+            <summary>
+            Class for create form objects
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Form.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:LITTLE_ERP.Domain.Form"/> class.
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Form.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LITTLE_ERP.Domain.Form"/> class.
+            </summary>
+            <param name="idForm">The form identifier.</param>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Form.#ctor(System.Int32,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LITTLE_ERP.Domain.Form"/> class.
+            </summary>
+            <param name="idForm">The form identifier.</param>
+            <param name="frmDesc">The form description.</param>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Form.ReadAll">
+            <summary>
+            Reads all forms from the database.
+            </summary>
+        </member>
+        <member name="T:LITTLE_ERP.Domain.Ingredient">
+            <summary>
+            Class for create ingredient objects
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Ingredient.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:LITTLE_ERP.Domain.Ingredient"/> class.
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Ingredient.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LITTLE_ERP.Domain.Ingredient"/> class.
+            </summary>
+            <param name="idIngredient">The ingredient identifier.</param>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Ingredient.#ctor(System.Int32,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LITTLE_ERP.Domain.Ingredient"/> class.
+            </summary>
+            <param name="idIngredient">The ingredient identifier.</param>
+            <param name="ingDesc">The ingredient description.</param>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Ingredient.ReadAll">
+            <summary>
+            Reads all Ingredients from de database.
+            </summary>
+        </member>
+        <member name="T:LITTLE_ERP.Domain.Invoice">
+            <summary>
+            Class for create invoice objects
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Invoice.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:LITTLE_ERP.Domain.Invoice"/> class.
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Invoice.#ctor(System.Int64)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LITTLE_ERP.Domain.Invoice"/> class.
+            </summary>
+            <param name="id">The identifier.</param>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Invoice.ReadAll">
+            <summary>
+            Reads all invoices from the database.
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Invoice.ReadInvoice">
+            <summary>
+            Reads an spacific invoice from the database.
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Invoice.Insert">
+            <summary>
+            Inserts the invoice in the database.
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Invoice.Delete">
+            <summary>
+            Deletes the invoice from the database.
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Invoice.UpdateAccounted">
+            <summary>
+            Updates the accounted field of the invoice.
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Invoice.MakeInvoiceDataTable">
+            <summary>
+            Fill a datatable with the invoice data.
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Invoice.MakeOrdersDataTable">
+            <summary>
+            Fill a datatable with the invoice's order data.
+            </summary>
+        </member>
+        <member name="T:LITTLE_ERP.Domain.Manage.CustomerManage">
+            <summary>
+            Class for manage customer, region, state, city and ZipCode objects
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Manage.CustomerManage.#ctor">
+            <summary>
+            Initializes all the lists of the <see cref="T:LITTLE_ERP.Domain.Manage.CustomerManage"/> class.
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Manage.CustomerManage.ReadAll">
+            <summary>
+            Reads all customers from the database.
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Manage.CustomerManage.ReadCustomer(LITTLE_ERP.Domain.Customer)">
+            <summary>
+            Reads a specific customer from the database.
+            </summary>
+            <param name="customer">The customer.</param>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Manage.CustomerManage.setSelectedList(System.String)">
+            <summary>
+            Adds to a list all customers that meet a pattern.
+            </summary>
+            <param name="pattern">The pattern.</param>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Manage.CustomerManage.setZipCityStateRegion(LITTLE_ERP.Domain.Customer)">
+            <summary>
+            Retrieve the zip, city, state and region of a customer and set them to the customer.
+            </summary>
+            <param name="customer">The customer.</param>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Manage.CustomerManage.setZipCodesCities(LITTLE_ERP.Domain.Customer,LITTLE_ERP.Domain.ZipCode)">
+            <summary>
+            Retrieve the zip code and city of a customer and set them to the customer.
+            </summary>
+            <param name="customer">The customer.</param>
+            <param name="zipcode">The zipcode.</param>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Manage.CustomerManage.InsertCustomer(LITTLE_ERP.Domain.Customer)">
+            <summary>
+            Inserts the customer in the database.
+            </summary>
+            <param name="customer">The customer.</param>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Manage.CustomerManage.UpdateCustomer(LITTLE_ERP.Domain.Customer)">
+            <summary>
+            Updates the customer data from the database.
+            </summary>
+            <param name="customer">The customer.</param>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Manage.CustomerManage.DeleteCustomer(LITTLE_ERP.Domain.Customer)">
+            <summary>
+            Logically Deletes the customer from the database.
+            </summary>
+            <param name="customer">The customer.</param>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Manage.CustomerManage.ReadAllRegions">
+            <summary>
+            Reads all regions from the database.
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Manage.CustomerManage.ReadAllStates(LITTLE_ERP.Domain.Region)">
+            <summary>
+            Reads all states from the database.
+            </summary>
+            <param name="region">The region.</param>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Manage.CustomerManage.ReadAllCities(LITTLE_ERP.Domain.State)">
+            <summary>
+            Reads all cities from the database.
+            </summary>
+            <param name="state">The state.</param>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Manage.CustomerManage.ReadAllZipCodes(LITTLE_ERP.Domain.City)">
+            <summary>
+            Reads all zip codes from the database.
+            </summary>
+            <param name="city">The city.</param>
+        </member>
+        <member name="T:LITTLE_ERP.Domain.Manage.OrderManage">
+            <summary>
+            Class for manage order, payment method and invoice objects
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Manage.OrderManage.#ctor">
+            <summary>
+            Initializes all the lists and datatables of the <see cref="T:LITTLE_ERP.Domain.Manage.OrderManage"/> class.
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Manage.OrderManage.ReadAll">
+            <summary>
+            Reads all orders from the database.
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Manage.OrderManage.ReadOrder(LITTLE_ERP.Domain.Order)">
+            <summary>
+            Reads a specific order from the database.
+            </summary>
+            <param name="order">The order.</param>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Manage.OrderManage.setSelectedList(System.String)">
+            <summary>
+            Adds to a list all customers that meet a pattern.
+            </summary>
+            <param name="pattern">The pattern.</param>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Manage.OrderManage.ReadAllPaymentMethods">
+            <summary>
+            Reads all payment methods from the database.
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Manage.OrderManage.setPaymentStatus(LITTLE_ERP.Domain.Order)">
+            <summary>
+            Retrieves the payment status of an order and sets it to the order.
+            </summary>
+            <param name="order">The order.</param>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Manage.OrderManage.setCustomerUser(LITTLE_ERP.Domain.Order)">
+            <summary>
+            Retrieve the customer and the user of an order an set them to the order.
+            </summary>
+            <param name="order">The order.</param>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Manage.OrderManage.getMaxOrderID">
+            <summary>
+            Gets the today maximum identifier for the order.
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Manage.OrderManage.InsertOrder(LITTLE_ERP.Domain.Order)">
+            <summary>
+            Inserts the order in the database.
+            </summary>
+            <param name="order">The order.</param>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Manage.OrderManage.UpdateOrder(LITTLE_ERP.Domain.Order)">
+            <summary>
+            Updates the order from the database.
+            </summary>
+            <param name="order">The order.</param>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Manage.OrderManage.DeleteOrder(LITTLE_ERP.Domain.Order)">
+            <summary>
+            Deletes logicaly the order from the database.
+            </summary>
+            <param name="order">The order.</param>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Manage.OrderManage.ReadAllOrderProducts(LITTLE_ERP.Domain.Order)">
+            <summary>
+            Reads all of the order products from the database.
+            </summary>
+            <param name="order">The order.</param>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Manage.OrderManage.InsertOrderProducts(LITTLE_ERP.Domain.Order)">
+            <summary>
+            Inserts the order products in the database.
+            </summary>
+            <param name="order">The order.</param>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Manage.OrderManage.InsertOrderStatus(LITTLE_ERP.Domain.Order)">
+            <summary>
+            Inserts the order status.
+            </summary>
+            <param name="order">The order.</param>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Manage.OrderManage.UpdateOrderStatus(LITTLE_ERP.Domain.Order)">
+            <summary>
+            Updates the order status.
+            </summary>
+            <param name="order">The order.</param>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Manage.OrderManage.ReadAllInvoices">
+            <summary>
+            Reads all invoices for the database.
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Manage.OrderManage.ReadInvoice(LITTLE_ERP.Domain.Invoice)">
+            <summary>
+            Reads the invoice from the database.
+            </summary>
+            <param name="invoice">The invoice.</param>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Manage.OrderManage.setOrder(LITTLE_ERP.Domain.Invoice)">
+            <summary>
+            Retrieve the invoice's order and sets it to the invoice.
+            </summary>
+            <param name="invoice">The invoice.</param>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Manage.OrderManage.setInvoicesSelectedList(System.String)">
+            <summary>
+            Adds to a list all invoices that meet a pattern.
+            </summary>
+            <param name="pattern">The pattern.</param>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Manage.OrderManage.InsertInvoice(LITTLE_ERP.Domain.Invoice)">
+            <summary>
+            Inserts the invoice in the database.
+            </summary>
+            <param name="invoice">The invoice.</param>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Manage.OrderManage.DeleteInvoice(LITTLE_ERP.Domain.Invoice)">
+            <summary>
+            Logically deletes the invoice from the database.
+            </summary>
+            <param name="invoice">The invoice.</param>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Manage.OrderManage.getMaxInvoiceID">
+            <summary>
+            Gets the maximum invoice identifier.
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Manage.OrderManage.UpdateAccounted(LITTLE_ERP.Domain.Invoice)">
+            <summary>
+            Updates the accounted field of an invoice.
+            </summary>
+            <param name="invoice">The invoice.</param>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Manage.OrderManage.MakeInvoiceDataTable(LITTLE_ERP.Domain.Invoice)">
+            <summary>
+            Fill a datatable with the invoice data.
+            </summary>
+            <param name="i">The invoice.</param>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Manage.OrderManage.MakeOrdersDataTable(LITTLE_ERP.Domain.Invoice)">
+            <summary>
+            Fill a datatable with the invoice's order data.
+            </summary>
+            <param name="i">The invoice.</param>
+        </member>
+        <member name="T:LITTLE_ERP.Domain.Manage.ProductManage">
+            <summary>
+            Class for manage product, form and ingredient objects
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Manage.ProductManage.#ctor">
+            <summary>
+            Initializes all the lists of the <see cref="T:LITTLE_ERP.Domain.Manage.ProductManage"/> class.
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Manage.ProductManage.ReadAll">
+            <summary>
+            Reads all products from the database.
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Manage.ProductManage.ReadProduct(LITTLE_ERP.Domain.Product)">
+            <summary>
+            Reads a specific product from the database.
+            </summary>
+            <param name="product">The product.</param>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Manage.ProductManage.setSelectedList(System.String)">
+            <summary>
+            Adds to a list all products that meet a pattern.
+            </summary>
+            <param name="pattern">The pattern.</param>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Manage.ProductManage.ReadAllForms">
+            <summary>
+            Reads all forms from the database.
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Manage.ProductManage.ReadAllIngredients">
+            <summary>
+            Reads all ingredients from the database.
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Manage.ProductManage.setFormIngredient(LITTLE_ERP.Domain.Product)">
+            <summary>
+            Retrieve the form and ingredient of a product and set them to the product.
+            </summary>
+            <param name="product">The product.</param>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Manage.ProductManage.InsertProduct(LITTLE_ERP.Domain.Product)">
+            <summary>
+            Inserts the product in the database.
+            </summary>
+            <param name="product">The product.</param>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Manage.ProductManage.UpdateProduct(LITTLE_ERP.Domain.Product)">
+            <summary>
+            Updates the product data from the database.
+            </summary>
+            <param name="product">The product.</param>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Manage.ProductManage.DeleteProduct(LITTLE_ERP.Domain.Product)">
+            <summary>
+            Logically deletes the product from the database.
+            </summary>
+            <param name="product">The product.</param>
+        </member>
+        <member name="T:LITTLE_ERP.Domain.Manage.RolManage">
+            <summary>
+            Class for manage rol objects
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Manage.RolManage.#ctor">
+            <summary>
+            Initializes the list of the <see cref="T:LITTLE_ERP.Domain.Manage.RolManage"/> class.
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Manage.RolManage.ReadAll">
+            <summary>
+            Read all roles from the database.
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Manage.RolManage.ReadRol(LITTLE_ERP.Domain.Rol)">
+            <summary>
+            Reads a specific rol from the database.
+            </summary>
+            <param name="rol">The rol.</param>
+        </member>
+        <member name="T:LITTLE_ERP.Domain.Manage.SuplierManage">
+            <summary>
+            Class for manage suplier objects
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Manage.SuplierManage.#ctor">
+            <summary>
+            Initializes all the lists of the <see cref="T:LITTLE_ERP.Domain.Manage.SuplierManage"/> class.
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Manage.SuplierManage.ReadAll">
+            <summary>
+            Reads all supliers from a Json file.
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Manage.SuplierManage.setSelectedList(System.String)">
+            <summary>
+            Adds to a list all supliers that meet a pattern.
+            </summary>
+            <param name="pattern">The pattern.</param>
+        </member>
+        <member name="T:LITTLE_ERP.Domain.Manage.UserManage">
+            <summary>
+            Class for manage user objects
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Manage.UserManage.#ctor">
+            <summary>
+            Initializes all the lists of the <see cref="T:LITTLE_ERP.Domain.Manage.UserManage"/> class.
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Manage.UserManage.ReadAll">
+            <summary>
+            Reads all users from the database.
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Manage.UserManage.ReadUser(LITTLE_ERP.Domain.User)">
+            <summary>
+            Reads a specific user from the database.
+            </summary>
+            <param name="user">The user.</param>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Manage.UserManage.setSelectedList(System.String)">
+            <summary>
+            Adds to a list all users that meet a pattern.
+            </summary>
+            <param name="pattern">The pattern.</param>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Manage.UserManage.InsertUser(LITTLE_ERP.Domain.User)">
+            <summary>
+            Inserts the user in the database.
+            </summary>
+            <param name="user">The user.</param>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Manage.UserManage.CheckUser(LITTLE_ERP.Domain.User)">
+            <summary>
+            Checks if a user exists in the database.
+            </summary>
+            <param name="user">The user.</param>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Manage.UserManage.DeleteUser(LITTLE_ERP.Domain.User)">
+            <summary>
+            Logically deletes the user from the database.
+            </summary>
+            <param name="user">The user.</param>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Manage.UserManage.UpdateName(LITTLE_ERP.Domain.User,System.String)">
+            <summary>
+            Updates the user's name field from the database.
+            </summary>
+            <param name="user">The user.</param>
+            <param name="newName">The new user name.</param>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Manage.UserManage.UpdatePass(LITTLE_ERP.Domain.User,System.String)">
+            <summary>
+            Updates the user's password field from the database.
+            </summary>
+            <param name="user">The user.</param>
+            <param name="newPass">The new user password.</param>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Manage.UserManage.addRol(LITTLE_ERP.Domain.Rol,LITTLE_ERP.Domain.User)">
+            <summary>
+            Adds a rol to the user.
+            </summary>
+            <param name="rol">The rol.</param>
+            <param name="user">The user.</param>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Manage.UserManage.deleteRoles(LITTLE_ERP.Domain.User)">
+            <summary>
+            Remove all roles from the user.
+            </summary>
+            <param name="user">The user.</param>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Manage.UserManage.setRolList(LITTLE_ERP.Domain.User)">
+            <summary>
+            Retrieves the roles assigned to the user and sets them in the list of user roles.
+            </summary>
+            <param name="user">The user.</param>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Manage.UserManage.getUserID(System.String,System.String)">
+            <summary>
+            Gets the user identifier.
+            </summary>
+            <param name="name">The name.</param>
+            <param name="password">The password.</param>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Manage.UserManage.setPermissions(LITTLE_ERP.Domain.User)">
+            <summary>
+            Sets the permissions to the user.
+            </summary>
+            <param name="user">The user.</param>
+        </member>
+        <member name="T:LITTLE_ERP.Domain.OrderProducts">
+            <summary>
+            Class for create OrderProducts objects
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.OrderProducts.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:LITTLE_ERP.Domain.OrderProducts"/> class.
+            </summary>
+        </member>
+        <member name="T:LITTLE_ERP.Domain.PaymentMethod">
+            <summary>
+            Class for create PaymentMethods objects
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.PaymentMethod.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:LITTLE_ERP.Domain.PaymentMethod"/> class.
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.PaymentMethod.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LITTLE_ERP.Domain.PaymentMethod"/> class.
+            </summary>
+            <param name="id">The identifier.</param>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.PaymentMethod.#ctor(System.Int32,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LITTLE_ERP.Domain.PaymentMethod"/> class.
+            </summary>
+            <param name="id">The identifier.</param>
+            <param name="name">The name.</param>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.PaymentMethod.ReadAll">
+            <summary>
+            Reads all payment methods from database.
+            </summary>
+        </member>
+        <member name="T:LITTLE_ERP.Domain.Order">
+            <summary>
+            Class for create order objects
+            </summary>
+        </member>
+        <member name="T:LITTLE_ERP.Domain.Order.OrderStatus">
+            <summary>
+            Class for create the order's status
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Order.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:LITTLE_ERP.Domain.Order"/> class.
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Order.#ctor(System.Int64)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LITTLE_ERP.Domain.Order"/> class.
+            </summary>
+            <param name="idOrder">The identifier order.</param>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Order.ReadAll">
+            <summary>
+            Reads all orders from the database.
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Order.ReadOrder">
+            <summary>
+            Reads a specific order from the database.
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Order.Insert">
+            <summary>
+            Inserts the order in the database.
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Order.Update">
+            <summary>
+            Updates the order data from the database.
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Order.Delete">
+            <summary>
+            Deletes the order from the database.
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Order.ReadAllOrderProducts">
+            <summary>
+            Reads all order products from database.
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Order.InsertOrderProducts">
+            <summary>
+            Inserts the order products in the database.
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Order.InsertOrderStatus">
+            <summary>
+            Inserts the order status in the database.
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Order.UpdateOrderStatus">
+            <summary>
+            Updates the order status from the database.
+            </summary>
+        </member>
+        <member name="T:LITTLE_ERP.Domain.Product">
+            <summary>
+            Class for create Product objects
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Product.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:LITTLE_ERP.Domain.Product"/> class.
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Product.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LITTLE_ERP.Domain.Product"/> class.
+            </summary>
+            <param name="idProduct">The product identifier.</param>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Product.ReadAll">
+            <summary>
+            Reads all products from the database.
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Product.ReadProduct">
+            <summary>
+            Reads an specific product from the database.
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Product.Insert">
+            <summary>
+            Inserts the product in the database.
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Product.Update">
+            <summary>
+            Updates the product data from the database.
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Product.Delete">
+            <summary>
+            Deletes the product from the database.
+            </summary>
+        </member>
+        <member name="T:LITTLE_ERP.Domain.Region">
+            <summary>
+            Class for create Region objects
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Region.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:LITTLE_ERP.Domain.Region"/> class.
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Region.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LITTLE_ERP.Domain.Region"/> class.
+            </summary>
+            <param name="idRegion">The region identifier.</param>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Region.#ctor(System.Int32,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LITTLE_ERP.Domain.Region"/> class.
+            </summary>
+            <param name="idRegion">The region identifier.</param>
+            <param name="name">The region name.</param>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Region.ReadAll">
+            <summary>
+            Reads all regions from the database.
+            </summary>
+        </member>
+        <member name="T:LITTLE_ERP.Domain.Rol">
+            <summary>
+            Class for create Rol objects
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Rol.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:LITTLE_ERP.Domain.Rol"/> class.
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Rol.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LITTLE_ERP.Domain.Rol"/> class.
+            </summary>
+            <param name="idRol">The rol identifier.</param>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Rol.readAll">
+            <summary>
+            Reads all roles from the database.
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Rol.readRol">
+            <summary>
+            Reads a specific rol from the database.
+            </summary>
+        </member>
+        <member name="T:LITTLE_ERP.Domain.State">
+            <summary>
+            Class for create State objects
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.State.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:LITTLE_ERP.Domain.State"/> class.
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.State.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LITTLE_ERP.Domain.State"/> class.
+            </summary>
+            <param name="idState">The state identifier.</param>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.State.#ctor(System.Int32,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LITTLE_ERP.Domain.State"/> class.
+            </summary>
+            <param name="idState">The state identifier.</param>
+            <param name="name">The state name.</param>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.State.ReadAll(LITTLE_ERP.Domain.Region)">
+            <summary>
+            Reads all states from a determined region.
+            </summary>
+            <param name="region">The region.</param>
+        </member>
+        <member name="T:LITTLE_ERP.Domain.Suplier">
+            <summary>
+            Class for create Suplier objects
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Suplier.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:LITTLE_ERP.Domain.Suplier"/> class.
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.Suplier.ReadAll">
+            <summary>
+            Reads all supliers from a Json file.
+            </summary>
+        </member>
+        <member name="T:LITTLE_ERP.Domain.ZipCode">
+            <summary>
+            Class for create ZipCode objects
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.ZipCode.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:LITTLE_ERP.Domain.ZipCode"/> class.
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.ZipCode.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LITTLE_ERP.Domain.ZipCode"/> class.
+            </summary>
+            <param name="idZipCode">The zip code identifier.</param>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.ZipCode.#ctor(System.Int32,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LITTLE_ERP.Domain.ZipCode"/> class.
+            </summary>
+            <param name="idZipCode">The zip code identifier.</param>
+            <param name="name">The zip code name.</param>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.ZipCode.ReadAll(LITTLE_ERP.Domain.City)">
+            <summary>
+            Reads all zip codes from a determined city.
+            </summary>
+            <param name="city">The city.</param>
+        </member>
+        <member name="T:LITTLE_ERP.Domain.User">
+            <summary>
+            Class for create User objects
+            </summary>
+        </member>
+        <member name="T:LITTLE_ERP.Domain.User.UserPermissions">
+            <summary>
+            Class for create User's permissions objects
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.User.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:LITTLE_ERP.Domain.User"/> class.
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.User.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LITTLE_ERP.Domain.User"/> class.
+            </summary>
+            <param name="idUser">The user identifier.</param>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.User.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LITTLE_ERP.Domain.User"/> class.
+            </summary>
+            <param name="name">The user name.</param>
+            <param name="password">The user password.</param>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.User.insert">
+            <summary>
+            Insert the user in the database.
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.User.check">
+            <summary>
+            Checks if a user exists in the database.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.User.readAll">
+            <summary>
+            Reads all users from the database.
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.User.readUser">
+            <summary>
+            Reads a specific user from the database.
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.User.delete">
+            <summary>
+            Delete the user from the database.
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.User.addRol(LITTLE_ERP.Domain.Rol)">
+            <summary>
+            Adds a rol to the user.
+            </summary>
+            <param name="rol">The rol.</param>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.User.deleteRoles">
+            <summary>
+            Remove all roles from the user.
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.User.setRolList">
+            <summary>
+            Retrieves the roles assigned to the user and sets them in the list of user roles.
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.User.updateName(System.String)">
+            <summary>
+            Updates the name field of the user.
+            </summary>
+            <param name="name">The name.</param>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.User.updatePass(System.String)">
+            <summary>
+            Updates the password field of the user.
+            </summary>
+            <param name="pass">The pass.</param>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.User.getUserID(System.String,System.String)">
+            <summary>
+            Gets the user identifier.
+            </summary>
+            <param name="login">The user's name.</param>
+            <param name="pass">The user's password.</param>
+            <returns></returns>
+        </member>
+        <member name="M:LITTLE_ERP.Domain.User.setPermissions">
+            <summary>
+            Sets the permissions to the user.
+            </summary>
+        </member>
+        <member name="T:LITTLE_ERP.Persistence.InvoiceDataSet">
+             <summary>
+            Represents a strongly typed in-memory cache of data.
+            </summary>
+        </member>
+        <member name="T:LITTLE_ERP.Persistence.InvoiceDataSet.InvoicesDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:LITTLE_ERP.Persistence.InvoiceDataSet.OrdersDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:LITTLE_ERP.Persistence.InvoiceDataSet.InvoicesRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:LITTLE_ERP.Persistence.InvoiceDataSet.OrdersRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:LITTLE_ERP.Persistence.InvoiceDataSet.InvoicesRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:LITTLE_ERP.Persistence.InvoiceDataSet.OrdersRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.Persistence.ConnectOracle.getData(System.String,System.String)">
+            Method to retrieve a set of data
+            Parameter: Query
+            Parameter: Table
+        </member>
+        <member name="M:LITTLE_ERP.Persistence.ConnectOracle.setData(System.String)">
+            Method to insert data in a table
+            Parameter: Sentence 
+        </member>
+        <member name="M:LITTLE_ERP.Persistence.ConnectOracle.DLookUp(System.String,System.String,System.String)">
+            Method to retrieve only one value
+            Parameter: column
+            Parameter: Table
+            Parameter: Condition
+        </member>
+        <member name="T:LITTLE_ERP.View.InvoiceView">
+            <summary>
+            Lógica de interacción para InvoiceView.xaml
+            </summary>
+            <summary>
+            InvoiceView
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.View.InvoiceView.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:LITTLE_ERP.View.InvoiceView"/> class.
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.View.InvoiceView.Grid_Loaded(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Handles the Loaded event of the Grid control.
+            
+            Load all the invoice data to the report
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:LITTLE_ERP.View.InvoiceView.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:LITTLE_ERP.View.NewOrder">
+            <summary>
+            Lógica de interacción para NewOrder.xaml
+            </summary>  
+            <summary>
+            NewOrder
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.View.NewOrder.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:LITTLE_ERP.View.NewOrder"/> class.
+            
+            Without parameters only shows the order data
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.View.NewOrder.#ctor(System.Windows.Window)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LITTLE_ERP.View.NewOrder"/> class.
+            
+            Initializes the form to create orders but if this window 
+            is created from the Invoice tab, is modified to create invoices
+            </summary>
+            <param name="callingForm">The calling form.</param>
+        </member>
+        <member name="M:LITTLE_ERP.View.NewOrder.btnSearchC_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Handles the Click event of the btnSearchC control.
+            
+            Opens the customers tab to select a customer
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:LITTLE_ERP.View.NewOrder.btnSearchP_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Handles the Click event of the btnSearchP control.
+            
+            Opens the products tab to select a product
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:LITTLE_ERP.View.NewOrder.btnSaveProduct_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Handles the Click event of the btnSaveProduct control.
+            
+            Add the product to the order datagrid
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
+            <returns></returns>
+        </member>
+        <member name="M:LITTLE_ERP.View.NewOrder.chkGeneric_Checked(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Handles the Checked event of the chkGeneric control.
+            
+            Modify the form to add generic products
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
+            <returns></returns>
+        </member>
+        <member name="M:LITTLE_ERP.View.NewOrder.chkGeneric_Unchecked(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Handles the Unchecked event of the chkGeneric control.
+            
+            Modify the form to add products from the database
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
+            <returns></returns>
+        </member>
+        <member name="M:LITTLE_ERP.View.NewOrder.btnP_New_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Handles the Click event of the btnP_New control.
+            
+            Empty the form to introduce a new product
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
+            <returns></returns>
+        </member>
+        <member name="M:LITTLE_ERP.View.NewOrder.btnP_Del_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Handles the Click event of the btnP_Del control.
+            
+            Delete the selected product from the order datagrid
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:LITTLE_ERP.View.NewOrder.btnSaveOrder_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Handles the Click event of the btnSaveOrder control.
+            
+            Save the order in the orders datagrid, but if the window 
+            has been called from the invoices tab, it also saves the 
+            invoice in the invoices datagrid
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
+            <returns></returns>
+        </member>
+        <member name="M:LITTLE_ERP.View.NewOrder.btnCancel_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Handles the Click event of the btnCancel control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
+            <returns></returns>
+        </member>
+        <member name="M:LITTLE_ERP.View.NewOrder.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:LITTLE_ERP.NewUser">
+            <summary>
+            Lógica de interacción para NewUser.xaml
+            </summary>
+            <summary>
+            NewUser
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.NewUser.#ctor(System.Windows.Window)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LITTLE_ERP.NewUser"/> class.
+            
+            Initializes the form to create or modify users
+            </summary>
+            <param name="callingForm">The calling form.</param>
+        </member>
+        <member name="M:LITTLE_ERP.NewUser.btnOK_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Handles the Click event of the btnOK control.
+            
+            Save the user in the users datagrid
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:LITTLE_ERP.NewUser.btnCancel_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Handles the Click event of the btnCancel control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:LITTLE_ERP.NewUser.btnAssign_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Handles the Click event of the btnAssign control.
+            
+            Assign a role to the user
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:LITTLE_ERP.NewUser.btnDeny_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Handles the Click event of the btnDeny control.
+            
+            Deny a role to the user
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:LITTLE_ERP.NewUser.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.SomeResources.Useful.random_Number(System.Int32,System.Int32)">
+             Method that extracts of Sample its amount and increases the number of valid samples
+            
+        </member>
+        <member name="M:LITTLE_ERP.SomeResources.Useful.getHashSha256(System.String)">
+            <summary>
+            Gets the hash sha256 for encripting the user's password.
+            </summary>
+            <param name="text">The text.</param>
+            <returns></returns>
+        </member>
+        <member name="T:LITTLE_ERP.TabsWindow">
+            <summary>
+            Lógica de interacción para TabsWindow.xaml
+            </summary>
+            <summary>
+            TabsWindow
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.TabsWindow.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:LITTLE_ERP.TabsWindow"/> class.
+            
+            Initialize the forms of each of the tabs and load all
+            the necessary data from the database
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.TabsWindow.btnAdd_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Handles the Click event of the btnAdd control.
+            
+            Open the form to create a new user
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:LITTLE_ERP.TabsWindow.btnDelete_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Handles the Click event of the btnDelete control.
+            
+            Delete the selected user
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:LITTLE_ERP.TabsWindow.btnModify_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Handles the Click event of the btnModify control.
+            
+            Open the form to modify the user
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:LITTLE_ERP.TabsWindow.txtU_Search_TextChanged(System.Object,System.Windows.Controls.TextChangedEventArgs)">
+            <summary>
+            Handles the TextChanged event of the txtU_Search control.
+            
+            Search among the database users
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.Windows.Controls.TextChangedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:LITTLE_ERP.TabsWindow.btnChangePwd_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Handles the Click event of the btnChangePwd control.
+            
+            Change the password of the logged in user
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:LITTLE_ERP.TabsWindow.btnSave_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Handles the Click event of the btnSave control.
+            
+            Save the customer in the database and in the datagrid customer
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:LITTLE_ERP.TabsWindow.cmbRegion_SelectionChanged(System.Object,System.Windows.Controls.SelectionChangedEventArgs)">
+            <summary>
+            Handles the SelectionChanged event of the cmbRegion control.
+            
+            Assign client region
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.Windows.Controls.SelectionChangedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:LITTLE_ERP.TabsWindow.cmbState_SelectionChanged(System.Object,System.Windows.Controls.SelectionChangedEventArgs)">
+            <summary>
+            Handles the SelectionChanged event of the cmbState control.
+            
+            Assign client state 
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.Windows.Controls.SelectionChangedEventArgs"/> instance containing the event data.</param>
+            <returns></returns>
+        </member>
+        <member name="M:LITTLE_ERP.TabsWindow.cmbCity_SelectionChanged(System.Object,System.Windows.Controls.SelectionChangedEventArgs)">
+            <summary>
+            Handles the SelectionChanged event of the cmbCity control.
+            
+            Assign client city
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.Windows.Controls.SelectionChangedEventArgs"/> instance containing the event data.</param>
+            <returns></returns>
+        </member>
+        <member name="M:LITTLE_ERP.TabsWindow.cmbZipCode_SelectionChanged(System.Object,System.Windows.Controls.SelectionChangedEventArgs)">
+            <summary>
+            Handles the SelectionChanged event of the cmbZipCode control.
+            
+            Assign client zip code
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.Windows.Controls.SelectionChangedEventArgs"/> instance containing the event data.</param>
+            <returns></returns>
+        </member>
+        <member name="M:LITTLE_ERP.TabsWindow.btnDeleteCustomer_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Handles the Click event of the btnDeleteCustomer control.
+            
+            Deletes the customer
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:LITTLE_ERP.TabsWindow.dgrCustomers_SelectionChanged(System.Object,System.Windows.Controls.SelectionChangedEventArgs)">
+            <summary>
+            Handles the SelectionChanged event of the dgrCustomers control.
+            
+            Load in the form the data of the selected customer
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.Windows.Controls.SelectionChangedEventArgs"/> instance containing the event data.</param>
+            <returns></returns>
+        </member>
+        <member name="M:LITTLE_ERP.TabsWindow.txtZipCode_TextChanged(System.Object,System.Windows.Controls.TextChangedEventArgs)">
+            <summary>
+            Handles the TextChanged event of the txtZipCode control.
+            
+            Select the region, the state, the city through the entered zip code
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.Windows.Controls.TextChangedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:LITTLE_ERP.TabsWindow.btnNewCustomer_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Handles the Click event of the btnNewCustomer control.
+            
+            Empty the form to be able to save a new customer
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:LITTLE_ERP.TabsWindow.txtCustomerSearch_TextChanged(System.Object,System.Windows.Controls.TextChangedEventArgs)">
+            <summary>
+            Handles the TextChanged event of the txtCustomerSearch control.
+            
+            Search among all customers
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.Windows.Controls.TextChangedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:LITTLE_ERP.TabsWindow.CustomerRow_DoubleClick(System.Object,System.Windows.Input.MouseButtonEventArgs)">
+            <summary>
+            Handles the DoubleClick event of the CustomerRow control.
+            
+            Load the user selected in the order form
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.Windows.Input.MouseButtonEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:LITTLE_ERP.TabsWindow.btnFill_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Handles the Click event of the btnFill control.
+            
+            Inserts 10000 customers in the program
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:LITTLE_ERP.TabsWindow.dgrProducts_SelectionChanged(System.Object,System.Windows.Controls.SelectionChangedEventArgs)">
+            <summary>
+            Handles the SelectionChanged event of the dgrProducts control.
+            
+            Load the form with the product data
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.Windows.Controls.SelectionChangedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:LITTLE_ERP.TabsWindow.btnP_Save_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Handles the Click event of the btnP_Save control.
+            
+            Save the product in the database and the product datagrid
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:LITTLE_ERP.TabsWindow.btnP_New_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Handles the Click event of the btnP_New control.
+            
+            Empty the form to be able to add a new product
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:LITTLE_ERP.TabsWindow.btnP_Del_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Handles the Click event of the btnP_Del control.
+            
+            Delete the selected product
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:LITTLE_ERP.TabsWindow.txtP_Search_TextChanged(System.Object,System.Windows.Controls.TextChangedEventArgs)">
+            <summary>
+            Handles the TextChanged event of the txtP_Search control.
+            
+            Search among all products
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.Windows.Controls.TextChangedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:LITTLE_ERP.TabsWindow.ProductRow_DoubleClick(System.Object,System.Windows.Input.MouseButtonEventArgs)">
+            <summary>
+            Handles the DoubleClick event of the ProductRow control.
+            
+            Load the product selected in the order form
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.Windows.Input.MouseButtonEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:LITTLE_ERP.TabsWindow.txtS_Search_TextChanged(System.Object,System.Windows.Controls.TextChangedEventArgs)">
+            <summary>
+            Handles the TextChanged event of the txtS_Search control.
+            
+            Search among all supliers
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.Windows.Controls.TextChangedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:LITTLE_ERP.TabsWindow.btnO_New_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Handles the Click event of the btnO_New control.
+            
+            Open the form to create orders
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:LITTLE_ERP.TabsWindow.btnO_Del_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Handles the Click event of the btnO_Del control.
+            
+            Deletes the selected order
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:LITTLE_ERP.TabsWindow.txtO_Search_TextChanged(System.Object,System.Windows.Controls.TextChangedEventArgs)">
+            <summary>
+            Handles the TextChanged event of the txtO_Search control.
+            
+            Search among all the orders
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.Windows.Controls.TextChangedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:LITTLE_ERP.TabsWindow.sldStatus_ValueChanged(System.Object,System.Windows.RoutedPropertyChangedEventArgs{System.Double})">
+            <summary>
+            Handles the ValueChanged event of the sldStatus control.
+            
+            Select the status of the order
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="!:RoutedPropertyChangedEventArgs&lt;System.Double&gt;"/> instance containing the event data.</param>
+        </member>
+        <member name="M:LITTLE_ERP.TabsWindow.dgrOrders_SelectionChanged(System.Object,System.Windows.Controls.SelectionChangedEventArgs)">
+            <summary>
+            Handles the SelectionChanged event of the dgrOrders control.
+            
+            Show the status of the order in the slider
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.Windows.Controls.SelectionChangedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:LITTLE_ERP.TabsWindow.btnO_Zoom_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Handles the Click event of the btnO_Zoom control.
+            
+            Show order details
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:LITTLE_ERP.TabsWindow.txtI_Search_TextChanged(System.Object,System.Windows.Controls.TextChangedEventArgs)">
+            <summary>
+            Handles the TextChanged event of the txtI_Search control.
+            
+            Search among all the invoices
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.Windows.Controls.TextChangedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:LITTLE_ERP.TabsWindow.btnI_Delete_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Handles the Click event of the btnI_Delete control.
+            
+            Delete the invoice
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:LITTLE_ERP.TabsWindow.dgrInvoices_MouseDoubleClick(System.Object,System.Windows.Input.MouseButtonEventArgs)">
+            <summary>
+            Handles the MouseDoubleClick event of the dgrInvoices control.
+            
+            Account the invoice
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.Windows.Input.MouseButtonEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:LITTLE_ERP.TabsWindow.btnI_Add_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Handles the Click event of the btnI_Add control.
+            
+            Open the form to create an invoice
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:LITTLE_ERP.TabsWindow.btnI_Zoom_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Handles the Click event of the btnI_Zoom control.
+            
+            Show the invoice data
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:LITTLE_ERP.TabsWindow.btnI_Print_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Handles the Click event of the btnI_Print control.
+            
+            Create the invoice report to be able to print it
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:LITTLE_ERP.TabsWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:LITTLE_ERP.App">
+            <summary>
+            Lógica de interacción para App.xaml
+            </summary>
+            <summary>
+            App
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.App.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.App.Main">
+            <summary>
+            Application Entry Point.
+            </summary>
+        </member>
+        <member name="T:LITTLE_ERP.MainWindow">
+            <summary>
+            Lógica de interacción para MainWindow.xaml
+            </summary>
+            <summary>
+            MainWindow
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.MainWindow.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:LITTLE_ERP.MainWindow"/> class.
+            </summary>
+        </member>
+        <member name="M:LITTLE_ERP.MainWindow.btnOK_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Handles the Click event of the btnOK control.
+            
+            Checks if the user exists in the database, if exist open the program, 
+            but otherwise an error is thrown
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:LITTLE_ERP.MainWindow.btnClose_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Handles the Click event of the btnClose control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:LITTLE_ERP.MainWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:LITTLE_ERP.Properties.Resources">
+            <summary>
+              Clase de recurso fuertemente tipado para buscar cadenas traducidas, etc.
+            </summary>
+        </member>
+        <member name="P:LITTLE_ERP.Properties.Resources.ResourceManager">
+            <summary>
+              Devuelve la instancia ResourceManager almacenada en caché utilizada por esta clase.
+            </summary>
+        </member>
+        <member name="P:LITTLE_ERP.Properties.Resources.Culture">
+            <summary>
+              Invalida la propiedad CurrentUICulture del subproceso actual para todas las
+              búsquedas de recursos usando esta clase de recursos fuertemente tipados.
+            </summary>
+        </member>
+    </members>
+</doc>

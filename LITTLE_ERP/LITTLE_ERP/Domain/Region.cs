@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace LITTLE_ERP.Domain
 {
+    /// <summary>
+    /// Class for create Region objects
+    /// </summary>
     class Region
     {
 
@@ -14,17 +17,29 @@ namespace LITTLE_ERP.Domain
 
         public Manage.CustomerManage manage { get; set; }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Region"/> class.
+        /// </summary>
         public Region()
         {
             this.manage = new Manage.CustomerManage();
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Region"/> class.
+        /// </summary>
+        /// <param name="idRegion">The region identifier.</param>
         public Region(int idRegion)
         {
             this.manage = new Manage.CustomerManage();
             this.id = idRegion;
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Region"/> class.
+        /// </summary>
+        /// <param name="idRegion">The region identifier.</param>
+        /// <param name="name">The region name.</param>
         public Region(int idRegion, String name)
         {
             this.manage = new Manage.CustomerManage();
@@ -32,6 +47,9 @@ namespace LITTLE_ERP.Domain
             this.name = name;
         }
 
+        /// <summary>
+        /// Reads all regions from the database.
+        /// </summary>
         public void ReadAll()
         {
             manage.ReadAllRegions();

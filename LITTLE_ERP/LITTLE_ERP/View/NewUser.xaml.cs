@@ -32,6 +32,12 @@ namespace LITTLE_ERP
 
         private TabsWindow tabsWindow = null;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="NewUser"/> class.
+        /// 
+        /// Initializes the form to create or modify users
+        /// </summary>
+        /// <param name="callingForm">The calling form.</param>
         public NewUser(Window callingForm)
         {           
             InitializeComponent();
@@ -95,6 +101,13 @@ namespace LITTLE_ERP
 
         }
 
+        /// <summary>
+        /// Handles the Click event of the btnOK control.
+        /// 
+        /// Save the user in the users datagrid
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void btnOK_Click(object sender, RoutedEventArgs e)
         {
 
@@ -181,11 +194,23 @@ namespace LITTLE_ERP
 
         }
 
+        /// <summary>
+        /// Handles the Click event of the btnCancel control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// Handles the Click event of the btnAssign control.
+        /// 
+        /// Assign a role to the user
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void btnAssign_Click(object sender, RoutedEventArgs e)
         {
             //add the selected role to the assigned list and remove from the allowed list
@@ -206,6 +231,13 @@ namespace LITTLE_ERP
             }
         }
 
+        /// <summary>
+        /// Handles the Click event of the btnDeny control.
+        /// 
+        /// Deny a role to the user
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void btnDeny_Click(object sender, RoutedEventArgs e)
         {
             //remove the selected role from the assigned list and add to the allowed list

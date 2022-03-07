@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace LITTLE_ERP.Domain.Manage
 {
+    /// <summary>
+    /// Class for manage product, form and ingredient objects
+    /// </summary>
     class ProductManage
     {
         public List<Product> list { get; set; }
@@ -15,6 +18,9 @@ namespace LITTLE_ERP.Domain.Manage
         public List<Ingredient> listI { get; set; }
         public List<Product> selectedList { get; set; }
 
+        /// <summary>
+        /// Initializes all the lists of the <see cref="ProductManage"/> class.
+        /// </summary>
         public ProductManage()
         {
             list = new List<Product>();
@@ -23,6 +29,9 @@ namespace LITTLE_ERP.Domain.Manage
             selectedList = new List<Product>();
         }
 
+        /// <summary>
+        /// Reads all products from the database.
+        /// </summary>
         public void ReadAll()
         {
             DataSet data = new DataSet();
@@ -42,6 +51,10 @@ namespace LITTLE_ERP.Domain.Manage
             }
         }
 
+        /// <summary>
+        /// Reads a specific product from the database.
+        /// </summary>
+        /// <param name="product">The product.</param>
         public void ReadProduct(Product product)
         {
             DataSet data = new DataSet();
@@ -60,6 +73,10 @@ namespace LITTLE_ERP.Domain.Manage
             setFormIngredient(product);
         }
 
+        /// <summary>
+        /// Adds to a list all products that meet a pattern.
+        /// </summary>
+        /// <param name="pattern">The pattern.</param>
         public void setSelectedList(string pattern)
         {
             selectedList.Clear();
@@ -76,6 +93,9 @@ namespace LITTLE_ERP.Domain.Manage
 
         }
 
+        /// <summary>
+        /// Reads all forms from the database.
+        /// </summary>
         public void ReadAllForms()
         {
             DataSet data = new DataSet();
@@ -95,6 +115,9 @@ namespace LITTLE_ERP.Domain.Manage
             }
         }
 
+        /// <summary>
+        /// Reads all ingredients from the database.
+        /// </summary>
         public void ReadAllIngredients()
         {
             DataSet data = new DataSet();
@@ -114,6 +137,10 @@ namespace LITTLE_ERP.Domain.Manage
             }
         }
 
+        /// <summary>
+        /// Retrieve the form and ingredient of a product and set them to the product.
+        /// </summary>
+        /// <param name="product">The product.</param>
         public void setFormIngredient(Product product)
         {
             DataSet data = new DataSet();
@@ -135,6 +162,10 @@ namespace LITTLE_ERP.Domain.Manage
 
         }
 
+        /// <summary>
+        /// Inserts the product in the database.
+        /// </summary>
+        /// <param name="product">The product.</param>
         public void InsertProduct(Product product)
         {
             ConnectOracle Search = new ConnectOracle();
@@ -150,6 +181,10 @@ namespace LITTLE_ERP.Domain.Manage
 
         }
 
+        /// <summary>
+        /// Updates the product data from the database.
+        /// </summary>
+        /// <param name="product">The product.</param>
         public void UpdateProduct(Product product)
         {
             ConnectOracle Search = new ConnectOracle();
@@ -160,6 +195,10 @@ namespace LITTLE_ERP.Domain.Manage
                 " where idProduct = " + product.idProduct);
         }
 
+        /// <summary>
+        /// Logically deletes the product from the database.
+        /// </summary>
+        /// <param name="product">The product.</param>
         public void DeleteProduct(Product product)
         {
             ConnectOracle Search = new ConnectOracle();

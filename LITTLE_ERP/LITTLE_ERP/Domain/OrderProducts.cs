@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace LITTLE_ERP.Domain
 {
+    /// <summary>
+    /// Class for create OrderProducts objects
+    /// </summary>
     class OrderProducts
     {
         public Int64 idOrder { get; set; }
@@ -14,6 +17,9 @@ namespace LITTLE_ERP.Domain
         public Double pricesale { get; set; }
         public int amount { get; set; }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OrderProducts"/> class.
+        /// </summary>
         public OrderProducts()
         {
 

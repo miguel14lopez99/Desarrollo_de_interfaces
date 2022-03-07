@@ -24,6 +24,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\LITTLE_ERP.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -35,6 +36,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
@@ -102,6 +104,7 @@
     <Compile Include="Domain\Customer.cs" />
     <Compile Include="Domain\Form.cs" />
     <Compile Include="Domain\Ingredient.cs" />
+    <Compile Include="Domain\Invoice.cs" />
     <Compile Include="Domain\Manage\CustomerManage.cs" />
     <Compile Include="Domain\Manage\OrderManage.cs" />
     <Compile Include="Domain\Manage\ProductManage.cs" />
@@ -109,8 +112,6 @@
     <Compile Include="Domain\Manage\SuplierManage.cs" />
     <Compile Include="Domain\OrderProducts.cs" />
     <Compile Include="Domain\PaymentMethod.cs" />
-    <Compile Include="Domain\Permission.cs" />
-    <Compile Include="Domain\Manage\PermissionManage.cs" />
     <Compile Include="Domain\Order.cs" />
     <Compile Include="Domain\Product.cs" />
     <Compile Include="Domain\Region.cs" />
@@ -118,17 +119,34 @@
     <Compile Include="Domain\State.cs" />
     <Compile Include="Domain\Suplier.cs" />
     <Compile Include="Domain\ZipCode.cs" />
+    <Compile Include="Persistence\InvoiceDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InvoiceDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="View\InvoiceReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InvoiceReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\InvoiceView.xaml.cs">
+      <DependentUpon>InvoiceView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\NewOrder.xaml.cs">
       <DependentUpon>NewOrder.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\NewUser.xaml.cs">
       <DependentUpon>NewUser.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SomeResources\Dates.cs" />
     <Compile Include="SomeResources\Useful.cs" />
     <Compile Include="View\TabsWindow.xaml.cs">
       <DependentUpon>TabsWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="View\InvoiceView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -175,6 +193,10 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\InvoiceReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>InvoiceReport.cs</LastGenOutput>
+    </EmbeddedResource>
     <None Include="Oracle.DataAccess.Common.Configuration.Section.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -182,6 +204,17 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
+    <None Include="Persistence\InvoiceDataSet.xsc">
+      <DependentUpon>InvoiceDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Persistence\InvoiceDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>InvoiceDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Persistence\InvoiceDataSet.xss">
+      <DependentUpon>InvoiceDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -202,6 +235,9 @@
     <Resource Include="SomeResources\searchIcon.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

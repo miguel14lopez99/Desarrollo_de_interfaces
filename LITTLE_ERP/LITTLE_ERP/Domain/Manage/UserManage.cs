@@ -9,19 +9,27 @@ using LITTLE_ERP.SomeResources;
 
 namespace LITTLE_ERP.Domain.Manage
 {
+    /// <summary>
+    /// Class for manage user objects
+    /// </summary>
     class UserManage
     {
-
-        public List<User> list { get; set; } //List where users are stored
+        public List<User> list { get; set; }
         public List<User> selectedList { get; set; }
 
+        /// <summary>
+        /// Initializes all the lists of the <see cref="UserManage"/> class.
+        /// </summary>
         public UserManage()
         {
             this.list = new List<User>();
             this.selectedList = new List<User>();
         }
 
-        public void ReadAll() //Read the users from the database and save them to the list
+        /// <summary>
+        /// Reads all users from the database.
+        /// </summary>
+        public void ReadAll()
         {
             DataSet data = new DataSet();
             ConnectOracle Search = new ConnectOracle();
@@ -42,6 +50,10 @@ namespace LITTLE_ERP.Domain.Manage
             }
         }
 
+        /// <summary>
+        /// Reads a specific user from the database.
+        /// </summary>
+        /// <param name="user">The user.</param>
         public void ReadUser(User user) //Read a user through their id and assign their name
         {
             DataSet data = new DataSet();
@@ -55,6 +67,10 @@ namespace LITTLE_ERP.Domain.Manage
             user.name = Convert.ToString(row["Name"]);
         }
 
+        /// <summary>
+        /// Adds to a list all users that meet a pattern.
+        /// </summary>
+        /// <param name="pattern">The pattern.</param>
         public void setSelectedList(string pattern)
         {
             selectedList.Clear();
@@ -70,7 +86,11 @@ namespace LITTLE_ERP.Domain.Manage
             }
         }
 
-        public void InsertUser(User user) //Insert a user in the database
+        /// <summary>
+        /// Inserts the user in the database.
+        /// </summary>
+        /// <param name="user">The user.</param>
+        public void InsertUser(User user)
         {
             ConnectOracle Search = new ConnectOracle();
 
@@ -81,6 +101,10 @@ namespace LITTLE_ERP.Domain.Manage
             Search.setData("INSERT INTO users VALUES(" + user.idUser + ",'" + user.name + "','" + user.password + "',0)");
         }
 
+        /// <summary>
+        /// Checks if a user exists in the database.
+        /// </summary>
+        /// <param name="user">The user.</param>
         public Boolean CheckUser(User user) //Checks if a user, with name and password, exists in the database
         {
             Boolean found = false;
@@ -97,27 +121,46 @@ namespace LITTLE_ERP.Domain.Manage
             return found;
         }
 
-        public void DeleteUser(User user) //Delete a user from the database
+        /// <summary>
+        /// Logically deletes the user from the database.
+        /// </summary>
+        /// <param name="user">The user.</param>
+        public void DeleteUser(User user)
         {
             ConnectOracle Search = new ConnectOracle();
 
             Search.setData("Update users set deleted=1 where idUser = " + user.idUser);
         }
 
-        public void UpdateName(User user, String newName) //Modify the username
+        /// <summary>
+        /// Updates the user's name field from the database.
+        /// </summary>
+        /// <param name="user">The user.</param>
+        /// <param name="newName">The new user name.</param>
+        public void UpdateName(User user, String newName)
         {
             ConnectOracle Search = new ConnectOracle();
 
             Search.setData("Update users set name='"+newName+"' where idUser = " + user.idUser);
         }
 
-        public void UpdatePass(User user, String newPass) //Modify the password
+        /// <summary>
+        /// Updates the user's password field from the database.
+        /// </summary>
+        /// <param name="user">The user.</param>
+        /// <param name="newPass">The new user password.</param>
+        public void UpdatePass(User user, String newPass)
         {
             ConnectOracle Search = new ConnectOracle();
 
             Search.setData("Update users set password='" + SomeResources.Useful.getHashSha256(newPass) + "' where idUser = " + user.idUser);
         }
 
+        /// <summary>
+        /// Adds a rol to the user.
+        /// </summary>
+        /// <param name="rol">The rol.</param>
+        /// <param name="user">The user.</param>
         public void addRol(Rol rol, User user) //Add a role to the user
         {
             ConnectOracle Search = new ConnectOracle();
@@ -127,6 +170,10 @@ namespace LITTLE_ERP.Domain.Manage
             Search.setData("INSERT INTO users_roles VALUES(" + maximun + ",'" + user.idUser + "','" + rol.idRol + "')");
         }
 
+        /// <summary>
+        /// Remove all roles from the user.
+        /// </summary>
+        /// <param name="user">The user.</param>
         public void deleteRoles(User user) //Remove all roles from the user
         {
             ConnectOracle Search = new ConnectOracle();
@@ -134,6 +181,10 @@ namespace LITTLE_ERP.Domain.Manage
             Search.setData("DELETE FROM users_roles where idUser = "+user.idUser);
         }
 
+        /// <summary>
+        /// Retrieves the roles assigned to the user and sets them in the list of user roles.
+        /// </summary>
+        /// <param name="user">The user.</param>
         public void setRolList(User user) //Retrieves the roles assigned to the user and puts them in the list of user roles
         {
             DataSet data = new DataSet();
@@ -156,6 +207,11 @@ namespace LITTLE_ERP.Domain.Manage
             }
         }
 
+        /// <summary>
+        /// Gets the user identifier.
+        /// </summary>
+        /// <param name="name">The name.</param>
+        /// <param name="password">The password.</param>
         public int getUserID(String name, String password) //Retrieve the user id through their name and password
         {
             ConnectOracle Search = new ConnectOracle();
@@ -163,6 +219,10 @@ namespace LITTLE_ERP.Domain.Manage
             return userID;
         }
 
+        /// <summary>
+        /// Sets the permissions to the user.
+        /// </summary>
+        /// <param name="user">The user.</param>
         public void setPermissions(User user) //Assign user permissions
         {
             DataSet data = new DataSet();
@@ -202,14 +262,18 @@ namespace LITTLE_ERP.Domain.Manage
                         case 7:
                             user.userPermissions.showProducts = true;
                             break;
+                        case 8:
+                            user.userPermissions.accountInvoices = true;
+                            break;
+                        case 9:
+                            user.userPermissions.showOrders = true;
+                            break;
+                        case 10:
+                            user.userPermissions.showInvoices = true;
+                            break;
                     }
                 }
             }
-
-
-            
         }
-
-        
     }
 }

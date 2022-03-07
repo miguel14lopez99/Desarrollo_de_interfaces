@@ -8,27 +8,43 @@ using System.Threading.Tasks;
 
 namespace LITTLE_ERP.Domain.Manage
 {
+    /// <summary>
+    /// Class for manage order, payment method and invoice objects
+    /// </summary>
     class OrderManage
     {
         public List<Order> list { get; set; }
         public List<PaymentMethod> listP { get; set; }
         public List<Order> selectedList { get; set; }
-        
+        public List<Invoice> listI { get; set; }
+        public List<Invoice> selectedListI { get; set; }
 
+        public DataTable tInvoices { get; set; }
+        public DataTable tOrders { get; set; }
+
+        /// <summary>
+        /// Initializes all the lists and datatables of the <see cref="OrderManage"/> class.
+        /// </summary>
         public OrderManage()
         {
             list = new List<Order>();
             listP = new List<PaymentMethod>();
             selectedList = new List<Order>();
-            
+            listI = new List<Invoice>();
+            selectedListI = new List<Invoice>();
+            tInvoices = new DataTable();
+            tOrders = new DataTable();
         }
 
+        /// <summary>
+        /// Reads all orders from the database.
+        /// </summary>
         public void ReadAll()
         {
             DataSet data = new DataSet();
             ConnectOracle Search = new ConnectOracle();
 
-            data = Search.getData("SELECT idOrder FROM Orders where deleted = 0", "Orders");
+            data = Search.getData("SELECT idOrder FROM Orders where deleted = 0 order by idOrder desc", "Orders");
 
             DataTable table = data.Tables["Orders"];
 
@@ -42,6 +58,10 @@ namespace LITTLE_ERP.Domain.Manage
             }
         }
 
+        /// <summary>
+        /// Reads a specific order from the database.
+        /// </summary>
+        /// <param name="order">The order.</param>
         public void ReadOrder(Order order)
         {
             DataSet data = new DataSet();
@@ -64,6 +84,10 @@ namespace LITTLE_ERP.Domain.Manage
             ReadAllOrderProducts(order);
         }
 
+        /// <summary>
+        /// Adds to a list all customers that meet a pattern.
+        /// </summary>
+        /// <param name="pattern">The pattern.</param>
         public void setSelectedList(string pattern)
         {
             selectedList.Clear();
@@ -80,6 +104,9 @@ namespace LITTLE_ERP.Domain.Manage
 
         }
 
+        /// <summary>
+        /// Reads all payment methods from the database.
+        /// </summary>
         public void ReadAllPaymentMethods()
         {
             DataSet data = new DataSet();
@@ -99,6 +126,10 @@ namespace LITTLE_ERP.Domain.Manage
             }
         }
 
+        /// <summary>
+        /// Retrieves the payment status of an order and sets it to the order.
+        /// </summary>
+        /// <param name="order">The order.</param>
         public void setPaymentStatus(Order order)
         {
             DataSet data = new DataSet();
@@ -128,6 +159,10 @@ namespace LITTLE_ERP.Domain.Manage
 
         }
 
+        /// <summary>
+        /// Retrieve the customer and the user of an order an set them to the order.
+        /// </summary>
+        /// <param name="order">The order.</param>
         public void setCustomerUser(Order order)
         {
             DataSet data = new DataSet();
@@ -143,13 +178,20 @@ namespace LITTLE_ERP.Domain.Manage
 
         }
 
-        public int getTodayMaxID()
+        /// <summary>
+        /// Gets the today maximum identifier for the order.
+        /// </summary>
+        public int getMaxOrderID()
         {
             ConnectOracle Search = new ConnectOracle();
 
             return Convert.ToInt32("0" + Search.DLookUp("count(*)", "Orders", "")) + 1;
         }
 
+        /// <summary>
+        /// Inserts the order in the database.
+        /// </summary>
+        /// <param name="order">The order.</param>
         public void InsertOrder(Order order)
         {
             ConnectOracle Search = new ConnectOracle();
@@ -158,8 +200,15 @@ namespace LITTLE_ERP.Domain.Manage
                 " values ("+ order.idOrder +", "+ order.idCustomer +", "+ order.idUser +", '"+ order.datetime.ToString("dd/MM/yyyy") + 
                 "', "+ order.payment.id +", "+ order.total +", "+ order.prepaid +", 0)");
 
+            InsertOrderProducts(order);
+            InsertOrderStatus(order);
+
         }
 
+        /// <summary>
+        /// Updates the order from the database.
+        /// </summary>
+        /// <param name="order">The order.</param>
         public void UpdateOrder(Order order)
         {
             ConnectOracle Search = new ConnectOracle();
@@ -170,6 +219,10 @@ namespace LITTLE_ERP.Domain.Manage
                 " where idOrder = " + order.idOrder);
         }
 
+        /// <summary>
+        /// Deletes logicaly the order from the database.
+        /// </summary>
+        /// <param name="order">The order.</param>
         public void DeleteOrder(Order order)
         {
             ConnectOracle Search = new ConnectOracle();
@@ -177,6 +230,10 @@ namespace LITTLE_ERP.Domain.Manage
             Search.setData("Update Orders set DELETED = 1 where idOrder = " + order.idOrder);
         }
 
+        /// <summary>
+        /// Reads all of the order products from the database.
+        /// </summary>
+        /// <param name="order">The order.</param>
         public void ReadAllOrderProducts(Order order)
         {
             DataSet data = new DataSet();
@@ -203,6 +260,10 @@ namespace LITTLE_ERP.Domain.Manage
             }
         }
 
+        /// <summary>
+        /// Inserts the order products in the database.
+        /// </summary>
+        /// <param name="order">The order.</param>
         public void InsertOrderProducts(Order order)
         {
             ConnectOracle Search = new ConnectOracle();
@@ -212,19 +273,19 @@ namespace LITTLE_ERP.Domain.Manage
                 if (product.idProduct == -1) //generic product
                 {
                     //max id from generic products
-                    int maximun = Convert.ToInt32("0" + Search.DLookUp("count(*)", "GENERICPRODUCTS", "")) + 1;
+                    int maximun = Convert.ToInt32("0" + Search.DLookUp("max(IDGENERICPRODUCT)", "GENERICPRODUCTS", "")) + 1;
 
                     Search.setData("insert into GENERICPRODUCTS (IDGENERICPRODUCT, IDORDER, DESCRIPTION, AMOUNT, PRICEOFSALE, DELETED)" +
-                    " values (" + maximun + ", " + product.idOrder + ", '" + product.description + "', " + product.amount +
+                    " values (" + maximun + ", " + order.idOrder + ", '" + product.description + "', " + product.amount +
                     ", " + product.pricesale + ", 0)");
                 }
                 else //normal product
                 {
                     //max id from order products
-                    int maximun = Convert.ToInt32("0" + Search.DLookUp("count(*)", "ORDERSPRODUCTS", "")) + 1;
+                    int maximun = Convert.ToInt32("0" + Search.DLookUp("max(IDORDERPRODUCT)", "ORDERSPRODUCTS", "")) + 1;
 
                     Search.setData("insert into ORDERSPRODUCTS (IDORDERPRODUCT, REFORDER, REFPRODUCT, AMOUNT, PRICESALE, DELETED)" +
-                    " values (" + maximun + ", " + product.idOrder + ", " + product.idProduct + ", " + product.amount +
+                    " values (" + maximun + ", " + order.idOrder + ", " + product.idProduct + ", " + product.amount +
                     ", " + product.pricesale + ", 0)");
                 }
 
@@ -232,6 +293,10 @@ namespace LITTLE_ERP.Domain.Manage
 
         }
 
+        /// <summary>
+        /// Inserts the order status.
+        /// </summary>
+        /// <param name="order">The order.</param>
         public void InsertOrderStatus(Order order)
         {
             ConnectOracle Search = new ConnectOracle();
@@ -248,6 +313,10 @@ namespace LITTLE_ERP.Domain.Manage
                     ", " + sent + ", " + invoiced + ")");
         }
 
+        /// <summary>
+        /// Updates the order status.
+        /// </summary>
+        /// <param name="order">The order.</param>
         public void UpdateOrderStatus(Order order)
         {
             ConnectOracle Search = new ConnectOracle();
@@ -263,5 +332,191 @@ namespace LITTLE_ERP.Domain.Manage
                 ", LABELED = "+ labeled + ", SENT = "+ sent +", INVOICED = "+ invoiced +
                 " where IDORDER = "+ order.idOrder);
         }
+
+        //
+        // INVOICES
+        //
+
+        /// <summary>
+        /// Reads all invoices for the database.
+        /// </summary>
+        public void ReadAllInvoices()
+        {
+            DataSet data = new DataSet();
+            ConnectOracle Search = new ConnectOracle();
+
+            data = Search.getData("SELECT idInvoice FROM Invoices where deleted = 0 order by IDINVOICE desc", "Invoices");
+
+            DataTable table = data.Tables["Invoices"];
+
+            Invoice aux;
+
+            foreach (DataRow row in table.Rows)
+            {
+                aux = new Invoice(Convert.ToInt64(row["idInvoice"]));
+                ReadInvoice(aux);
+                listI.Add(aux);
+            }
+        }
+
+        /// <summary>
+        /// Reads the invoice from the database.
+        /// </summary>
+        /// <param name="invoice">The invoice.</param>
+        public void ReadInvoice(Invoice invoice)
+        {
+            DataSet data = new DataSet();
+            ConnectOracle Search = new ConnectOracle();
+
+            data = Search.getData("SELECT * FROM Invoices where idInvoice = " + invoice.id, "Invoices");
+
+            DataTable table = data.Tables["Invoices"];
+
+            DataRow row = table.Rows[0];
+            invoice.date = Convert.ToDateTime(row["dateinvoice"]);
+            if (Convert.ToInt32(row["accounted"]) == 0)
+                invoice.accounted = false;
+            else
+                invoice.accounted = true;
+
+            setOrder(invoice);
+        }
+
+        /// <summary>
+        /// Retrieve the invoice's order and sets it to the invoice.
+        /// </summary>
+        /// <param name="invoice">The invoice.</param>
+        public void setOrder(Invoice invoice)
+        {
+            DataSet data = new DataSet();
+            ConnectOracle Search = new ConnectOracle();
+
+            Int64 idOrder = Convert.ToInt64(Search.DLookUp("idOrder", "ORDERS_INVOICES", "idInvoice = " + invoice.id));
+
+            Order aux = new Order();
+            aux.idOrder = idOrder;
+            ReadOrder(aux);
+
+            invoice.order = aux;
+        }
+
+        /// <summary>
+        /// Adds to a list all invoices that meet a pattern.
+        /// </summary>
+        /// <param name="pattern">The pattern.</param>
+        public void setInvoicesSelectedList(string pattern)
+        {
+            selectedListI.Clear();
+
+            ReadAll();
+
+            foreach (Invoice invoice in listI)
+            {
+                if (invoice.ToString().Contains(pattern))
+                {
+                    selectedListI.Add(invoice);
+                }
+            }
+
+        }
+
+        /// <summary>
+        /// Inserts the invoice in the database.
+        /// </summary>
+        /// <param name="invoice">The invoice.</param>
+        public void InsertInvoice (Invoice invoice)
+        {
+            ConnectOracle Search = new ConnectOracle();
+
+            Search.setData("Insert into invoices (IDINVOICE, DATEINVOICE, ACCOUNTED, DELETED)" +
+                " values (" + invoice.id + ", '" + invoice.date.ToShortDateString() + "', 0, 0)");
+
+            Search.setData("Insert into orders_invoices (IDORDERINVOICE, IDORDER, IDINVOICE) " +
+                " values ((select count(*) from orders_invoices)+1,"+invoice.order.idOrder+","+invoice.id+")");
+        }
+
+        /// <summary>
+        /// Logically deletes the invoice from the database.
+        /// </summary>
+        /// <param name="invoice">The invoice.</param>
+        public void DeleteInvoice (Invoice invoice)
+        {
+            ConnectOracle Search = new ConnectOracle();
+
+            Search.setData("Update invoices set deleted = 1 where idinvoice = " + invoice.id);
+            Search.setData("Update orders_status set invoiced = 0 where idOrder = " + invoice.order.idOrder);
+        }
+
+        /// <summary>
+        /// Gets the maximum invoice identifier.
+        /// </summary>
+        public int getMaxInvoiceID()
+        {
+            ConnectOracle Search = new ConnectOracle();
+
+            return Convert.ToInt32("0" + Search.DLookUp("count(*)", "Invoices", "")) + 1;
+        }
+
+        /// <summary>
+        /// Updates the accounted field of an invoice.
+        /// </summary>
+        /// <param name="invoice">The invoice.</param>
+        public void UpdateAccounted(Invoice invoice)
+        {
+            ConnectOracle Search = new ConnectOracle();
+
+            Search.setData("Update invoices set accounted = 1 where idinvoice = " + invoice.id);
+        }
+
+        //
+        // REPORTS
+        //
+
+        /// <summary>
+        /// Fill a datatable with the invoice data.
+        /// </summary>
+        /// <param name="i">The invoice.</param>
+        public void MakeInvoiceDataTable(Invoice i)
+        {
+            tInvoices = new DataTable();
+
+            tInvoices.Columns.Add("Name", Type.GetType("System.String"));
+            tInvoices.Columns.Add("Surname", Type.GetType("System.String"));
+            tInvoices.Columns.Add("Adress", Type.GetType("System.String"));
+            tInvoices.Columns.Add("Region", Type.GetType("System.String"));
+            tInvoices.Columns.Add("State", Type.GetType("System.String"));
+            tInvoices.Columns.Add("City", Type.GetType("System.String"));
+            tInvoices.Columns.Add("ZipCode", Type.GetType("System.String"));
+            tInvoices.Columns.Add("id_invoice", Type.GetType("System.String"));
+            tInvoices.Columns.Add("date", Type.GetType("System.String"));
+            tInvoices.Columns.Add("total", Type.GetType("System.String"));
+
+            tInvoices.Rows.Add(new Object[] { i.order.customer.name, i.order.customer.surname,
+                i.order.customer.address, i.order.customer.region.name, i.order.customer.state.name, i.order.customer.city.name,
+                i.order.customer.zipcode.name, i.id, i.date.ToString("d"), i.order.total});
+
+        }
+
+        /// <summary>
+        /// Fill a datatable with the invoice's order data.
+        /// </summary>
+        /// <param name="i">The invoice.</param>
+        public void MakeOrdersDataTable(Invoice i)
+        {
+            tOrders = new DataTable();
+
+            tOrders.Columns.Add("Quantity", Type.GetType("System.String"));
+            tOrders.Columns.Add("Description", Type.GetType("System.String"));
+            tOrders.Columns.Add("Unity_price", Type.GetType("System.String"));
+            tOrders.Columns.Add("Prepaid", Type.GetType("System.String"));
+
+            foreach (OrderProducts p in i.order.listOP)
+            {
+                tOrders.Rows.Add(new Object[] { p.amount, p.description,
+                p.pricesale, i.order.prepaid});
+            }
+
+        }
+
     }
 }

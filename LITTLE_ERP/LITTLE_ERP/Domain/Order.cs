@@ -6,8 +6,14 @@ using System.Threading.Tasks;
 
 namespace LITTLE_ERP.Domain
 {
+    /// <summary>
+    /// Class for create order objects
+    /// </summary>
     class Order
     {
+        /// <summary>
+        /// Class for create the order's status
+        /// </summary>
         public class OrderStatus
         {
             public Boolean confirmed { get; set; }
@@ -34,6 +40,9 @@ namespace LITTLE_ERP.Domain
 
         public Manage.OrderManage manage { get; set; }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Order"/> class.
+        /// </summary>
         public Order()
         {
             manage = new Manage.OrderManage();
@@ -42,6 +51,10 @@ namespace LITTLE_ERP.Domain
             prepaid = 0;
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Order"/> class.
+        /// </summary>
+        /// <param name="idOrder">The identifier order.</param>
         public Order(Int64 idOrder)
         {
             manage = new Manage.OrderManage();
@@ -51,46 +64,73 @@ namespace LITTLE_ERP.Domain
             prepaid = 0;
         }
 
+        /// <summary>
+        /// Reads all orders from the database.
+        /// </summary>
         public void ReadAll()
         {
             manage.ReadAll();
         }
 
+        /// <summary>
+        /// Reads a specific order from the database.
+        /// </summary>
         public void ReadOrder()
         {
             manage.ReadOrder(this);
         }
 
+        /// <summary>
+        /// Inserts the order in the database.
+        /// </summary>
         public void Insert()
         {
             manage.InsertOrder(this);
         }
 
+        /// <summary>
+        /// Updates the order data from the database.
+        /// </summary>
         public void Update()
         {
             manage.UpdateOrder(this);
         }
 
+        /// <summary>
+        /// Deletes the order from the database.
+        /// </summary>
         public void Delete()
         {
             manage.DeleteOrder(this);
         }
 
+        /// <summary>
+        /// Reads all order products from database.
+        /// </summary>
         public void ReadAllOrderProducts()
         {
             manage.ReadAllOrderProducts(this);
         }
 
+        /// <summary>
+        /// Inserts the order products in the database.
+        /// </summary>
         public void InsertOrderProducts()
         {
             manage.InsertOrderProducts(this);
         }
 
+        /// <summary>
+        /// Inserts the order status in the database.
+        /// </summary>
         public void InsertOrderStatus()
         {
             manage.InsertOrderStatus(this);
         }
 
+        /// <summary>
+        /// Updates the order status from the database.
+        /// </summary>
         public void UpdateOrderStatus()
         {
             manage.UpdateOrderStatus(this);

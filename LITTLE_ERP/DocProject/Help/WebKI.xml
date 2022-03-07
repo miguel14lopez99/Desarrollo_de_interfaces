@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpKI>
+  <HelpKINode Title="App class">
+    <HelpKINode Title="App Class" Url="html/31226e60-842c-15b7-b045-eb075321de9b.htm" />
+    <HelpKINode Title="constructor" Url="html/a007c2c8-d714-6f6c-d8c8-ef535506866f.htm" />
+    <HelpKINode Title="events" Url="html/2fc5d411-3622-4538-172e-5d4f57a54672.htm" />
+    <HelpKINode Title="methods" Url="html/515e03cc-887b-3cbd-5708-4fcfa2c62efa.htm" />
+    <HelpKINode Title="properties" Url="html/5674cb6c-2b0c-3046-d616-65bd7dbc54b8.htm" />
+  </HelpKINode>
+  <HelpKINode Title="App.App constructor" Url="html/a007c2c8-d714-6f6c-d8c8-ef535506866f.htm" />
+  <HelpKINode Title="App.InitializeComponent method" Url="html/6f5440fa-e3d7-fe9d-d2ba-cd9ab099a7c5.htm" />
+  <HelpKINode Title="App.Main method" Url="html/56e975d3-b5de-3ae0-1c51-f386ca1b7b23.htm" />
+  <HelpKINode Title="btnClose_Click method" Url="html/1dfbe6b3-6a6f-502d-516a-423c36fd42f3.htm" />
+  <HelpKINode Title="btnOK_Click method" Url="html/91c35319-c366-0a41-fb98-389b662bcf20.htm" />
+  <HelpKINode Title="ConnectOracle class">
+    <HelpKINode Title="ConnectOracle Class" Url="html/7c2a9aa9-f547-9af4-557d-f8841b757fd0.htm" />
+    <HelpKINode Title="constructor" Url="html/f8c38abc-61d8-5da0-d5eb-2c0373514598.htm" />
+    <HelpKINode Title="methods" Url="html/0d860784-4e44-200a-57e1-ddd10391d1e5.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ConnectOracle.ConnectOracle constructor" Url="html/f8c38abc-61d8-5da0-d5eb-2c0373514598.htm" />
+  <HelpKINode Title="ConnectOracle.DLookUp method" Url="html/74f88a27-9c9e-60cd-0bf3-1008712415ef.htm" />
+  <HelpKINode Title="ConnectOracle.getData method" Url="html/58576761-5483-17d7-3d23-d57fc712ef5d.htm" />
+  <HelpKINode Title="ConnectOracle.setData method" Url="html/419c9bc9-3783-cc10-d16b-be82976a4f5f.htm" />
+  <HelpKINode Title="DLookUp method" Url="html/74f88a27-9c9e-60cd-0bf3-1008712415ef.htm" />
+  <HelpKINode Title="getData method" Url="html/58576761-5483-17d7-3d23-d57fc712ef5d.htm" />
+  <HelpKINode Title="InitializeComponent method">
+    <HelpKINode Title="App.InitializeComponent Method " Url="html/6f5440fa-e3d7-fe9d-d2ba-cd9ab099a7c5.htm" />
+    <HelpKINode Title="MainWindow.InitializeComponent Method " Url="html/6f81ba7b-3a31-10fc-2f37-4849d47f5906.htm" />
+    <HelpKINode Title="NewOrder.InitializeComponent Method " Url="html/41d2588a-975b-4350-9a77-7aa2a36f3146.htm" />
+    <HelpKINode Title="NewUser.InitializeComponent Method " Url="html/513b426f-15f1-1ee7-ca8a-0f326b465675.htm" />
+    <HelpKINode Title="TabsWindow.InitializeComponent Method " Url="html/6ba0d31d-c8b8-98d8-de54-db9d4e862c6a.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IsMod property" Url="html/72156578-e73a-33af-1c28-524be09f9e72.htm" />
+  <HelpKINode Title="isSelectingCustomers property" Url="html/80332823-37eb-1766-65da-d4d6ccfa5264.htm" />
+  <HelpKINode Title="isSelectingProducts property" Url="html/b01c6d72-6c9d-3245-2b34-7169f3b56bcd.htm" />
+  <HelpKINode Title="LITTLE_ERP namespace" Url="html/1d5b3cd6-1ea4-86a0-0007-6c24a392b580.htm" />
+  <HelpKINode Title="LITTLE_ERP.App class" Url="html/31226e60-842c-15b7-b045-eb075321de9b.htm" />
+  <HelpKINode Title="LITTLE_ERP.MainWindow class" Url="html/1e151456-3804-5d0e-cecd-e767de33a265.htm" />
+  <HelpKINode Title="LITTLE_ERP.NewUser class" Url="html/80d35535-6346-b2bc-7d36-eebd81848164.htm" />
+  <HelpKINode Title="LITTLE_ERP.Persistence namespace" Url="html/8c126d58-92e9-ecef-7d57-52b3541ea943.htm" />
+  <HelpKINode Title="LITTLE_ERP.Persistence.ConnectOracle class" Url="html/7c2a9aa9-f547-9af4-557d-f8841b757fd0.htm" />
+  <HelpKINode Title="LITTLE_ERP.TabsWindow class" Url="html/a74f7aa2-3b7a-9c1c-3b37-a77533e03d55.htm" />
+  <HelpKINode Title="LITTLE_ERP.View namespace" Url="html/64f19808-90ee-0a46-1eab-0f0aef677c2b.htm" />
+  <HelpKINode Title="LITTLE_ERP.View.NewOrder class" Url="html/19469751-3205-32a9-75f5-30dd59616bed.htm" />
+  <HelpKINode Title="Main method" Url="html/56e975d3-b5de-3ae0-1c51-f386ca1b7b23.htm" />
+  <HelpKINode Title="MainWindow class">
+    <HelpKINode Title="MainWindow Class" Url="html/1e151456-3804-5d0e-cecd-e767de33a265.htm" />
+    <HelpKINode Title="constructor" Url="html/c1ab0684-879a-a476-c5a6-fe023da0bda3.htm" />
+    <HelpKINode Title="events" Url="html/a9d564d4-ad0e-ad35-70d2-a1013bcb25bc.htm" />
+    <HelpKINode Title="methods" Url="html/0fb5827f-89a2-e166-47ba-5992a0d1ec1b.htm" />
+    <HelpKINode Title="properties" Url="html/52bf618b-6f82-c36a-c957-ca2b1066b81e.htm" />
+  </HelpKINode>
+  <HelpKINode Title="MainWindow.btnClose_Click method" Url="html/1dfbe6b3-6a6f-502d-516a-423c36fd42f3.htm" />
+  <HelpKINode Title="MainWindow.btnOK_Click method" Url="html/91c35319-c366-0a41-fb98-389b662bcf20.htm" />
+  <HelpKINode Title="MainWindow.InitializeComponent method" Url="html/6f81ba7b-3a31-10fc-2f37-4849d47f5906.htm" />
+  <HelpKINode Title="MainWindow.MainWindow constructor" Url="html/c1ab0684-879a-a476-c5a6-fe023da0bda3.htm" />
+  <HelpKINode Title="NewOrder class">
+    <HelpKINode Title="NewOrder Class" Url="html/19469751-3205-32a9-75f5-30dd59616bed.htm" />
+    <HelpKINode Title="constructor" Url="html/f3db3c5e-c6e6-4b91-4b17-cfc9b9294bcd.htm" />
+    <HelpKINode Title="events" Url="html/c643f056-77d5-3c6c-b2d8-08c3eb587e8c.htm" />
+    <HelpKINode Title="methods" Url="html/63aa99aa-a214-1a10-6e29-ec7b788d3f73.htm" />
+    <HelpKINode Title="properties" Url="html/21940831-b4af-0e8d-5f26-c450bdd95d4d.htm" />
+  </HelpKINode>
+  <HelpKINode Title="NewOrder.InitializeComponent method" Url="html/41d2588a-975b-4350-9a77-7aa2a36f3146.htm" />
+  <HelpKINode Title="NewOrder.NewOrder constructor" Url="html/f3db3c5e-c6e6-4b91-4b17-cfc9b9294bcd.htm" />
+  <HelpKINode Title="NewUser class">
+    <HelpKINode Title="NewUser Class" Url="html/80d35535-6346-b2bc-7d36-eebd81848164.htm" />
+    <HelpKINode Title="constructor" Url="html/9424e8a2-c58c-580c-144b-36f011844bf9.htm" />
+    <HelpKINode Title="events" Url="html/8de0f90d-2410-2e0c-0362-689a49960261.htm" />
+    <HelpKINode Title="methods" Url="html/9bc7e9a7-f7cc-bbe4-74c1-1031fdd6f65d.htm" />
+    <HelpKINode Title="properties" Url="html/9e1fd653-8d72-276b-1f1c-b9c0b8133c4e.htm" />
+  </HelpKINode>
+  <HelpKINode Title="NewUser.InitializeComponent method" Url="html/513b426f-15f1-1ee7-ca8a-0f326b465675.htm" />
+  <HelpKINode Title="NewUser.IsMod property" Url="html/72156578-e73a-33af-1c28-524be09f9e72.htm" />
+  <HelpKINode Title="NewUser.NewUser constructor" Url="html/9424e8a2-c58c-580c-144b-36f011844bf9.htm" />
+  <HelpKINode Title="setData method" Url="html/419c9bc9-3783-cc10-d16b-be82976a4f5f.htm" />
+  <HelpKINode Title="TabsWindow class">
+    <HelpKINode Title="TabsWindow Class" Url="html/a74f7aa2-3b7a-9c1c-3b37-a77533e03d55.htm" />
+    <HelpKINode Title="constructor" Url="html/1e18987f-6a54-b30a-9f72-de218bfa6b34.htm" />
+    <HelpKINode Title="events" Url="html/b7ad300a-22ef-56f4-7982-68046467de00.htm" />
+    <HelpKINode Title="methods" Url="html/07663f82-7402-8a32-ce9e-49ab279a1bed.htm" />
+    <HelpKINode Title="properties" Url="html/69e6924f-723d-c81c-613b-15fb95f4ea28.htm" />
+  </HelpKINode>
+  <HelpKINode Title="TabsWindow.InitializeComponent method" Url="html/6ba0d31d-c8b8-98d8-de54-db9d4e862c6a.htm" />
+  <HelpKINode Title="TabsWindow.isSelectingCustomers property" Url="html/80332823-37eb-1766-65da-d4d6ccfa5264.htm" />
+  <HelpKINode Title="TabsWindow.isSelectingProducts property" Url="html/b01c6d72-6c9d-3245-2b34-7169f3b56bcd.htm" />
+  <HelpKINode Title="TabsWindow.TabsWindow constructor" Url="html/1e18987f-6a54-b30a-9f72-de218bfa6b34.htm" />
+  <HelpKINode Title="version">
+    <HelpKINode Title="1.0.0.0" Url="html/5e651954-5218-4411-9353-b2f3d6465072.htm" />
+    <HelpKINode Title="history" Url="html/0b5d6636-2d7b-490d-a464-0b28280672ae.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Welcome" Url="html/8eed4220-089d-42d7-aa67-36b15479393b.htm" />
+</HelpKI>

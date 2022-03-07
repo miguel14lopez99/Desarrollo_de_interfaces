@@ -33,11 +33,21 @@ namespace LITTLE_ERP
         public Boolean isSelectingProducts { get; set; }
         public Boolean isSelectingCustomers { get; set; }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TabsWindow"/> class.
+        /// 
+        /// Initialize the forms of each of the tabs and load all
+        /// the necessary data from the database
+        /// </summary>
         public TabsWindow()
         {
             DateTime ahora = DateTime.Now;
 
             InitializeComponent();
+
+            //
+            // USERS
+            //
 
             //set the connected user name and time
             lblUserName.Content = "Name: " + SetUser.name;
@@ -71,16 +81,22 @@ namespace LITTLE_ERP
                 btnNewCustomer.IsEnabled = false;
                 btnDeleteCustomer.IsEnabled = false;
                 btnSave.IsEnabled = false;
-
-                //user that can only show customers can't make or delete orders
-                btnO_New.IsEnabled = false;
-                btnO_Del.IsEnabled = false;
             }
             if (setUser.userPermissions.showProducts)
             {
                 btnP_New.IsEnabled = false;
                 btnP_Del.IsEnabled = false;
                 btnP_Save.IsEnabled = false;
+            }
+            if (setUser.userPermissions.showOrders)
+            {
+                btnO_New.IsEnabled = false;
+                btnO_Del.IsEnabled = false;
+            }
+            if (setUser.userPermissions.showInvoices)
+            {
+                btnI_Add.IsEnabled = false;
+                btnI_Delete.IsEnabled = false;
             }
 
             //update roles
@@ -92,12 +108,12 @@ namespace LITTLE_ERP
             }
             LblRoles.Content = sRoles;
 
-            ///
-            /// CUSTOMERS
-            ///
+            //
+            // CUSTOMERS
+            //
 
-            //Recuperar regiones
-            //mientras no elijas un region los demás combos estarian deshabilitados
+            //Retrieve regions
+            //as long as you don't choose a region the other combos would be disabled
 
             Region auxR = new Region();
             auxR.ReadAll();
@@ -106,13 +122,13 @@ namespace LITTLE_ERP
             Customer auxC = new Customer();
             auxC.ReadAll();
             dgrCustomers.ItemsSource = auxC.manage.list;
-            
-            //inicializo el id del customer selecionado a 0
+
+            //I initialize the id of the selected customer to 0
             idCustomerMod = 0;
 
-            ///
-            /// PRODUCTS
-            ///
+            //
+            // PRODUCTS
+            //
 
             Product auxP = new Product();
             auxP.ReadAll();
@@ -126,25 +142,32 @@ namespace LITTLE_ERP
             auxI.ReadAll();
             cmbP_Ingredient.ItemsSource = auxI.manage.listI;
 
-            //inicializo el id del customer selecionado a 0
+            //I initialize the id of the selected customer to 0
             idProductMod = 0;
 
-            ///
-            /// SUPLIERS
-            ///
+            //
+            // SUPLIERS
+            //
 
             Suplier auxS = new Suplier();
             auxS.ReadAll();
             dgrSupliers.ItemsSource = auxS.manage.list;
 
-            ///
-            /// ORDERS
-            ///
+            //
+            // ORDERS
+            //
 
             Order auxO = new Order();
             auxO.ReadAll();
             dgrOrders.ItemsSource = auxO.manage.list;
 
+            //
+            // INVOICES
+            //
+
+            Invoice auxIn = new Invoice();
+            auxIn.ReadAll();
+            dgrInvoices.ItemsSource = auxIn.manage.listI;
         }
 
         private void btnLogout_Click(object sender, RoutedEventArgs e)
@@ -155,10 +178,17 @@ namespace LITTLE_ERP
             this.Close();
         }
 
-        ///
-        /// USERS
-        ///
+        //
+        // USERS
+        //
 
+        /// <summary>
+        /// Handles the Click event of the btnAdd control.
+        /// 
+        /// Open the form to create a new user
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
             NewUser.SetUser = setUser;
@@ -175,6 +205,13 @@ namespace LITTLE_ERP
             dgrUsers.ItemsSource = aux.manage.list;
         }
 
+        /// <summary>
+        /// Handles the Click event of the btnDelete control.
+        /// 
+        /// Delete the selected user
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void btnDelete_Click(object sender, RoutedEventArgs e)
         {          
             List<User> data = new List<User>();
@@ -199,6 +236,13 @@ namespace LITTLE_ERP
             }
         }
 
+        /// <summary>
+        /// Handles the Click event of the btnModify control.
+        /// 
+        /// Open the form to modify the user
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void btnModify_Click(object sender, RoutedEventArgs e)
         {
             if (dgrUsers.SelectedItems.Count == 1)
@@ -226,6 +270,13 @@ namespace LITTLE_ERP
             }
         }
 
+        /// <summary>
+        /// Handles the TextChanged event of the txtU_Search control.
+        /// 
+        /// Search among the database users
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="TextChangedEventArgs"/> instance containing the event data.</param>
         private void txtU_Search_TextChanged(object sender, TextChangedEventArgs e)
         {
             User aux = new User();
@@ -244,10 +295,17 @@ namespace LITTLE_ERP
             }
         }
 
-        ///
-        /// PROFILE
-        ///
+        //
+        // PROFILE
+        //
 
+        /// <summary>
+        /// Handles the Click event of the btnChangePwd control.
+        /// 
+        /// Change the password of the logged in user
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void btnChangePwd_Click(object sender, RoutedEventArgs e)
         {
             //check if the previous password is the same as the user password
@@ -270,10 +328,17 @@ namespace LITTLE_ERP
             }      
         }
 
-        ///
-        /// CUSTOMERS
-        ///
+        //
+        // CUSTOMERS
+        //
 
+        /// <summary>
+        /// Handles the Click event of the btnSave control.
+        /// 
+        /// Save the customer in the database and in the datagrid customer
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
             Customer aux = new Customer();
@@ -300,6 +365,13 @@ namespace LITTLE_ERP
 
         }
 
+        /// <summary>
+        /// Handles the SelectionChanged event of the cmbRegion control.
+        /// 
+        /// Assign client region
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="SelectionChangedEventArgs"/> instance containing the event data.</param>
         private void cmbRegion_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
@@ -311,6 +383,14 @@ namespace LITTLE_ERP
 
         }
 
+        /// <summary>
+        /// Handles the SelectionChanged event of the cmbState control.
+        /// 
+        /// Assign client state 
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.Windows.Controls.SelectionChangedEventArgs"/> instance containing the event data.</param>
+        /// <returns></returns>
         private void cmbState_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
@@ -322,6 +402,14 @@ namespace LITTLE_ERP
 
         }
 
+        /// <summary>
+        /// Handles the SelectionChanged event of the cmbCity control.
+        /// 
+        /// Assign client city
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.Windows.Controls.SelectionChangedEventArgs"/> instance containing the event data.</param>
+        /// <returns></returns>
         private void cmbCity_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
@@ -339,6 +427,14 @@ namespace LITTLE_ERP
             
         }
 
+        /// <summary>
+        /// Handles the SelectionChanged event of the cmbZipCode control.
+        /// 
+        /// Assign client zip code
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.Windows.Controls.SelectionChangedEventArgs"/> instance containing the event data.</param>
+        /// <returns></returns>
         private void cmbZipCode_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
@@ -351,6 +447,13 @@ namespace LITTLE_ERP
 
         }
 
+        /// <summary>
+        /// Handles the Click event of the btnDeleteCustomer control.
+        /// 
+        /// Deletes the customer
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void btnDeleteCustomer_Click(object sender, RoutedEventArgs e)
         {
             List<Customer> data = new List<Customer>();
@@ -375,6 +478,14 @@ namespace LITTLE_ERP
             }
         }
 
+        /// <summary>
+        /// Handles the SelectionChanged event of the dgrCustomers control.
+        /// 
+        /// Load in the form the data of the selected customer
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.Windows.Controls.SelectionChangedEventArgs"/> instance containing the event data.</param>
+        /// <returns></returns>
         private void dgrCustomers_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Customer aux = (Customer)dgrCustomers.SelectedItem;
@@ -408,6 +519,13 @@ namespace LITTLE_ERP
            
         }
 
+        /// <summary>
+        /// Handles the TextChanged event of the txtZipCode control.
+        /// 
+        /// Select the region, the state, the city through the entered zip code
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="TextChangedEventArgs"/> instance containing the event data.</param>
         private void txtZipCode_TextChanged(object sender, TextChangedEventArgs e)
         {
             if(txtZipCode.Text.Length == 5)
@@ -438,6 +556,13 @@ namespace LITTLE_ERP
 
         }
 
+        /// <summary>
+        /// Handles the Click event of the btnNewCustomer control.
+        /// 
+        /// Empty the form to be able to save a new customer
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void btnNewCustomer_Click(object sender, RoutedEventArgs e)
         {
             txtNIF.Text = "";
@@ -456,6 +581,13 @@ namespace LITTLE_ERP
 
         }
 
+        /// <summary>
+        /// Handles the TextChanged event of the txtCustomerSearch control.
+        /// 
+        /// Search among all customers
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="TextChangedEventArgs"/> instance containing the event data.</param>
         private void txtCustomerSearch_TextChanged(object sender, TextChangedEventArgs e)
         {
             Customer aux = new Customer();
@@ -474,6 +606,13 @@ namespace LITTLE_ERP
             }
         }
 
+        /// <summary>
+        /// Handles the DoubleClick event of the CustomerRow control.
+        /// 
+        /// Load the user selected in the order form
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="MouseButtonEventArgs"/> instance containing the event data.</param>
         private void CustomerRow_DoubleClick(object sender, MouseButtonEventArgs e)
         {
             if (isSelectingCustomers)
@@ -488,10 +627,32 @@ namespace LITTLE_ERP
 
         }
 
-        ///
-        /// PRODUCTS
-        ///
+        /// <summary>
+        /// Handles the Click event of the btnFill control.
+        /// 
+        /// Inserts 10000 customers in the program
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
+        private void btnFill_Click(object sender, RoutedEventArgs e)
+        {
+            Customer aux = new Customer();
+            aux.manage.Test10000Customers();
+            aux.ReadAll();
+            dgrCustomers.ItemsSource = aux.manage.list;
+        }
 
+        //
+        // PRODUCTS
+        //
+
+        /// <summary>
+        /// Handles the SelectionChanged event of the dgrProducts control.
+        /// 
+        /// Load the form with the product data
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="SelectionChangedEventArgs"/> instance containing the event data.</param>
         private void dgrProducts_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Product aux = (Product)dgrProducts.SelectedItem;
@@ -510,6 +671,13 @@ namespace LITTLE_ERP
             }
         }
 
+        /// <summary>
+        /// Handles the Click event of the btnP_Save control.
+        /// 
+        /// Save the product in the database and the product datagrid
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void btnP_Save_Click(object sender, RoutedEventArgs e)
         {
             Product aux = new Product();
@@ -531,6 +699,13 @@ namespace LITTLE_ERP
             dgrProducts.ItemsSource = aux.manage.list;
         }
 
+        /// <summary>
+        /// Handles the Click event of the btnP_New control.
+        /// 
+        /// Empty the form to be able to add a new product
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void btnP_New_Click(object sender, RoutedEventArgs e)
         {
             txtP_Price.Text = "";
@@ -541,6 +716,13 @@ namespace LITTLE_ERP
             isProductMod = false;
         }
 
+        /// <summary>
+        /// Handles the Click event of the btnP_Del control.
+        /// 
+        /// Delete the selected product
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void btnP_Del_Click(object sender, RoutedEventArgs e)
         {
             List<Product> data = new List<Product>();
@@ -563,8 +745,15 @@ namespace LITTLE_ERP
             {
                 MessageBox.Show("You must select at least one row");
             }
-        }   
+        }
 
+        /// <summary>
+        /// Handles the TextChanged event of the txtP_Search control.
+        /// 
+        /// Search among all products
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="TextChangedEventArgs"/> instance containing the event data.</param>
         private void txtP_Search_TextChanged(object sender, TextChangedEventArgs e)
         {
             Product aux = new Product();
@@ -583,6 +772,13 @@ namespace LITTLE_ERP
             }
         }
 
+        /// <summary>
+        /// Handles the DoubleClick event of the ProductRow control.
+        /// 
+        /// Load the product selected in the order form
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="MouseButtonEventArgs"/> instance containing the event data.</param>
         private void ProductRow_DoubleClick(object sender, MouseButtonEventArgs e)
         {
             DataGridRow row = sender as DataGridRow;
@@ -594,10 +790,17 @@ namespace LITTLE_ERP
             this.Close();
         }
 
-        ///
-        /// SUPLIERS
-        ///
+        //
+        // SUPLIERS
+        //
 
+        /// <summary>
+        /// Handles the TextChanged event of the txtS_Search control.
+        /// 
+        /// Search among all supliers
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="TextChangedEventArgs"/> instance containing the event data.</param>
         private void txtS_Search_TextChanged(object sender, TextChangedEventArgs e)
         {
             Suplier aux = new Suplier();
@@ -616,10 +819,17 @@ namespace LITTLE_ERP
             }
         }
 
-        ///
-        /// ORDERS
-        ///
+        //
+        // ORDERS
+        //
 
+        /// <summary>
+        /// Handles the Click event of the btnO_New control.
+        /// 
+        /// Open the form to create orders
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void btnO_New_Click(object sender, RoutedEventArgs e)
         {
             NewOrder.User = setUser;
@@ -627,6 +837,13 @@ namespace LITTLE_ERP
             newOrder.Show();
         }
 
+        /// <summary>
+        /// Handles the Click event of the btnO_Del control.
+        /// 
+        /// Deletes the selected order
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void btnO_Del_Click(object sender, RoutedEventArgs e)
         {
             List<Order> data = new List<Order>();
@@ -651,6 +868,13 @@ namespace LITTLE_ERP
             }
         }
 
+        /// <summary>
+        /// Handles the TextChanged event of the txtO_Search control.
+        /// 
+        /// Search among all the orders
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="TextChangedEventArgs"/> instance containing the event data.</param>
         private void txtO_Search_TextChanged(object sender, TextChangedEventArgs e)
         {
             Order aux = new Order();
@@ -669,24 +893,13 @@ namespace LITTLE_ERP
             }
         }
 
-        void cellConfirmed(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        void cellLabeled(object sender, RoutedEventArgs e)
-        {
-
-        }
-        void cellSent(object sender, RoutedEventArgs e)
-        {
-
-        }
-        void cellInvoiced(object sender, RoutedEventArgs e)
-        {
-
-        }
-
+        /// <summary>
+        /// Handles the ValueChanged event of the sldStatus control.
+        /// 
+        /// Select the status of the order
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedPropertyChangedEventArgs{System.Double}"/> instance containing the event data.</param>
         private void sldStatus_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             Order aux = (Order)dgrOrders.SelectedItem;            
@@ -730,12 +943,41 @@ namespace LITTLE_ERP
                 }
 
                 if (sldStatus.Value == 40)
-                {
-                    lblStatus.Text = "Status: Invoiced";
+                {                 
                     aux.status.confirmed = true;
                     aux.status.labeled = true;
-                    aux.status.sent = true;
-                    aux.status.invoiced = true;
+                    aux.status.sent = true;                   
+
+                    if(aux.status.invoiced != true)
+                    {
+                        MessageBoxResult result = MessageBox.Show("Do you want to invoice this order?", "", MessageBoxButton.OKCancel);
+                        switch (result)
+                        {
+                            case MessageBoxResult.OK:
+                                lblStatus.Text = "Status: Invoiced";
+                                aux.status.invoiced = true;
+
+                                //INSERT THE INVOICE
+                                Invoice invoice = new Invoice();
+                                int maximun = aux.manage.getMaxInvoiceID();
+                                Int64 invoiceID = Convert.ToInt64(DateTime.Today.ToString("yyyy") + maximun.ToString("0000"));
+                                invoice.id = invoiceID;
+                                invoice.date = DateTime.Today;
+                                invoice.order = aux;
+
+                                invoice.Insert();
+
+                                invoice.ReadAll();
+                                dgrInvoices.ItemsSource = invoice.manage.listI;
+
+                                break;
+                            case MessageBoxResult.Cancel:
+                                sldStatus.Value = 30;
+                                break;
+                        }
+                    }
+                    else
+                        lblStatus.Text = "Status: Invoiced";
                 }
 
                 dgrOrders.SelectedItem = aux;
@@ -746,6 +988,13 @@ namespace LITTLE_ERP
 
         }
 
+        /// <summary>
+        /// Handles the SelectionChanged event of the dgrOrders control.
+        /// 
+        /// Show the status of the order in the slider
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="SelectionChangedEventArgs"/> instance containing the event data.</param>
         private void dgrOrders_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Order aux = (Order)dgrOrders.SelectedItem;
@@ -767,6 +1016,13 @@ namespace LITTLE_ERP
             
         }
 
+        /// <summary>
+        /// Handles the Click event of the btnO_Zoom control.
+        /// 
+        /// Show order details
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void btnO_Zoom_Click(object sender, RoutedEventArgs e)
         {
             Order aux = (Order)dgrOrders.SelectedItem;
@@ -774,5 +1030,152 @@ namespace LITTLE_ERP
             NewOrder newOrder = new NewOrder();
             newOrder.Show();
         }
+
+        //
+        // INVOICES
+        //
+
+        /// <summary>
+        /// Handles the TextChanged event of the txtI_Search control.
+        /// 
+        /// Search among all the invoices
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="TextChangedEventArgs"/> instance containing the event data.</param>
+        private void txtI_Search_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Invoice aux = new Invoice();
+
+            if (txtI_Search.Text.Length != 0)
+            {
+                String pattern = txtI_Search.Text;
+
+                aux.manage.setInvoicesSelectedList(pattern);
+                dgrInvoices.ItemsSource = aux.manage.selectedListI;
+            }
+            else
+            {
+                aux.ReadAll();
+                dgrInvoices.ItemsSource = aux.manage.listI;
+            }
+        }
+
+        /// <summary>
+        /// Handles the Click event of the btnI_Delete control.
+        /// 
+        /// Delete the invoice
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
+        private void btnI_Delete_Click(object sender, RoutedEventArgs e)
+        {
+            List<Invoice> data = new List<Invoice>();
+            int indice = 0;
+            if (dgrInvoices.SelectedItems.Count > 0)
+            {
+                data = (List<Invoice>)dgrInvoices.ItemsSource;
+
+                for (int i = 0; i < dgrInvoices.SelectedItems.Count; i++)
+                {
+                    indice = dgrInvoices.Items.IndexOf(dgrInvoices.SelectedItems[i]);
+                    data.RemoveAt(indice);
+                    Invoice row = (Invoice)dgrInvoices.SelectedItems[i];
+                    row.Delete();
+
+                }
+                dgrInvoices.ItemsSource = null;
+                dgrInvoices.ItemsSource = data;
+
+                Order aux = new Order();
+                aux.ReadAll();
+                dgrOrders.ItemsSource = aux.manage.list;
+            }
+            else
+            {
+                MessageBox.Show("You must select at least one row");
+            }
+        }
+
+        /// <summary>
+        /// Handles the MouseDoubleClick event of the dgrInvoices control.
+        /// 
+        /// Account the invoice
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="MouseButtonEventArgs"/> instance containing the event data.</param>
+        private void dgrInvoices_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (setUser.userPermissions.accountInvoices)
+            {
+                Invoice aux = (Invoice)dgrInvoices.SelectedItem;
+                Invoice beforeAux = new Invoice();
+
+                int indice = dgrInvoices.Items.IndexOf(aux);
+
+                if ((dgrInvoices.Items.Count - 1) != indice)
+                    beforeAux = (Invoice)dgrInvoices.Items.GetItemAt(indice + 1);
+
+                if (beforeAux.accounted == true || (dgrInvoices.Items.Count - 1) == indice)
+                {
+                    aux.accounted = true;
+                    aux.UpdateAccounted();
+
+                    dgrInvoices.Items.Refresh();
+                }
+                else
+                {
+                    MessageBox.Show("Invoices must be accounted in order");
+                }
+            }
+
+        }
+
+        /// <summary>
+        /// Handles the Click event of the btnI_Add control.
+        /// 
+        /// Open the form to create an invoice
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
+        private void btnI_Add_Click(object sender, RoutedEventArgs e)
+        {
+            Invoice aux = (Invoice)dgrInvoices.SelectedItem;
+            NewOrder.NewInvoice = true;
+            NewOrder.User = setUser;
+            NewOrder newOrder = new NewOrder(this);
+            newOrder.Show();
+        }
+
+        /// <summary>
+        /// Handles the Click event of the btnI_Zoom control.
+        /// 
+        /// Show the invoice data
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
+        private void btnI_Zoom_Click(object sender, RoutedEventArgs e)
+        {
+            Invoice aux = (Invoice)dgrInvoices.SelectedItem;
+            NewOrder.Order = aux.order;
+            NewOrder newOrder = new NewOrder();
+            newOrder.Show();
+        }
+
+        /// <summary>
+        /// Handles the Click event of the btnI_Print control.
+        /// 
+        /// Create the invoice report to be able to print it
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
+        private void btnI_Print_Click(object sender, RoutedEventArgs e)
+        {
+            Invoice aux = (Invoice)dgrInvoices.SelectedItem;
+            InvoiceView.Invoice = aux;
+            InvoiceView invoiceView = new InvoiceView();
+            invoiceView.Show();
+        }
+
+        
     }
 }

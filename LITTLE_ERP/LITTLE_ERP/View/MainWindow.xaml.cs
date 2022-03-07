@@ -22,12 +22,22 @@ namespace LITTLE_ERP
     /// </summary>
     public partial class MainWindow : Window
     {
-
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MainWindow"/> class.
+        /// </summary>
         public MainWindow()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Handles the Click event of the btnOK control.
+        /// 
+        /// Checks if the user exists in the database, if exist open the program, 
+        /// but otherwise an error is thrown
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         public void btnOK_Click(object sender, RoutedEventArgs e)
         {
             String login = txtLogin.Text;
@@ -54,6 +64,11 @@ namespace LITTLE_ERP
 
         }
 
+        /// <summary>
+        /// Handles the Click event of the btnClose control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         public void btnClose_Click(object sender, RoutedEventArgs e)
         {
             this.Close();

@@ -8,17 +8,26 @@ using System.Threading.Tasks;
 
 namespace LITTLE_ERP.Domain.Manage
 {
+    /// <summary>
+    /// Class for manage rol objects
+    /// </summary>
     class RolManage
     {
 
         public List<Rol> list { get; set; }
 
+        /// <summary>
+        /// Initializes the list of the <see cref="RolManage"/> class.
+        /// </summary>
         public RolManage()
         {
             this.list = new List<Rol>();
         }
 
-        public void ReadAll() //Read the roles from the database and save them to the list
+        /// <summary>
+        /// Read all roles from the database.
+        /// </summary>
+        public void ReadAll()
         {
             DataSet data = new DataSet();
             ConnectOracle Search = new ConnectOracle();
@@ -37,7 +46,12 @@ namespace LITTLE_ERP.Domain.Manage
             }
         }
 
-        public void ReadRol(Rol rol) //Read a role through their id and assign their description
+
+        /// <summary>
+        /// Reads a specific rol from the database.
+        /// </summary>
+        /// <param name="rol">The rol.</param>
+        public void ReadRol(Rol rol)
         {
             DataSet data = new DataSet();
             ConnectOracle Search = new ConnectOracle();
