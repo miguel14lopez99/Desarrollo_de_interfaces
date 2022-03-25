@@ -103,3 +103,7 @@ C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\LITTLE_ERP\LITTLE_ER
 C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\LITTLE_ERP\LITTLE_ERP\bin\Debug\LITTLE_ERP.xml
 C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\LITTLE_ERP\LITTLE_ERP\obj\Debug\View\InvoiceView.g.cs
 C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\LITTLE_ERP\LITTLE_ERP\obj\Debug\View\InvoiceView.baml
+C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\LITTLE_ERP\LITTLE_ERP\bin\Debug\LITTLE_ERP.exe.manifest
+C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\LITTLE_ERP\LITTLE_ERP\bin\Debug\LITTLE_ERP.application
+C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\LITTLE_ERP\LITTLE_ERP\obj\Debug\LITTLE_ERP.exe.manifest
+C:\Users\chipi\Documents\Repositorios\Disenio_de_interfaces\LITTLE_ERP\LITTLE_ERP\obj\Debug\LITTLE_ERP.application

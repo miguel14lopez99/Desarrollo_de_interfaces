@@ -1,0 +1,20 @@
+C:\Users\chipi\source\repos\Ejercicio Barcos2\Ejercicio Barcos2\bin\Debug\netcoreapp3.1\Ejercicio Barcos2.exe
+C:\Users\chipi\source\repos\Ejercicio Barcos2\Ejercicio Barcos2\bin\Debug\netcoreapp3.1\Ejercicio Barcos2.deps.json
+C:\Users\chipi\source\repos\Ejercicio Barcos2\Ejercicio Barcos2\bin\Debug\netcoreapp3.1\Ejercicio Barcos2.runtimeconfig.json
+C:\Users\chipi\source\repos\Ejercicio Barcos2\Ejercicio Barcos2\bin\Debug\netcoreapp3.1\Ejercicio Barcos2.runtimeconfig.dev.json
+C:\Users\chipi\source\repos\Ejercicio Barcos2\Ejercicio Barcos2\bin\Debug\netcoreapp3.1\Ejercicio Barcos2.dll
+C:\Users\chipi\source\repos\Ejercicio Barcos2\Ejercicio Barcos2\bin\Debug\netcoreapp3.1\Ejercicio Barcos2.pdb
+C:\Users\chipi\source\repos\Ejercicio Barcos2\Ejercicio Barcos2\obj\Debug\netcoreapp3.1\Ejercicio Barcos2.csproj.AssemblyReference.cache
+C:\Users\chipi\source\repos\Ejercicio Barcos2\Ejercicio Barcos2\obj\Debug\netcoreapp3.1\MainWindow.g.cs
+C:\Users\chipi\source\repos\Ejercicio Barcos2\Ejercicio Barcos2\obj\Debug\netcoreapp3.1\App.g.cs
+C:\Users\chipi\source\repos\Ejercicio Barcos2\Ejercicio Barcos2\obj\Debug\netcoreapp3.1\Ejercicio Barcos2_MarkupCompile.cache
+C:\Users\chipi\source\repos\Ejercicio Barcos2\Ejercicio Barcos2\obj\Debug\netcoreapp3.1\Ejercicio Barcos2_MarkupCompile.lref
+C:\Users\chipi\source\repos\Ejercicio Barcos2\Ejercicio Barcos2\obj\Debug\netcoreapp3.1\MainWindow.baml
+C:\Users\chipi\source\repos\Ejercicio Barcos2\Ejercicio Barcos2\obj\Debug\netcoreapp3.1\Ejercicio Barcos2.g.resources
+C:\Users\chipi\source\repos\Ejercicio Barcos2\Ejercicio Barcos2\obj\Debug\netcoreapp3.1\Ejercicio Barcos2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\chipi\source\repos\Ejercicio Barcos2\Ejercicio Barcos2\obj\Debug\netcoreapp3.1\Ejercicio Barcos2.AssemblyInfoInputs.cache
+C:\Users\chipi\source\repos\Ejercicio Barcos2\Ejercicio Barcos2\obj\Debug\netcoreapp3.1\Ejercicio Barcos2.AssemblyInfo.cs
+C:\Users\chipi\source\repos\Ejercicio Barcos2\Ejercicio Barcos2\obj\Debug\netcoreapp3.1\Ejercicio Barcos2.csproj.CoreCompileInputs.cache
+C:\Users\chipi\source\repos\Ejercicio Barcos2\Ejercicio Barcos2\obj\Debug\netcoreapp3.1\Ejercicio Barcos2.dll
+C:\Users\chipi\source\repos\Ejercicio Barcos2\Ejercicio Barcos2\obj\Debug\netcoreapp3.1\Ejercicio Barcos2.pdb
+C:\Users\chipi\source\repos\Ejercicio Barcos2\Ejercicio Barcos2\obj\Debug\netcoreapp3.1\Ejercicio Barcos2.genruntimeconfig.cache

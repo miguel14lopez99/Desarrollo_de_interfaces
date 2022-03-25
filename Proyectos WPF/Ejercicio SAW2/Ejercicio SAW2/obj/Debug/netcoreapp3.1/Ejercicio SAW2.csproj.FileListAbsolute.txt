@@ -1,0 +1,20 @@
+C:\Users\chipi\source\repos\Ejercicio SAW2\Ejercicio SAW2\bin\Debug\netcoreapp3.1\Ejercicio SAW2.exe
+C:\Users\chipi\source\repos\Ejercicio SAW2\Ejercicio SAW2\bin\Debug\netcoreapp3.1\Ejercicio SAW2.deps.json
+C:\Users\chipi\source\repos\Ejercicio SAW2\Ejercicio SAW2\bin\Debug\netcoreapp3.1\Ejercicio SAW2.runtimeconfig.json
+C:\Users\chipi\source\repos\Ejercicio SAW2\Ejercicio SAW2\bin\Debug\netcoreapp3.1\Ejercicio SAW2.runtimeconfig.dev.json
+C:\Users\chipi\source\repos\Ejercicio SAW2\Ejercicio SAW2\bin\Debug\netcoreapp3.1\Ejercicio SAW2.dll
+C:\Users\chipi\source\repos\Ejercicio SAW2\Ejercicio SAW2\bin\Debug\netcoreapp3.1\Ejercicio SAW2.pdb
+C:\Users\chipi\source\repos\Ejercicio SAW2\Ejercicio SAW2\obj\Debug\netcoreapp3.1\Ejercicio SAW2.csproj.AssemblyReference.cache
+C:\Users\chipi\source\repos\Ejercicio SAW2\Ejercicio SAW2\obj\Debug\netcoreapp3.1\MainWindow.g.cs
+C:\Users\chipi\source\repos\Ejercicio SAW2\Ejercicio SAW2\obj\Debug\netcoreapp3.1\App.g.cs
+C:\Users\chipi\source\repos\Ejercicio SAW2\Ejercicio SAW2\obj\Debug\netcoreapp3.1\Ejercicio SAW2_MarkupCompile.cache
+C:\Users\chipi\source\repos\Ejercicio SAW2\Ejercicio SAW2\obj\Debug\netcoreapp3.1\Ejercicio SAW2_MarkupCompile.lref
+C:\Users\chipi\source\repos\Ejercicio SAW2\Ejercicio SAW2\obj\Debug\netcoreapp3.1\MainWindow.baml
+C:\Users\chipi\source\repos\Ejercicio SAW2\Ejercicio SAW2\obj\Debug\netcoreapp3.1\Ejercicio SAW2.g.resources
+C:\Users\chipi\source\repos\Ejercicio SAW2\Ejercicio SAW2\obj\Debug\netcoreapp3.1\Ejercicio SAW2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\chipi\source\repos\Ejercicio SAW2\Ejercicio SAW2\obj\Debug\netcoreapp3.1\Ejercicio SAW2.AssemblyInfoInputs.cache
+C:\Users\chipi\source\repos\Ejercicio SAW2\Ejercicio SAW2\obj\Debug\netcoreapp3.1\Ejercicio SAW2.AssemblyInfo.cs
+C:\Users\chipi\source\repos\Ejercicio SAW2\Ejercicio SAW2\obj\Debug\netcoreapp3.1\Ejercicio SAW2.csproj.CoreCompileInputs.cache
+C:\Users\chipi\source\repos\Ejercicio SAW2\Ejercicio SAW2\obj\Debug\netcoreapp3.1\Ejercicio SAW2.dll
+C:\Users\chipi\source\repos\Ejercicio SAW2\Ejercicio SAW2\obj\Debug\netcoreapp3.1\Ejercicio SAW2.pdb
+C:\Users\chipi\source\repos\Ejercicio SAW2\Ejercicio SAW2\obj\Debug\netcoreapp3.1\Ejercicio SAW2.genruntimeconfig.cache

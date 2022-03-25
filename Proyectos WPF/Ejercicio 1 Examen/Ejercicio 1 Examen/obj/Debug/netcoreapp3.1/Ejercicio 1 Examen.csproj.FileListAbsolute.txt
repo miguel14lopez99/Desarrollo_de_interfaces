@@ -1,0 +1,14 @@
+C:\Users\chipi\source\repos\Ejercicio 1 Examen\Ejercicio 1 Examen\bin\Debug\netcoreapp3.1\Ejercicio 1 Examen.exe
+C:\Users\chipi\source\repos\Ejercicio 1 Examen\Ejercicio 1 Examen\bin\Debug\netcoreapp3.1\Ejercicio 1 Examen.deps.json
+C:\Users\chipi\source\repos\Ejercicio 1 Examen\Ejercicio 1 Examen\bin\Debug\netcoreapp3.1\Ejercicio 1 Examen.runtimeconfig.json
+C:\Users\chipi\source\repos\Ejercicio 1 Examen\Ejercicio 1 Examen\bin\Debug\netcoreapp3.1\Ejercicio 1 Examen.runtimeconfig.dev.json
+C:\Users\chipi\source\repos\Ejercicio 1 Examen\Ejercicio 1 Examen\bin\Debug\netcoreapp3.1\Ejercicio 1 Examen.dll
+C:\Users\chipi\source\repos\Ejercicio 1 Examen\Ejercicio 1 Examen\bin\Debug\netcoreapp3.1\Ejercicio 1 Examen.pdb
+C:\Users\chipi\source\repos\Ejercicio 1 Examen\Ejercicio 1 Examen\obj\Debug\netcoreapp3.1\Ejercicio 1 Examen.csproj.AssemblyReference.cache
+C:\Users\chipi\source\repos\Ejercicio 1 Examen\Ejercicio 1 Examen\obj\Debug\netcoreapp3.1\Ejercicio 1 Examen.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\chipi\source\repos\Ejercicio 1 Examen\Ejercicio 1 Examen\obj\Debug\netcoreapp3.1\Ejercicio 1 Examen.AssemblyInfoInputs.cache
+C:\Users\chipi\source\repos\Ejercicio 1 Examen\Ejercicio 1 Examen\obj\Debug\netcoreapp3.1\Ejercicio 1 Examen.AssemblyInfo.cs
+C:\Users\chipi\source\repos\Ejercicio 1 Examen\Ejercicio 1 Examen\obj\Debug\netcoreapp3.1\Ejercicio 1 Examen.csproj.CoreCompileInputs.cache
+C:\Users\chipi\source\repos\Ejercicio 1 Examen\Ejercicio 1 Examen\obj\Debug\netcoreapp3.1\Ejercicio 1 Examen.dll
+C:\Users\chipi\source\repos\Ejercicio 1 Examen\Ejercicio 1 Examen\obj\Debug\netcoreapp3.1\Ejercicio 1 Examen.pdb
+C:\Users\chipi\source\repos\Ejercicio 1 Examen\Ejercicio 1 Examen\obj\Debug\netcoreapp3.1\Ejercicio 1 Examen.genruntimeconfig.cache
